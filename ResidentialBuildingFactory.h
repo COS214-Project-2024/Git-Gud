@@ -9,6 +9,7 @@ private:
     
 public:
     Building* constructBuilding() override;
+    Building* cloneBuilding() override;
 };
 
 

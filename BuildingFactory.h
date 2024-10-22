@@ -9,6 +9,7 @@ private:
     Building* building;
 public:
     virtual Building* constructBuilding() = 0;
+    virtual Building* cloneBuilding() = 0;
 };
 
 

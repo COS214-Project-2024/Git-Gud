@@ -1,15 +1,15 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 
-#include "Observer.h"
+#include "Citizen.h"
 
 class Subject
 {
 private:
-    Observer* observerList;
+    Citizen* observerList;
 public:
-    void attach(Observer* observer);
-    void detach(Observer* observer);
+    void attach(Citizen* observer);
+    void detach(Citizen* observer);
     void notify();
 };
 

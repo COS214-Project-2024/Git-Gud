@@ -28,6 +28,6 @@ class ResourceManager {
         void setEnergySupply(int newEnergySupply);
         void setWaterSupply(int newWaterSupply);
         void setCityBudget(int newCityBudget);
-}
+};
 
 #endif // RESOURCEMANAGER_H

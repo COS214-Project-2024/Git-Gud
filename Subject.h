@@ -6,6 +6,13 @@
 
 #include "Citizen.h"
 
+struct ChangeData{
+
+    std::string changeType;
+    float value;
+
+};
+
 class Subject{
 
     private:

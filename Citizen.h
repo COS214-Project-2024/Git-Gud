@@ -3,12 +3,13 @@
 
 #include "SatisfactionLevel.h"
 
-class Citizen
-{
-private:
-    SatisfactionLevel* satisfactionLevel;
-public:
-    void update();
+class Citizen{
+
+    private:
+        SatisfactionLevel* satisfactionLevel;
+    public:
+        void update();
+
 };
 
 

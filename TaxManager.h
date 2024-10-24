@@ -3,14 +3,15 @@
 
 #include "RetrieveTax.h"
 
-class TaxManager
-{
-private:
-    RetrieveTax* taxStrategy;
-    float currentTotalTaxRate;
-public:
-    float calculateTax();
-    void updateTotalTaxRate();
+class TaxManager{
+
+    private:
+        RetrieveTax* taxStrategy;
+        float currentTotalTaxRate;
+    public:
+        float calculateTax();
+        void updateTotalTaxRate();
+
 };
 
 

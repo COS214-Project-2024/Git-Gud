@@ -2,6 +2,7 @@
 #define INDUSTRIALBUILDINGFACTORY_H   
 
 #include "BuildingFactory.h"
+#include "IndustrialBuilding.h"
 
 class IndustrialBuildingFactory : public BuildingFactory
 {

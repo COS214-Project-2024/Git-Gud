@@ -2,6 +2,7 @@
 #define LANDMARKFACTORY_H   
 
 #include "BuildingFactory.h"
+#include "Landmark.h"
 
 class LandmarkFactory : public BuildingFactory
 {

@@ -2,6 +2,7 @@
 #define COMMERCIALBUILDINGFACTORY_H   
 
 #include "BuildingFactory.h"
+#include "CommercialBuilding.h"
 
 class CommercialBuildingFactory : public BuildingFactory
 {

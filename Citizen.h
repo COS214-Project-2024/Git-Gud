@@ -8,7 +8,7 @@ class Citizen{
     private:
         SatisfactionLevel* satisfactionLevel;
     public:
-        void update();
+        void update(ChangeData changeData);
 
 };
 

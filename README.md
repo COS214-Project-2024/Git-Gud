@@ -7,7 +7,7 @@
 </p>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Project_Status-Designing_System-yellow" alt="Static Badge">
+  <img src="https://img.shields.io/badge/Project_Status-Implementing_System-yellow" alt="Static Badge">
 </div>
 
 This project is part of the COS 214 course and aims to develop a dynamic simulation of urban growth, resource management, and citizen satisfaction using C++. 🚧

@@ -7,7 +7,7 @@
 class WasteManagementFactory : public UtilityFactory {
 public:
     WasteManagementFactory(int capacity, int maintenanceCost, int handlingCap);
-    ~WasteManagementFactory(){};
+    virtual ~WasteManagementFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
         // Return a new WasteManagement instance with specific handilng capacities

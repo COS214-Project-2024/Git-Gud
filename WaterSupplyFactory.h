@@ -7,7 +7,7 @@
 class WaterSupplyFactory : public UtilityFactory {
 public:
     WaterSupplyFactory(int capacity, int maintenanceCost, int waterflow);
-    ~WaterSupplyFactory(){};
+    virtual ~WaterSupplyFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
         // Return a new WaterSupply instance with specific filtering and garbage capacities

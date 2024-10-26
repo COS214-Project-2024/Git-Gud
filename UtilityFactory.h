@@ -8,7 +8,7 @@
 class UtilityFactory{
     public:
         UtilityFactory();
-        ~UtilityFactory(){}
+        virtual ~UtilityFactory(){}
 
         virtual Utility* createUtility(int capacity, int maintenanceCost) = 0;
 };

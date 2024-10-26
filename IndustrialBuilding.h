@@ -3,11 +3,11 @@
 
 #include "Building.h"
 
-class IndustrialBuilding : public Building
-{
-private:
+class IndustrialBuilding : public Building{
     
-public:
+    private:
+        
+    public:
 
 };
 

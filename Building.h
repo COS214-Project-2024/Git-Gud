@@ -4,11 +4,12 @@
 #include "BuildingState.h"
 #include "Citizen.h"
 
-class Building
-{
-private:
-    BuildingState* state;
-public:
+class Building{
+
+    private:
+        BuildingState* state;
+    public:
+        Building();
 
 };
 

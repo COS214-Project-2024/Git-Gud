@@ -1,6 +1,8 @@
 #ifndef RESOURCES_H
 #define RESOURCES_H
 
+#include <string>
+
 class Resources {
 private:
     int wood;
@@ -21,27 +23,13 @@ public:
     int getWaterSupply() const;
     int getEnergySupply() const;
 
-    // Setters for direct initialization
-    void setWood(int amount) { wood = amount; }
-    void setSteel(int amount) { steel = amount; }
-    void setConcrete(int amount) { concrete = amount; }
-    void setWaterSupply(int amount) { waterSupply = amount; }
+    // Methods to modify resources
+    void addResource(const std::string& resourceType, int amount);
+    void useResource(const std::string& resourceType, int amount);
 
-    // Methods to add resources
-    void addWood(int amount);
-    void addSteel(int amount);
-    void addConcrete(int amount);
+    // For budget, provide specific methods since it may have unique rules
     void addBudget(int amount);
-    void addWaterSupply(int amount);
-    void addEnergySupply(int amount);
-
-    // Methods to use resources
-    void useWood(int amount);
-    void useSteel(int amount);
-    void useConcrete(int amount);
     void spendBudget(int amount);
-    void useWaterSupply(int amount);
-    void useEnergySupply(int amount);
 };
 
 #endif // RESOURCES_H

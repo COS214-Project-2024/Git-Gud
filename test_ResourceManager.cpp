@@ -1,44 +1,62 @@
-// test_ResourceManager.cpp
 #include <gtest/gtest.h>
 #include "ResourceManager.h"
 
 class ResourceManagerTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        ResourceManager::resetInstance(); // Reset to ensure a fresh instance
+        ResourceManager::resetInstance(); // Reset Singleton instance for each test
     }
 };
 
 TEST_F(ResourceManagerTest, SingletonInstance) {
     ResourceManager* instance1 = ResourceManager::getInstance();
     ResourceManager* instance2 = ResourceManager::getInstance();
-    EXPECT_EQ(instance1, instance2);
+    EXPECT_EQ(instance1, instance2); // Should be the same instance
 }
 
-TEST_F(ResourceManagerTest, ResourceUsageAndAddition) {
+TEST_F(ResourceManagerTest, InitializeResources) {
     ResourceManager* manager = ResourceManager::getInstance();
+    manager->initializeResources(10, 20, 30, 40); // Initialize specific values
 
-    // Initialize resources directly for testing instead of adding
-    manager->initializeResources(40, 20, 30, 10);   // Set Wood:10, Steel:20, Concrete:30, Water:40
-    EXPECT_EQ(manager->getWood(), 10);       // Expecting wood to be 10
-    EXPECT_EQ(manager->getSteel(), 20);      // Expecting steel to be 20
-    EXPECT_EQ(manager->getConcrete(), 30);   // Expecting concrete to be 30
-    EXPECT_EQ(manager->getWaterSupply(), 40);// Expecting water supply to be 40
+    EXPECT_EQ(manager->getWood(), 40);
+    EXPECT_EQ(manager->getSteel(), 20);
+    EXPECT_EQ(manager->getConcrete(), 30);
+    EXPECT_EQ(manager->getWaterSupply(), 10);
+}
 
-    // Use resources to test decrementing values
-    manager->useResources(5, 10, 15, 20, 5); // Subtract Wood:5, Steel:10, Concrete:15, Water:20, Energy:5
-    EXPECT_EQ(manager->getWood(), 5);        // Wood should now be 5
-    EXPECT_EQ(manager->getSteel(), 10);      // Steel should now be 10
-    EXPECT_EQ(manager->getConcrete(), 15);   // Concrete should now be 15
-    EXPECT_EQ(manager->getWaterSupply(), 20);// Water supply should now be 20
-    EXPECT_EQ(manager->getEnergySupply(), 0);// No energy added initially, so it should be 0
+TEST_F(ResourceManagerTest, AddResources) {
+    ResourceManager* manager = ResourceManager::getInstance();
+    manager->addResource("wood", 10);
+    manager->addResource("steel", 20);
+    manager->addResource("concrete", 30);
+    manager->addResource("waterSupply", 40);
+
+    EXPECT_EQ(manager->getWood(), 10);
+    EXPECT_EQ(manager->getSteel(), 20);
+    EXPECT_EQ(manager->getConcrete(), 30);
+    EXPECT_EQ(manager->getWaterSupply(), 40);
+}
+
+TEST_F(ResourceManagerTest, UseResources) {
+    ResourceManager* manager = ResourceManager::getInstance();
+    manager->initializeResources(40, 20, 30, 10); // Initialize with specific values
+
+    manager->useResource("wood", 5);
+    manager->useResource("steel", 10);
+    manager->useResource("concrete", 15);
+    manager->useResource("waterSupply", 5);
+
+    EXPECT_EQ(manager->getWood(), 35);
+    EXPECT_EQ(manager->getSteel(), 10);
+    EXPECT_EQ(manager->getConcrete(), 15);
+    EXPECT_EQ(manager->getWaterSupply(), 5);
 }
 
 TEST_F(ResourceManagerTest, SufficientMaterialsCheck) {
     ResourceManager* manager = ResourceManager::getInstance();
-    manager->initializeResources(10, 10, 10, 10);   // Initialize with specific values
-    manager->addEnergySupply(20);                   // Add initial energy
+    manager->initializeResources(10, 10, 10, 10); // Initialize specific values
+    manager->addResource("energySupply", 20);     // Set initial energy
 
-    EXPECT_TRUE(manager->sufficientMaterials(5, 5, 5, 5, 10));   // Should pass
-    EXPECT_FALSE(manager->sufficientMaterials(15, 15, 15, 15, 25));  // Should fail
+    EXPECT_TRUE(manager->sufficientMaterials(5, 5, 5, 5, 10));   // Should be true
+    EXPECT_FALSE(manager->sufficientMaterials(15, 15, 15, 15, 25)); // Should be false
 }

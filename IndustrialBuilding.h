@@ -9,6 +9,12 @@ private:
     
 public:
 
+    IndustrialBuilding(BuildingState* s);
+
+    virtual void provideService();
+
+    virtual int getCost();
+
 };
 
 

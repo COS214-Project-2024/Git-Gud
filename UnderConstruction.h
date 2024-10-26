@@ -6,8 +6,11 @@
 class UnderConstruction : public BuildingState
 {
 private:
+
     
 public:
+
+    UnderConstruction(){};
 
 };
 

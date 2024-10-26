@@ -9,7 +9,7 @@ private:
     
 public:
 
-    CommercialBuilding();
+    CommercialBuilding(BuildingState* s);
 
     virtual void provideService();
 

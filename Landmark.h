@@ -9,6 +9,12 @@ private:
     int landmarkName;
 public:
 
+    LandmarkBuilding(BuildingState* s);
+
+    virtual void provideService();
+
+    virtual int getCost();
+
 };
 
 

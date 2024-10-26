@@ -10,6 +10,12 @@ private:
     std::list<Citizen*> tenants;
 public:
 
+    ResidentialBuilding(BuildingState* s);
+
+    virtual void provideService();
+
+    virtual int getCost();
+
 };
 
 

@@ -11,12 +11,12 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
-#include "BuildingState.h"
 #include "Citizen.h"
+#include "UnderConstruction.h"
 
 class Building
 {
-private:
+protected:
 
     /// @brief State of the Building
     BuildingState* state;
@@ -35,6 +35,8 @@ public:
     /// @brief  Get the cost of the Building
     /// @return int
     virtual int getCost()=0; 
+
+    virtual void setState(BuildingState* s);
 
 };
 

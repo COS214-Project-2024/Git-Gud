@@ -2,10 +2,13 @@
 #define BUILDINGFACTORY_H
 
 #include "Building.h"
+#include "ResourceManager.h"
 
 class BuildingFactory
 {
-private:
+protected:
+
+    ResourceManager* Rmanager;
 
     Building* building;
 

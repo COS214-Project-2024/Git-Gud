@@ -4,7 +4,10 @@
 #include "IndustrialBuildingFactory.h"
 
 Building* IndustrialBuildingFactory::constructBuilding(){
-    return new IndustrialBuilding();
+    if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
+        return new IndustrialBuilding(new UnderConstruction());
+    }
+    return nullptr;
 }
 
 #endif

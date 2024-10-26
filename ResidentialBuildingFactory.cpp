@@ -4,7 +4,10 @@
 #include "ResidentialBuildingFactory.h"
 
 Building* ResidentialBuildingFactory::constructBuilding(){
-    return new ResidentialBuilding();
+    if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
+        return new ResidentialBuilding(new UnderConstruction());
+    }
+    return nullptr;
 }
 
 #endif

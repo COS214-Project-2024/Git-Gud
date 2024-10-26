@@ -1,54 +1,46 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
-#include <map>
-#include <string>
-#include <memory>
-#include "Resource.h"
-#include "Power.h"
-#include "Water.h"
-#include "Steel.h"
-#include "Wood.h"
-#include "Concrete.h"
-#include "Budget.h"
+#include "Resources.h"
 
 class ResourceManager {
-    private:
-        ResourceManager();
+private:
+    static ResourceManager* instance; // Singleton instance
+    ResourceManager(); // Private constructor
 
-        static ResourceManager* instance; // Singleton instance
+    int energySupply;
+    int waterSupply;
+    int cityBudget;
 
-        int energySupply;
-        int waterSupply;
-        int cityBudget;
+    Resources resources; // Instance of Resources to manage the resource values
 
-        // Map to store resources
-        std::map<std::string, std::unique_ptr<Resource>> resources;
+public:
+    // Singleton instance getter
+    static ResourceManager* getInstance();
 
-    public:
-        // Singleton instance getter
-        static ResourceManager* getInstance();
+    // Check if there are sufficient materials available
+    bool sufficientMaterials(int water, int steel, int concrete, int wood, int power) const;
 
-        // Method to initialize or add resources to the map
-        void initializeResource(const std::string& resourceType, int amount);
+    // Methods to use and add resources
+    void useResources(int water, int steel, int concrete, int wood, int power);
+    void addResources(int water, int steel, int concrete, int wood);
 
-        // Check if there are sufficient materials available
-        bool sufficientMaterials(int water, int steel, int concrete, int wood, int power) const;
+    // Specific methods for energy, water, and budget
+    void addEnergy(int amount);
+    void addWater(int amount);
+    void addBudget(int amount);
+    void spendBudget(int amount);
 
-        // Methods to update specific resources directly
-        void useResources(int water, int steel, int concrete, int wood, int power);
-        void addResource(const std::string& resourceType, int amount);
-
-        // Specific methods for energy, water, and budget
-        void addEnergy(int amount);
-        void addWater(int amount);
-        void addBudget(int amount);
-        void spendBudget(int amount);
-
-        // Getters for main resources
-        int getEnergySupply() const;
-        int getWaterSupply() const;
-        int getCityBudget() const;
+    // Getters for main resources
+    int getEnergySupply() const;
+    int getWaterSupply() const;
+    int getCityBudget() const;
+    
+    // Getters for Resources
+    int getWood() const;
+    int getSteel() const;
+    int getConcrete() const;
+    int getBudget() const;
 };
 
 #endif // RESOURCEMANAGER_H

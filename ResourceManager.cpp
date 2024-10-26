@@ -2,86 +2,36 @@
 
 ResourceManager* ResourceManager::instance = nullptr;
 
-ResourceManager::ResourceManager()
-    : energySupply(0),  // Default value
-      waterSupply(0),    // Default value
-      cityBudget(100000)   // Default value
-{
-    resources["Steel"] = std::make_unique<Steel>(300);   // Example initial amount
-    resources["Wood"] = std::make_unique<Wood>(200);
-    resources["Concrete"] = std::make_unique<Concrete>(400);
-}
+ResourceManager::ResourceManager() : energySupply(0), waterSupply(0), cityBudget(0) {}
 
-// Public method to access the singleton instance
 ResourceManager* ResourceManager::getInstance() {
-    if (instance == nullptr) {
+    if (!instance) {
         instance = new ResourceManager();
     }
-
     return instance;
 }
 
-// Initialize or add a new resource type with an initial amount
-void ResourceManager::initializeResource(const std::string& resourceType, int amount) {
-    if (resources.find(resourceType) == resources.end()) {
-        // If resource type doesn't exist, create it and add to map
-        if (resourceType == "Steel") {
-            resources[resourceType] = std::make_unique<Steel>(amount);
-        } else if (resourceType == "Wood") {
-            resources[resourceType] = std::make_unique<Wood>(amount);
-        } else if (resourceType == "Concrete") {
-            resources[resourceType] = std::make_unique<Concrete>(amount);
-        } else if (resourceType == "Power") {
-            resources[resourceType] = std::make_unique<Power>(amount);
-        } else if (resourceType == "Water") {
-            resources[resourceType] = std::make_unique<Water>(amount);
-        } else if (resourceType == "Budget") {
-            resources[resourceType] = std::make_unique<Budget>(amount);
-        } else {
-            throw std::invalid_argument("Unknown resource type.");
-        }
-    } else {
-        // If resource exists, update its amount
-        resources[resourceType]->increaseAmount(amount);
-    }
-}
-
-// Get a specific resource
-Resource* ResourceManager::getResource(const std::string& resourceType) const {
-    if (resources.find(resourceType) != resources.end()) {
-        return resources.at(resourceType).get();
-    }
-
-    return nullptr;
-}
-
 bool ResourceManager::sufficientMaterials(int water, int steel, int concrete, int wood, int power) const {
-    return (waterSupply >= water &&
-            resources.at("Steel")->getAvailableAmount() >= steel &&
-            resources.at("Concrete")->getAvailableAmount() >= concrete &&
-            resources.at("Wood")->getAvailableAmount() >= wood &&
-            energySupply >= power);
+    return resources.getWater() >= water &&
+           resources.getSteel() >= steel &&
+           resources.getConcrete() >= concrete &&
+           resources.getWood() >= wood &&
+           energySupply >= power;
 }
 
 void ResourceManager::useResources(int water, int steel, int concrete, int wood, int power) {
-    if (sufficientMaterials(water, steel, concrete, wood, power)) {
-        waterSupply -= water;
-        energySupply -= power;
-        resources["Steel"]->decreaseAmount(steel);
-        resources["Concrete"]->decreaseAmount(concrete);
-        resources["Wood"]->decreaseAmount(wood);
-    } else {
-        throw std::runtime_error("Insufficient resources for operation.");
-    }
+    resources.useWater(water);
+    resources.useSteel(steel);
+    resources.useConcrete(concrete);
+    resources.useWood(wood);
+    energySupply -= power;
 }
 
-// Add to an existing resource
-void ResourceManager::addResource(const std::string& resourceType, int amount) {
-    if (resources.find(resourceType) != resources.end()) {
-        resources[resourceType]->increaseAmount(amount);
-    } else {
-        throw std::invalid_argument("Resource type does not exist.");
-    }
+void ResourceManager::addResources(int water, int steel, int concrete, int wood) {
+    resources.addWater(water);
+    resources.addSteel(steel);
+    resources.addConcrete(concrete);
+    resources.addWood(wood);
 }
 
 void ResourceManager::addEnergy(int amount) {
@@ -97,11 +47,7 @@ void ResourceManager::addBudget(int amount) {
 }
 
 void ResourceManager::spendBudget(int amount) {
-    if (cityBudget >= amount) {
-        cityBudget -= amount;
-    } else {
-        throw std::runtime_error("Insufficient budget for operation.");
-    }
+    cityBudget -= amount;
 }
 
 int ResourceManager::getEnergySupply() const {
@@ -113,5 +59,21 @@ int ResourceManager::getWaterSupply() const {
 }
 
 int ResourceManager::getCityBudget() const {
+    return cityBudget;
+}
+
+int ResourceManager::getWood() const {
+    return resources.getWood();
+}
+
+int ResourceManager::getSteel() const {
+    return resources.getSteel();
+}
+
+int ResourceManager::getConcrete() const {
+    return resources.getConcrete();
+}
+
+int ResourceManager::getBudget() const {
     return cityBudget;
 }

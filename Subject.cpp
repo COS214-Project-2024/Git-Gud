@@ -14,3 +14,13 @@ void Subject::detach(Citizen *observer){
 
 
 }
+
+void Subject::notify(ChangeData changeData){
+
+    for(Citizen *citizen: observerList){
+
+        citizen->update(changeData);
+
+    }
+
+}

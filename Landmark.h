@@ -3,11 +3,14 @@
 
 #include "Building.h"
 
-class LandmarkBuilding : public Building
-{
-private:
-    int landmarkName;
-public:
+class LandmarkBuilding : public Building{
+
+    private:
+        int landmarkName;
+    public:
+
+    protected: 
+        LandmarkBuilding();
 
 };
 

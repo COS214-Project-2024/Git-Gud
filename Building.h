@@ -2,9 +2,10 @@
 #define BUILDING_H
 
 #include "BuildingState.h"
-#include "Citizen.h"
+//#include "Citizen.h"
+#include "Subject.h"
 
-class Building{
+class Building : public Subject{
 
     private:
         BuildingState* state;

@@ -1,3 +1,4 @@
+// ResourceManager.h
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
@@ -8,39 +9,33 @@ private:
     static ResourceManager* instance; // Singleton instance
     ResourceManager(); // Private constructor
 
-    int energySupply;
-    int waterSupply;
-    int cityBudget;
-
-    Resources resources; // Instance of Resources to manage the resource values
+    Resources resources; // Instance of Resources to manage all resource values
+    const int startingBudget = 500000; // Define starting budget, adjust as needed
 
 public:
-    // Singleton instance getter
     static ResourceManager* getInstance();
 
-    // Check if there are sufficient materials available
+    // Method to reset the Singleton instance (for testing)
+    static void resetInstance();
+
     bool sufficientMaterials(int water, int steel, int concrete, int wood, int power) const;
 
-    // Methods to use and add resources
+    void initializeResources(int water, int steel, int concrete, int wood);
+
     void useResources(int water, int steel, int concrete, int wood, int power);
     void addResources(int water, int steel, int concrete, int wood);
 
-    // Specific methods for energy, water, and budget
-    void addEnergy(int amount);
-    void addWater(int amount);
+    void addEnergySupply(int amount);
+    void addWaterSupply(int amount);
     void addBudget(int amount);
     void spendBudget(int amount);
 
-    // Getters for main resources
-    int getEnergySupply() const;
-    int getWaterSupply() const;
-    int getCityBudget() const;
-    
-    // Getters for Resources
     int getWood() const;
     int getSteel() const;
     int getConcrete() const;
     int getBudget() const;
+    int getWaterSupply() const;
+    int getEnergySupply() const;
 };
 
 #endif // RESOURCEMANAGER_H

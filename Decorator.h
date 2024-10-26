@@ -3,12 +3,11 @@
 
 #include "Building.h"
 
-class Decorator : public Building
-{
+class Decorator : public Building{
 private:
     Building* building;
 public:
-    void addCitizen();
+    virtual void provideService();
 };
 
 #endif // DECORATOR_H

@@ -9,6 +9,12 @@ private:
     
 public:
 
+    CommercialBuilding();
+
+    virtual void provideService();
+
+    virtual int getCost();
+
 };
 
 

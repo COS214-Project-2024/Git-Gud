@@ -6,8 +6,11 @@
 
 class WasteManagementFactory : public UtilityFactory {
 public:
+    WasteManagementFactory(int capacity, int maintenanceCost, int handlingCap);
+    ~WasteManagementFactory(){};
+
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Return a new WasteManagement instance with specific filtering and garbage capacities
+        // Return a new WasteManagement instance with specific handilng capacities
         return new WasteManagement(capacity, maintenanceCost, capacity * 0.8, capacity * 0.9);
     }
 };

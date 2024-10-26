@@ -10,6 +10,7 @@ private:
 public:
     WaterSupply(int capacity, int maintenanceCost, int waterFlow);
     virtual ~WaterSupply() = default;
+    
     void provideService() override;
 };
 

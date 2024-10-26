@@ -13,7 +13,7 @@ public:
     int getCost() const { return cost; }
     int getAvailableAmount() const { return availableAmount; }
 
-    void reduceAmount(int amount) {
+    void decreaseAmount(int amount) {
         if (availableAmount >= amount) {
             availableAmount -= amount;
         }

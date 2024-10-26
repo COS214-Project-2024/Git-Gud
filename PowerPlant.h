@@ -10,6 +10,7 @@ class PowerPlant : public Utility {
     public:
         PowerPlant(int capacity, int maintenanceCost, int energyOut);
         virtual ~PowerPlant() = default;
+        
         void provideService() override;
 };
 

@@ -8,8 +8,7 @@ void TaxManager::updateTotalTaxRate(float newRate){
 
     notify(changeData);
 
-
-    //Add rest of implementation for this function
+    currentTotalTaxRate = newRate;
 
 }
 

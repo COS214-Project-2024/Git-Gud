@@ -21,7 +21,7 @@ protected:
 
 public:
     virtual Building* constructBuilding() = 0;
-    virtual Building* cloneBuilding(Building* b) = 0;       // I have added the Building* b in the parameter since we need to know which building we are copying
+    virtual Building* cloneBuilding() = 0;       // I have added the Building* b in the parameter since we need to know which building we are copying
 };
 
 

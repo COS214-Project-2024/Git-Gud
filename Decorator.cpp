@@ -3,8 +3,12 @@
 
 #include "Decorator.h"
 
-void Decorator::provideService(){
+void Decorator::provideService(){       // needs updating
     this->building->provideService();
+}
+
+Decorator::~Decorator(){
+    delete this->building;
 }
 
 #endif

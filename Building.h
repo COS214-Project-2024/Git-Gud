@@ -27,6 +27,8 @@ protected:
     /// @brief Units of power consumed
     int power;
 
+    int cost;
+
 public:
 
     /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)

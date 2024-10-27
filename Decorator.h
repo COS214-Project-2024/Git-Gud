@@ -5,15 +5,17 @@
 #include "ResourceManager.h"
 
 class Decorator : public Building{
-private:
+protected:
 
     Building* building;
 
 public:
 
-    virtual void provideService();
+    virtual void provideService()=0;
 
-    virtual int getCost();
+    virtual int getCost()=0;
+
+    virtual ~Decorator();
 
 };
 

@@ -8,13 +8,16 @@ class BuildingWithCoffeeShop : public Decorator{
 public:
 
     // The interface that supports the upgradeBuilding operation must check if there are enough resources
-    BuildingWithCoffeeShop(){
+    BuildingWithCoffeeShop(Building* b){
+        this->building=b;
         this->state=new UnderConstruction();
     }
 
     virtual void provideService();
 
     virtual int getCost();
+
+    virtual ~BuildingWithCoffeeShop(){};
 
     int power=5;
     int water=4;

@@ -3,14 +3,17 @@
 
 #include "BuildingState.h"
 
-class UnderConstruction : public BuildingState
-{
-private:
-
+class UnderConstruction : public BuildingState{
     
-public:
+    public:
 
-    UnderConstruction(){};
+        UnderConstruction() = default;  
+
+        void enterState(Building *building) override;
+        void exitState(Building* building) override;
+
+        void nextState(Building* building) override;
+    
 
 };
 

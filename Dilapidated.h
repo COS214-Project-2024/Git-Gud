@@ -3,11 +3,16 @@
 
 #include "BuildingState.h"
 
-class Delapidated : public BuildingState
-{
-private:
-    
-public:
+class Delapidated : public BuildingState{
+
+    public:
+
+        Delapidated() = default;  
+
+        void enterState(Building *building) override;
+        void exitState(Building* building) override;
+
+        void nextState(Building* building) override;
 
 };
 

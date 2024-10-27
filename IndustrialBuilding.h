@@ -2,12 +2,16 @@
 #define INDUSTRIALBUILDING_H
 
 #include "Building.h"
+#include "Subject.h"
 
-class IndustrialBuilding : public Building
-{
-private:
+class IndustrialBuilding : public Building{
     
-public:
+    private:
+        
+    public:
+
+    protected:
+        IndustrialBuilding();
 
     IndustrialBuilding(BuildingState* s);
 

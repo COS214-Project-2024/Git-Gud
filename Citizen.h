@@ -2,6 +2,7 @@
 #define CITIZEN_H
 
 #include "SatisfactionLevel.h"
+#include "Subject.h"
 
 class Citizen{
 
@@ -9,6 +10,8 @@ class Citizen{
         SatisfactionLevel* satisfactionLevel;
     public:
         void update(ChangeData changeData);
+        void handleTaxChange(float newTaxRate);
+        void handleBuildingConstructed(float BuildingNum);
 
 };
 

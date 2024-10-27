@@ -14,31 +14,36 @@
 #include "Citizen.h"
 #include "UnderConstruction.h"
 
-class Building
-{
-protected:
+class Building : public Subject{
+    
+    private:
+        BuildingState* state;
 
-    /// @brief State of the Building
-    BuildingState* state;
+    protected:
 
-    /// @brief Units of water consumed
-    int water;
+        /// @brief State of the Building
+        BuildingState* state;
 
-    /// @brief Units of power consumed
-    int power;
+        /// @brief Units of water consumed
+        int water;
 
-    int cost;
+        /// @brief Units of power consumed
+        int power;
 
-public:
+        int cost;
 
-    /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
-    virtual void provideService()=0;
+    public:
+    
+        Building();
 
-    /// @brief  Get the cost of the Building
-    /// @return int
-    virtual int getCost()=0; 
+        /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
+        virtual void provideService()=0;
 
-    virtual void setState(BuildingState* s);
+        /// @brief  Get the cost of the Building
+        /// @return int
+        virtual int getCost()=0; 
+
+        virtual void setState(BuildingState* s);
 
 };
 

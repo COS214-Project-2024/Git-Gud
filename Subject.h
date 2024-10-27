@@ -20,7 +20,7 @@ class Subject{
     public:
         void attach(Citizen* observer);
         void detach(Citizen* observer);
-        virtual void notify(ChangeData changeData) = 0;
+        void notify(ChangeData changeData);
 
 };
 

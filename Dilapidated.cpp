@@ -1,19 +1,21 @@
 #include "Dilapidated.h"
+#include "Building.h"
+#include "Operational.h"
 
-void Delapidated::enterState(Building *building){
+void Dilapidated::enterState(Building *building){
 
     std::cout << "Building is Delapidated" << std::endl;
 
 }
 
-void Delapidated::exitState(Building *building){
+void Dilapidated::exitState(Building *building){
 
     std::cout << "Building is no longer Delapidated" << std::endl;
 
 }
 
-void Delapidated::nextState(Building *building){
+void Dilapidated::nextState(Building *building){
 
-    building->changeState(new Operational());
+    building->setState(new Operational());
 
 }

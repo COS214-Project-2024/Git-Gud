@@ -1,13 +1,20 @@
 #include "Building.h"
 
 void Building::setState(BuildingState* s){
-    delete this->state;
-    this->state=s;
+
+    if(this->buildingState != NULL){
+
+        delete this->buildingState;
+
+    }
+
+    this->state = s;
+
 }
 
 Building::Building(){
 
-    //set state to UnderConstruction
+    this->setState(new UnderConstruction);
 
 }
 

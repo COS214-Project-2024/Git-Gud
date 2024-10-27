@@ -1,5 +1,6 @@
 #include "UnderConstruction.h"
 #include "Operational.h"
+#include "Building.h"
 #include <iostream>
 
 void UnderConstruction::enterState(Building *building){
@@ -16,6 +17,6 @@ void UnderConstruction::exitState(Building *building){
 
 void UnderConstruction::nextState(Building *building){
 
-    building->changeState(new Operational());
+    building->setState(new Operational());
 
 }

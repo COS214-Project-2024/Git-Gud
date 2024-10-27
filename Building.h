@@ -13,11 +13,12 @@
 
 #include "Citizen.h"
 #include "UnderConstruction.h"
+#include "BuildingState.h"
 
 class Building : public Subject{
     
     private:
-        BuildingState* state;
+        BuildingState* buildingState;
 
     protected:
 

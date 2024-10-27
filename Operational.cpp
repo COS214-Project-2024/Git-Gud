@@ -1,5 +1,6 @@
 #include "Operational.h"
 #include "Dilapidated.h"
+#include "Building.h"
 
 void Operational::enterState(Building *building){
 
@@ -15,6 +16,6 @@ void Operational::exitState(Building *building){
 
 void Operational::nextState(Building *building){
 
-    building->changeState(new Dilapidated());
+    building->setState(new Dilapidated());
 
 }

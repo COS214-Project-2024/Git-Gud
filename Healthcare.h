@@ -5,6 +5,8 @@
 
 class HealthCare : public PublicService {
 public:
+    HealthCare();
+    virtual ~HealthCare() = default;
     void provideService() override;
 };
 

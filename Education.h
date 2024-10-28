@@ -5,6 +5,8 @@
 
 class Education : public PublicService {
 public:
+    Education();
+    virtual ~Education() = default;
     void provideService() override;
 };
 

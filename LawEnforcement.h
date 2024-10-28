@@ -5,6 +5,8 @@
 
 class LawEnforcement : public PublicService {
 public:
+    LawEnforcement();
+    virtual ~LawEnforcement() = default;
     void provideService() override;
 };
 

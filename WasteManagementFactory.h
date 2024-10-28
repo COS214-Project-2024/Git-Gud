@@ -10,8 +10,8 @@ public:
     virtual ~WasteManagementFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Return a new WasteManagement instance with specific handilng capacities
-        return new WasteManagement(capacity, maintenanceCost, capacity * 0.8, capacity * 0.9);
+        // Return a new WasteManagement instance with specific handling capacities
+        return new WasteManagement(capacity, maintenanceCost, capacity * 0.8);
     }
 };
 

@@ -8,7 +8,7 @@ class Neautral : public SatisfactionLevel
 private:
     
 public:
-
+    Neautral(){taxReturn = 1.0;};
 };
 
 

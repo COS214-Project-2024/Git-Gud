@@ -8,7 +8,7 @@ class Dissatisfied : public SatisfactionLevel
 private:
     
 public:
-
+    Dissatisfied(){taxReturn = 0.8;};
 };
 
 

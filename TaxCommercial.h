@@ -8,7 +8,10 @@ class TaxCommercial : public RetrieveTax
 private:
     
 public:
-    float CollectTax();
+    /// @brief Algorithm to collect tax
+    /// @param buildings 
+    /// @return float
+    float CollectTax(std::list<Building*> buildings);
 };
 
 

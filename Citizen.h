@@ -8,7 +8,16 @@ class Citizen{
     private:
         SatisfactionLevel* satisfactionLevel;
     public:
-        void update(ChangeData changeData);
+        //void update(ChangeData changeData);
+        void handleTaxChange(float newTaxRate);
+        void handleBuildingConstructed(float BuildingNum);
+        
+        /// @brief Returns the satifaction level of the citizen
+        /// @return SatisfactionLevel*
+        SatisfactionLevel* getSatisfactionLevel();
+
+        /// @brief sets the satifaction level of the citizen
+        void setSatisfactionLevel(SatisfactionLevel* satisfactionLevel);
 
 };
 

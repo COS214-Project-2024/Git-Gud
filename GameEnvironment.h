@@ -16,6 +16,8 @@ private:
     int rows, cols;
     int startingPoint[2];//Starting point of the map shal be offramp at the centre. The centre point changes with the size of the map. Intially it is set to 25,25
 
+    void resizeGrid(int newRows, int newCols, string direction);
+
 public:
     GameEnvironment();
     ~GameEnvironment();
@@ -26,6 +28,7 @@ public:
     void printTerminal();
     void printToFile(string filename="map.txt");
     void createRoad(int x, int y);
+    
 
 };
 

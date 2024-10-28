@@ -1,7 +1,5 @@
 #include "GameEnvironment.h"
 
-
-
 GameEnvironment::GameEnvironment() {
     rows = 50;
     cols = 50;
@@ -51,6 +49,12 @@ GameEnvironment::~GameEnvironment() {
 
 bool GameEnvironment::add(Building* building, int x, int y) {
     //receive coordinates, interpret them as row and column
+    //check if coordinates are within bounds and translate
+    if (x < 0) resizeGrid(rows, cols*1.1, "West");
+    if (x >= cols) resizeGrid(rows, cols*1.1, "East");
+    if (y < 0) resizeGrid(rows*1.1, cols, "North");
+    if (y >= rows) resizeGrid(rows*1.1, cols, "South");
+    //check if building already exists at coordinates
     if (buildingGrid[y][x] != nullptr) {
         return false;
     }
@@ -125,4 +129,72 @@ void GameEnvironment::printToFile(string filename) {
     file.close();
 }
 
+void GameEnvironment::createRoad(int x, int y) {
+    if (utilityGrid[y][x] == nullptr) {
+        utilityGrid[y][x] = new UtilGridNode();
+    }
+    utilityGrid[y][x]->createRoad();
+}
 
+void GameEnvironment::resizeGrid(int newRows, int newCols, string direction)
+{
+    ///////Determine offset
+    int rowOffset = 0;
+    int colOffset = 0;
+
+    if (direction == "North")
+    {
+        rowOffset = newRows - rows;
+    }
+    else if (direction == "South")
+    {
+        rowOffset = 0;
+    }
+    else if (direction == "West")
+    {
+        colOffset = newCols - cols;
+    }
+    else if (direction == "East")
+    {
+        colOffset = 0;
+    }
+    ///////Allocate new grids
+    Building*** newBuildingGrid = new Building**[newRows];
+    UtilGridNode*** newUtilityGrid = new UtilGridNode**[newRows];
+
+    for (int i = 0; i < newRows; i++)
+    {
+        newBuildingGrid[i] = new Building*[newCols];
+        newUtilityGrid[i] = new UtilGridNode*[newCols];
+        for (int j = 0; j < newCols; j++)
+        {
+            newBuildingGrid[i][j] = nullptr;
+            newUtilityGrid[i][j] = nullptr;
+        }
+    }
+    ///////Translate old grid to new grid
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            newBuildingGrid[i + rowOffset][j + colOffset] = buildingGrid[i][j];
+            newUtilityGrid[i + rowOffset][j + colOffset] = utilityGrid[i][j];
+        }
+    }
+    ///////Delete old grid
+    for (int i = 0; i < rows; i++)
+    {
+        delete[] buildingGrid[i];
+        delete[] utilityGrid[i];
+    }
+
+    delete[] buildingGrid;
+    delete[] utilityGrid;
+    ///////Update member variables
+    buildingGrid = newBuildingGrid;
+    utilityGrid = newUtilityGrid;
+    rows = newRows;
+    cols = newCols;
+    startingPoint[0] += rowOffset;
+    startingPoint[1] += colOffset;
+}

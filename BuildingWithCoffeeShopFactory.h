@@ -16,6 +16,14 @@ public:
 
     virtual ~BuildingWithCoffeeShopFactory(){};
 
+private:
+
+    int power=5;
+    int water=4;
+    int wood=1;
+    int steel=1;
+    int concrete=1;
+
 };
 
 #endif

@@ -11,7 +11,7 @@ protected:
 
 public:
 
-    virtual void provideService()=0;
+    virtual void provideService(){};
 
     virtual int getCost()=0;
 

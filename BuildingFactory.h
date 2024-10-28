@@ -25,7 +25,7 @@ public:
 
     virtual Building* upgradeBuilding(Building* b){}; // This method is used to Decorate buildings
 
-    virtual Building* cloneBuilding(){};       // I have added the Building* b in the parameter since we need to know which building we are copying
+    virtual Building* cloneBuilding(){};      
 
     virtual void setBuilding(Building* b);
 

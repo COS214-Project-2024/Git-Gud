@@ -10,12 +10,10 @@ class LandmarkBuilding : public Building{
     public:
 
     protected: 
-        LandmarkBuilding();
-
-        LandmarkBuilding(BuildingState* s);
+        LandmarkBuilding(int capacity);
+        LandmarkBuilding(BuildingState* s, int capacity);
 
         virtual void provideService() override;
-
         virtual float getCost() override;
 
 };

@@ -1,11 +1,10 @@
-#ifndef TRANSPORT_H
-#define TRANSPORT_H
+#ifndef TRANSPORTATION_H
+#define TRANSPORTATION_H
 
 #include "PublicService.h"
 
-class Transport : public PublicService {
+class Transportation : public PublicService {
 private:
-    int roadCapacity;
     int busCapacity;
     int taxiCapacity;
     int trainCapacity;
@@ -16,4 +15,4 @@ public:
     //void calculateCommuteTimes();
 };
 
-#endif  // TRANSPORT_H
+#endif  // TRANSPORTATION_H

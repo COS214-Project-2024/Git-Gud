@@ -3,10 +3,11 @@
 
 #include "UtilityFactory.h"
 #include "WasteManagement.h"
+#include "Utility.h"
 
 class WasteManagementFactory : public UtilityFactory {
 public:
-    WasteManagementFactory(int capacity, int maintenanceCost, int handlingCap);
+    WasteManagementFactory(){};
     virtual ~WasteManagementFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override {

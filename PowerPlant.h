@@ -8,7 +8,7 @@ class PowerPlant : public Utility {
         int energyOutput;
 
     public:
-        PowerPlant(int capacity, int maintenanceCost, int energyOut);
+        PowerPlant(int capacity, int maintenanceCost, int energyOut) : Utility("PowerPlant", capacity, maintenanceCost), energyOutput(energyOut){}
         virtual ~PowerPlant() = default;
         
         void provideService() override;

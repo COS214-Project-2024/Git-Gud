@@ -9,7 +9,7 @@ private:
     float funding;
 
 public:
-    virtual void provideService();
+    virtual void provideService() = 0;
 };
 
 #endif  // PUBLICSERVICE_H

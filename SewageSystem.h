@@ -4,11 +4,11 @@
 #include "Utility.h"
 
 class SewageSystem : public Utility {
-private:
+protected:
     int filteringCapacity;  // Capacity to filter sewage
 
 public:
-    SewageSystem(int capacity, int maintenanceCost, int filteringCap);
+    SewageSystem(int capacity, int maintenanceCost, int filteringCap) : Utility("SewageSystem", capacity, maintenanceCost), filteringCapacity(filteringCap){};
     virtual ~SewageSystem() = default;
 
     void provideService() override;

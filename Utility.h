@@ -10,7 +10,7 @@ class Utility {
         int maintenanceCost;      // Cost for maintaining the utility
     
     public:
-        Utility(const std::string& type, int cap, int cost);
+        Utility(const std::string& type, int cap, int cost) : utilityType(type), capacity(cap), maintenanceCost(cost){}
         virtual ~Utility() = default;
         virtual void provideService() = 0;  // Pure virtual function
         std::string getUtilityType() const;

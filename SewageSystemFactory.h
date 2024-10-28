@@ -6,7 +6,7 @@
 
 class SewageSystemFactory : public UtilityFactory {
 public:
-    SewageSystemFactory(int capacity, int maintenanceCost, int filteringCap);
+    SewageSystemFactory(){};
     virtual ~SewageSystemFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override{

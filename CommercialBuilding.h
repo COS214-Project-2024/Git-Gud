@@ -3,19 +3,25 @@
 
 #include "Building.h"
 
+enum BusinessType {LUXURY, FOOD, GENERAL};
+
 class CommercialBuilding : public Building{
 
     private:
-        
+        int size;
+        int numStories;
+        BusinessType businessType;
+
     public:
+        int getSize();
+        int getNumStories();
+        BusinessType getBusinessType();
 
     protected:
-        CommercialBuilding();
-
-        CommercialBuilding(BuildingState* s);
+        CommercialBuilding(int capacity, int size, int numStories, BusinessType businessType);
+        CommercialBuilding(BuildingState* s, int capacity, int size, int numStores, BusinessType businessType);
 
         virtual void provideService() override;
-
         virtual float getCost() override;
 
 };

@@ -8,7 +8,7 @@ private:
     int handlingCapacity;  // Capacity to handle waste
 
 public:
-    WasteManagement(int capacity, int maintenanceCost, int HandlingCap);
+    WasteManagement(int capacity, int maintenanceCost, int HandlingCap) : Utility("WasteManagement", capacity, maintenanceCost), handlingCapacity(HandlingCap){};
     virtual ~WasteManagement() = default;
 
     void provideService() override;

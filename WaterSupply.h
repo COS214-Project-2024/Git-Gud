@@ -8,7 +8,7 @@ private:
     int waterFlowRate;
 
 public:
-    WaterSupply(int capacity, int maintenanceCost, int waterFlow);
+    WaterSupply(int capacity, int maintenanceCost, int waterFlow) : Utility("WaterSupply", capacity, maintenanceCost), waterFlowRate(waterFlow){};
     virtual ~WaterSupply() = default;
     
     void provideService() override;

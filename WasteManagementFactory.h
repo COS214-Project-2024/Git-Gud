@@ -3,7 +3,6 @@
 
 #include "UtilityFactory.h"
 #include "WasteManagement.h"
-#include "Utility.h"
 
 class WasteManagementFactory : public UtilityFactory {
 public:

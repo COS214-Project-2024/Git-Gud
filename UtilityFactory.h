@@ -1,11 +1,11 @@
-#ifndef UTILITY_H
-#define UTILITY_H
+#ifndef UTILITYFACTORY_H
+#define UTILITYFACTORY_H
 
 #include "Utility.h"
 #include "WasteManagement.h"
 #include <string>
 
-class UtilityFactory{
+class UtilityFactory {
     public:
         UtilityFactory();
         virtual ~UtilityFactory(){}
@@ -13,4 +13,4 @@ class UtilityFactory{
         virtual Utility* createUtility(int capacity, int maintenanceCost) = 0;
 };
 
-#endif // UTILITY_H
+#endif // UTILITYFACTORY_H

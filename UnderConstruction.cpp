@@ -20,3 +20,9 @@ void UnderConstruction::nextState(Building *building){
     building->setState(new Operational());
 
 }
+
+std::string UnderConstruction::getCurrentState(){
+
+    return "UnderConstruction";
+
+}

@@ -19,3 +19,9 @@ void Operational::nextState(Building *building){
     building->setState(new Dilapidated());
 
 }
+
+std::string Operational::getCurrentState(){
+
+    return "Operational";
+
+}

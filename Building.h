@@ -45,6 +45,8 @@ class Building : public Subject{
         virtual int getCost()=0; 
 
         virtual void setState(BuildingState* s);
+        void repairBuilding();
+        std::string currentState();
 
 };
 

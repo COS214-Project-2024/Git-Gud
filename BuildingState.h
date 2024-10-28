@@ -14,6 +14,7 @@ class BuildingState{
         virtual void exitState(Building* building) = 0;
 
         virtual void nextState(Building* building) = 0;
+        virtual std::string getCurrentState() = 0;
 
 };
 

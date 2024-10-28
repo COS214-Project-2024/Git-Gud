@@ -13,6 +13,7 @@ class UnderConstruction : public BuildingState{
         void exitState(Building* building) override;
 
         void nextState(Building* building) override;
+        std::string getCurrentState() override;
     
 
 };

@@ -13,3 +13,7 @@ void TaxManager::updateTotalTaxRate(float newRate){
 
 }
 
+// Calls the collectTax from the strategy
+float TaxManager::calculateTax(){
+    return taxStrategy->CollectTax(buildings);
+}

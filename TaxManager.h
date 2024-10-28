@@ -3,10 +3,12 @@
 
 #include "RetrieveTax.h"
 #include "Subject.h"
+#include <list>
 
 class TaxManager : public Subject{
 
     private:
+        std::list<Building*> buildings;
         RetrieveTax* taxStrategy;
         float currentTotalTaxRate;
     public:

@@ -2,4 +2,5 @@
 
 CommercialBuilding::CommercialBuilding(BuildingState* s){
     this->state=s;
+    buildingType = "Commercial";
 }

@@ -13,6 +13,7 @@
 
 #include "Citizen.h"
 #include "UnderConstruction.h"
+#include <string>
 
 class Building
 {
@@ -27,6 +28,9 @@ protected:
     /// @brief Units of power consumed
     int power;
 
+    /// @brief Desciption of building's purpose
+    std::string buildingType;
+
 public:
 
     /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
@@ -37,6 +41,10 @@ public:
     virtual int getCost()=0; 
 
     virtual void setState(BuildingState* s);
+
+    /// @brief returns the building type
+    /// @return string
+    virtual std::string getBuildingType();
 
 };
 

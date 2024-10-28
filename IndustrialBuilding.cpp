@@ -2,4 +2,5 @@
 
 IndustrialBuilding::IndustrialBuilding(BuildingState* s){
     this->state=s;
+    buildingType = "Industrial";
 }

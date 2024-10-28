@@ -12,11 +12,11 @@ class CommercialBuilding : public Building{
     protected:
         CommercialBuilding();
 
-    CommercialBuilding(BuildingState* s);
+        CommercialBuilding(BuildingState* s);
 
-    virtual void provideService();
+        virtual void provideService() override;
 
-    virtual int getCost();
+        virtual float getCost() override;
 
 };
 

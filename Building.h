@@ -16,14 +16,13 @@
 #include "BuildingState.h"
 
 class Building : public Subject{
-    
-    private:
-        BuildingState* buildingState;
 
     protected:
 
+        int capacity;
+
         /// @brief State of the Building
-        BuildingState* state;
+        BuildingState* buildingState;
 
         /// @brief Units of water consumed
         int water;
@@ -35,18 +34,20 @@ class Building : public Subject{
 
     public:
     
-        Building();
+        Building(int capacity);
 
         /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
         virtual void provideService()=0;
 
         /// @brief  Get the cost of the Building
         /// @return int
-        virtual int getCost()=0; 
+        virtual float getCost() = 0; 
 
         virtual void setState(BuildingState* s);
         void repairBuilding();
         std::string currentState();
+        void simulateConstruction();
+        void addCitizens();
 
 };
 

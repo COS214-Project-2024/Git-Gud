@@ -1,6 +1,9 @@
 #include "Building.h"
 #include "Operational.h"
 #include "UnderConstruction.h"
+#include <thread>
+#include <chrono>
+#include <iostream>
 
 void Building::setState(BuildingState* s){
 
@@ -14,9 +17,13 @@ void Building::setState(BuildingState* s){
 
 }
 
-Building::Building(){
+Building::Building(int capacity){
 
+    this->capacity = capacity;
     this->setState(new UnderConstruction);
+
+    //allows thread to run concurrently and seperately from the rest
+    std::thread(&Building::simulateConstruction, this).detach();
 
 }
 
@@ -42,5 +49,13 @@ void Building::repairBuilding(){
 
     }
     
+
+}
+
+void Building::simulateConstruction(){
+
+    //Simulates 30 second waiting period for building construction
+    std::this_thread::sleep_for(std::chrono::seconds(30));
+    setState(new Operational());
 
 }

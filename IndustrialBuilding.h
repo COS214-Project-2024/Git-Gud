@@ -13,11 +13,11 @@ class IndustrialBuilding : public Building{
     protected:
         IndustrialBuilding();
 
-    IndustrialBuilding(BuildingState* s);
+        IndustrialBuilding(BuildingState* s);
 
-    virtual void provideService();
+        virtual void provideService() override;
 
-    virtual int getCost();
+        virtual float getCost() override;
 
 };
 

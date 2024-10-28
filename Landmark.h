@@ -12,11 +12,11 @@ class LandmarkBuilding : public Building{
     protected: 
         LandmarkBuilding();
 
-    LandmarkBuilding(BuildingState* s);
+        LandmarkBuilding(BuildingState* s);
 
-    virtual void provideService();
+        virtual void provideService() override;
 
-    virtual int getCost();
+        virtual float getCost() override;
 
 };
 

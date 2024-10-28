@@ -11,13 +11,15 @@ class ResidentialBuilding : public Building{
     public:
 
     protected:
-        ResidentialBuilding();
+        ~ResidentialBuilding();
 
-    ResidentialBuilding(BuildingState* s);
+        ResidentialBuilding(int capacity);
+        ResidentialBuilding(BuildingState* s, int capacity);
 
-    virtual void provideService();
+        virtual void provideService() override;
 
-    virtual int getCost();
+        virtual float getCost() override;
+        void addCitizens();
 
 };
 

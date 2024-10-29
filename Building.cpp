@@ -1,10 +1,25 @@
 #include "Building.h"
+#include "Operational.h"
+#include "UnderConstruction.h"
+#include <thread>
+#include <chrono>
+#include <iostream>
 
 void Building::setState(BuildingState* s){
-    delete this->state;
-    this->state=s;
+
+    if(this->buildingState != NULL){
+
+        delete this->buildingState;
+
+    }
+
+    this->buildingState = s;
+
 }
 
-std::string Building::getBuildingType(){
-    return buildingType;
+Building::Building(int capacity){
+
+    this->capacity = capacity;
+    this->setState(new UnderConstruction);
+
 }

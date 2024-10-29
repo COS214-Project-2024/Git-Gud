@@ -2,18 +2,28 @@
 #define COMMERCIALBUILDING_H
 
 #include "Building.h"
+#include <iostream>
 
-class CommercialBuilding : public Building
-{
-private:
-    
-public:
+enum BusinessType {LUXURY, FOOD, GENERAL};
 
-    CommercialBuilding(BuildingState* s);
+class CommercialBuilding : public Building{
 
-    virtual void provideService();
+    private:
+        int size;
+        int numStories;
+        BusinessType businessType;
 
-    virtual int getCost();
+    public:
+        int getSize();
+        int getNumStories();
+        BusinessType getBusinessType();
+
+    protected:
+        CommercialBuilding(int capacity, int size, int numStories, BusinessType businessType);
+        CommercialBuilding(BuildingState* s, int capacity, int size, int numStores, BusinessType businessType);
+
+        virtual void provideService() override;
+        virtual float getCost() override;
 
 };
 

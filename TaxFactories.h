@@ -8,10 +8,13 @@ class TaxFactories : public RetrieveTax
 private:
     
 public:
-    /// @brief Algorithm to collect tax
-    /// @param buildings 
-    /// @return float
-    float CollectTax(std::list<Building*> buildings);
+    /// @brief Collect tax from buildings (Strategy)
+    /// @param resBuildings 
+    /// @param comBuildings 
+    /// @param indBuildings 
+    /// @param tax 
+    /// @return 
+    virtual float CollectTax(std::list<ResidentialBuilding*> resBuildings, std::list<CommercialBuilding*> comBuildings, std::list<IndustrialBuilding*> indBuildings, float tax);
 };
 
 

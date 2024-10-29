@@ -13,38 +13,37 @@
 
 #include "Citizen.h"
 #include "UnderConstruction.h"
-#include <string>
+#include "BuildingState.h"
 
-class Building
-{
-protected:
+class Building : public Subject{
 
-    /// @brief State of the Building
-    BuildingState* state;
+    protected:
 
-    /// @brief Units of water consumed
-    int water;
+        int capacity;
 
-    /// @brief Units of power consumed
-    int power;
+        /// @brief State of the Building
+        BuildingState* buildingState;
 
-    /// @brief Desciption of building's purpose
-    std::string buildingType;
+        /// @brief Units of water consumed
+        int water;
 
-public:
+        /// @brief Units of power consumed
+        int power;
 
-    /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
-    virtual void provideService()=0;
+        int cost;
 
-    /// @brief  Get the cost of the Building
-    /// @return int
-    virtual int getCost()=0; 
+    public:
+    
+        Building(int capacity);
 
-    virtual void setState(BuildingState* s);
+        /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
+        virtual void provideService()=0;
 
-    /// @brief returns the building type
-    /// @return string
-    virtual std::string getBuildingType();
+        /// @brief  Get the cost of the Building
+        /// @return int
+        virtual float getCost() = 0; 
+
+        virtual void setState(BuildingState* s);
 
 };
 

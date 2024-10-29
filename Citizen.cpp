@@ -1,14 +1,27 @@
 #include "Citizen.h"
+#include "Neutral.h"
 
 Citizen::Citizen(){
 
     this->hasJob = false;
+    this->satisfactionLevel = new Neutral();
 
 }
 
 Citizen::Citizen(bool hasJob){
 
     this->hasJob = hasJob;
+    this->satisfactionLevel = new Neutral();
+
+}
+
+Citizen::~Citizen(){
+
+    if(satisfactionLevel != nullptr){
+
+        delete satisfactionLevel;
+
+    }
 
 }
 
@@ -31,7 +44,7 @@ void Citizen::handleTaxChange(float changeInTaxRate){
     if(changeInTaxRate > 0){ //increase in tax
 
         //subtract SatisfactionLevel float by 'changeInTaxRate'
-        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating - changeInTaxRate;
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + changeInTaxRate; //changeInTaxRate is negative in this case, so use plus operator
 
     } else if(changeInTaxRate < 0){ //decrease in tax
 

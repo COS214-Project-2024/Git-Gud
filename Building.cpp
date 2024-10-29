@@ -33,13 +33,38 @@ Building::Building(int capacity){
 
 }
 
+Building::~Building(){
+
+    if(buildingState != nullptr){
+
+        delete buildingState;
+
+    }
+
+}
+
 std::string Building::currentState(){
 
-    return buildingState->getCurrentState();
+    if(buildingState != nullptr){
+
+        return buildingState->getCurrentState();
+
+    } else{
+
+        return "State not set";
+
+    }
 
 }
 
 void Building::repairBuilding(){
+
+    if(!buildingState){
+
+        std::cout << "Building state is uninitialized." << std::endl;
+        return;
+        
+    }
 
     if(this->currentState() == "UnderConstruction"){
 
@@ -57,10 +82,11 @@ void Building::repairBuilding(){
     
 }
 
-void Building::simulateConstruction(){
+void Building::simulateConstruction(){ //possible issue here: Building could be destructed during 30 second period
 
     //Simulates 30 second waiting period for building construction
     std::this_thread::sleep_for(std::chrono::seconds(30));
     setState(new Operational());
 
 }
+

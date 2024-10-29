@@ -36,6 +36,7 @@ class Building : public Subject{
     
         Building(int capacity);
         Building();
+        virtual ~Building();
 
         /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
         virtual void provideService()=0;

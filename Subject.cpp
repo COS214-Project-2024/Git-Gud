@@ -36,5 +36,6 @@ void Subject::addCitizenToSimulation(Citizen* newCitizen){
 void Subject::removeCitizenFromSimulation(Citizen* citizen){
 
     allCitizens.erase(std::remove(allCitizens.begin(), allCitizens.end(), citizen), allCitizens.end());
+    delete citizen;
 
 }

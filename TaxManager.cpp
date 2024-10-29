@@ -12,3 +12,20 @@ void TaxManager::updateTotalTaxRate(float newRate){
 
 }
 
+
+void TaxManager::addResidential(ResidentialBuilding* residential){
+    residentialBuildings.push_back(residential);
+}
+void TaxManager::addIndustrial(IndustrialBuilding* industrial){
+    industrialBuildings.push_back(industrial);
+}
+void TaxManager::addCommercial(CommercialBuilding* commercial){
+    commercialBuildings.push_back(commercial);
+}
+
+// Calls the collectTax from the strategy
+float TaxManager::calculateTax(){
+    return taxStrategy->CollectTax(residentialBuildings, commercialBuildings, industrialBuildings, currentTotalTaxRate);
+}
+
+

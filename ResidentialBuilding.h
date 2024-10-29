@@ -21,6 +21,8 @@ class ResidentialBuilding : public Building{
         virtual float getCost() override;
         void addCitizens();
 
+        std::list<Citizen*> getTenants();
+
 };
 
 

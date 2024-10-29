@@ -2,6 +2,7 @@
 #define COMMERCIALBUILDING_H
 
 #include "Building.h"
+#include <iostream>
 
 enum BusinessType {LUXURY, FOOD, GENERAL};
 

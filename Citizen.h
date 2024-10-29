@@ -16,10 +16,19 @@ class Citizen{
         virtual ~Citizen();
         Citizen(bool hasJob);
         virtual void update(ChangeData changeData);
-        void handleTaxChange(float newTaxRate);
-        void handleBuildingConstructed(float BuildingNum);
         bool getHasJob();
         void setJobStatus(bool jobStatus);
+
+        //void update(ChangeData changeData);
+        void handleTaxChange(float newTaxRate);
+        void handleBuildingConstructed(float BuildingNum);
+        
+        /// @brief Returns the satifaction level of the citizen
+        /// @return SatisfactionLevel*
+        SatisfactionLevel* getSatisfactionLevel();
+
+        /// @brief sets the satifaction level of the citizen
+        void setSatisfactionLevel(SatisfactionLevel* satisfactionLevel);
 
 };
 

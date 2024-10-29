@@ -75,3 +75,11 @@ void Citizen::setJobStatus(bool jobStatus){
     this->hasJob = jobStatus;
 
 }
+
+SatisfactionLevel* Citizen::getSatisfactionLevel(){
+    return this->satisfactionLevel;
+}
+
+void Citizen::setSatisfactionLevel(SatisfactionLevel* satisfactionLevel){
+    this->satisfactionLevel = satisfactionLevel;
+}

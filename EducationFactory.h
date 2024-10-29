@@ -12,7 +12,7 @@ public:
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
         // Return a new Education instance
-        return new Education();
+        return new Education(capacity, maintenanceCost);
     }
 };
 

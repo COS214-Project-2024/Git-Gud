@@ -6,18 +6,18 @@
 
 class SewageSystemFactory : public UtilityFactory {
 public:
-    SewageSystemFactory(){};
-    virtual ~SewageSystemFactory(){};
+    SewageSystemFactory() = default;
+    virtual ~SewageSystemFactory() = default;
 
-    Utility* createUtility(int capacity, int maintenanceCost) override{
-        // Return a new Sewerage System instance with specific waterflow capacities
-        return new SewageSystem(capacity, maintenanceCost, capacity * 2);
+    Utility* createUtility(int capacity, int maintenanceCost) override {
+        // Create a new SewageSystem instance with specific water flow capacities
+        SewageSystem* sewageSystem = new SewageSystem(capacity, maintenanceCost, capacity * 2);
+
+        // Adjust the wasteCapacity resource
+        adjustResource("wasteCapacity", capacity);
+
+        return sewageSystem;
     }
-
-private:
-    int capacity;
-    int maintenanceCost;
-    int filteringCapacity;
 };
 
-#endif  // SEWAGESYSTEMFACTORY_H
+#endif // SEWAGESYSTEMFACTORY_H

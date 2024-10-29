@@ -6,13 +6,18 @@
 
 class WasteManagementFactory : public UtilityFactory {
 public:
-    WasteManagementFactory(){};
-    virtual ~WasteManagementFactory(){};
+    WasteManagementFactory() = default;
+    virtual ~WasteManagementFactory() = default;
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Return a new WasteManagement instance with specific handling capacities
-        return new WasteManagement(capacity, maintenanceCost, capacity * 0.8);
+        // Create a new WasteManagement instance with capacity interpreted as filtering capability
+        WasteManagement* wasteManagement = new WasteManagement(capacity, maintenanceCost);
+
+        // Adjust the waste capacity resource in ResourceManager
+        adjustResource("wasteCapacity", capacity);
+
+        return wasteManagement;
     }
 };
 
-#endif  // WASTEMANAGEMENTFACTORY_H
+#endif // WASTEMANAGEMENTFACTORY_H

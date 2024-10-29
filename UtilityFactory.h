@@ -2,10 +2,16 @@
 #define UTILITYFACTORY_H
 
 #include "Utility.h"
-#include "WasteManagement.h"
+#include "ResourceManager.h"
 #include <string>
 
 class UtilityFactory {
+    protected:
+    // Helper method to adjust resources in ResourceManager
+    void adjustResource(const std::string& resourceType, int amount) {
+        ResourceManager::getInstance()->addResource(resourceType, amount);
+    }
+
     public:
         UtilityFactory(){};
         virtual ~UtilityFactory(){}

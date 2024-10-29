@@ -4,14 +4,13 @@
 #include "Utility.h"
 
 class PowerPlant : public Utility {
-    private:
-        int energyOutput;
+public:
+    PowerPlant(int capacity, int maintenanceCost)
+        : Utility("PowerPlant", capacity, maintenanceCost) {}
 
-    public:
-        PowerPlant(int capacity, int maintenanceCost, int energyOut) : Utility("PowerPlant", capacity, maintenanceCost), energyOutput(energyOut){}
-        virtual ~PowerPlant() = default;
-        
-        void provideService() override;
+    void provideService() override {
+        // Logic specific to PowerPlant, using capacity as energy output
+    }
 };
 
-#endif  // POWERPLANT_H
+#endif // POWERPLANT_H

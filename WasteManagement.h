@@ -4,16 +4,13 @@
 #include "Utility.h"
 
 class WasteManagement : public Utility {
-private:
-    int handlingCapacity;  // Capacity to handle waste
-
 public:
-    WasteManagement(int capacity, int maintenanceCost, int HandlingCap) : Utility("WasteManagement", capacity, maintenanceCost), handlingCapacity(HandlingCap){};
-    virtual ~WasteManagement() = default;
+    WasteManagement(int capacity, int maintenanceCost)
+        : Utility("WasteManagement", capacity, maintenanceCost) {}
 
-    void provideService() override;
-    
-    int getHandlingCapacity() const;
+    void provideService() override {
+        // Logic specific to WasteManagement, using capacity as filtering capability
+    }
 };
 
-#endif  // WASTEMANAGEMENT_H
+#endif // WASTEMANAGEMENT_H

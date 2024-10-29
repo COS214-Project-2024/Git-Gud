@@ -48,6 +48,7 @@ void ResidentialBuilding::addCitizens(){
 
         this->addCitizenToSimulation(newCitizen);
         this->attach(newCitizen);
+        this->tenants.push_back(newCitizen);
 
     }
 

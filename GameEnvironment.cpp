@@ -15,8 +15,8 @@ GameEnvironment::GameEnvironment() {
         }
     }
     //set starting point
-    startingPoint[0] = 25;
-    startingPoint[1] = 25;
+    startingPoint[0] = 24;
+    startingPoint[1] = 24;
                                             //REMINDER: PULL UTILITIES AND BUILDINGS
     //create road at starting point
     utilityGrid[startingPoint[0]][startingPoint[1]] = new UtilGridNode();
@@ -47,6 +47,40 @@ GameEnvironment::~GameEnvironment() {
     delete[] utilityGrid;
 }
 
+bool GameEnvironment::adjToRoad(int x, int y)
+{
+    /* if ((x+1<cols && utilityGrid[y][x+1])
+    ||(x-1>=0 &&utilityGrid[y][x-1])
+    ||(y+1<rows && utilityGrid[y+1][x])
+    ||(y-1>0 && utilityGrid[y-1][x])
+    ||(x+1<cols && y+1<rows && utilityGrid[y+1][x+1])
+    ||(x-1<cols && y-1<rows && utilityGrid[y-1][x-1])
+    ||(x+1<cols && y-1<rows && utilityGrid[y-1][x+1])
+    ||(x-1<cols && y+1<rows && utilityGrid[y+1][x-1]))
+    {} */
+
+    int icurr = x;
+    int cCurr = y;
+    for (int i = -1; i < 1; i++)
+    {
+        for (int c = -1; c < 1; c++)
+        {
+            if (i==0 && c==0) continue;
+
+            if (utilityGrid[icurr + i][cCurr + c] != nullptr && utilityGrid[icurr + i][cCurr + c]->hasRoad())
+            {
+                return true;
+            }
+            
+        }
+    }
+
+    return false;
+
+
+    
+}
+
 bool GameEnvironment::add(Building* building, int x, int y) {
     //receive coordinates, interpret them as row and column
     //check if coordinates are within bounds and translate
@@ -55,7 +89,7 @@ bool GameEnvironment::add(Building* building, int x, int y) {
     if (y < 0) resizeGrid(rows*1.1, cols, "North");
     if (y >= rows) resizeGrid(rows*1.1, cols, "South");
     //check if building already exists at coordinates
-    if (buildingGrid[y][x] != nullptr) {
+    if (buildingGrid[y][x] != nullptr || !adjToRoad(x,y)) {
         return false;
     }
     buildingGrid[y][x] = building;
@@ -198,3 +232,23 @@ void GameEnvironment::resizeGrid(int newRows, int newCols, string direction)
     startingPoint[0] += rowOffset;
     startingPoint[1] += colOffset;
 }
+
+/* RadialBuildingIterator* createRadBuildIt(int x, int y, int radius)
+{
+    RadialBuildingIterator* temp = new RadialBuildingIterator(this,utilGrid);
+}
+
+RadialUtilityIterator* createRadUtilIt(int x, int y, int radius)
+{
+    return nullptr;
+}
+
+UtilityIterator* createUtilIt()
+{
+    return nullptr;
+}
+
+BuildingIterator* createBuildIt()
+{
+    return nullptr;
+} */

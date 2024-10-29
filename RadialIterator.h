@@ -51,7 +51,7 @@ RadialIterator<T>::~RadialIterator() {
 }
 
 template <typename T>
-RadialIterator<T>::RadialIterator(GameEnvironment* game, T*** array, int x, int y, int radius)
+RadialIterator<T>::RadialIterator(GameEnvironment* game, T*** array, int x, int y, int radius) : Iterator<T>()
 {
     this->game = game;
     this->array = array;

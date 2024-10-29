@@ -4,12 +4,8 @@
 ResourceManager* ResourceManager::instance = nullptr;
 
 ResourceManager::ResourceManager() {
-    resources.addBudget(startingBudget);
-    resources.addResource("wood", 0);
-    resources.addResource("steel", 0);
-    resources.addResource("concrete", 0);
-    resources.addResource("waterSupply", 0);
-    resources.addResource("energySupply", 0);
+    // Initialize resources with starting values
+    resources.setBudget(startingBudget);
 }
 
 ResourceManager* ResourceManager::getInstance() {
@@ -22,44 +18,55 @@ ResourceManager* ResourceManager::getInstance() {
 void ResourceManager::resetInstance() {
     delete instance;
     instance = new ResourceManager();
-}
-
-void ResourceManager::initializeResources(int water, int steel, int concrete, int wood) {
-    resources.addResource("waterSupply", water);
-    resources.addResource("steel", steel);
-    resources.addResource("concrete", concrete);
-    resources.addResource("wood", wood);
-}
-
-void ResourceManager::addResource(const std::string& resourceType, int amount) {
-    resources.addResource(resourceType, amount);
-}
-
-void ResourceManager::useResource(const std::string& resourceType, int amount) {
-    resources.useResource(resourceType, amount);
+    std::cout << "ResourceManager reset." << std::endl;
 }
 
 bool ResourceManager::sufficientMaterials(int water, int steel, int concrete, int wood, int power) const {
-    return resources.getWaterSupply() >= water &&
-           resources.getSteel() >= steel &&
-           resources.getConcrete() >= concrete &&
-           resources.getWood() >= wood &&
-           resources.getEnergySupply() >= power;
+    return resources.getWaterSupplyResource().getAmount() >= water &&
+           resources.getSteelResource().getAmount() >= steel &&
+           resources.getConcreteResource().getAmount() >= concrete &&
+           resources.getWoodResource().getAmount() >= wood &&
+           resources.getEnergySupplyResource().getAmount() >= power;
 }
 
-// Remaining methods as needed, such as addBudget, spendBudget, and getters
+
+void ResourceManager::initializeResources(int water, int steel, int concrete, int wood) {
+    resources.setWaterSupply(water);
+    resources.setSteel(steel);
+    resources.setConcrete(concrete);
+    resources.setWood(wood);
+}
+
+void ResourceManager::addResource(const std::string& resourceType, int amount) {
+    if (resourceType == "wood") resources.getWoodResource().addAmount(amount);
+    else if (resourceType == "steel") resources.getSteelResource().addAmount(amount);
+    else if (resourceType == "concrete") resources.getConcreteResource().addAmount(amount);
+    else if (resourceType == "waterSupply") resources.getWaterSupplyResource().addAmount(amount);
+    else if (resourceType == "energySupply") resources.getEnergySupplyResource().addAmount(amount);
+    else if (resourceType == "budget") resources.getBudgetResource().addAmount(amount);
+}
+
+void ResourceManager::useResource(const std::string& resourceType, int amount) {
+    if (resourceType == "wood") resources.getWoodResource().subtractAmount(amount);
+    else if (resourceType == "steel") resources.getSteelResource().subtractAmount(amount);
+    else if (resourceType == "concrete") resources.getConcreteResource().subtractAmount(amount);
+    else if (resourceType == "waterSupply") resources.getWaterSupplyResource().subtractAmount(amount);
+    else if (resourceType == "energySupply") resources.getEnergySupplyResource().subtractAmount(amount);
+    else if (resourceType == "budget") resources.getBudgetResource().subtractAmount(amount);
+}
+
 void ResourceManager::addBudget(int amount) {
-    resources.addBudget(amount);
+    resources.getBudgetResource().addAmount(amount);
 }
 
 void ResourceManager::spendBudget(int amount) {
-    resources.spendBudget(amount);
+    resources.getBudgetResource().subtractAmount(amount);
 }
 
-// Getters delegate to Resources
-int ResourceManager::getWood() const { return resources.getWood(); }
-int ResourceManager::getSteel() const { return resources.getSteel(); }
-int ResourceManager::getConcrete() const { return resources.getConcrete(); }
-int ResourceManager::getBudget() const { return resources.getBudget(); }
-int ResourceManager::getWaterSupply() const { return resources.getWaterSupply(); }
-int ResourceManager::getEnergySupply() const { return resources.getEnergySupply(); }
+// Getters
+int ResourceManager::getWood() const { return resources.getWoodResource().getAmount(); }
+int ResourceManager::getSteel() const { return resources.getSteelResource().getAmount(); }
+int ResourceManager::getConcrete() const { return resources.getConcreteResource().getAmount(); }
+int ResourceManager::getBudget() const { return resources.getBudgetResource().getAmount(); }
+int ResourceManager::getWaterSupply() const { return resources.getWaterSupplyResource().getAmount(); }
+int ResourceManager::getEnergySupply() const { return resources.getEnergySupplyResource().getAmount(); }

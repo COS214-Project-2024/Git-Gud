@@ -36,6 +36,7 @@ public:
     int getBudget() const;
     int getWaterSupply() const;
     int getEnergySupply() const;
+    int getWasteCapacity() const;
 };
 
 #endif // RESOURCEMANAGER_H

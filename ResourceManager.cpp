@@ -26,9 +26,9 @@ bool ResourceManager::sufficientMaterials(int water, int steel, int concrete, in
            resources.getSteelResource().getAmount() >= steel &&
            resources.getConcreteResource().getAmount() >= concrete &&
            resources.getWoodResource().getAmount() >= wood &&
-           resources.getEnergySupplyResource().getAmount() >= power;
+           resources.getEnergySupplyResource().getAmount() >= power &&
+           resources.getWasteCapacityResource().getAmount() >= 0; // Check waste capacity
 }
-
 
 void ResourceManager::initializeResources(int water, int steel, int concrete, int wood) {
     resources.setWaterSupply(water);
@@ -44,6 +44,7 @@ void ResourceManager::addResource(const std::string& resourceType, int amount) {
     else if (resourceType == "waterSupply") resources.getWaterSupplyResource().addAmount(amount);
     else if (resourceType == "energySupply") resources.getEnergySupplyResource().addAmount(amount);
     else if (resourceType == "budget") resources.getBudgetResource().addAmount(amount);
+    else if (resourceType == "wasteCapacity") resources.getWasteCapacityResource().addAmount(amount); // Add waste capacity
 }
 
 void ResourceManager::useResource(const std::string& resourceType, int amount) {
@@ -53,6 +54,7 @@ void ResourceManager::useResource(const std::string& resourceType, int amount) {
     else if (resourceType == "waterSupply") resources.getWaterSupplyResource().subtractAmount(amount);
     else if (resourceType == "energySupply") resources.getEnergySupplyResource().subtractAmount(amount);
     else if (resourceType == "budget") resources.getBudgetResource().subtractAmount(amount);
+    else if (resourceType == "wasteCapacity") resources.getWasteCapacityResource().subtractAmount(amount); // Use waste capacity
 }
 
 void ResourceManager::addBudget(int amount) {
@@ -70,3 +72,4 @@ int ResourceManager::getConcrete() const { return resources.getConcreteResource(
 int ResourceManager::getBudget() const { return resources.getBudgetResource().getAmount(); }
 int ResourceManager::getWaterSupply() const { return resources.getWaterSupplyResource().getAmount(); }
 int ResourceManager::getEnergySupply() const { return resources.getEnergySupplyResource().getAmount(); }
+int ResourceManager::getWasteCapacity() const { return resources.getWasteCapacityResource().getAmount(); } // Getter for waste capacity

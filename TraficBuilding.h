@@ -3,11 +3,20 @@
 
 #include "Building.h"
 
-class TraficBuilding: public Building
-{
-private:
+class TraficBuilding: public Building{
 
-public:
+    private:
+
+    public:
+
+    protected: 
+        TraficBuilding() = default;
+
+        TraficBuilding(BuildingState* s);
+
+        virtual void provideService() override;
+
+        virtual float getCost() override;
 
 };
 

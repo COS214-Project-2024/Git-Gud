@@ -2,13 +2,24 @@
 #define CITIZEN_H
 
 #include "SatisfactionLevel.h"
+#include "Subject.h"
+#include "ChangeData.h"
 
 class Citizen{
 
     private:
         SatisfactionLevel* satisfactionLevel;
+        bool hasJob;
+
     public:
-        void update(ChangeData changeData);
+        Citizen();
+        virtual ~Citizen();
+        Citizen(bool hasJob);
+        virtual void update(ChangeData changeData);
+        void handleTaxChange(float newTaxRate);
+        void handleBuildingConstructed(float BuildingNum);
+        bool getHasJob();
+        void setJobStatus(bool jobStatus);
 
 };
 

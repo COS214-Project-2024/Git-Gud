@@ -1,15 +1,21 @@
-#ifndef DELAPIDATED_H
-#define DELAPIDATED_H
+#ifndef DILAPIDATED_H
+#define DILAPIDATED_H
 
 #include "BuildingState.h"
 
-class Delapidated : public BuildingState
-{
-private:
-    
-public:
+class Dilapidated : public BuildingState{
+
+    public:
+
+        Dilapidated() = default;  
+
+        void enterState(Building *building) override;
+        void exitState(Building* building) override;
+
+        void nextState(Building* building) override;
+        std::string getCurrentState() override;
 
 };
 
 
-#endif // DELAPIDATED_H
+#endif // DILAPIDATED_H

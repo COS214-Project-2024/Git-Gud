@@ -2,18 +2,21 @@
 #define LANDMARKBUILDING_H
 
 #include "Building.h"
+#include "GameEnvironment.h"
 
-class LandmarkBuilding : public Building
-{
-private:
-    int landmarkName;
-public:
+class LandmarkBuilding : public Building{
 
-    LandmarkBuilding(BuildingState* s);
+    private:
+        int landmarkName;
+    public:
+        
 
-    virtual void provideService();
+    protected: 
+        LandmarkBuilding(int capacity);
+        LandmarkBuilding(BuildingState* s, int capacity);
 
-    virtual int getCost();
+        virtual void provideService() override;
+        virtual float getCost() override;
 
 };
 

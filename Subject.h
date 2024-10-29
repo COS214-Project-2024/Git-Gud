@@ -5,22 +5,26 @@
 #include <vector>
 
 #include "Citizen.h"
+#include "ChangeData.h"
 
-struct ChangeData{
-
-    std::string changeType;
-    float value;
-
-};
+//forward declaration:
+class Citizen;
 
 class Subject{
 
     private:
         std::vector<Citizen*> observerList;
+
+    protected:
+        static std::vector<Citizen*> allCitizens;
+
     public:
         void attach(Citizen* observer);
         void detach(Citizen* observer);
-        virtual void notify(ChangeData changeData) = 0;
+        void notify(ChangeData changeData);
+
+        void addCitizenToSimulation(Citizen* newCitizen);
+        void removeCitizenFromSimulation(Citizen* citizen);
 
 };
 

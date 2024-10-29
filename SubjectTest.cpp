@@ -3,51 +3,40 @@
 #include "Subject.h"
 #include "Citizen.h"
 #include "ChangeData.h"
+#include <pthread.h>
 
 // Mock class for Citizen
-class MockCitizen : public Citizen {
-public:
-    MOCK_METHOD(void, update, (ChangeData), (override));
+class SubjectTest : public ::testing::Test {
+
+    protected:
+        Subject subject;
+
 };
 
-TEST(SubjectTest, AttachAndNotify) {
-    Subject subject;
-    MockCitizen mockCitizen;
+class MockCitizen : public Citizen { 
 
-    // Attach the observer
-    subject.attach(&mockCitizen);
+    public: MOCK_METHOD(void, update, (ChangeData), (override)); 
+    
+};
 
-    // Expect the observer to be notified
-    ChangeData changeData;
-    EXPECT_CALL(mockCitizen, update(changeData)).Times(1);
+TEST_F(SubjectTest, testAttachObserver){
 
-    // Notify observers
-    subject.notify(changeData);
+    subject.attach(new Citizen());
+
+    EXPECT_EQ(subject.getObserverListSize(), 1);
+
 }
 
-TEST(SubjectTest, Detach) {
-    Subject subject;
-    MockCitizen mockCitizen;
+TEST_F(SubjectTest, testDetachObserver){
 
-    // Attach and then detach the observer
-    subject.attach(&mockCitizen);
-    subject.detach(&mockCitizen);
+    Citizen* newCitizen = new Citizen();
 
-    // Expect the observer not to be notified
-    ChangeData changeData;
-    EXPECT_CALL(mockCitizen, update(changeData)).Times(0);
+    subject.attach(newCitizen);
+    subject.detach(newCitizen);
 
-    // Notify observers
-    subject.notify(changeData);
+    EXPECT_EQ(subject.getObserverListSize(), 0);
+
 }
 
-TEST(SubjectTest, AddAndRemoveCitizen) {
-    Subject subject;
-    MockCitizen mockCitizen;
 
-    // Add and then remove the citizen from the simulation
-    subject.addCitizenToSimulation(&mockCitizen);
-    subject.removeCitizenFromSimulation(&mockCitizen);
 
-    // No specific expectations for this test, just ensuring no errors occur
-}

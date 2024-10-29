@@ -13,7 +13,7 @@ public:
 
     virtual void provideService();
 
-    virtual int getCost();
+    virtual float getCost();
 
     virtual ~BuildingWithCoffeeShop(){};
 

@@ -6,3 +6,5 @@ Building* BuildingWithCoffeeShopFactory::upgradeBuilding(Building* b){
     }
     return b;
 }
+
+

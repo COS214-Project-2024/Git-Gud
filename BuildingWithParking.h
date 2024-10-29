@@ -2,6 +2,7 @@
 #define BUILDINGWITHPARKING_H
 
 #include "Decorator.h"
+#include <vector>
 
 class BuildingWithParking : public Decorator{
 
@@ -11,11 +12,13 @@ public:
 
     virtual void provideService();
 
-    virtual int getCost();
+    virtual float getCost();
 
 private:
 
     Building* building;
+
+    std::vector<Citizen*> workers;
 
 };
 

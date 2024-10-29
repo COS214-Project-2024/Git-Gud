@@ -13,7 +13,7 @@ public:
 
     virtual void provideService(){};
 
-    virtual int getCost()=0;
+    virtual float getCost()=0;
 
     virtual ~Decorator();
 

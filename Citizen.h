@@ -8,10 +8,16 @@ class Citizen{
 
     private:
         SatisfactionLevel* satisfactionLevel;
+        bool hasJob;
+
     public:
+        Citizen();
+        Citizen(bool hasJob);
         void update(ChangeData changeData);
         void handleTaxChange(float newTaxRate);
         void handleBuildingConstructed(float BuildingNum);
+        bool getHasJob();
+        void setJobStatus(bool jobStatus);
 
 };
 

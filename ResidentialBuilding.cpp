@@ -2,7 +2,10 @@
 
 ResidentialBuilding::ResidentialBuilding(int capacity):Building(capacity){
 
-    //leave empty
+    addCitizens();
+
+    ChangeData changeData = {"BuildingConstructed", 3.0f};
+    notify(changeData);
 
 }
 
@@ -26,7 +29,7 @@ ResidentialBuilding::~ResidentialBuilding(){
 
 void ResidentialBuilding::provideService(){
 
-    //provide service
+    std::cout << "Provide services to residents" << std::endl;
 
 }
 
@@ -40,11 +43,12 @@ void ResidentialBuilding::addCitizens(){
 
     for(int i = 0; i < this->capacity; i++){
 
-        this->attach(new Citizen());
+        Citizen* newCitizen = new Citizen();
+
+        this->addCitizenToSimulation(newCitizen);
+        this->attach(newCitizen);
 
     }
-
-    
 
 }
 

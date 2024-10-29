@@ -26,6 +26,9 @@ class Subject{
         void detach(Citizen* observer);
         void notify(ChangeData changeData);
 
+        void addCitizenToSimulation(Citizen* newCitizen);
+        void removeCitizenFromSimulation(Citizen* citizen);
+
 };
 
 

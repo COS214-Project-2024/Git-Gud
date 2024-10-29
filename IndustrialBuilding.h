@@ -19,6 +19,7 @@ class IndustrialBuilding : public Building{
         int getNumStories();
         Industry getIndustryType();
         float getPollutionLevel();
+        void addEmployees();
 
     protected:
         IndustrialBuilding(int capacity, int size, int numStories, Industry industryType, int pollutionLevel);

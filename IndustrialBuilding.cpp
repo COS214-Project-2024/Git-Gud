@@ -67,3 +67,31 @@ float IndustrialBuilding::getCost(){
     return 50000;
 
 }
+
+void IndustrialBuilding::addEmployees(){
+
+    int EmployeesAdded = 0;
+
+    for(Citizen* citizen: allCitizens){
+
+        if(EmployeesAdded >= capacity){
+
+            break;
+
+        }
+
+        if(citizen->getHasJob() == false){
+
+            this->attach(citizen);
+            citizen->setJobStatus(true);
+            EmployeesAdded++;
+
+        }
+
+    }
+
+    ChangeData changeData = {"BuildingConstructed", 1.0f};
+
+    notify(changeData);
+
+}

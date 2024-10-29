@@ -1,5 +1,17 @@
 #include "Citizen.h"
 
+Citizen::Citizen(){
+
+    this->hasJob = false;
+
+}
+
+Citizen::Citizen(bool hasJob){
+
+    this->hasJob = hasJob;
+
+}
+
 void Citizen::update(ChangeData changeData){
 
     if(changeData.changeType == "TaxChange"){
@@ -44,5 +56,17 @@ void Citizen::handleBuildingConstructed(float BuildingFloat){
 
     }
 
+
+}
+
+bool Citizen::getHasJob(){
+
+    return hasJob;
+
+}
+
+void Citizen::setJobStatus(bool jobStatus){
+
+    this->hasJob = jobStatus;
 
 }

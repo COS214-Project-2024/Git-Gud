@@ -16,6 +16,7 @@ class CommercialBuilding : public Building{
         int getSize();
         int getNumStories();
         BusinessType getBusinessType();
+        void addEmployees();
 
     protected:
         CommercialBuilding(int capacity, int size, int numStories, BusinessType businessType);

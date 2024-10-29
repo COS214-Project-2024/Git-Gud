@@ -47,7 +47,6 @@ class Building : public Subject{
         void repairBuilding();
         std::string currentState();
         void simulateConstruction();
-        void addCitizens();
 
 };
 

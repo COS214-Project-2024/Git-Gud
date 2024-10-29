@@ -59,3 +59,31 @@ BusinessType CommercialBuilding::getBusinessType(){
     return businessType;
 
 }
+
+void CommercialBuilding::addEmployees(){
+
+    int EmployeesAdded = 0;
+
+    for(Citizen* citizen: allCitizens){
+
+        if(EmployeesAdded >= capacity){
+
+            break;
+
+        }
+
+        if(citizen->getHasJob() == false){
+
+            this->attach(citizen);
+            citizen->setJobStatus(true);
+            EmployeesAdded++;
+
+        }
+
+    }
+
+    ChangeData changeData = {"BuildingConstructed", 2.0f};
+
+    notify(changeData);
+
+}

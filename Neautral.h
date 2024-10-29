@@ -3,12 +3,12 @@
 
 #include "SatisfactionLevel.h"
 
-class Neautral : public SatisfactionLevel
+class Neutral : public SatisfactionLevel
 {
 private:
     
 public:
-    Neautral(){taxReturn = 1.0;};
+    Neutral(){satisfactionRating = 1.0;};
 };
 
 

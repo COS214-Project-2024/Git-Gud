@@ -20,6 +20,7 @@ class Citizen{
         void handleBuildingConstructed(float BuildingNum);
         bool getHasJob();
         void setJobStatus(bool jobStatus);
+        void setState(SatisfactionLevel* satislevel);
 
 };
 

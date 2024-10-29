@@ -8,10 +8,18 @@ float TaxFactories::CollectTax(std::list<ResidentialBuilding*> resBuildings, std
         switch ((*buildingIt)->getIndustryType())
         {
         case MANUFACTURING:
-            buildingTax = tax*((*buildingIt)->getNumStories()+(*buildingIt)->getPollutionLevel());
+            int factor = (*buildingIt)->getNumStories()-(*buildingIt)->getPollutionLevel();
+            if(factor < 1){
+                factor = 1;
+            }
+            buildingTax = tax*factor;
             break;
         case ENERGY:
-            buildingTax = tax*((*buildingIt)->getPollutionLevel()*2);
+            int factor = 5-(*buildingIt)->getPollutionLevel();
+            if(factor < 1){
+                factor = 1;
+            }
+            buildingTax = tax*factor;
             break;
         case TECHNOLOGY:
                 buildingTax = tax*((*buildingIt)->getNumStories()+(*buildingIt)->getSize());

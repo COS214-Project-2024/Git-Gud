@@ -3,10 +3,6 @@
 
 #include "Decorator.h"
 
-Decorator::Decorator(Building* b, int cap) : Building(cap){
-    this->building=b;
-}
-
 void Decorator::provideService(){       // needs updating
     this->building->provideService();
 }

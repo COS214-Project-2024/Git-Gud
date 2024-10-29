@@ -8,7 +8,7 @@ class BuildingWithParking : public Decorator{
 
 public:
 
-    BuildingWithParking(Building* b, int cap);
+    BuildingWithParking(Building* b);
 
     virtual void provideService();
 

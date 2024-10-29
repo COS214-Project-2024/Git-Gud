@@ -1,6 +1,7 @@
 #include "BuildingWithCoffeeshop.h"
 
-BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b, int cap) : Decorator(b, cap){
+BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
+    this->building=b;
     this->setState(new UnderConstruction());
     this->cost=10000;
 }

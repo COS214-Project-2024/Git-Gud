@@ -5,7 +5,8 @@
 
 class HealthCare : public PublicService {
 public:
-    HealthCare();
+    
+    HealthCare(int capacity, int maintenanceCost) : PublicService(capacity, maintenanceCost, "HealthCare", 100000){};
     virtual ~HealthCare() = default;
     void provideService() override;
 };

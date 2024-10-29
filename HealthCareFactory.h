@@ -12,7 +12,7 @@ public:
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
         // Return a new HealthCare instance
-        return new HealthCare();
+        return new HealthCare(capacity, maintenanceCost);
     }
 };
 

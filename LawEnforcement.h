@@ -5,7 +5,7 @@
 
 class LawEnforcement : public PublicService {
 public:
-    LawEnforcement();
+    LawEnforcement(int capacity, int maintenanceCost) : PublicService(capacity, maintenanceCost, "LawEnforcement", 25000){};
     virtual ~LawEnforcement() = default;
     void provideService() override;
 };

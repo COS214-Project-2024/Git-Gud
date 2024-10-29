@@ -64,6 +64,6 @@ void IndustrialBuilding::provideService(){
 
 float IndustrialBuilding::getCost(){
 
-    //return cost
+    return 50000;
 
 }

@@ -2,6 +2,7 @@
 #define LANDMARKBUILDING_H
 
 #include "Building.h"
+#include "GameEnvironment.h"
 
 class LandmarkBuilding : public Building{
 

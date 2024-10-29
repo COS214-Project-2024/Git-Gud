@@ -15,7 +15,6 @@ class GameEnvironment
 private:
     Utility*** utilityGrid;
     Building*** buildingGrid;
-    std::vector <Citizen*> Citizens;
     int rows, cols;
 public:
     void addUtility(Utility* utility, int x, int y);
@@ -26,7 +25,6 @@ public:
     UtilityIterator* createUtilityIterator();
     BuildingIterator* createBuildingIterator();
 
-    friend Building;
 };
 
 #endif // GAMEENVIRONMENT_H

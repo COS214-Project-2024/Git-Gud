@@ -32,7 +32,7 @@ void ResidentialBuilding::provideService(){
 
 float ResidentialBuilding::getCost(){
 
-    //get cost
+    return 25000;
 
 }
 

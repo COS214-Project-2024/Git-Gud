@@ -3,7 +3,19 @@
 
 LandmarkBuilding::LandmarkBuilding(int capacity):Building(capacity){
 
-    //add citizens to obersverlist
+    for(Citizen* citizen : allCitizens){
+
+        attach(citizen);
+
+    }
+
+    if(!allCitizens.empty()){
+
+        ChangeData changeData = {"BuildingConstructed", 4.0f};
+
+        notify(changeData);
+
+    }
 
 }
 
@@ -21,6 +33,6 @@ void LandmarkBuilding::provideService(){
 
 float LandmarkBuilding::getCost(){
 
-    //return cost
+    return 75000;
     
 }

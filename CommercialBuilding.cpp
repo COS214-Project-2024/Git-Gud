@@ -20,7 +20,7 @@ CommercialBuilding::CommercialBuilding(int capacity, int size, int numStories, B
 
 float CommercialBuilding::getCost(){
 
-    //return cost
+    return 50000;
 
 }
 

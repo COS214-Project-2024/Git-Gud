@@ -13,7 +13,7 @@ void Building::setState(BuildingState* s){
 
     }
 
-    this->state = s;
+    this->buildingState = s;
 
 }
 
@@ -49,7 +49,6 @@ void Building::repairBuilding(){
 
     }
     
-
 }
 
 void Building::simulateConstruction(){

@@ -2,14 +2,18 @@
 #define PUBLICSERVICE_H
 
 #include "Utility.h"
-#include <string>
 
-class PublicService: public Utility
-{
-private:
+class PublicService : public Utility {
 
-public:
-    virtual void provideService() = 0;
+    private:
+        std::string serviceType;
+        int fund;
+
+    public:
+        PublicService(int capacity, int maintenanceCost, std::string publicType, int funding) : Utility("PublicService", capacity, maintenanceCost), serviceType(publicType), fund(funding){}
+        virtual ~PublicService() = default;
+        
+        virtual void provideService() = 0;
 };
 
-#endif // PUBLICSERVICE_H
+#endif  // PUBLICSERVICE_H

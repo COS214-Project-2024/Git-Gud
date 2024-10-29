@@ -3,12 +3,11 @@
 
 #include "PublicService.h"
 
-class LawEnforcement: public PublicService
-{
-private:
-
+class LawEnforcement : public PublicService {
 public:
-    void provideService();
+    LawEnforcement(int capacity, int maintenanceCost) : PublicService(capacity, maintenanceCost, "LawEnforcement", 25000){};
+    virtual ~LawEnforcement() = default;
+    void provideService() override;
 };
 
-#endif // LAWENFORCEMENT_H
+#endif  // LAWENFORCEMENT_H

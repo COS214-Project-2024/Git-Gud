@@ -3,14 +3,16 @@
 
 #include "PublicService.h"
 
-class Transportation: public PublicService
-{
+class Transportation : public PublicService {
 private:
-    int roadCapacity, busCapacity, trainCapacity, taxiCapacity, airportCapacity;
+    int busCapacity;
+    int taxiCapacity;
+    int trainCapacity;
+    int airportCapacity;
 public:
-    void provideService();
-    void manageTraficFlow();
-    void calculateCommuteTimes();
+    void provideService() override;
+    //void manageTrafficFlow();
+    //void calculateCommuteTimes();
 };
 
-#endif // TRANSPORTATION_H
+#endif  // TRANSPORTATION_H

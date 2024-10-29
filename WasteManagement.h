@@ -1,15 +1,16 @@
-#ifndef WASTE_MANAGEMENT_H
-#define WASTE_MANAGEMENT_H
+#ifndef WASTEMANAGEMENT_H
+#define WASTEMANAGEMENT_H
 
 #include "Utility.h"
 
-class WasteManagement : public Utility
-{
-private:
-
+class WasteManagement : public Utility {
 public:
-    void provideService() override;
+    WasteManagement(int capacity, int maintenanceCost)
+        : Utility("WasteManagement", capacity, maintenanceCost) {}
+
+    void provideService() override {
+        // Logic specific to WasteManagement, using capacity as filtering capability
+    }
 };
 
-
-#endif // WASTE_MANAGEMENT_H
+#endif // WASTEMANAGEMENT_H

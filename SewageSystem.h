@@ -1,15 +1,16 @@
-#ifndef SEWAGE_SYSTEM_H
-#define SEWAGE_SYSTEM_H
+#ifndef SEWAGESYSTEM_H
+#define SEWAGESYSTEM_H
 
 #include "Utility.h"
 
-class SewageSystem : public Utility
-{
-private:
-
+class SewageSystem : public Utility {
 public:
-    void provideService() override;
+    SewageSystem(int capacity, int maintenanceCost)
+        : Utility("SewageSystem", capacity, maintenanceCost) {}
+
+    void provideService() override {
+        // Logic specific to WasteManagement, using capacity as filtering capability
+    }
 };
 
-
-#endif // SEWAGE_SYSTEM_H
+#endif  // SEWAGESYSTEM_H

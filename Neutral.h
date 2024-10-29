@@ -1,15 +1,15 @@
 
-#ifndef SATISFIED_H
-#define SATISFIED_H
+#ifndef NEUTRAL_H
+#define NEUTRAL_H
 
 #include "SatisfactionLevel.h"
 
-class Satisfied : public SatisfactionLevel{
+class Neutral : public SatisfactionLevel{
 
     public:
         float satisfactionRating;
 
-        Satisfied() = default;
+        Neutral() = default;
 
         void enterState() override;
         void exitState() override;
@@ -20,4 +20,4 @@ class Satisfied : public SatisfactionLevel{
         std::string getCurrentSatisfactionLevel() override;
 };
 
-#endif  // SATISFIED_H
+#endif  // NEUTRAL_H

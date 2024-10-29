@@ -3,12 +3,12 @@
 
 #include "PublicService.h"
 
-class HealthCare: public PublicService
-{
-private:
-
+class HealthCare : public PublicService {
 public:
-    void provideService();
+    
+    HealthCare(int capacity, int maintenanceCost) : PublicService(capacity, maintenanceCost, "HealthCare", 100000){};
+    virtual ~HealthCare() = default;
+    void provideService() override;
 };
 
-#endif // HEALTHCARE_H
+#endif  // HEALTHCARE_H

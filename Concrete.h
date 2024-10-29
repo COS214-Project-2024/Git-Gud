@@ -10,7 +10,6 @@ private:
 
 public:
     Concrete(int initialAmount = 0) : amount(initialAmount) {}
-    
     int getAmount() const { return amount; }
     void setAmount(int newAmount) { amount = newAmount; }
 

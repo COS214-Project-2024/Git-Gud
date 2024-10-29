@@ -3,13 +3,20 @@
 
 #include "SatisfactionLevel.h"
 
-class VeryDissatisfied : public SatisfactionLevel
-{
-private:
-    
-public:
-    VeryDissatisfied(){satisfactionRating = 0.5;};
+class VeryDissatisfied : public SatisfactionLevel{
+
+    public:
+        float satisfactionRating;
+
+        VeryDissatisfied() = default;
+
+        void enterState() override;
+        void exitState() override;
+
+        void nextState(Citizen* citizen) override;
+        void prevState(Citizen* citizen) override;
+
+        std::string getCurrentSatisfactionLevel() override;
 };
 
-
-#endif // VERYDISSATISFIED_H
+#endif  // VERYDISSATISFIED_H

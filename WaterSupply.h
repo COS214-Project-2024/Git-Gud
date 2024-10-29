@@ -1,12 +1,13 @@
-#ifndef WATER_SUPPLY_H
-#define WATER_SUPPLY_H
+#ifndef WATERSUPPLY_H
+#define WATERSUPPLY_H
 
-#include "Utility.h"
+#include "Resources.h"
+#include <algorithm>
 
-class WaterSupply : public Utility
-{
+class WaterSupply {
 private:
-    int waterFlowRate;
+    int amount;
+
 public:
     WaterSupply(int initialAmount = 0) : amount(initialAmount) {}
     

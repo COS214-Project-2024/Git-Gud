@@ -9,6 +9,7 @@ private:
     float funding;
 
 public:
+    PublicService(int capacity, int maintenanceCost, std::string sType, float fund) : Utility("PublicService", capacity, maintenanceCost), serviceType(sType), funding(fund){};
     virtual void provideService() = 0;
 };
 

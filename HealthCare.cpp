@@ -1,4 +1,4 @@
-#include "Healthcare.h"
+#include "HealthCare.h"
 #include <iostream>
 
 void HealthCare::provideService()

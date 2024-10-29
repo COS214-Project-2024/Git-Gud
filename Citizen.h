@@ -18,6 +18,7 @@ class Citizen{
         virtual void update(ChangeData changeData);
         bool getHasJob();
         void setJobStatus(bool jobStatus);
+        void setState(SatisfactionLevel* satislevel);
 
         //void update(ChangeData changeData);
         void handleTaxChange(float newTaxRate);

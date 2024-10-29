@@ -82,4 +82,7 @@ SatisfactionLevel* Citizen::getSatisfactionLevel(){
 
 void Citizen::setSatisfactionLevel(SatisfactionLevel* satisfactionLevel){
     this->satisfactionLevel = satisfactionLevel;
+void Citizen::setState(SatisfactionLevel* satisLevel)
+{
+    satisfactionLevel = satisLevel;
 }

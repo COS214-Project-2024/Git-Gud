@@ -4,17 +4,22 @@
 #include "Building.h"
 #include <list>
 
-class ResidentialBuilding : public Building
-{
-private:
-    std::list<Citizen*> tenants;
-public:
+class ResidentialBuilding : public Building{
 
-    ResidentialBuilding(BuildingState* s);
+    private:
+        std::list<Citizen*> tenants;
+    public:
 
-    virtual void provideService();
+    protected:
+        ~ResidentialBuilding();
 
-    virtual int getCost();
+        ResidentialBuilding(int capacity);
+        ResidentialBuilding(BuildingState* s, int capacity);
+
+        virtual void provideService() override;
+
+        virtual float getCost() override;
+        void addCitizens();
 
 };
 

@@ -2,9 +2,13 @@
 #define GAMEENVIRONMENT_H
 
 #include "Utility.h"
+#include "Citizen.h"
 #include "Building.h"
 #include "UtilityIterator.h"
 #include "BuildingIterator.h"
+#include <vector>
+
+class Building;
 
 class GameEnvironment
 {
@@ -20,6 +24,7 @@ public:
     void PrintToFIle();
     UtilityIterator* createUtilityIterator();
     BuildingIterator* createBuildingIterator();
+
 };
 
 #endif // GAMEENVIRONMENT_H

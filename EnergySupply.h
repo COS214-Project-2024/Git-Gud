@@ -1,14 +1,15 @@
-#ifndef WATER_SUPPLY_H
-#define WATER_SUPPLY_H
+#ifndef ENERGYSUPPLY_H
+#define ENERGYSUPPLY_H
 
-#include "Utility.h"
+#include "Resources.h"
+#include <algorithm>
 
-class WaterSupply : public Utility
-{
+class EnergySupply {
 private:
-    int waterFlowRate;
+    int amount;
+
 public:
-    WaterSupply(int initialAmount = 0) : amount(initialAmount) {}
+    EnergySupply(int initialAmount = 0) : amount(initialAmount) {}
     
     int getAmount() const { return amount; }
     void setAmount(int newAmount) { amount = newAmount; }
@@ -17,4 +18,4 @@ public:
     void subtractAmount(int sub) { amount = std::max(0, amount - sub); }
 };
 
-#endif // WATERSUPPLY_H
+#endif // ENERGYSUPPLY_H

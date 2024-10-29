@@ -1,15 +1,16 @@
-#ifndef WATER_SUPPLY_H
-#define WATER_SUPPLY_H
+#ifndef WOOD_H
+#define WOOD_H
 
-#include "Utility.h"
+#include "Resources.h"
+#include <algorithm>
 
-class WaterSupply : public Utility
-{
+class Wood : public Resources {
 private:
-    int waterFlowRate;
+    int amount;
+
 public:
-    WaterSupply(int initialAmount = 0) : amount(initialAmount) {}
-    
+    Wood(int initialAmount = 0) : amount(initialAmount) {}
+
     int getAmount() const { return amount; }
     void setAmount(int newAmount) { amount = newAmount; }
 
@@ -17,4 +18,4 @@ public:
     void subtractAmount(int sub) { amount = std::max(0, amount - sub); }
 };
 
-#endif // WATERSUPPLY_H
+#endif // WOOD_H

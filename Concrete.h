@@ -1,14 +1,14 @@
-#ifndef WATERSUPPLY_H
-#define WATERSUPPLY_H
+#ifndef CONCRETE_H
+#define CONCRETE_H
 
 #include "Resources.h"
 
-class WaterSupply : public Resources {
+class Concrete : public Resources {
 private:
     int amount;
 
 public:
-    WaterSupply(int initialAmount = 0) : amount(initialAmount) {}
+    Concrete(int initialAmount = 0) : amount(initialAmount) {}
     int getAmount() const { return amount; }
     void setAmount(int newAmount) { amount = newAmount; }
 
@@ -16,4 +16,4 @@ public:
     void subtractAmount(int sub) { amount = std::max(0, amount - sub); }
 };
 
-#endif // WATERSUPPLY_H
+#endif // CONCRETE_H

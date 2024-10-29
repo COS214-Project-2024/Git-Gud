@@ -2,13 +2,14 @@
 #define RESOURCEMANAGER_H
 
 #include "Resources.h"
+#include <string>
 
 class ResourceManager {
 private:
     static ResourceManager* instance; // Singleton instance
     ResourceManager(); // Private constructor
 
-    Resources resources;
+    Resources resources; // Manages individual resources
     const int startingBudget = 500000;
 
 public:
@@ -35,6 +36,7 @@ public:
     int getBudget() const;
     int getWaterSupply() const;
     int getEnergySupply() const;
+    int getWasteCapacity() const;
 };
 
 #endif // RESOURCEMANAGER_H

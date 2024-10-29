@@ -2,6 +2,7 @@
 #define BUILDINGWITHPARKING_H
 
 #include "Decorator.h"
+#include <vector>
 
 class BuildingWithParking : public Decorator{
 
@@ -16,6 +17,8 @@ public:
 private:
 
     Building* building;
+
+    std::vector<Citizen*> workers;
 
 };
 

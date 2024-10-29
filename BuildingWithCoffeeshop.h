@@ -2,6 +2,7 @@
 #define BUILDINGWITHCOFFEESHOP_H
 
 #include "Decorator.h"
+#include <vector>
 
 class BuildingWithCoffeeShop : public Decorator{
 
@@ -15,6 +16,10 @@ public:
     virtual int getCost();
 
     virtual ~BuildingWithCoffeeShop(){};
+
+private:
+
+    std::vector<Citizen*> workers;
 
 };
 

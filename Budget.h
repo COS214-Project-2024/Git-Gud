@@ -2,8 +2,9 @@
 #define BUDGET_H
 
 #include "Resources.h"
+#include <algorithm>
 
-class Budget : public Resources {
+class Budget {
 private:
     int amount;
 

@@ -2,8 +2,9 @@
 #define ENERGYSUPPLY_H
 
 #include "Resources.h"
+#include <algorithm>
 
-class EnergySupply : public Resources {
+class EnergySupply {
 private:
     int amount;
 

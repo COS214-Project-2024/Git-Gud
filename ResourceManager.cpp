@@ -4,7 +4,6 @@
 ResourceManager* ResourceManager::instance = nullptr;
 
 ResourceManager::ResourceManager() {
-    // Initialize resources with starting values
     resources.setBudget(startingBudget);
 }
 
@@ -12,12 +11,13 @@ ResourceManager* ResourceManager::getInstance() {
     if (!instance) {
         instance = new ResourceManager();
     }
+
     return instance;
 }
 
 void ResourceManager::resetInstance() {
     delete instance;
-    instance = new ResourceManager();
+    instance = new ResourceManager();  // Reset to default starting values
     std::cout << "ResourceManager reset." << std::endl;
 }
 
@@ -27,7 +27,7 @@ bool ResourceManager::sufficientMaterials(int water, int steel, int concrete, in
            resources.getConcreteResource().getAmount() >= concrete &&
            resources.getWoodResource().getAmount() >= wood &&
            resources.getEnergySupplyResource().getAmount() >= power &&
-           resources.getWasteCapacityResource().getAmount() >= 0; // Check waste capacity
+           resources.getWasteCapacityResource().getAmount() >= 0;
 }
 
 void ResourceManager::initializeResources(int water, int steel, int concrete, int wood) {
@@ -44,7 +44,7 @@ void ResourceManager::addResource(const std::string& resourceType, int amount) {
     else if (resourceType == "waterSupply") resources.getWaterSupplyResource().addAmount(amount);
     else if (resourceType == "energySupply") resources.getEnergySupplyResource().addAmount(amount);
     else if (resourceType == "budget") resources.getBudgetResource().addAmount(amount);
-    else if (resourceType == "wasteCapacity") resources.getWasteCapacityResource().addAmount(amount); // Add waste capacity
+    else if (resourceType == "wasteCapacity") resources.getWasteCapacityResource().addAmount(amount);
 }
 
 void ResourceManager::useResource(const std::string& resourceType, int amount) {
@@ -54,7 +54,7 @@ void ResourceManager::useResource(const std::string& resourceType, int amount) {
     else if (resourceType == "waterSupply") resources.getWaterSupplyResource().subtractAmount(amount);
     else if (resourceType == "energySupply") resources.getEnergySupplyResource().subtractAmount(amount);
     else if (resourceType == "budget") resources.getBudgetResource().subtractAmount(amount);
-    else if (resourceType == "wasteCapacity") resources.getWasteCapacityResource().subtractAmount(amount); // Use waste capacity
+    else if (resourceType == "wasteCapacity") resources.getWasteCapacityResource().subtractAmount(amount);
 }
 
 void ResourceManager::addBudget(int amount) {
@@ -72,4 +72,4 @@ int ResourceManager::getConcrete() const { return resources.getConcreteResource(
 int ResourceManager::getBudget() const { return resources.getBudgetResource().getAmount(); }
 int ResourceManager::getWaterSupply() const { return resources.getWaterSupplyResource().getAmount(); }
 int ResourceManager::getEnergySupply() const { return resources.getEnergySupplyResource().getAmount(); }
-int ResourceManager::getWasteCapacity() const { return resources.getWasteCapacityResource().getAmount(); } // Getter for waste capacity
+int ResourceManager::getWasteCapacity() const { return resources.getWasteCapacityResource().getAmount(); }

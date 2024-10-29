@@ -2,8 +2,9 @@
 #define WATERSUPPLY_H
 
 #include "Resources.h"
+#include <algorithm>
 
-class WaterSupply : public Resources {
+class WaterSupply {
 private:
     int amount;
 

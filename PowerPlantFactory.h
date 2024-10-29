@@ -10,8 +10,8 @@ public:
     virtual ~PowerPlantFactory() = default;
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Create a new PowerPlant instance with specific power output
-        PowerPlant* plant = new PowerPlant(capacity, maintenanceCost, capacity * 0.8);
+        // Create a new PowerPlant instance with only the two required parameters
+        PowerPlant* plant = new PowerPlant(capacity, maintenanceCost);
 
         // Adjust the power resource upon creation of the PowerPlant
         adjustResource("energySupply", capacity);

@@ -10,14 +10,11 @@ public:
     virtual ~WaterFilteringPlantFactory() = default;
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Create a new WaterFilteringPlant instance with capacity and maintenanceCost
         WaterFilteringPlant* plant = new WaterFilteringPlant(capacity, maintenanceCost);
-
-        // Adjust the WaterSupply resource in ResourceManager by the plant's capacity
-        adjustResource("waterSupply", capacity);
-
+        adjustResource("waterSupply", capacity);  // or the appropriate resource
         return plant;
     }
+
 };
 
 #endif // WATERFILTERINGPLANTFACTORY_H

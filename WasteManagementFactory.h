@@ -10,13 +10,9 @@ public:
     virtual ~WasteManagementFactory() = default;
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Create a new WasteManagement instance with capacity interpreted as filtering capability
-        WasteManagement* wasteManagement = new WasteManagement(capacity, maintenanceCost);
-
-        // Adjust the waste capacity resource in ResourceManager
-        adjustResource("wasteCapacity", capacity);
-
-        return wasteManagement;
+        WasteManagement* waste = new WasteManagement(capacity, maintenanceCost);
+        adjustResource("wasteCapacity", capacity);  // or the appropriate resource
+        return waste;
     }
 };
 

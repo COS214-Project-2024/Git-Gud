@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++11 -I /usr/local/include
 LDFLAGS = -L /usr/local/lib -lgtest -lgtest_main -lpthread
 
 # Source files
-SOURCES = Education.cpp HealthCare.cpp LawEnforcement.cpp Resources.cpp ResourceManager.cpp Utility.cpp Powerplant.cpp WasteManagement.cpp WaterSupply.cpp SewageSystem.cpp test_Resources.cpp test_ResourceManager.cpp test_Utility.cpp
+SOURCES = Education.cpp HealthCare.cpp LawEnforcement.cpp ResourceManager.cpp test_Resources.cpp test_ResourceManager.cpp test_Utility.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 EXECUTABLE = runTests
 

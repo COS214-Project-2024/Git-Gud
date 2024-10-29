@@ -2,6 +2,7 @@
 #define WOOD_H
 
 #include "Resources.h"
+#include <algorithm>
 
 class Wood : public Resources {
 private:

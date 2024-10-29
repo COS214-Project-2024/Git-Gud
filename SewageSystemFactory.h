@@ -10,12 +10,8 @@ public:
     virtual ~SewageSystemFactory() = default;
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
-        // Create a new SewageSystem instance with specific water flow capacities
-        SewageSystem* sewageSystem = new SewageSystem(capacity, maintenanceCost, capacity * 2);
-
-        // Adjust the wasteCapacity resource
-        adjustResource("wasteCapacity", capacity);
-
+        SewageSystem* sewageSystem = new SewageSystem(capacity, maintenanceCost);
+        adjustResource("waterSupply", capacity);  // or the appropriate resource
         return sewageSystem;
     }
 };

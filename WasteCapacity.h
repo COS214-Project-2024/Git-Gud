@@ -2,8 +2,9 @@
 #define WASTECAPACITY_H
 
 #include "Resources.h"
+#include <algorithm>
 
-class WasteCapacity : public Resources {
+class WasteCapacity {
 private:
     int amount;
 

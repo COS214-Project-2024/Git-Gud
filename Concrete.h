@@ -2,8 +2,9 @@
 #define CONCRETE_H
 
 #include "Resources.h"
+#include <algorithm>
 
-class Concrete : public Resources {
+class Concrete {
 private:
     int amount;
 

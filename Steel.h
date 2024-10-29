@@ -2,8 +2,9 @@
 #define STEEL_H
 
 #include "Resources.h"
+#include <algorithm>
 
-class Steel : public Resources {
+class Steel {
 private:
     int amount;
 

@@ -5,13 +5,10 @@
 #include <vector>
 
 #include "Citizen.h"
+#include "ChangeData.h"
 
-struct ChangeData{
-
-    std::string changeType;
-    float value;
-
-};
+//forward declaration:
+class Citizen;
 
 class Subject{
 

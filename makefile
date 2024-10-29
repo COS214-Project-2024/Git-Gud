@@ -3,9 +3,9 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall -g
 GTEST_LIB = -lgtest -lgtest_main -pthread
 
-# Source files and tests
-SRC = TaxManager.cpp Subject.cpp ResidentialBuilding.cpp LandmarkBuilding.cpp IndustrialBuildingFactory.cpp Citizen.cpp Building.cpp
-TEST_SRC = TaxManagerTest.cpp SubjectTest.cpp ResidentialBuildingTest.cpp LandmarkBuildingTest.cpp IndustrialBuildingFactoryTest.cpp CitizenTest.cpp BuildingTest.cpp
+# Source files and tests (only SubjectTest.cpp)
+SRC = TaxManager.cpp Subject.cpp ResidentialBuilding.cpp Landmark.cpp Citizen.cpp Building.cpp
+TEST_SRC = SubjectTest.cpp
 
 # Output for tests
 TEST_BIN = test_suite

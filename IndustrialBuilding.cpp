@@ -1,4 +1,5 @@
 #include "IndustrialBuilding.h"
+#include "Citizen.h"
 
 IndustrialBuilding::IndustrialBuilding(BuildingState *s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel):Building(capacity){
 

@@ -1,5 +1,6 @@
 #include "Landmark.h"
 #include "GameEnvironment.h"
+#include "Citizen.h"
 
 LandmarkBuilding::LandmarkBuilding(int capacity):Building(capacity){
 

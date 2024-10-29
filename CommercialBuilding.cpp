@@ -1,4 +1,5 @@
 #include "CommercialBuilding.h"
+#include "Citizen.h"
 
 CommercialBuilding::CommercialBuilding(BuildingState *s, int capacity, int size, int numStores, BusinessType businessType): Building(capacity){
 

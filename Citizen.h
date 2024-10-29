@@ -3,6 +3,7 @@
 
 #include "SatisfactionLevel.h"
 #include "Subject.h"
+#include "ChangeData.h"
 
 class Citizen{
 
@@ -12,8 +13,9 @@ class Citizen{
 
     public:
         Citizen();
+        virtual ~Citizen();
         Citizen(bool hasJob);
-        void update(ChangeData changeData);
+        virtual void update(ChangeData changeData);
         void handleTaxChange(float newTaxRate);
         void handleBuildingConstructed(float BuildingNum);
         bool getHasJob();

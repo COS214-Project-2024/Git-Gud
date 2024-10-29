@@ -1,4 +1,5 @@
 #include "ResidentialBuilding.h"
+#include "Citizen.h"
 
 ResidentialBuilding::ResidentialBuilding(int capacity):Building(capacity){
 

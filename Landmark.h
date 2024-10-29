@@ -9,6 +9,7 @@ class LandmarkBuilding : public Building{
     private:
         int landmarkName;
     public:
+        
 
     protected: 
         LandmarkBuilding(int capacity);

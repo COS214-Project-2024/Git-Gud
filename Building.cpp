@@ -17,6 +17,12 @@ void Building::setState(BuildingState* s){
 
 }
 
+Building::Building(){
+
+    capacity = 30;
+
+}
+
 Building::Building(int capacity){
 
     this->capacity = capacity;

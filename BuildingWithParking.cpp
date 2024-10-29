@@ -1,7 +1,6 @@
 #include "BuildingWithParking.h"
 
-BuildingWithParking::BuildingWithParking(Building* b){
-    this->building=b;
+BuildingWithParking::BuildingWithParking(Building* b, int cap) : Decorator(b ,cap){
     this->setState(new UnderConstruction());
     this->cost=15000;
 }

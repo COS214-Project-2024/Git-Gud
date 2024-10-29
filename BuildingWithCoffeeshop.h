@@ -9,7 +9,7 @@ class BuildingWithCoffeeShop : public Decorator{
 public:
 
     // The interface that supports the upgradeBuilding operation must check if there are enough resources
-    BuildingWithCoffeeShop(Building* b);
+    BuildingWithCoffeeShop(Building* b, int cap);
 
     virtual void provideService();
 

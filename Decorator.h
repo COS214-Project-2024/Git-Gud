@@ -11,9 +11,11 @@ protected:
 
 public:
 
+    Decorator(Building* b, int cap);
+
     virtual void provideService(){};
 
-    virtual float getCost()=0;
+    virtual float getCost(){};
 
     virtual ~Decorator();
 

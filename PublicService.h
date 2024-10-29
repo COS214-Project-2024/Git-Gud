@@ -4,13 +4,16 @@
 #include "Utility.h"
 
 class PublicService : public Utility {
-private:
-    std::string serviceType;
-    float funding;
 
-public:
-    PublicService(int capacity, int maintenanceCost, std::string sType, float fund) : Utility("PublicService", capacity, maintenanceCost), serviceType(sType), funding(fund){};
-    virtual void provideService() = 0;
+    private:
+        std::string serviceType;
+        int fund;
+
+    public:
+        PublicService(int capacity, int maintenanceCost, std::string publicType, int funding) : Utility("PublicService", capacity, maintenanceCost), serviceType(publicType), fund(funding){}
+        virtual ~PublicService() = default;
+        
+        virtual void provideService() = 0;
 };
 
 #endif  // PUBLICSERVICE_H

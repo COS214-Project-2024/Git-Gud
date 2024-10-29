@@ -4,6 +4,9 @@
 #include "SewageSystemFactory.h"
 #include "WasteManagementFactory.h"
 #include "WaterSupplyFactory.h"
+#include "HealthCareFactory.h"
+#include "EducationFactory.h"
+#include "LawEnforcementFactory.h"
 #include "PowerPlant.h"
 #include "SewageSystem.h"
 #include "WasteManagement.h"
@@ -35,6 +38,20 @@ TEST_F(UtilitiesTest, Initialization) {
     EXPECT_EQ(ws1->getUtilityType(), "WaterSupply");
     EXPECT_EQ(ws1->getCapacity(), 40);
 
+    HealthCareFactory* hcf1 = new HealthCareFactory();
+    Utility* hc1 = hcf1->createUtility(40, 21000);
+    EXPECT_EQ(hc1->getUtilityType(), "PublicService");
+    EXPECT_EQ(hc1->getCapacity(), 40);
+
+    EducationFactory* ef1 = new EducationFactory();
+    Utility* e1 = ef1->createUtility(40, 21000);
+    EXPECT_EQ(e1->getUtilityType(), "PublicService");
+    EXPECT_EQ(e1->getCapacity(), 40);
+
+    LawEnforcementFactory* lef1 = new LawEnforcementFactory();
+    Utility* le1 = lef1->createUtility(40, 21000);
+    EXPECT_EQ(le1->getUtilityType(), "PublicService");
+    EXPECT_EQ(le1->getCapacity(), 40);
 
 }
 

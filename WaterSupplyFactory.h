@@ -6,7 +6,7 @@
 
 class WaterSupplyFactory : public UtilityFactory {
 public:
-    WaterSupplyFactory(int capacity, int maintenanceCost, int waterflow);
+    WaterSupplyFactory(){};
     virtual ~WaterSupplyFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override {

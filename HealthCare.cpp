@@ -4,5 +4,5 @@
 void HealthCare::provideService()
 {
     std::cout << "HealthCare has been provided to neighbouring buildings.\nIncrease citizen satisfaction";
-    //Call function to increase satisfaction
+    //Call function to increase satisfaction of citizens in buildings
 }

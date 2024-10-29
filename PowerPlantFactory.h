@@ -7,7 +7,7 @@
 
 class PowerPlantFactory : public UtilityFactory {
 public:
-    PowerPlantFactory(int capacity, int maintenanceCost, int energyOut);
+    PowerPlantFactory(){};
     virtual ~PowerPlantFactory(){};
 
     Utility* createUtility(int capacity, int maintenanceCost) override {

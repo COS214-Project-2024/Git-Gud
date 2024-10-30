@@ -9,8 +9,6 @@ class ResidentialBuilding : public Building{
     private:
         std::list<Citizen*> tenants;
     public:
-
-    protected:
         ~ResidentialBuilding();
 
         ResidentialBuilding(int capacity);

@@ -21,7 +21,7 @@ void VerySatisfied::nextState(Citizen* citizen)
         
 void VerySatisfied::prevState(Citizen* citizen)
 {
-    citizen->setState(new Satisfied());
+    citizen->setSatisfactionLevel(new Satisfied());
 }
 
 std::string VerySatisfied::getCurrentSatisfactionLevel()

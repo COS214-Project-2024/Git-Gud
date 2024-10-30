@@ -3,8 +3,12 @@
 #define NEUTRAL_H
 
 #include "SatisfactionLevel.h"
+#include "Dissatisfied.h"
+#include "Satisfied.h"
 
 class Neutral : public SatisfactionLevel{
+    protected:
+        float taxReturn = 1.0;
 
     public:
         float satisfactionRating;

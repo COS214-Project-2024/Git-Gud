@@ -2,8 +2,11 @@
 #define VERYDISSATISFIED_H
 
 #include "SatisfactionLevel.h"
+#include "Dissatisfied.h"
 
 class VeryDissatisfied : public SatisfactionLevel{
+    protected:
+        float taxReturn = 0.5;
 
     public:
         float satisfactionRating;

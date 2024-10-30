@@ -6,6 +6,7 @@
 
 void promptPlayer();
 void createBuilding();
+void placeBuilding(BuildingFactory* factory);
 void viewCityGrid();
 void displayRecources();
 void collectTax();

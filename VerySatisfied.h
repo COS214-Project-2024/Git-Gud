@@ -2,13 +2,16 @@
 #define VERYSATISFIED_H
 
 #include "SatisfactionLevel.h"
+#include "Satisfied.h"
 
 class VerySatisfied : public SatisfactionLevel{
+    protected:
+        float taxReturn = 1.5;
 
     public:
         float satisfactionRating;
 
-        Satisfied() = default;
+        VerySatisfied() = default;
 
         void enterState() override;
         void exitState() override;

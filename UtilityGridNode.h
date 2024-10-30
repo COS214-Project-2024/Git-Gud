@@ -2,7 +2,7 @@
 #ifndef UTILITY_GRID_NODE_H
 #define UTILITY_GRID_NODE_H
 
-class Utility; // Forward declaration
+#include "Utility.h"
 
 class UtilGridNode {
     private:
@@ -73,7 +73,7 @@ public:
         return true;
     };
     
-    bool hasRoad()
+    bool getHasRoad()
     {
         return hasRoad;
     };

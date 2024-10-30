@@ -1,6 +1,8 @@
 #include <iostream>
 #include "ResourceManager.h"
 #include "BuildingFactory.h"
+#include "TaxManager.h"
+// #include "Subject.h"
 
 void promptPlayer();
 void createBuilding();
@@ -130,7 +132,9 @@ void displayRecources(){
 }
 
 void collectTax(){
+    TaxManager* taxManager;
     cout << "Collecting Tax..." << endl;
+    cout << taxManager->calculateTax() << endl;
     promptPlayer();
 }
 

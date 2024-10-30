@@ -38,3 +38,15 @@ void Subject::removeCitizenFromSimulation(Citizen* citizen){
     allCitizens.erase(std::remove(allCitizens.begin(), allCitizens.end(), citizen), allCitizens.end());
 
 }
+
+int Subject::getObserverListSize(){
+
+    return observerList.size();
+
+}
+
+int Subject::getNumCitizens(){
+
+    return allCitizens.size();
+
+}

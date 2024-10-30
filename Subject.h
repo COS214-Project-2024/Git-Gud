@@ -26,6 +26,9 @@ class Subject{
         void addCitizenToSimulation(Citizen* newCitizen);
         void removeCitizenFromSimulation(Citizen* citizen);
 
+        int getObserverListSize();
+        int getNumCitizens();
+
 };
 
 

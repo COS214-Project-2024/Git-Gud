@@ -75,3 +75,13 @@ void Citizen::setJobStatus(bool jobStatus){
     this->hasJob = jobStatus;
 
 }
+
+Citizen::~Citizen(){
+
+    if(satisfactionLevel != nullptr){
+
+        delete satisfactionLevel;
+
+    }
+
+}

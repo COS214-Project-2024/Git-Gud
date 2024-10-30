@@ -15,12 +15,12 @@ void Neutral::exitState()
 
 void Neutral::nextState(Citizen* citizen)
 {
-    citizen->setState(new Satisfied());
+    citizen->setSatisfactionLevel(new Satisfied());
 }
         
 void Neutral::prevState(Citizen* citizen)
 {
-    citizen->setState(new Dissatisfied());
+    citizen->setSatisfactionLevel(new Dissatisfied());
 }
 
 std::string Neutral::getCurrentSatisfactionLevel()

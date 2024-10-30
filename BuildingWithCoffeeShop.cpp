@@ -8,6 +8,7 @@ BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
 
 void BuildingWithCoffeeShop::provideService(){
     this->building->provideService();
+    std::cout << "and serves coffee" << std::endl;
 }
 
 float BuildingWithCoffeeShop::getCost(){

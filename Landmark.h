@@ -11,7 +11,7 @@ class LandmarkBuilding : public Building{
     public:
         
 
-    protected: 
+   // protected: changed to accomodate factory
         LandmarkBuilding(int capacity);
         LandmarkBuilding(BuildingState* s, int capacity);
 

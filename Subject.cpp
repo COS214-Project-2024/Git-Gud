@@ -1,4 +1,5 @@
 #include "Subject.h"
+#include "Citizen.h"
 #include <iostream>
 #include <algorithm>
 
@@ -37,5 +38,17 @@ void Subject::removeCitizenFromSimulation(Citizen* citizen){
 
     allCitizens.erase(std::remove(allCitizens.begin(), allCitizens.end(), citizen), allCitizens.end());
     delete citizen;
+
+}
+
+int Subject::getObserverListSize(){
+
+    return observerList.size();
+
+}
+
+int Subject::getNumCitizens(){
+
+    return allCitizens.size();
 
 }

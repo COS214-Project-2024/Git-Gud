@@ -38,5 +38,25 @@ TEST_F(SubjectTest, testDetachObserver){
 
 }
 
+TEST_F(SubjectTest, testAddingCitizensToSimulation){
+
+    subject.addCitizenToSimulation(new Citizen());
+
+    EXPECT_EQ(subject.getNumCitizens(), 1);
+
+
+}
+
+TEST_F(SubjectTest, testRemovingCitizensFromSimulation){
+
+    Citizen* newCitizen = new Citizen();
+
+    subject.addCitizenToSimulation(newCitizen);
+    subject.removeCitizenFromSimulation(newCitizen);
+
+    EXPECT_EQ(subject.getNumCitizens(), 0);
+
+}
+
 
 

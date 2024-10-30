@@ -1,4 +1,6 @@
 #include <iostream>
+#include "ResourceManager.h"
+#include "BuildingFactory.h"
 
 void promptPlayer();
 void createBuilding();
@@ -72,8 +74,40 @@ void promptPlayer() {
 }
 
 void createBuilding(){
+    cout << "Wich type of building do you want to create:" << endl;
+    cout << "•[1] Residential Building" << endl;
+    cout << "•[2] Commercial Building" << endl;
+    cout << "•[3] Industrial Building" << endl;
+    cout << "•[4] Landscape" << endl;
+    cout << "•[5] Cancel" << endl;
+
+    int choice;
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    switch(choice) {
+        case 1:
+            //ResedentialBuildingFactory resedentialBuildingFactory;
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+        case 5:
+            promptPlayer();
+            break;
+        default:
+            cout << "Invalid choice!" << endl;
+            break;
+    }
+    
     cout << "Creating Building..." << endl;
-    promptPlayer();
+
 }
 
 void viewCityGrid(){
@@ -82,8 +116,16 @@ void viewCityGrid(){
 }
 
 void displayRecources(){
+    ResourceManager* manager = ResourceManager::getInstance();
     cout << "Displaying Recources..." << endl;
-    
+    cout << "Wood: " << manager->getWood() << endl;
+    cout << "Steel: " << manager->getSteel() << endl;
+    cout << "Concrete: " << manager->getConcrete() << endl;
+    cout << "Budget: " << manager->getBudget() << endl;
+    cout << "Water Supply: " << manager->getWaterSupply() << endl;
+    cout << "Energy Supply: " << manager->getEnergySupply() << endl;
+    cout << "Waste Capacity: " << manager->getWasteCapacity() << endl;
+        
     promptPlayer();
 }
 

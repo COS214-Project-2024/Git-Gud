@@ -7,8 +7,6 @@
 class Citizen;
 
 class SatisfactionLevel{
-    protected:
-        float taxReturn;
 
     public:
         float satisfactionRating;
@@ -19,7 +17,6 @@ class SatisfactionLevel{
         virtual void prevState(Citizen* citizen) = 0;
 
         virtual std::string getCurrentSatisfactionLevel() = 0;
-        float getTaxReturn(){return taxReturn;};
 };
 
 #endif  // SATISFACTIONLEVEL_H

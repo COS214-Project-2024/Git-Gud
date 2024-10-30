@@ -10,7 +10,7 @@ class ResidentialBuilding : public Building{
         std::list<Citizen*> tenants;
     public:
 
-    //protected: Changed to accomodate factory
+    protected:
         ~ResidentialBuilding();
 
         ResidentialBuilding(int capacity);

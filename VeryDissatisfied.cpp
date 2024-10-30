@@ -15,7 +15,7 @@ void VeryDissatisfied::exitState()
 
 void VeryDissatisfied::nextState(Citizen* citizen)
 {
-    citizen->setSatisfactionLevel(new Dissatisfied());
+    citizen->setState(new Dissatisfied());
 }
         
 void VeryDissatisfied::prevState(Citizen* citizen)

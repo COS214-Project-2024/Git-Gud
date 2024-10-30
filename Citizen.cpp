@@ -17,7 +17,7 @@ Citizen::Citizen(bool hasJob){
 
 Citizen::~Citizen(){
 
-    if(satisfactionLevel != NULL){
+    if(satisfactionLevel != nullptr){
 
         delete satisfactionLevel;
 

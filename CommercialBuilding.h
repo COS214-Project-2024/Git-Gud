@@ -19,7 +19,7 @@ class CommercialBuilding : public Building{
         BusinessType getBusinessType();
         void addEmployees();
 
-    //protected: Changed to accomodate factory
+    protected:
         CommercialBuilding(int capacity, int size, int numStories, BusinessType businessType);
         CommercialBuilding(BuildingState* s, int capacity, int size, int numStores, BusinessType businessType);
 

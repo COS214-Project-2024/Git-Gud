@@ -46,12 +46,9 @@ class Building : public Subject{
         virtual float getCost() = 0; 
 
         virtual void setState(BuildingState* s);
-
-        virtual void repairBuilding();
-
-        virtual std::string currentState();
-
-        virtual void simulateConstruction();
+        void repairBuilding();
+        std::string currentState();
+        void simulateConstruction();
 
 };
 

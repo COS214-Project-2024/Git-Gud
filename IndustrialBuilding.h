@@ -21,7 +21,7 @@ class IndustrialBuilding : public Building{
         float getPollutionLevel();
         void addEmployees();
 
-    //protected: Changed to accomadte construction in factory
+    protected:
         IndustrialBuilding(int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
         IndustrialBuilding(BuildingState* s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
 

@@ -5,7 +5,7 @@
 
 Building* LandmarkFactory::constructBuilding(){
     if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
-        return new LandmarkBuilding(new UnderConstruction(), 50);
+        return new LandmarkBuilding(new UnderConstruction());
     }
     return nullptr;
 }

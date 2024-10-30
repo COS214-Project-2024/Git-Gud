@@ -5,7 +5,7 @@
 
 Building* ResidentialBuildingFactory::constructBuilding(){
     if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
-        return new ResidentialBuilding(new UnderConstruction(), 50);
+        return new ResidentialBuilding(new UnderConstruction());
     }
     return nullptr;
 }

@@ -3,12 +3,8 @@
 #define SATISFIED_H
 
 #include "SatisfactionLevel.h"
-#include "VerySatisfied.h"
-#include "Neutral.h"
 
 class Satisfied : public SatisfactionLevel{
-    protected:
-        float taxReturn = 1.2;
 
     public:
         float satisfactionRating;

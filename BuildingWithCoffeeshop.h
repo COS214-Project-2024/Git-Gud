@@ -15,14 +15,6 @@ public:
 
     virtual float getCost();
 
-    virtual void setState(BuildingState* s);
-
-    virtual void repairBuilding();
-
-    virtual std::string currentState();
-
-    virtual void simulateConstruction();
-
     virtual ~BuildingWithCoffeeShop(){};
 
 private:

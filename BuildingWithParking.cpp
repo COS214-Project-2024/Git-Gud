@@ -14,3 +14,19 @@ void BuildingWithParking::provideService(){
 float BuildingWithParking::getCost(){
     return this->cost + this->building->getCost();
 }
+
+void BuildingWithParking::setState(BuildingState* s){
+    this->building->setState(s);
+}
+
+void BuildingWithParking::repairBuilding(){
+    this->building->repairBuilding();
+}
+
+std::string BuildingWithParking::currentState(){
+    return this->building->currentState();
+}
+
+void BuildingWithParking::simulateConstruction(){
+    this->building->simulateConstruction();
+}

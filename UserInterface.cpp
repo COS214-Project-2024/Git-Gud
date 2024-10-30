@@ -87,18 +87,20 @@ void createBuilding(){
     cout << "Enter your choice: ";
     cin >> choice;
 
+    BuildingFactory* factory;
+
     switch(choice) {
         case 1:
-            //ResedentialBuildingFactory resedentialBuildingFactory;
+            factory = new ResidentialBuildingFactory();
             break;
         case 2:
-            
+            factory = new CommercialBuildingFactory();
             break;
         case 3:
-            
+            factory = new IndustrialBuildingFactory();
             break;
         case 4:
-            
+            factory = new LandscapeFactory();
             break;
         case 5:
             promptPlayer();
@@ -108,8 +110,14 @@ void createBuilding(){
             break;
     }
     
+    factory->constructBuilding();
     cout << "Creating Building..." << endl;
+    placeBuilding(factory);
+}
 
+void placeBuilding(BuildingFactory* factory){
+    cout << "Placing Building..." << endl;
+    promptPlayer();
 }
 
 void viewCityGrid(){

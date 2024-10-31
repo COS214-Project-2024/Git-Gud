@@ -1,8 +1,12 @@
 #include "Transportation.h"
 #include <iostream>
 
-void Transportation::provideService()
+void Transportation::manageTrafficFlow()
 {
-    std::cout << "Transportation has been provided to neighbouring buildings.\nIncrease citizen satisfaction";
-    //Call function to increase satisfaction
+    
+}
+
+void Transportation::calculateCommuteTimes()
+{
+    
 }

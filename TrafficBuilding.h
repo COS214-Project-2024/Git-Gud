@@ -14,10 +14,11 @@ class TrafficBuilding: public Building{
 
     private:
         TransportType tType;
+        float cost;
     public:
 
     protected: 
-        TrafficBuilding(BuildingState *s, int capacity, TransportType transportType);
+        TrafficBuilding(BuildingState *s, int capacity, float cost, TransportType transportType);
 
         virtual void provideService() override;
 

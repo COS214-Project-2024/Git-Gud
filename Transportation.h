@@ -10,9 +10,8 @@ private:
     int trainCapacity;
     int airportCapacity;
 public:
-    void provideService() override;
-    //void manageTrafficFlow();
-    //void calculateCommuteTimes();
+    void manageTrafficFlow();
+    void calculateCommuteTimes();
 };
 
 #endif  // TRANSPORTATION_H

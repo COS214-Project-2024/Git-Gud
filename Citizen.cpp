@@ -44,12 +44,12 @@ void Citizen::handleTaxChange(float changeInTaxRate){
     if(changeInTaxRate > 0){ //increase in tax
 
         //subtract SatisfactionLevel float by 'changeInTaxRate'
-        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + changeInTaxRate; //changeInTaxRate is negative in this case, so use plus operator
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating - changeInTaxRate;
 
     } else if(changeInTaxRate < 0){ //decrease in tax
 
         //add SatisfactionLevel float by 'changeInTaxRate'
-        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + changeInTaxRate;
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + -changeInTaxRate;
 
     }
 

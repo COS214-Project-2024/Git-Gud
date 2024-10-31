@@ -12,6 +12,8 @@ class SatisfactionLevel{
 
     public:
         float satisfactionRating;
+
+        virtual ~SatisfactionLevel(){};
         virtual void enterState() = 0;
         virtual void exitState() = 0;
 

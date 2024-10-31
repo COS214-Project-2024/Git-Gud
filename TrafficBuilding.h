@@ -10,20 +10,29 @@ enum TransportType {
     AIRPLANE
 };
 
-class TrafficBuilding: public Building{
+class TrafficBuilding : public Building {
+private:
+    TransportType tType;
+    float cost;
 
-    private:
-        TransportType tType;
-        float cost;
-    public:
+public:
+    // Updated constructor to match the factory arguments
+    TrafficBuilding(BuildingState *s, int capacity, TransportType transportType, float cost)
+        : Building(capacity), tType(transportType), cost(cost) {
+        buildingState = s;
+    }
 
-    protected: 
-        TrafficBuilding(BuildingState *s, int capacity, float cost, TransportType transportType);
+    void provideService() override {
+        // Implement service specific to each TransportType
+    }
 
-        virtual void provideService() override;
+    float getCost() override {
+        return cost;
+    }
 
-        virtual float getCost() override;
-
+    TransportType getTransportType() const {
+        return tType;
+    }
 };
 
 #endif // TRAFFICBUILDING_H

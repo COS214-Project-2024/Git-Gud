@@ -12,6 +12,8 @@ using namespace std;
 
 class BuildingIteratorRadial;
 class BuildingIteratorLinear;
+class UtilityIteratorRadial;
+class UtilityIteratorLinear;
 
 
 class GameEnvironment {
@@ -94,6 +96,8 @@ private:
 
     friend class BuildingIteratorRadial;
     friend class BuildingIteratorLinear;
+    friend class UtilityIteratorRadial;
+    friend class UtilityIteratorLinear;
 
     bool adjToRoad(int x, int y)
     {
@@ -255,6 +259,10 @@ public:
     BuildingIteratorRadial* createRadBuildItr(int x, int y, int radius);    
 
     BuildingIteratorLinear* createLinBuildItr();
+
+    UtilityIteratorRadial* createRadUtilItr(int x, int y, int radius);
+
+    UtilityIteratorLinear* createLinUtilItr();
 
 };
 
@@ -451,6 +459,189 @@ class BuildingIteratorLinear : public BuildingIterator {
 
 };
 
+class UtilityIterator {
+    protected:
+        GameEnvironment* game;
+        UtilGridNode*** array;
+        int row, col;
+
+    public:
+        virtual bool hasNext()=0;
+        virtual void next()=0;
+        virtual UtilGridNode* current() =0;
+};
+
+class UtilityIteratorRadial: public UtilityIterator {
+    protected:
+        int setRadius;
+        int centerX, centerY;
+        
+        void calculatePoints()
+        {
+            int yUp, yDown;
+
+            for (int r= 1; r < setRadius; r++) {
+                for (int x = centerX - r; x <= centerX + r; x++) {
+
+                    if (x < 0 || x >= game->rows) {
+                        continue;
+                    }
+
+                    yUp = sqrt(r*r - (x - centerX)*(x - centerX)) + centerY;
+                    yDown = -sqrt(r*r - (x - centerX)*(x - centerX)) + centerY;
+                    if (yUp >= 0 && yUp < game->rows && !contains(x, yUp) && this->array[x][yUp] != nullptr) {
+                        Node* newNode = new Node;
+                        newNode->point.x = x;
+                        newNode->point.y = yUp;
+                        newNode->next = head;
+                        head = newNode;
+                    }
+
+                    if (yDown != yUp && yDown >= 0 && yDown < game->rows && !contains(x, yDown) && this->array[x][yDown] != nullptr) {
+                        Node* newNode = new Node;
+                        newNode->point.x = x;
+                        newNode->point.y = yDown;
+                        newNode->next = head;
+                        head = newNode;
+                    }
+                }
+            }            
+        };
+
+        bool contains(int x, int y)
+        {
+            Node* temp = head;
+            while (temp != nullptr) {
+                if (temp->point.x == x && temp->point.y == y) {
+                    return true;
+                }
+                temp = temp->next;
+            }
+            return false;
+        };
+
+        Node* head;
+
+    public:
+        UtilityIteratorRadial()
+        {
+            centerX = 0;
+            centerY = 0;
+            setRadius = 0;
+        };
+
+        ~UtilityIteratorRadial()
+        {
+            game = nullptr;
+            array = nullptr;
+        };
+
+        UtilityIteratorRadial(GameEnvironment* game, int x, int y, int radius)
+        {
+            this->game = game;
+            this->array = game->utilityGrid;
+            centerX = x;
+            centerY = y;
+            setRadius = radius;
+            head = nullptr;
+            calculatePoints();
+        };
+
+        bool hasNext() override
+        {
+            return head->next != nullptr;
+        };
+
+        void next() override
+        {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        };
+
+        UtilGridNode* current() override
+        {
+            if (head == nullptr) {
+                return nullptr;
+            }
+            return this->array[head->point.x][head->point.y];
+        };
+};
+    
+class UtilityIteratorLinear: public UtilityIterator{
+    public:
+        UtilityIteratorLinear(GameEnvironment* game)
+        {
+            this->game = game;
+            this->array = game->utilityGrid;
+            row = 0;
+            col = 0;
+
+            for (int i = 0; i < this->game->rows; i++) {
+                for (int j = 0; j < this->game->cols; j++) {
+                    if (this->array[i][j] != nullptr) {
+                        row = i;
+                        col = j;
+                        return;
+                    }
+                }
+            }
+        };
+
+        ~UtilityIteratorLinear()
+        {
+            game = nullptr;
+            array = nullptr;
+        };
+
+        bool hasNext() override
+        {
+            int tempRow = row;
+            int tempCol = col+1;
+            while (tempRow < this->game->rows) {
+                while (tempCol < this->game->cols) {
+                    if (this->array[tempRow][tempCol] != nullptr) {
+                        return true;
+                    }
+                    tempCol++;
+                }
+                tempRow++;
+                tempCol = 0;
+            }
+            return false;
+        };
+
+        void next() override
+        {
+            int tempRow = row;
+            int tempCol = col+1;
+            while (tempRow < this->game->rows) {
+                while (tempCol < this->game->cols) {
+                    if (this->array[tempRow][tempCol] != nullptr) {
+                        row = tempRow;
+                        col = tempCol;
+                        return;
+                    }
+                    tempCol++;
+                }
+                tempRow++;
+                tempCol = 0;
+            }
+
+            row = -1;
+            col = -1;
+        };
+
+        UtilGridNode* current() override
+        {
+            if (row == -1 || col == -1 || this->array[row][col] == nullptr) {
+                return nullptr;
+            }
+            return this->array[row][col];
+        };
+};
+
+
 BuildingIteratorRadial* GameEnvironment::createRadBuildItr(int x, int y, int radius)
 {
     return new BuildingIteratorRadial(this, x, y, radius);
@@ -459,6 +650,11 @@ BuildingIteratorRadial* GameEnvironment::createRadBuildItr(int x, int y, int rad
 BuildingIteratorLinear* GameEnvironment::createLinBuildItr()
 {
     return new BuildingIteratorLinear(this);
+};
+
+UtilityIteratorRadial* GameEnvironment::createRadUtilItr(int x, int y, int radius)
+{
+    return new UtilityIteratorRadial(this, x, y, radius);
 };
 
 #endif // GAMEENVIRONMENT_H

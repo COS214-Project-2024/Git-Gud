@@ -5,6 +5,8 @@
 #include "Subject.h"
 #include "ChangeData.h"
 
+class SatisfactionLevel;
+
 class Citizen{
 
     private:

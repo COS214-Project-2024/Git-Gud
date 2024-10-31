@@ -8,7 +8,7 @@ BuildingWithParking::BuildingWithParking(Building* b){
 
 void BuildingWithParking::provideService(){
     this->building->provideService(); 
-    std::cout <<"and provides parking" << std::endl;
+    std::cout <<" and provides parking" << std::endl;
 }
 
 float BuildingWithParking::getCost(){

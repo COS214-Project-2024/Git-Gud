@@ -30,6 +30,34 @@ void BuildingWithParking::simulateConstruction(){
     this->building->simulateConstruction();
 }
 
+int BuildingWithParking::getNumStories(){
+    return this->building->getNumStories();
+}
+
+BusinessType BuildingWithParking::getBusinessType(){
+    return this->building->getBusinessType();
+}
+
+void BuildingWithParking::addEmployees(){
+    this->building->addEmployees();
+}
+
+int BuildingWithParking::getSize(){
+    return this->building->getSize();
+}
+
+float BuildingWithParking::getPollutionLevel(){
+    return this->building->getPollutionLevel();
+}
+
+void BuildingWithParking::addCitizens(){
+    this->building->addCitizens();
+}
+
+std::list<Citizen*> BuildingWithParking::getTenants(){
+    this->building->getTenants();
+}
+
 BuildingWithParking* BuildingWithParking::clone(){
     BuildingWithParking* temp=new BuildingWithParking();
     Building* b=this->building->clone();

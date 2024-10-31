@@ -29,6 +29,34 @@ void BuildingWithCoffeeShop::simulateConstruction(){
     this->building->simulateConstruction();
 }
 
+int BuildingWithCoffeeShop::getNumStories(){
+    return this->building->getNumStories();
+}
+
+BusinessType BuildingWithCoffeeShop::getBusinessType(){
+    return this->building->getBusinessType();
+}
+
+void BuildingWithCoffeeShop::addEmployees(){
+    this->building->addEmployees();
+}
+
+int BuildingWithCoffeeShop::getSize(){
+    return this->building->getSize();
+}
+
+float BuildingWithCoffeeShop::getPollutionLevel(){
+    return this->building->getPollutionLevel();
+}
+
+void BuildingWithCoffeeShop::addCitizens(){
+    this->building->addCitizens();
+}
+
+std::list<Citizen*> BuildingWithCoffeeShop::getTenants(){
+    this->building->getTenants();
+}
+
 BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone(){
     BuildingWithCoffeeShop* b=new BuildingWithCoffeeShop();
     Building* temp=this->building->clone();

@@ -24,6 +24,20 @@ public:
 
     virtual void simulateConstruction();
 
+    virtual int getNumStories();
+
+    virtual BusinessType getBusinessType();
+
+    virtual void addEmployees();
+
+    virtual int getSize();
+
+    virtual float getPollutionLevel();
+
+    virtual void addCitizens();
+
+    virtual std::list<Citizen*> getTenants();
+
     virtual BuildingWithParking* clone();
 
 private:

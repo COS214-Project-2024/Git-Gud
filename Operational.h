@@ -7,7 +7,9 @@ class Operational : public BuildingState{
 
     public:
 
-        Operational() = default;  
+        Operational() = default; 
+
+        ~Operational(){}; 
 
         void enterState(Building *building) override;
         void exitState(Building* building) override;

@@ -19,7 +19,9 @@ void Subject::detach(Citizen *observer){
 
 void Subject::notify(ChangeData changeData){
 
-    for(Citizen *citizen: observerList){
+    std::vector<Citizen*> copyOfList = observerList;
+
+    for(Citizen *citizen: copyOfList){
 
         citizen->update(changeData);
 

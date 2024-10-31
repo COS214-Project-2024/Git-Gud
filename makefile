@@ -1,10 +1,10 @@
 # Compiler and flags
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -g
-GTEST_LIB = -lgtest -lgtest_main -pthread
+GTEST_LIB = -lgtest -lgtest_main -lgmock -lgmock_main -pthread
 
 # Source files and tests (only SubjectTest.cpp)
-SRC = TaxManager.cpp Subject.cpp ResidentialBuilding.cpp Landmark.cpp Citizen.cpp Building.cpp
+SRC = Subject.cpp Citizen.cpp
 TEST_SRC = SubjectTest.cpp
 
 # Output for tests

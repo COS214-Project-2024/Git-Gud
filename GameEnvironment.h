@@ -4,23 +4,20 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <math.h>
 #include "UtilityGridNode.h"
 #include "Building.h"
-/* #include "ConcreteIterators.h"
-#include "RadialIterator.h"
-#include "LinearIterator.h" */
+
 using namespace std;
-//placeholder
-class Utility;
-//forward declarations for actual utility
-//class Iterator;
+
+class BuildingIteratorRadial;
+class BuildingIteratorLinear;
+
 
 class GameEnvironment {
 private:
     Building*** buildingGrid;
     UtilGridNode*** utilityGrid;
-    friend class Iterator;
-    friend class Building;
 
     int rows, cols;
     int startingPoint[2];//Starting point of the map shal be offramp at the centre. The centre point changes with the size of the map. Intially it is set to 25,25
@@ -94,6 +91,9 @@ private:
         if (y < 0) resizeGrid(rows*1.1, cols, "North");
         if (y >= rows) resizeGrid(rows*1.1, cols, "South");
     };
+
+    friend class BuildingIteratorRadial;
+    friend class BuildingIteratorLinear;
 
     bool adjToRoad(int x, int y)
     {
@@ -252,13 +252,213 @@ public:
         utilityGrid[y][x]->createRoad();
     };
     
-    /* RadialBuildingIterator* createRadBuildIt(int x, int y, int radius);
-    RadialUtilityIterator* createRadUtilIt(int x, int y, int radius);
-    UtilityIterator* createUtilIt();
-    BuildingIterator* createBuildIt(); */
+    BuildingIteratorRadial* createRadBuildItr(int x, int y, int radius);    
 
-    
+    BuildingIteratorLinear* createLinBuildItr();
 
+};
+
+
+struct Node {
+    struct Point {
+        int x, y;
+    };
+
+    Point point;
+    Node* next;
+};
+
+class BuildingIterator {
+    protected:
+        GameEnvironment* game;
+        Building*** array;
+        int row, col;
+
+    public:
+        virtual bool hasNext()=0;
+        virtual void next()=0;
+        virtual Building* current() =0;
+};
+
+class BuildingIteratorRadial : public BuildingIterator {
+    protected:
+        int setRadius;
+        int centerX, centerY;
+        
+        void calculatePoints()
+        {
+            int yUp, yDown;
+
+            for (int r= 1; r < setRadius; r++) {
+                for (int x = centerX - r; x <= centerX + r; x++) {
+
+                    if (x < 0 || x >= game->rows) {
+                        continue;
+                    }
+
+                    yUp = sqrt(r*r - (x - centerX)*(x - centerX)) + centerY;
+                    yDown = -sqrt(r*r - (x - centerX)*(x - centerX)) + centerY;
+                    if (yUp >= 0 && yUp < game->rows && !contains(x, yUp) && this->array[x][yUp] != nullptr) {
+                        Node* newNode = new Node;
+                        newNode->point.x = x;
+                        newNode->point.y = yUp;
+                        newNode->next = head;
+                        head = newNode;
+                    }
+
+                    if (yDown != yUp && yDown >= 0 && yDown < game->rows && !contains(x, yDown) && this->array[x][yDown] != nullptr) {
+                        Node* newNode = new Node;
+                        newNode->point.x = x;
+                        newNode->point.y = yDown;
+                        newNode->next = head;
+                        head = newNode;
+                    }
+                }
+            }            
+        };
+
+        bool contains(int x, int y)
+        {
+            Node* temp = head;
+            while (temp != nullptr) {
+                if (temp->point.x == x && temp->point.y == y) {
+                    return true;
+                }
+                temp = temp->next;
+            }
+            return false;
+        };
+
+        Node* head;
+
+    public:
+        BuildingIteratorRadial()
+        {
+            centerX = 0;
+            centerY = 0;
+            setRadius = 0;
+        };
+
+        ~BuildingIteratorRadial()
+        {
+            game = nullptr;
+            array = nullptr;
+        };
+
+        BuildingIteratorRadial(GameEnvironment* game, int x, int y, int radius)
+        {
+            this->game = game;
+            this->array = game->buildingGrid;
+            centerX = x;
+            centerY = y;
+            setRadius = radius;
+            head = nullptr;
+            calculatePoints();
+        };
+
+        bool hasNext() override
+        {
+            return head->next != nullptr;
+        };
+
+        void next() override
+        {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+        };
+
+        Building* current() override
+        {
+            if (head == nullptr) {
+                return nullptr;
+            }
+            return this->array[head->point.x][head->point.y];
+        };
+};
+
+class BuildingIteratorLinear : public BuildingIterator {
+    public:
+        BuildingIteratorLinear(GameEnvironment* game)
+        {
+            this->game = game;
+            this->array = game->buildingGrid;
+            row = 0;
+            col = 0;
+
+            for (int i = 0; i < this->game->rows; i++) {
+                for (int j = 0; j < this->game->cols; j++) {
+                    if (this->array[i][j] != nullptr) {
+                        row = i;
+                        col = j;
+                        return;
+                    }
+                }
+            }
+        };
+
+        ~BuildingIteratorLinear()
+        {
+            game = nullptr;
+            array = nullptr;
+        };
+
+        bool hasNext() override
+        {
+            int tempRow = row;
+            int tempCol = col+1;
+            while (tempRow < this->game->rows) {
+                while (tempCol < this->game->cols) {
+                    if (this->array[tempRow][tempCol] != nullptr) {
+                        return true;
+                    }
+                    tempCol++;
+                }
+                tempRow++;
+                tempCol = 0;
+            }
+            return false;
+        };
+
+        void next() override
+        {
+            int tempRow = row;
+            int tempCol = col+1;
+            while (tempRow < this->game->rows) {
+                while (tempCol < this->game->cols) {
+                    if (this->array[tempRow][tempCol] != nullptr) {
+                        row = tempRow;
+                        col = tempCol;
+                        return;
+                    }
+                    tempCol++;
+                }
+                tempRow++;
+                tempCol = 0;
+            }
+
+            row = -1;
+            col = -1;
+        };
+
+        Building* current() override
+        {
+            if (row == -1 || col == -1 || this->array[row][col] == nullptr) {
+                return nullptr;
+            }
+            return this->array[row][col];
+        };
+
+};
+
+BuildingIteratorRadial* GameEnvironment::createRadBuildItr(int x, int y, int radius)
+{
+    return new BuildingIteratorRadial(this, x, y, radius);
+};
+
+BuildingIteratorLinear* GameEnvironment::createLinBuildItr()
+{
+    return new BuildingIteratorLinear(this);
 };
 
 #endif // GAMEENVIRONMENT_H

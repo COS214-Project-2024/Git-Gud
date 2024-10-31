@@ -38,3 +38,10 @@ Utility.h
 lukasTestingMain.cpp
 test.txt
 GameEnvironment.txt
+BuildingIterator.txt
+BuildingIteratorLinear.txt
+BuildingIteratorRadial.txt
+LinearIterator.txt
+UtilityIterator.h
+UtilityIteratorLinear.h
+UtilityIteratorRadial.h

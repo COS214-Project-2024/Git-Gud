@@ -18,3 +18,8 @@ float TraficBuilding::getCost(){
     //return cost
 
 }
+
+TraficBuilding* TraficBuilding::clone(){
+    TraficBuilding* temp=new TraficBuilding();
+    return temp;
+}

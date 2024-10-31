@@ -88,3 +88,8 @@ void CommercialBuilding::addEmployees(){
     notify(changeData);
 
 }
+
+CommercialBuilding* CommercialBuilding::clone(){
+    CommercialBuilding* temp=new CommercialBuilding(this->capacity, this->size, this->numStories, this->businessType);
+    return temp;
+}

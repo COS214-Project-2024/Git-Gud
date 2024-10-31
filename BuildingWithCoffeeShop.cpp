@@ -2,8 +2,7 @@
 
 BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
     this->building=b;
-    this->setState(new UnderConstruction());
-    this->cost=10000;
+    this->building->setState(new UnderConstruction());
 }
 
 void BuildingWithCoffeeShop::provideService(){
@@ -30,8 +29,9 @@ void BuildingWithCoffeeShop::simulateConstruction(){
     this->building->simulateConstruction();
 }
 
-/*BuildingWithCoffeeShop::BuildingWithCoffeeShop(const BuildingWithCoffeeShop& other){
-    // So we don't want to copy the workers vector over, since we don't necessarilly want the exact same workers to work at the new building
-    // So we need assignment operators as well
-    this->building=other.building; 
-}*/
+BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone(){
+    BuildingWithCoffeeShop* b=new BuildingWithCoffeeShop();
+    Building* temp=this->building->clone();
+    b->building=temp;
+    return b;
+}

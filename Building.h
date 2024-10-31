@@ -15,7 +15,6 @@
 #include "UnderConstruction.h"
 #include "BuildingState.h"
 #include <list>
-#include <algorithm>
 
 enum BusinessType {LUXURY, FOOD, GENERAL, NONE};
 
@@ -70,13 +69,6 @@ class Building : public Subject{
         };
 
         virtual Building* clone()=0;
-
-        Building& operator=(Building& other){
-            if (this != &other){
-                Building* b=other.clone();
-                
-            }
-        }
 
 };
 

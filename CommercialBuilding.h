@@ -26,6 +26,8 @@ class CommercialBuilding : public Building{
         virtual void provideService() override;
         virtual float getCost() override;
 
+        virtual CommercialBuilding* clone();
+
 };
 
 

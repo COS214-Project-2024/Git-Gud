@@ -2,8 +2,7 @@
 
 BuildingWithParking::BuildingWithParking(Building* b){
     this->building=b;
-    this->setState(new UnderConstruction());
-    this->cost=15000;
+    this->building->setState(new UnderConstruction());
 }
 
 void BuildingWithParking::provideService(){
@@ -12,7 +11,7 @@ void BuildingWithParking::provideService(){
 }
 
 float BuildingWithParking::getCost(){
-    return this->cost + this->building->getCost();
+    return 10000 + this->building->getCost();
 }
 
 void BuildingWithParking::setState(BuildingState* s){
@@ -29,4 +28,11 @@ std::string BuildingWithParking::currentState(){
 
 void BuildingWithParking::simulateConstruction(){
     this->building->simulateConstruction();
+}
+
+BuildingWithParking* BuildingWithParking::clone(){
+    BuildingWithParking* temp=new BuildingWithParking();
+    Building* b=this->building->clone();
+    temp->building=b;
+    return temp;
 }

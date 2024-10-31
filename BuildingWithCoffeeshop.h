@@ -11,6 +11,8 @@ public:
     // The interface that supports the upgradeBuilding operation must check if there are enough resources
     BuildingWithCoffeeShop(Building* b);
 
+    BuildingWithCoffeeShop();
+
     //BuildingWithCoffeeShop(const BuildingWithCoffeeShop& other);
 
     virtual void provideService();
@@ -26,6 +28,8 @@ public:
     virtual void simulateConstruction();
 
     virtual ~BuildingWithCoffeeShop(){};
+
+    virtual BuildingWithCoffeeShop* clone();
 
 private:
 

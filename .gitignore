@@ -45,3 +45,10 @@ LinearIterator.txt
 UtilityIterator.h
 UtilityIteratorLinear.h
 UtilityIteratorRadial.h
+googletest/
+build/
+CMakeLists.txt
+Example.cpp
+Example.hpp
+ExampleTests.cpp
+unitTestingGE.cpp

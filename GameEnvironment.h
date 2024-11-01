@@ -164,6 +164,16 @@ public:
         delete[] utilityGrid;
     };
 
+    int getRows()
+    {
+        return rows;
+    };
+
+    int getCols()
+    {
+        return cols;
+    };
+    
     bool add(Building* building, int x, int y)
     {
         //receive coordinates, interpret them as row and column

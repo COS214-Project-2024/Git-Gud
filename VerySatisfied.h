@@ -8,7 +8,7 @@ class VerySatisfied : public SatisfactionLevel{
     public:
         float satisfactionRating;
 
-        Satisfied() = default;
+        VerySatisfied() = default;
 
         void enterState() override;
         void exitState() override;

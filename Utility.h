@@ -3,7 +3,7 @@
 
 #include <string>
 
-class Utility {
+class Utility : public Subject {
 protected:
     std::string utilityType; // Type of utility (e.g., "PowerPlant", "WaterFilteringPlant")
     int capacity;            // General capacity (output, filtering, etc.)

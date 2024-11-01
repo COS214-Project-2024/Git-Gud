@@ -34,8 +34,13 @@ bool PrototypeManager::removePrototype(Building* p){
     return false;
 }
 
-Building* PrototypeManager::getPrototype(){
-
+Building* PrototypeManager::getPrototype(Building* p) const{
+    for (int i = 0; i < size; ++i) {
+        if (prototypeBuildings[i] == p) {
+            return prototypeBuildings[i];
+        }
+    }
+    return nullptr;
 }
 
 void PrototypeManager::resizeArray(int newCapacity) {

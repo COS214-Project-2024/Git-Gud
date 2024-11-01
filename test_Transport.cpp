@@ -17,8 +17,8 @@ TEST_F(TransportTest, Initialization) {
     TrafficBuilding* tb3 = tbf1->createTrafficBuilding(TRAIN, 120); 
     EXPECT_EQ(tb3->getTransportType(), TRAIN);
 
-    TrafficBuilding* tb4 = tbf1->createTrafficBuilding(AIRPLANE, 250); 
-    EXPECT_EQ(tb4->getTransportType(), AIRPLANE);
+    TrafficBuilding* tb4 = tbf1->createTrafficBuilding(AIRPORT, 250); 
+    EXPECT_EQ(tb4->getTransportType(), AIRPORT);
 }
 
 TEST_F(TransportTest, Simulation) {
@@ -30,7 +30,7 @@ TEST_F(TransportTest, Simulation) {
     ts1->addTrafficBuilding(BUS, 50);
     ts1->addTrafficBuilding(TRAIN, 120);
     ts1->addTrafficBuilding(TRAIN, 120);
-    ts1->addTrafficBuilding(AIRPLANE, 250);
+    ts1->addTrafficBuilding(AIRPORT, 250);
 
     ts1->initializeTrafficFlow();
 

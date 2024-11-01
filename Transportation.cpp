@@ -1,12 +1,24 @@
 #include "Transportation.h"
 #include <iostream>
 
-void Transportation::manageTrafficFlow()
+void Transportation::updateCapacity(TransportType t, int add)
 {
-    
-}
-
-void Transportation::calculateCommuteTimes()
-{
-    
+    switch(t)
+        {
+            case TAXI:
+                taxiCapacity += add;
+                break;
+            case BUS:
+                busCapacity += add;
+                break;
+            case TRAIN:
+                trainCapacity += add;
+                break;
+            case AIRPORT:
+                airportCapacity += add;
+                break;
+            default:
+                break;
+        
+        }
 }

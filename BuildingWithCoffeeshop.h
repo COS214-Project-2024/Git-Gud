@@ -45,9 +45,7 @@ public:
 
     virtual BuildingWithCoffeeShop* clone();
 
-private:
-
-    std::vector<Citizen*> workers;
+    virtual void addWorker();
 
 };
 

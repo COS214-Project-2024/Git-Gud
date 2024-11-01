@@ -38,6 +38,8 @@ public:
 
     virtual std::list<Citizen*> getTenants();
 
+    virtual void addWorker();
+
     virtual BuildingWithParking* clone();
 
 private:

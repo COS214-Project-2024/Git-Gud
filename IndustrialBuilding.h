@@ -13,11 +13,11 @@ class IndustrialBuilding : public Building{
         float pollutionLevel;
         
     public:
-        int getSize();
-        int getNumStories();
-        Industry getIndustryType();
-        float getPollutionLevel();
-        void addEmployees();
+        virtual int getSize();
+        virtual int getNumStories();
+        virtual Industry getIndustryType();
+        virtual float getPollutionLevel();
+        virtual void addEmployees();
 
     //protected: Changed to accomadte construction in factory
         IndustrialBuilding(int capacity, int size, int numStories, Industry industryType, int pollutionLevel);

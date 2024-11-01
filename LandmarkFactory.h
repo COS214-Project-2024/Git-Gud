@@ -9,8 +9,8 @@ class LandmarkFactory : public BuildingFactory
 private:
     
 public:
-    Building* constructBuilding() override;
-    Building* cloneBuilding() override;
+    LandmarkBuilding* constructBuilding() override;
+    LandmarkBuilding* cloneBuilding() override;
 };
 
 

@@ -29,6 +29,9 @@ $(TARGET): $(OBJ)
 test: $(TARGET)
 	./$(TARGET)
 
+valgrind:$(TARGET)
+	valgrind --leak-check=full --track-origins=yes ./$(TARGET)
+
 # Clean
 clean:
 	rm -f $(OBJ) $(TARGET)

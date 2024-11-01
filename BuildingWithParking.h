@@ -29,7 +29,7 @@ public:
      * @brief Construct a new Building With Parking object
      * 
      */
-    BuildingWithParking(){};
+    BuildingWithParking(){this->buildingState=nullptr;};
 
     /**
      * @brief Method used to provide additional service on top of the service from the Building-object being decorated
@@ -129,6 +129,8 @@ public:
      * @return BuildingWithParking* 
      */
     virtual BuildingWithParking* clone();
+
+    virtual ~BuildingWithParking(){};
 
 };
 

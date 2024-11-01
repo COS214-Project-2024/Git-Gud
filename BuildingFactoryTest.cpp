@@ -4,7 +4,7 @@
 
 TEST(CommercialBuildingFactoryTest, construct){
     BuildingFactory* f=new CommercialBuildingFactory();
-    CommercialBuilding* b=f->constructBuilding();
+    Building* b=f->constructBuilding();
     
     EXPECT_EQ(b->getBusinessType(), BusinessType::GENERAL);
 }

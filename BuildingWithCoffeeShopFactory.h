@@ -30,7 +30,7 @@ public:
      * @param b 
      * @return Building* 
      */
-    virtual Building* upgradeBuilding(Building* b);
+    virtual BuildingWithCoffeeShop* upgradeBuilding(Building* b);
 
     /**
      * @brief Method used to return a pointer to a copy of the desired Building object

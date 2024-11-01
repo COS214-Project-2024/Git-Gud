@@ -4,6 +4,7 @@ BuildingWithParking::BuildingWithParking(Building* b){
     this->building=b;
     this->building->setState(new UnderConstruction());
     this->capacity=2;
+    this->buildingState=nullptr;
 }
 
 void BuildingWithParking::provideService(){

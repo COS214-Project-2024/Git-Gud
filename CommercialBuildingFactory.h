@@ -9,8 +9,8 @@ class CommercialBuildingFactory : public BuildingFactory
 private:
     
 public:
-    Building* constructBuilding() override;
-    Building* cloneBuilding() override;
+    CommercialBuilding* constructBuilding() override;
+    CommercialBuilding* cloneBuilding() override;
 };
 
 

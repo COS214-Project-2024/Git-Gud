@@ -1,23 +1,49 @@
-CXXFLAGS = -std=c++17 -Wall -g
-GTEST_LIB = -lgtest -lgtest_main -pthread
+# Compiler
+CXX = g++
 
-# Source files and tests (only SubjectTest.cpp)
-SRC = TaxManager.cpp Subject.cpp ResidentialBuilding.cpp Landmark.cpp Citizen.cpp Building.cpp Education.cpp HealthCare.cpp LawEnforcement.cpp ResourceManager.cpp test_Resources.cpp test_ResourceManager.cpp test_Utility.cpp
-TEST_SRC = SubjectTest.cpp
+# Compiler flags
+CXXFLAGS = -std=c++11 -I/usr/include/gtest -I.
 
-# Output for tests
-TEST_BIN = test_suite
+# Linker flags
+LDFLAGS = -lgtest -lgtest_main -pthread
 
-# Build and link all tests
-all: $(TEST_BIN)
+# Source files
+COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp TrafficSimulation.cpp
 
-$(TEST_BIN): $(SRC) $(TEST_SRC)
-	$(CXX) $(CXXFLAGS) $(SRC) $(TEST_SRC) -o $(TEST_BIN) $(GTEST_LIB)
+# Test-specific source files
+TEST_SRC1 = test_Transport.cpp
+TEST_SRC2 = test_Resources.cpp  
+
+# Object files
+COMMON_OBJ = $(COMMON_SRC:.cpp=.o)
+OBJ1 = $(COMMON_OBJ) $(TEST_SRC1:.cpp=.o)
+OBJ2 = $(COMMON_OBJ) $(TEST_SRC2:.cpp=.o)
+
+# Executable names for each test
+TARGET1 = test_Transport
+TARGET2 = test_Resources
+
+# Build targets
+all: $(TARGET1) $(TARGET2)
+
+$(TARGET1): $(OBJ1)
+	$(CXX) $(OBJ1) -o $(TARGET1) $(LDFLAGS)
+
+$(TARGET2): $(OBJ2)
+	$(CXX) $(OBJ2) -o $(TARGET2) $(LDFLAGS)
+
+# Compile object files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Run tests
-test: $(TEST_BIN)
-	./$(TEST_BIN)
+transport: $(TARGET1)
+	./$(TARGET1)
 
-# Clean up generated files
+resources: $(TARGET2)
+	./$(TARGET2)
+
+# Clean
 clean:
-	rm -f $(TEST_BIN) *.o
+	rm -f $(COMMON_OBJ) $(OBJ1) $(OBJ2) $(TARGET1) $(TARGET2)
+

@@ -11,6 +11,7 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
+#include "Subject.h"
 #include "Citizen.h"
 #include "UnderConstruction.h"
 #include "BuildingState.h"
@@ -71,6 +72,8 @@ class Building : public Subject{
             std::list<Citizen*> c;
             return c;
         };
+
+        virtual void addWorker(){};
 
         virtual Building* clone()=0;
         int getCapacity();

@@ -1,5 +1,9 @@
 #include "Player.h"
 
+void Player::changeTaxRate(float tax){
+    taxMan->updateTotalTaxRate(tax);
+}
+
 void Player::taxResidentialBuildings(){
     taxMan->chooseTaxMethod(new TaxResidents);
     Balance = taxMan->calculateTax();
@@ -25,4 +29,8 @@ void Player::addIndustrialBuilding(IndustrialBuilding* industrialBuilding){
 
 void Player::addCommercialBuilding(CommercialBuilding* commercialBuilding){
     taxMan->addCommercial(commercialBuilding);
+}
+
+float Player::getBalance(){
+    return Balance;
 }

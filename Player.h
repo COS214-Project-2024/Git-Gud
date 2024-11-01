@@ -12,6 +12,8 @@ private:
     float Balance;
     TaxManager* taxMan;
 public:
+    void changeTaxRate(float tax);
+
     void taxResidentialBuildings();
     void taxIndustrialBuildings();
     void taxCommercialBuildings();
@@ -19,6 +21,8 @@ public:
     void addResidentialBuilding(ResidentialBuilding* residentialBuilding);
     void addIndustrialBuilding(IndustrialBuilding* industrialBuilding);
     void addCommercialBuilding(CommercialBuilding* commercialBuilding);
+
+    float getBalance();
 };
 
 

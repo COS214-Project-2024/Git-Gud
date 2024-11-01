@@ -26,6 +26,7 @@ void BuildingWithCoffeeShop::repairBuilding(){
 std::string BuildingWithCoffeeShop::currentState(){
     return this->building->currentState();
 }
+
 void BuildingWithCoffeeShop::simulateConstruction(){
     this->building->simulateConstruction();
 }

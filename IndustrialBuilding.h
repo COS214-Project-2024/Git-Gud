@@ -4,7 +4,7 @@
 #include "Building.h"
 #include "Subject.h"
 
-enum Industry {MANUFACTURING, ENERGY, TECHNOLOGY};
+//enum Industry {MANUFACTURING, ENERGY, TECHNOLOGY};
 
 class IndustrialBuilding : public Building{
     
@@ -23,7 +23,7 @@ class IndustrialBuilding : public Building{
 
     //protected: Changed to accomadte construction in factory
         IndustrialBuilding(int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
-        IndustrialBuilding(BuildingState* s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
+        IndustrialBuilding(std::unique_ptr<BuildingState> s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
 
         virtual void provideService() override;
         virtual float getCost() override;

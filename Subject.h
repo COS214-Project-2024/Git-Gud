@@ -16,9 +16,11 @@ class Subject{
         std::vector<Citizen*> observerList;
 
     protected:
-        static std::vector<Citizen*> allCitizens;
+        
 
     public:
+        static std::vector<Citizen*> allCitizens;
+
         void attach(Citizen* observer);
         void detach(Citizen* observer);
         void notify(ChangeData changeData);

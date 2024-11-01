@@ -1,9 +1,11 @@
 #include "IndustrialBuilding.h"
 #include "Citizen.h"
+#include <iostream>
+#include <memory>
 
-IndustrialBuilding::IndustrialBuilding(BuildingState *s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel):Building(capacity){
+IndustrialBuilding::IndustrialBuilding(std::unique_ptr<BuildingState> s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel):Building(capacity){
 
-    this->buildingState = s;
+    this->setState(std::move(s));
 
     this->size = size;
     this->numStories = numStories;
@@ -18,6 +20,8 @@ IndustrialBuilding::IndustrialBuilding(int capacity, int size, int numStories, I
     this->numStories = numStories;
     this->industryType = industryType;
     this->pollutionLevel = pollutionLevel;
+
+    this->setState(std::make_unique<UnderConstruction>());
 
 }
 

@@ -10,9 +10,9 @@ ResidentialBuilding::ResidentialBuilding(int capacity):Building(capacity){
 
 }
 
-ResidentialBuilding::ResidentialBuilding(BuildingState* s, int capacity): Building(capacity){
+ResidentialBuilding::ResidentialBuilding(std::unique_ptr<BuildingState> s, int capacity): Building(capacity){
 
-    this->buildingState = s;
+    setState(std::move(s));
 
 }
 

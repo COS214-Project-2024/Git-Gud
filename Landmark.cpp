@@ -18,11 +18,13 @@ LandmarkBuilding::LandmarkBuilding(int capacity):Building(capacity){
 
     }
 
+    this->setState(std::make_unique<UnderConstruction>());
+
 }
 
-LandmarkBuilding::LandmarkBuilding(BuildingState *s, int capacity): Building(capacity){
+LandmarkBuilding::LandmarkBuilding(std::unique_ptr<BuildingState> s, int capacity): Building(capacity){
 
-    this->buildingState = s;
+    setState(std::move(s));
 
 }
 

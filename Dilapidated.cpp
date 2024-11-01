@@ -16,7 +16,7 @@ void Dilapidated::exitState(Building *building){
 
 void Dilapidated::nextState(Building *building){
 
-    building->setState(new Operational());
+    building->setState(std::unique_ptr<Operational>());
 
 }
 

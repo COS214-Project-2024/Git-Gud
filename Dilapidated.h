@@ -8,6 +8,7 @@ class Dilapidated : public BuildingState{
     public:
 
         Dilapidated() = default;  
+        ~Dilapidated(){};
 
         void enterState(Building *building) override;
         void exitState(Building* building) override;

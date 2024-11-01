@@ -28,6 +28,7 @@ class Subject{
 
         int getObserverListSize();
         int getNumCitizens();
+        std::vector<Citizen*> getObserverList();
 
 };
 

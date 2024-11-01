@@ -15,6 +15,8 @@
 #include "UnderConstruction.h"
 #include "BuildingState.h"
 #include <list>
+#include <memory>
+#include <future>
 
 enum BusinessType {LUXURY, FOOD, GENERAL, NONE};
 
@@ -27,7 +29,9 @@ class Building : public Subject{
         int capacity;
 
         /// @brief State of the Building
-        BuildingState* buildingState;
+        std::unique_ptr<BuildingState> buildingState;
+
+        std::future<void> constructionFuture; //used as part of the simulateConstruction() function
 
     public:
     
@@ -42,7 +46,7 @@ class Building : public Subject{
         /// @return int
         virtual float getCost() = 0; 
 
-        virtual void setState(BuildingState* s);
+        virtual void setState(std::unique_ptr<BuildingState> s);
 
         virtual void repairBuilding();
 
@@ -53,7 +57,7 @@ class Building : public Subject{
         // Added these methods to ensure the type is preserved after decorated
         virtual int getNumStories(){return 0;};
 
-        virtual BusinessType getBusinessType(){NONE;};
+        virtual BusinessType getBusinessType(){return NONE;};
 
         virtual void addEmployees(){};
 
@@ -69,6 +73,7 @@ class Building : public Subject{
         };
 
         virtual Building* clone()=0;
+        int getCapacity();
 
 };
 

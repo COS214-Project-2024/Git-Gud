@@ -17,7 +17,7 @@ void UnderConstruction::exitState(Building *building){
 
 void UnderConstruction::nextState(Building *building){
 
-    building->setState(new Operational());
+    building->setState(std::unique_ptr<Operational>());
 
 }
 

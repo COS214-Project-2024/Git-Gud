@@ -1,5 +1,18 @@
 #include "PrototypeManager.h"
 
+PrototypeManager::PrototypeManager(){
+    capacity = 10;
+    size = 0;
+    prototypeBuildings = new Building*[capacity];
+}
+
+PrototypeManager::~PrototypeManager(){
+    for (int i = 0; i < size; ++i) {
+        delete prototypeBuildings[i];
+    }
+    delete[] prototypeBuildings;
+}
+
 void PrototypeManager::addPrototype(Building* p){
 
 }

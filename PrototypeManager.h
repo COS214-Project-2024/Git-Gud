@@ -10,6 +10,8 @@ private:
     int capacity, size;
     void resizeArray(int newCapacity);
 public:
+    PrototypeManager();
+    ~PrototypeManager();
     void addPrototype(Building* p);
     void removePrototype(Building* p);
     Building* getPrototype();    

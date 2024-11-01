@@ -69,6 +69,8 @@ class Building : public Subject{
             return c;
         };
 
+        virtual void addWorker(){};
+
         virtual Building* clone()=0;
 
 };

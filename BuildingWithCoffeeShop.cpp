@@ -3,6 +3,7 @@
 BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
     this->building=b;
     this->building->setState(new UnderConstruction());
+    this->capacity=1;
 }
 
 void BuildingWithCoffeeShop::provideService(){
@@ -55,6 +56,40 @@ void BuildingWithCoffeeShop::addCitizens(){
 
 std::list<Citizen*> BuildingWithCoffeeShop::getTenants(){
     this->building->getTenants();
+}
+
+void BuildingWithCoffeeShop::addWorker(){
+    if(allCitizens.empty()){
+
+        std::cout << "No citizens to attach." << std::endl;
+        return;
+
+    }
+
+    int EmployeesAdded = 0;
+
+    for(Citizen* citizen: allCitizens){
+
+        if(EmployeesAdded >= capacity){
+
+            break;
+
+        }
+
+        if(citizen->getHasJob() == false){
+
+            this->building->attach(citizen);
+            citizen->setJobStatus(true);
+            EmployeesAdded++;
+
+        }
+
+    }
+
+    ChangeData changeData = {"BuildingConstructed", 2.0f};
+
+    notify(changeData);
+
 }
 
 BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone(){

@@ -17,7 +17,7 @@ TEST(ParkingDecoratorTest, Service){
     Building* b=new IndustrialBuilding(50,100,3,Industry::ENERGY,2);
     Decorator* d=new BuildingWithParking(b);
     
-    std::stirngstream buffer;
+    std::stringstream buffer;
     std::streambuf* oldBuf=std::cout.rdbuf(buffer.rdbuf());
 
     d->provideService();

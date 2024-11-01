@@ -42,7 +42,7 @@ public:
         {
             return false;
         }
-        if (head->utility->getType() == type)
+        if (head->utility->getUtilityType() == type)
         {
             Node* temp = head;
             head = head->next;
@@ -53,7 +53,7 @@ public:
         Node* previous = nullptr;
         while (current != nullptr)
         {
-            if (current->utility->getType() == type)
+            if (current->utility->getUtilityType() == type)
             {
                 previous->next = current->next;
                 delete current;
@@ -65,7 +65,7 @@ public:
 
     bool add(Utility* utility)
     {
-        remove(utility->getType());//Calling remove first to avoid duplicate utilities. Minimize traversals
+        remove(utility->getUtilityType());//Calling remove first to avoid duplicate utilities. Minimize traversals
         Node* newNode = new Node;
         newNode->utility = utility;
         newNode->next = head;
@@ -83,7 +83,7 @@ public:
         Node* current = head;
         while (current != nullptr)
         {
-            if (current->utility->getType() == type)
+            if (current->utility->getUtilityType() == type)
             {
                 return current->utility;
             }

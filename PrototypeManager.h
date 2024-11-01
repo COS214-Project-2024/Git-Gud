@@ -6,11 +6,13 @@
 class PrototypeManager
 {
 private:
-    Building* buildings;
+    Building** prototypeBuildings;
+    int capacity, size;
+    void resizeArray(int newCapacity);
 public:
     void addPrototype(Building* p);
     void removePrototype(Building* p);
-    Building* getPrototype();
+    Building* getPrototype();    
 };
 
 #endif // PROTOTYPEMANAGER_H

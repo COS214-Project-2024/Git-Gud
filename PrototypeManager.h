@@ -14,7 +14,9 @@ public:
     ~PrototypeManager();
     void addPrototype(Building* p);
     bool removePrototype(Building* p);
-    Building* getPrototype(Building* p) const;    
+    Building* getPrototype(Building* p) const;
+    int getSize() const { return size; } 
+    int getCapacity() const { return capacity; }  
 };
 
 #endif // PROTOTYPEMANAGER_H

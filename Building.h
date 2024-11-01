@@ -36,7 +36,7 @@ class Building : public Subject{
     
         Building(int capacity);
         Building();
-        virtual ~Building() = default;
+        virtual ~Building();
 
         virtual Building* clone() const = 0;
 

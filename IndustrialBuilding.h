@@ -28,6 +28,8 @@ class IndustrialBuilding : public Building{
         virtual void provideService() override;
         virtual float getCost() override;
 
+        virtual IndustrialBuilding* clone() const override;
+
 };
 
 

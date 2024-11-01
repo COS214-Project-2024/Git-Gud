@@ -7,4 +7,8 @@ Building* BuildingWithCoffeeShopFactory::upgradeBuilding(Building* b){
     return b;
 }
 
+BuildingWithCoffeeShop* BuildingWithCoffeeShopFactory::cloneBuilding(){
+    return dynamic_cast<BuildingWithCoffeeShop*>(building)->clone();
+}
+
 

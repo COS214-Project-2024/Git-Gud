@@ -8,13 +8,13 @@ CXXFLAGS = -std=c++11 -I/usr/include/gtest -I.
 LDFLAGS = -lgtest -lgtest_main -pthread
 
 # Source files
-SRC = test_Transport.cpp Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp TrafficSimulation.cpp
+SRC = DecoratorTest.cpp Building.cpp BuildingWithParking.cpp BuildingWithCoffeeShop.cpp ResidentialBuilding.cpp IndustrialBuilding.cpp CommercialBuilding.cpp Subject.cpp Citizen.cpp Decorator.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp Neutral.cpp Dissatisfied.cpp Satisfied.cpp VeryDissatisfied.cpp VerySatisfied.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
 
 # Executable name
-TARGET = test_Transport
+TARGET = test_decorator
 
 # Build target
 all: $(TARGET)

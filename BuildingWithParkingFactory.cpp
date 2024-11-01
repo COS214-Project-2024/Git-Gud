@@ -6,3 +6,7 @@ Building* BuildingWithParkingFactory::upgradeBuilding(Building* b){
     }
     return b;
 }
+
+BuildingWithParking* BuildingWithParkingFactory::cloneBuilding(){
+    return dynamic_cast<BuildingWithParking*>(building)->clone();
+}

@@ -29,7 +29,7 @@ public:
      * @brief Construct a new Building With Coffee Shop object
      * 
      */
-    BuildingWithCoffeeShop();
+    BuildingWithCoffeeShop(){};
 
     /**
      * @brief Method used to provide a service to the Citizens in the decorated Building

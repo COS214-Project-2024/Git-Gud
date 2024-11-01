@@ -39,7 +39,7 @@ public:
     }
 
     TrafficBuilding* clone(){
-        TrafficBuilding* temp= new TrafficBuilding(this->capacity, this->getTransportType(), this->cost);
+        TrafficBuilding* temp = new TrafficBuilding(this->capacity, this->getTransportType(), this->cost);
         return temp;
     }
 

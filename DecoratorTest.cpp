@@ -8,14 +8,14 @@
 
 TEST(CoffeeDecoratorTest, Cost){
     Building* c=new CommercialBuilding(50, 100, 3, BusinessType::FOOD);
-    Decorator* d=new BuildingWithCoffeeShop(c);
+    Building* d=new BuildingWithCoffeeShop(c);
     float f=55000;
     EXPECT_EQ(d->getCost(), f);
 }
 
 TEST(ParkingDecoratorTest, Service){
     Building* b=new IndustrialBuilding(50,100,3,Industry::ENERGY,2);
-    Decorator* d=new BuildingWithParking(b);
+    Building* d=new BuildingWithParking(b);
     
     std::stringstream buffer;
     std::streambuf* oldBuf=std::cout.rdbuf(buffer.rdbuf());
@@ -29,7 +29,23 @@ TEST(ParkingDecoratorTest, Service){
 
 TEST(DecoratorStateTest, State){
     Building* b= new ResidentialBuilding(new UnderConstruction(),5);
-    Decorator* d=new BuildingWithCoffeeShop(b);
+    Building* d=new BuildingWithCoffeeShop(b);
 
     EXPECT_EQ(d->currentState(), "UnderConstruction");
+}
+
+TEST(DecorateDecorator, Service){
+    Building* b=new ResidentialBuilding(50);
+    Building* d=new BuildingWithCoffeeShop(b);
+    Building* dd=new BuildingWithParking(d);
+
+    std::stringstream buffer;
+    std::streambuf* oldBuf=std::cout.rdbuf(buffer.rdbuf());
+
+    dd->provideService();
+
+    std::cout.rdbuf(oldBuf);
+
+    EXPECT_EQ(buffer.str(), "Provide services to residents and serves coffee and provides parking");
+    
 }

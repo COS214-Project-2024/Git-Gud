@@ -36,8 +36,6 @@ class Building : public Subject{
         Building();
         virtual ~Building();
 
-        virtual Building* clone() const = 0;
-
         /// @brief Generic function that provides a service to it's Citizens (e.g. CommercialBuilding wou,,d pay it's Citizens)
         virtual void provideService()=0;
 

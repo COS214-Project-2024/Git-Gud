@@ -96,3 +96,9 @@ void IndustrialBuilding::addEmployees(){
     notify(changeData);
 
 }
+
+IndustrialBuilding* IndustrialBuilding::clone() const{
+
+    return new IndustrialBuilding(*this);
+
+}

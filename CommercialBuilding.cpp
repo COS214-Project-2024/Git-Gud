@@ -88,3 +88,9 @@ void CommercialBuilding::addEmployees(){
     notify(changeData);
 
 }
+
+CommercialBuilding* CommercialBuilding::clone() const{
+
+    return new CommercialBuilding(*this);
+
+}

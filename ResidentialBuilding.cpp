@@ -57,3 +57,9 @@ void ResidentialBuilding::addCitizens(){
 std::list<Citizen*> ResidentialBuilding::getTenants(){
     return tenants;
 }
+
+ResidentialBuilding* ResidentialBuilding::clone() const{
+
+    return new ResidentialBuilding(*this);
+
+}

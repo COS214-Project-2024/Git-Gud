@@ -37,3 +37,9 @@ float LandmarkBuilding::getCost(){
     return 75000;
     
 }
+
+LandmarkBuilding* LandmarkBuilding::clone() const{
+
+    return new LandmarkBuilding(*this);
+
+}

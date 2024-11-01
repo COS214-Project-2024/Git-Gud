@@ -21,5 +21,6 @@ float TraficBuilding::getCost(){
 
 TraficBuilding* TraficBuilding::clone(){
     TraficBuilding* temp=new TraficBuilding();
+    temp->capacity=this->capacity;
     return temp;
 }

@@ -16,6 +16,9 @@ private:
     float cost;
 
 public:
+
+    TrafficBuilding(int capacity, TransportType transportType, float cost) : Building(capacity), tType(transportType), cost(cost){};
+
     // Updated constructor to match the factory arguments
     TrafficBuilding(BuildingState *s, int capacity, TransportType transportType, float cost)
         : Building(capacity), tType(transportType), cost(cost) {
@@ -33,6 +36,11 @@ public:
 
     TransportType getTransportType() const {
         return tType;
+    }
+
+    TrafficBuilding* clone(){
+        TrafficBuilding* temp= new TrafficBuilding(this->capacity, this->getTransportType(), this->cost);
+        return temp;
     }
 
     

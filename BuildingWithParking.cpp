@@ -3,6 +3,7 @@
 BuildingWithParking::BuildingWithParking(Building* b){
     this->building=b;
     this->building->setState(new UnderConstruction());
+    this->capacity=2;
 }
 
 void BuildingWithParking::provideService(){
@@ -56,6 +57,40 @@ void BuildingWithParking::addCitizens(){
 
 std::list<Citizen*> BuildingWithParking::getTenants(){
     this->building->getTenants();
+}
+
+void BuildingWithParking::addWorker(){
+    if(allCitizens.empty()){
+
+        std::cout << "No citizens to attach." << std::endl;
+        return;
+
+    }
+
+    int EmployeesAdded = 0;
+
+    for(Citizen* citizen: allCitizens){
+
+        if(EmployeesAdded >= capacity){
+
+            break;
+
+        }
+
+        if(citizen->getHasJob() == false){
+
+            this->building->attach(citizen);
+            citizen->setJobStatus(true);
+            EmployeesAdded++;
+
+        }
+
+    }
+
+    ChangeData changeData = {"BuildingConstructed", 2.0f};
+
+    notify(changeData);
+
 }
 
 BuildingWithParking* BuildingWithParking::clone(){

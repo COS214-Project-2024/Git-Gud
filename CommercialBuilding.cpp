@@ -3,7 +3,7 @@
 
 CommercialBuilding::CommercialBuilding(BuildingState *s, int capacity, int size, int numStores, BusinessType businessType): Building(capacity){
 
-    this->buildingState = s;
+    this->setState(s);
 
     this->size = size;
     this->numStories = numStories;
@@ -62,6 +62,13 @@ BusinessType CommercialBuilding::getBusinessType(){
 }
 
 void CommercialBuilding::addEmployees(){
+
+    if(allCitizens.empty()){
+
+        std::cout << "No citizens to attach." << std::endl;
+        return;
+
+    }
 
     int EmployeesAdded = 0;
 

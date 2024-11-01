@@ -7,7 +7,7 @@
 
 void Building::setState(BuildingState* s){
 
-    if(this->buildingState != NULL){
+    if(this->buildingState != nullptr){
 
         delete this->buildingState;
 
@@ -20,6 +20,10 @@ void Building::setState(BuildingState* s){
 Building::Building(){
 
     capacity = 30;
+    this->setState(new UnderConstruction);
+
+    //allows thread to run concurrently and seperately from the rest
+    std::thread(&Building::simulateConstruction, this).detach();
 
 }
 
@@ -85,7 +89,7 @@ void Building::repairBuilding(){
 void Building::simulateConstruction(){ //possible issue here: Building could be destructed during 30 second period
 
     //Simulates 30 second waiting period for building construction
-    std::this_thread::sleep_for(std::chrono::seconds(30));
+    std::this_thread::sleep_for(std::chrono::seconds(5));
     setState(new Operational());
 
 }

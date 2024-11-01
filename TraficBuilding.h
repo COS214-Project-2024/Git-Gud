@@ -18,6 +18,8 @@ class TraficBuilding: public Building{
 
         virtual float getCost() override;
 
+        virtual TraficBuilding* clone();
+
 };
 
 #endif // TRAFICBUILDING_H

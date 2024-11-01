@@ -14,6 +14,11 @@
 #include "Citizen.h"
 #include "UnderConstruction.h"
 #include "BuildingState.h"
+#include <list>
+
+enum BusinessType {LUXURY, FOOD, GENERAL, NONE};
+
+enum Industry {MANUFACTURING, ENERGY, TECHNOLOGY};
 
 class Building : public Subject{
 
@@ -23,14 +28,6 @@ class Building : public Subject{
 
         /// @brief State of the Building
         BuildingState* buildingState;
-
-        /// @brief Units of water consumed
-        int water;
-
-        /// @brief Units of power consumed
-        int power;
-
-        int cost;
 
     public:
     
@@ -52,6 +49,26 @@ class Building : public Subject{
         virtual std::string currentState();
 
         virtual void simulateConstruction();
+
+        // Added these methods to ensure the type is preserved after decorated
+        virtual int getNumStories(){return 0;};
+
+        virtual BusinessType getBusinessType(){NONE;};
+
+        virtual void addEmployees(){};
+
+        virtual int getSize(){return 0;};
+
+        virtual float getPollutionLevel(){return 0;};
+
+        virtual void addCitizens(){};
+
+        virtual std::list<Citizen*> getTenants(){
+            std::list<Citizen*> c;
+            return c;
+        };
+
+        virtual Building* clone()=0;
 
 };
 

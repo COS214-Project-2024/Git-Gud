@@ -11,6 +11,10 @@ public:
     // The interface that supports the upgradeBuilding operation must check if there are enough resources
     BuildingWithCoffeeShop(Building* b);
 
+    BuildingWithCoffeeShop();
+
+    //BuildingWithCoffeeShop(const BuildingWithCoffeeShop& other);
+
     virtual void provideService();
 
     virtual float getCost();
@@ -24,6 +28,22 @@ public:
     virtual void simulateConstruction();
 
     virtual ~BuildingWithCoffeeShop(){};
+
+    virtual int getNumStories();
+
+    virtual BusinessType getBusinessType();
+
+    virtual void addEmployees();
+
+    virtual int getSize();
+
+    virtual float getPollutionLevel();
+
+    virtual void addCitizens();
+
+    virtual std::list<Citizen*> getTenants();
+
+    virtual BuildingWithCoffeeShop* clone();
 
 private:
 

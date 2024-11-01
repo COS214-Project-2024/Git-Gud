@@ -18,6 +18,8 @@ class LandmarkBuilding : public Building{
         virtual void provideService() override;
         virtual float getCost() override;
 
+        virtual LandmarkBuilding* clone();
+
 };
 
 

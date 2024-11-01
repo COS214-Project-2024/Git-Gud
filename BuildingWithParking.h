@@ -10,6 +10,8 @@ public:
 
     BuildingWithParking(Building* b);
 
+    BuildingWithParking();
+
     virtual void provideService();
 
     virtual float getCost();
@@ -22,9 +24,23 @@ public:
 
     virtual void simulateConstruction();
 
-private:
+    virtual int getNumStories();
 
-    Building* building;
+    virtual BusinessType getBusinessType();
+
+    virtual void addEmployees();
+
+    virtual int getSize();
+
+    virtual float getPollutionLevel();
+
+    virtual void addCitizens();
+
+    virtual std::list<Citizen*> getTenants();
+
+    virtual BuildingWithParking* clone();
+
+private:
 
     std::vector<Citizen*> workers;
 

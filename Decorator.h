@@ -15,6 +15,8 @@ public:
 
     virtual float getCost()=0;
 
+    virtual Decorator* clone()=0;
+
     virtual ~Decorator();
 
 };

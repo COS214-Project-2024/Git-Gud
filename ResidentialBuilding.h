@@ -23,6 +23,8 @@ class ResidentialBuilding : public Building{
 
         std::list<Citizen*> getTenants();
 
+        virtual ResidentialBuilding* clone();
+
 };
 
 

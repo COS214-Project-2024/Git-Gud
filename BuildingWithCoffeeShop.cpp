@@ -2,17 +2,16 @@
 
 BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
     this->building=b;
-    this->setState(new UnderConstruction());
-    this->cost=10000;
+    this->building->setState(new UnderConstruction());
 }
 
 void BuildingWithCoffeeShop::provideService(){
     this->building->provideService();
-    std::cout << "and serves coffee" << std::endl;
+    std::cout << " and serves coffee" << std::endl;
 }
 
 float BuildingWithCoffeeShop::getCost(){
-    return this->cost+this->building->getCost();
+    return 5000+this->building->getCost();
 }
 
 void BuildingWithCoffeeShop::setState(BuildingState* s){
@@ -28,4 +27,39 @@ std::string BuildingWithCoffeeShop::currentState(){
 }
 void BuildingWithCoffeeShop::simulateConstruction(){
     this->building->simulateConstruction();
+}
+
+int BuildingWithCoffeeShop::getNumStories(){
+    return this->building->getNumStories();
+}
+
+BusinessType BuildingWithCoffeeShop::getBusinessType(){
+    return this->building->getBusinessType();
+}
+
+void BuildingWithCoffeeShop::addEmployees(){
+    this->building->addEmployees();
+}
+
+int BuildingWithCoffeeShop::getSize(){
+    return this->building->getSize();
+}
+
+float BuildingWithCoffeeShop::getPollutionLevel(){
+    return this->building->getPollutionLevel();
+}
+
+void BuildingWithCoffeeShop::addCitizens(){
+    this->building->addCitizens();
+}
+
+std::list<Citizen*> BuildingWithCoffeeShop::getTenants(){
+    this->building->getTenants();
+}
+
+BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone(){
+    BuildingWithCoffeeShop* b=new BuildingWithCoffeeShop();
+    Building* temp=this->building->clone();
+    b->building=temp;
+    return b;
 }

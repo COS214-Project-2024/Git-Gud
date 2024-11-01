@@ -37,3 +37,9 @@ float LandmarkBuilding::getCost(){
     return 75000;
     
 }
+
+LandmarkBuilding* LandmarkBuilding::clone(){
+    LandmarkBuilding* temp=new LandmarkBuilding(this->capacity);
+    temp->landmarkName=this->landmarkName;
+    return temp;
+}

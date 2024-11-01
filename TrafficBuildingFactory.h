@@ -21,7 +21,7 @@ public:
             case TRAIN:
                 cost = 50000;
                 break;
-            case AIRPLANE:
+            case AIRPORT:
                 cost = 100000;
                 break;
             default:

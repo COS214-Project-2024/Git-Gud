@@ -18,6 +18,27 @@ public:
 
     // Initializes traffic flow if validation passes for each type
     void initializeTrafficFlow();
+
+    std::string getTransportTypeString(TransportType t)  {
+        switch(t)
+        {
+            case TAXI:
+                return "Taxi";
+                break;
+            case BUS:
+                return "Bus";
+                break;
+            case TRAIN:
+                return "Train";
+                break;
+            case AIRPORT:
+                return "Airplane";
+                break;
+            default:
+                return "No type";
+        
+        }
+    }
 };
 
 #endif // TRAFFICSIMULATION_H

@@ -7,7 +7,7 @@ enum TransportType {
     TAXI,
     BUS,
     TRAIN,
-    AIRPLANE
+    AIRPORT
 };
 
 class TrafficBuilding : public Building {
@@ -34,6 +34,9 @@ public:
     TransportType getTransportType() const {
         return tType;
     }
+
+    
+
 };
 
 #endif // TRAFFICBUILDING_H

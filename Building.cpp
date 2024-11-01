@@ -64,7 +64,3 @@ void Building::simulateConstruction(){
     setState(new Operational());
 
 }
-
-int Building::getCapacity(){
-    return capacity;
-}

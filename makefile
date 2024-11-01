@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++11 -I/usr/include/gtest -I.
 LDFLAGS = -lgtest -lgtest_main -pthread
 
 # Source files
-SRC = test_Transport.cpp  TrafficSimulation.cpp
+SRC = test_Transport.cpp Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp TrafficSimulation.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)

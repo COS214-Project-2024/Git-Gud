@@ -1,4 +1,5 @@
 #include "Transportation.h"
+#include "Subject.h"
 #include <iostream>
 
 void Transportation::updateCapacity(TransportType t, int add)
@@ -21,4 +22,25 @@ void Transportation::updateCapacity(TransportType t, int add)
                 break;
         
         }
+}
+
+TrafficFlow Transportation::calculateTrafficFlow()
+{
+    /*
+    int remain = getNumCitizens() % getNumStations();
+
+    switch(remain)
+    {
+        case remain == 0:
+            currentFlow = HIGH;
+        break;
+
+        case remain < 1:
+            currentFlow = MODERATE;
+        break;
+
+        case remain > 1:
+            currentFlow = LOW;
+    }
+    */
 }

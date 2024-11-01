@@ -14,23 +14,31 @@ PrototypeManager::~PrototypeManager(){
 }
 
 void PrototypeManager::addPrototype(Building* p){
+    if (p == nullptr)
+    {
+        return;
+    }
+    
     if (size >= capacity) {
-        resizeArray(capacity * 2);
+        resizeArray();
     }
     prototypeBuildings[size++] = p;
 }
 
 bool PrototypeManager::removePrototype(Building* p){
-    for (int i = 0; i < size; ++i) {
-        if (prototypeBuildings[i] == p) {
-            delete prototypeBuildings[i];
-            for (int j = i; j < size - 1; ++j) {
-                prototypeBuildings[j] = prototypeBuildings[j + 1];
+    if (p != nullptr)   
+    {  
+        for (int i = 0; i < size; ++i) {
+            if (prototypeBuildings[i] == p) {
+                //delete prototypeBuildings[i];
+                for (int j = i; j < size - 1; ++j) {
+                    prototypeBuildings[j] = prototypeBuildings[j + 1];
+                }
+                --size;
+                return true;
             }
-            --size;
-            return true;
         }
-    }
+    } 
     return false;
 }
 
@@ -43,7 +51,8 @@ Building* PrototypeManager::getPrototype(Building* p) const{
     return nullptr;
 }
 
-void PrototypeManager::resizeArray(int newCapacity) {
+void PrototypeManager::resizeArray() {
+    int newCapacity = capacity * 2;
     Building** newPrototypes = new Building*[newCapacity];
     for (int i = 0; i < size; ++i) {
         newPrototypes[i] = prototypeBuildings[i];

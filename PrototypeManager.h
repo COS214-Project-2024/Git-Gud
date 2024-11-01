@@ -8,7 +8,7 @@ class PrototypeManager
 private:
     Building** prototypeBuildings;
     int capacity, size;
-    void resizeArray(int newCapacity);
+    void resizeArray();
 public:
     PrototypeManager();
     ~PrototypeManager();

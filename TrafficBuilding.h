@@ -27,10 +27,6 @@ public:
         //Call function to increase satisfaction
     }
 
-    int getCapacity() override {
-        return capacity;
-    }
-
     float getCost() override {
         return cost;
     }

@@ -11,6 +11,7 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
+#include "Subject.h"
 #include "Citizen.h"
 #include "UnderConstruction.h"
 #include "BuildingState.h"
@@ -46,7 +47,7 @@ class Building : public Subject{
 
         /// @brief  Get the capacity of the Building
         /// @return int
-        virtual int getCapacity() = 0; 
+        int getCapacity(); 
 
         virtual void setState(BuildingState* s);
         void repairBuilding();

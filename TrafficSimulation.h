@@ -8,17 +8,15 @@
 
 class TrafficSimulation {
 private:
-    // Stores traffic buildings by type
     std::unordered_map<TransportType, std::vector<std::unique_ptr<TrafficBuilding>>> trafficBuildings;
 
 public:
-    // Adds a new TrafficBuilding to the simulation
     void addTrafficBuilding(TransportType type, int capacity);
 
-    // Ensures at least two of each TrafficBuilding type are present
-    bool validateTrafficBuildings() const;
+    // Validates if there are at least two buildings of the specified type
+    bool validateTrafficBuildings(TransportType type) const;
 
-    // Initializes traffic flow if validation passes
+    // Initializes traffic flow if validation passes for each type
     void initializeTrafficFlow();
 };
 

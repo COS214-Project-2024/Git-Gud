@@ -2,6 +2,7 @@
 #define TRANSPORTATION_H
 
 #include "PublicService.h"
+#include "TrafficBuilding.h"
 
 class Transportation : public PublicService {
 private:
@@ -10,9 +11,9 @@ private:
     int trainCapacity;
     int airportCapacity;
 public:
-    void provideService() override;
-    //void manageTrafficFlow();
-    //void calculateCommuteTimes();
+    //Increase amount of each transport type
+    //Used to calculate the traffic flow for all the citizens using that transport type
+    void updateCapacity(TransportType t, int add);
 };
 
 #endif  // TRANSPORTATION_H

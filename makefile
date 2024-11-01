@@ -1,23 +1,34 @@
-CXXFLAGS = -std=c++17 -Wall -g
-GTEST_LIB = -lgtest -lgtest_main -pthread
+# Compiler
+CXX = g++
 
-# Source files and tests (only SubjectTest.cpp)
-SRC = TaxManager.cpp Subject.cpp ResidentialBuilding.cpp Landmark.cpp Citizen.cpp Building.cpp Education.cpp HealthCare.cpp LawEnforcement.cpp ResourceManager.cpp test_Resources.cpp test_ResourceManager.cpp test_Utility.cpp
-TEST_SRC = SubjectTest.cpp
+# Compiler flags
+CXXFLAGS = -std=c++11 -I/usr/include/gtest -I.
 
-# Output for tests
-TEST_BIN = test_suite
+# Linker flags
+LDFLAGS = -lgtest -lgtest_main -pthread
 
-# Build and link all tests
-all: $(TEST_BIN)
+# Source files
+SRC = test_Transport.cpp Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp TrafficSimulation.cpp
 
-$(TEST_BIN): $(SRC) $(TEST_SRC)
-	$(CXX) $(CXXFLAGS) $(SRC) $(TEST_SRC) -o $(TEST_BIN) $(GTEST_LIB)
+# Object files
+OBJ = $(SRC:.cpp=.o)
+
+# Executable name
+TARGET = test_Transport
+
+# Build target
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(OBJ) -o $(TARGET) $(LDFLAGS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Run tests
-test: $(TEST_BIN)
-	./$(TEST_BIN)
+test: $(TARGET)
+	./$(TARGET)
 
-# Clean up generated files
+# Clean
 clean:
-	rm -f $(TEST_BIN) *.o
+	rm -f $(OBJ) $(TARGET)

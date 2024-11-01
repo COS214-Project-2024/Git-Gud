@@ -13,7 +13,7 @@ public:
     PrototypeManager();
     ~PrototypeManager();
     void addPrototype(Building* p);
-    void removePrototype(Building* p);
+    bool removePrototype(Building* p);
     Building* getPrototype();    
 };
 

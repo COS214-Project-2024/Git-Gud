@@ -14,11 +14,24 @@ PrototypeManager::~PrototypeManager(){
 }
 
 void PrototypeManager::addPrototype(Building* p){
-
+    if (size >= capacity) {
+        resizeArray(capacity * 2);
+    }
+    prototypeBuildings[size++] = p;
 }
 
-void PrototypeManager::removePrototype(Building* p){
-
+bool PrototypeManager::removePrototype(Building* p){
+    for (int i = 0; i < size; ++i) {
+        if (prototypeBuildings[i] == p) {
+            delete prototypeBuildings[i];
+            for (int j = i; j < size - 1; ++j) {
+                prototypeBuildings[j] = prototypeBuildings[j + 1];
+            }
+            --size;
+            return true;
+        }
+    }
+    return false;
 }
 
 Building* PrototypeManager::getPrototype(){

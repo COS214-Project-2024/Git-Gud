@@ -2,7 +2,7 @@ CXXFLAGS = -std=c++17 -Wall -g
 GTEST_LIB = -lgtest -lgtest_main -pthread
 
 # Source files and tests (only SubjectTest.cpp)
-SRC = TaxManager.cpp Subject.cpp ResidentialBuilding.cpp Landmark.cpp Citizen.cpp Building.cpp Education.cpp HealthCare.cpp LawEnforcement.cpp ResourceManager.cpp test_Resources.cpp test_ResourceManager.cpp test_Utility.cpp
+SRC = Building.cpp TrafficSimulation.cpp test_Transport.cpp
 TEST_SRC = SubjectTest.cpp
 
 # Output for tests

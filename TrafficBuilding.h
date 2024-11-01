@@ -23,7 +23,12 @@ public:
     }
 
     void provideService() override {
-        // Implement service specific to each TransportType
+        std::cout << "Transportation has been provided to neighbouring buildings.\nIncrease citizen satisfaction";
+        //Call function to increase satisfaction
+    }
+
+    int getCapacity() override {
+        return capacity;
     }
 
     float getCost() override {

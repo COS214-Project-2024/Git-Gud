@@ -44,6 +44,10 @@ class Building : public Subject{
         /// @return int
         virtual float getCost() = 0; 
 
+        /// @brief  Get the capacity of the Building
+        /// @return int
+        virtual int getCapacity() = 0; 
+
         virtual void setState(BuildingState* s);
         void repairBuilding();
         std::string currentState();

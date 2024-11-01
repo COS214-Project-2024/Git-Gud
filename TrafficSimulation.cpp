@@ -3,8 +3,8 @@
 #include <stdexcept>
 #include <iostream>
 
-void TrafficSimulation::addTrafficBuilding(TransportType type, int capacity) {
-    auto building = TrafficBuildingFactory::createTrafficBuilding(type, capacity);
+void TrafficSimulation::addTrafficBuilding(TransportType type, int cost) {
+    auto building = TrafficBuildingFactory::createTrafficBuilding(type, cost);
     trafficBuildings[type].push_back(std::unique_ptr<TrafficBuilding>(building));
 }
 

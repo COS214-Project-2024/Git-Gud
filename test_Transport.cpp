@@ -34,4 +34,16 @@ TEST_F(TransportTest, Simulation) {
 
     ts1->initializeTrafficFlow();
 
+    EXPECT_EQ(ts1->getNumStations(TAXI), 2);
+    EXPECT_EQ(ts1->getNumStations(BUS), 2);
+    EXPECT_EQ(ts1->getNumStations(TRAIN), 2);
+    EXPECT_EQ(ts1->getNumStations(AIRPORT), 1);
+    
+    EXPECT_EQ(ts1->getTransportTypeString(TAXI), "Taxi");
+    EXPECT_EQ(ts1->getTransportTypeString(BUS), "Bus");
+    EXPECT_EQ(ts1->getTransportTypeString(TRAIN), "Train");
+    EXPECT_EQ(ts1->getTransportTypeString(AIRPORT), "Airport");
+    
+    
 }
+

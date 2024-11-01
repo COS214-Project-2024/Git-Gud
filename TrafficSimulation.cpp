@@ -35,30 +35,8 @@ void TrafficSimulation::initializeTrafficFlow() {
     }
 }
 
-int TrafficSimulation::getStation(TransportType type)
-{
-    switch(type)
-        {
-            case TAXI:
-                return numTaxis;
-                break;
-            case BUS:
-                return numBuses;
-                break;
-            case TRAIN:
-                return numTrains;
-                break;
-            case AIRPORT:
-                return numAirports;
-                break;
-            default:
-                return 0;
-                break;
-        
-        }
-}
 
-    std::string TrafficSimulation::getTransportTypeString(TransportType t)  {
+std::string TrafficSimulation::getTransportTypeString(TransportType t)  {
         switch(t)
         {
             case TAXI:
@@ -71,7 +49,7 @@ int TrafficSimulation::getStation(TransportType type)
                 return "Train";
                 break;
             case AIRPORT:
-                return "Airplane";
+                return "Airport";
                 break;
             default:
                 return "No type";
@@ -96,7 +74,6 @@ int TrafficSimulation::getStation(TransportType type)
                 break;
             default:
                 return 0;
-                break;
         
         }
     }

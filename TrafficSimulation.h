@@ -24,9 +24,6 @@ public:
     //Get number of stations for a type (Use to check if there are minimum 2)
     int getNumStations(TransportType t);
 
-    //Get number of a specific station using string value
-    int getStation(TransportType type);
-
     //Get name of transport in string
     std::string getTransportTypeString(TransportType t); 
 };

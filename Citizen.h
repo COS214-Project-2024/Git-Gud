@@ -24,6 +24,8 @@ class Citizen{
         //void update(ChangeData changeData);
         void handleTaxChange(float newTaxRate);
         void handleBuildingConstructed(float BuildingNum);
+        void handleServiceProvided(float UtilityFloat);
+
         
         /// @brief Returns the satifaction level of the citizen
         /// @return SatisfactionLevel*

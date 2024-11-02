@@ -35,6 +35,10 @@ void Citizen::update(ChangeData changeData){
 
         handleBuildingConstructed(changeData.value);
 
+    } else if(changeData.changeType == "ServiceProvided"){ //for utilities
+
+        handleServiceProvided(changeData.value);
+
     }
 
 }
@@ -74,6 +78,44 @@ void Citizen::handleBuildingConstructed(float BuildingFloat){
 
     }
 
+
+}
+
+void Citizen::handleServiceProvided(float UtilityFloat){
+
+    if(UtilityFloat == 1.0f){ //SewageSystem
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.5;
+
+    } else if(UtilityFloat == 2.0f){ //PowerPlant
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 1;
+
+    } else if(UtilityFloat == 3.0f){ //WaterSupply
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.25;
+
+    } else if(UtilityFloat == 4.0f){ //WasteManagement
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.5;
+
+    } else if(UtilityFloat == 5.0f){ //HealthCare
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.75;
+
+    } else if(UtilityFloat == 6.0f){ //Education
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.25;
+
+    } else if(UtilityFloat == 7.0f){ //LawEnforcement
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.5;
+
+    } else if(UtilityFloat == 8.0f){ //Transportation
+
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.25;
+
+    } 
 
 }
 

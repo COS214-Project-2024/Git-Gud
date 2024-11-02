@@ -173,6 +173,18 @@ public:
     {
         return cols;
     };
+
+    Building* GameEnvironment::getBuildingAt(int x, int y){
+
+        if(x >= 0 && x < getRows() && y >= 0 && y < getCols()){
+
+            return buildingGrid[x][y];
+
+        }
+
+        return nullptr;
+
+    }
     
     bool add(Building* building, int x, int y)
     {
@@ -195,6 +207,9 @@ public:
             utilityGrid[y][x] = new UtilGridNode();
         }
         utilityGrid[y][x]->add(utility);
+
+        utility->provideService(this, x, y, 2);
+
         return true;
     };
 

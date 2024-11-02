@@ -8,8 +8,12 @@ public:
     PowerPlant(int capacity, int maintenanceCost)
         : Utility("PowerPlant", capacity, maintenanceCost) {}
 
-    void provideService() override {
-        // Logic specific to PowerPlant, using capacity as energy output
+    void callObserver() override{
+
+        ChangeData changeData = {"ProvideService", 2.0f};
+
+        this->notify(changeData);
+
     }
 };
 

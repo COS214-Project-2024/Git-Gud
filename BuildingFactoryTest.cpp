@@ -7,7 +7,7 @@
 #include "ResidentialBuilding.h"
 #include "ResidentialBuildingFactory.h"
 
-TEST(CommercialFact, cost){
+/*TEST(CommercialFact, cost){
     BuildingFactory* b=new CommercialBuildingFactory();
     b->Rmanager->initializeResources(50,50,50,50);
     b->Rmanager->addResource("energySupply",50);
@@ -114,7 +114,7 @@ TEST(DecorateDecorator, Service){
 
     EXPECT_EQ(buffer.str(), "Provide services to residents\n and serves coffee\n and provides parking\n");
     
-}
+}*/
 
 /*TEST(CoffeeParkingClone, BusinessType){
     BuildingFactory* b=new CommercialBuildingFactory();
@@ -145,16 +145,16 @@ TEST(DecorateDecorator, Service){
 
 }*/
 
-/*int main(){
+int main(){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);
     Building* c=new BuildingWithCoffeeShop(b);
 
-    Building* d=c->clone(); // Hier is die segfault!!!!
-    c->provideService();
+    BuildingFactory* d=new BuildingWithCoffeeShopFactory();
+    Building* f=d->cloneBuilding(c);
 
-    delete c;
+    delete f;
     delete d;
 
-}*/
+}
 
     

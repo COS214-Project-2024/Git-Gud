@@ -18,8 +18,7 @@
 class Decorator : public Building{
 protected:
 
-    /// @brief Building-object that is being decorated
-    Building* building;
+    
 
 public:
 
@@ -50,6 +49,9 @@ public:
      * 
      */
     virtual ~Decorator();
+
+    /// @brief Building-object that is being decorated
+    Building* building;
 
 };
 

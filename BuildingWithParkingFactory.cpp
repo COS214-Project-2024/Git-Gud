@@ -8,6 +8,7 @@ BuildingWithParking* BuildingWithParkingFactory::upgradeBuilding(Building* b){
 }
 
 BuildingWithParking* BuildingWithParkingFactory::cloneBuilding(Building* b){
-    std::cout << "fact" << std::endl;
-    return dynamic_cast<BuildingWithParking*>(b)->clone();
+    Building* c=dynamic_cast<BuildingWithParking*>(b)->building->clone();
+    delete b;
+    return new BuildingWithParking(c);
 }

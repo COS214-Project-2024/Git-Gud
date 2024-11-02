@@ -94,7 +94,7 @@ void BuildingWithCoffeeShop::addWorker(){
 
 }
 
-BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
+/*BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
     BuildingWithCoffeeShop* b = new BuildingWithCoffeeShop();
     std::cout << "coff" << std::endl;
     // Only clone `this->building` if it's not null
@@ -105,4 +105,4 @@ BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
     }
 
     return b;
-}
+}*/

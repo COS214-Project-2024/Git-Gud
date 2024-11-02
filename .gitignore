@@ -43,3 +43,4 @@ unitTestingGE.cpp
 tasks.json
 ExampleTests.cpp
 test_PrototypeManager
+makefile

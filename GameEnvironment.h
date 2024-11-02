@@ -86,11 +86,24 @@ private:
         startingPoint[1] += colOffset;
     };
 
-    void checkCoherence(int x, int y)
+    void checkCoherence(int &x, int &y)
     {
-        if (x < 0) resizeGrid(rows, cols*1.1, "West");
+
+        int temp;
+
+        if (x < 0) 
+        {
+            temp = cols;
+            resizeGrid(rows, cols*1.1, "West");
+            x += (cols-temp);
+        }
         if (x >= cols) resizeGrid(rows, cols*1.1, "East");
-        if (y < 0) resizeGrid(rows*1.1, cols, "North");
+        if (y < 0) 
+        {
+            temp = rows;
+            resizeGrid(rows*1.1, cols, "North");
+            y += (rows-temp);
+        }
         if (y >= rows) resizeGrid(rows*1.1, cols, "South");
     };
 
@@ -216,6 +229,10 @@ public:
     bool remove(int x, int y, string type="unspecified"){
         //receive coordinates, interpret them as row and column
         //if type is unspecified, remove building
+        if (x < 0 || x >= cols || y < 0 || y >= rows) {
+            return false;
+        }
+        
         if (type == "unspecified") {
             if (buildingGrid[y][x] != nullptr) {
                 delete buildingGrid[y][x];
@@ -322,7 +339,7 @@ class BuildingIteratorRadial : public BuildingIterator {
         {
             int yUp, yDown;
 
-            for (int r= 1; r < setRadius; r++) {
+            for (int r= 0; r <= setRadius; r++) {
                 for (int x = centerX - r; x <= centerX + r; x++) {
 
                     if (x < 0 || x >= game->rows) {
@@ -391,11 +408,17 @@ class BuildingIteratorRadial : public BuildingIterator {
 
         bool hasNext() override
         {
+            if (head == nullptr) {
+                return false;
+            }
             return head->next != nullptr;
         };
 
         void next() override
-        {
+        {   
+            if (head == nullptr) {
+                return;
+            }
             Node* temp = head;
             head = head->next;
             delete temp;
@@ -438,6 +461,11 @@ class BuildingIteratorLinear : public BuildingIterator {
 
         bool hasNext() override
         {
+
+            if (row == -1 || col == -1) {
+                return false;
+            }
+
             int tempRow = row;
             int tempCol = col+1;
             while (tempRow < this->game->rows) {
@@ -505,7 +533,7 @@ class UtilityIteratorRadial: public UtilityIterator {
         {
             int yUp, yDown;
 
-            for (int r= 1; r < setRadius; r++) {
+            for (int r= 0; r <= setRadius; r++) {
                 for (int x = centerX - r; x <= centerX + r; x++) {
 
                     if (x < 0 || x >= game->rows) {
@@ -574,11 +602,17 @@ class UtilityIteratorRadial: public UtilityIterator {
 
         bool hasNext() override
         {
+            if (head == nullptr) {
+                return false;
+            }
             return head->next != nullptr;
         };
 
         void next() override
         {
+            if (head == nullptr) {
+                return;
+            }
             Node* temp = head;
             head = head->next;
             delete temp;
@@ -621,6 +655,10 @@ class UtilityIteratorLinear: public UtilityIterator{
 
         bool hasNext() override
         {
+            if (row == -1 || col == -1) {
+                return false;
+            }
+
             int tempRow = row;
             int tempCol = col+1;
             while (tempRow < this->game->rows) {
@@ -680,6 +718,11 @@ BuildingIteratorLinear* GameEnvironment::createLinBuildItr()
 UtilityIteratorRadial* GameEnvironment::createRadUtilItr(int x, int y, int radius)
 {
     return new UtilityIteratorRadial(this, x, y, radius);
+};
+
+UtilityIteratorLinear* GameEnvironment::createLinUtilItr()
+{
+    return new UtilityIteratorLinear(this);
 };
 
 #endif // GAMEENVIRONMENT_H

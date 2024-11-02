@@ -2,7 +2,7 @@
 
 BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
     this->building=b;
-    this->building->setState(new UnderConstruction());
+    this->building->setState(std::make_unique<UnderConstruction>());
     this->capacity=1;
 }
 
@@ -15,8 +15,8 @@ float BuildingWithCoffeeShop::getCost(){
     return 5000+this->building->getCost();
 }
 
-void BuildingWithCoffeeShop::setState(BuildingState* s){
-    this->building->setState(s);
+void BuildingWithCoffeeShop::setState(std::unique_ptr<BuildingState> s){
+    this->building->setState(std::move(s));
 }
 
 void BuildingWithCoffeeShop::repairBuilding(){
@@ -95,6 +95,7 @@ void BuildingWithCoffeeShop::addWorker(){
 
 BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone(){
     BuildingWithCoffeeShop* b=new BuildingWithCoffeeShop();
+    std::cout << "coff" << std::endl;
     Building* temp=this->building->clone();
     b->building=temp;
     return b;

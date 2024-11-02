@@ -13,6 +13,7 @@
 
 #include "Building.h"
 #include "ResourceManager.h"
+#include <memory>
 
 class Decorator : public Building{
 protected:

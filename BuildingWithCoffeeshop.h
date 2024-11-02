@@ -49,7 +49,7 @@ public:
      * 
      * @param s 
      */
-    virtual void setState(BuildingState* s);
+    virtual void setState(std::unique_ptr<BuildingState> s);
 
     /**
      * @brief Method used to repair the Building

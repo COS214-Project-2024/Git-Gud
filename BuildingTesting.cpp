@@ -14,13 +14,13 @@ protected:
 
     void SetUp() override{
 
-        BuildingState* initialState = new UnderConstruction();
+        //BuildingState* initialState = new UnderConstruction();
         int capacity = 100;
         int size = 200;
         int numStores = 5;
         BusinessType businessType = LUXURY;
 
-        building = new CommercialBuilding(initialState, capacity, size, numStores, businessType);
+        building = new CommercialBuilding(std::make_unique<UnderConstruction>(), capacity, size, numStores, businessType);
     }
 };
 
@@ -31,7 +31,7 @@ TEST_F(BuildingTest, ConstructorTest) {
 TEST_F(BuildingTest, RepairBuildingTest){
 
     building->repairBuilding();
-    building->setState(new Dilapidated);
+    building->setState(std::make_unique<Dilapidated>());
     building->repairBuilding();
     EXPECT_EQ(building->currentState(), "Operational");
 

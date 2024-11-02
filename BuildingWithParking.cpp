@@ -2,7 +2,7 @@
 
 BuildingWithParking::BuildingWithParking(Building* b){
     this->building=b;
-    this->building->setState(new UnderConstruction());
+    this->building->setState(std::make_unique<UnderConstruction>());
     this->capacity=2;
     this->buildingState=nullptr;
 }
@@ -16,8 +16,8 @@ float BuildingWithParking::getCost(){
     return 10000 + this->building->getCost();
 }
 
-void BuildingWithParking::setState(BuildingState* s){
-    this->building->setState(s);
+void BuildingWithParking::setState(std::unique_ptr<BuildingState> s){
+    this->building->setState(std::move(s));
 }
 
 void BuildingWithParking::repairBuilding(){
@@ -96,6 +96,7 @@ void BuildingWithParking::addWorker(){
 
 BuildingWithParking* BuildingWithParking::clone(){
     BuildingWithParking* temp=new BuildingWithParking();
+    std::cout << "buildwpark" << std::endl;
     Building* b=this->building->clone();
     temp->building=b;
     return temp;

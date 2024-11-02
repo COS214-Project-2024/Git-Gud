@@ -5,13 +5,13 @@
 
 LandmarkBuilding* LandmarkFactory::constructBuilding(){
     if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
-        return new LandmarkBuilding(new UnderConstruction(), 50);
+        return new LandmarkBuilding(std::make_unique<UnderConstruction>(), 50);
     }
     return nullptr;
 }
 
-LandmarkBuilding* LandmarkFactory::cloneBuilding(){
-    return dynamic_cast<LandmarkBuilding*>(this->building)->clone();
+LandmarkBuilding* LandmarkFactory::cloneBuilding(Building* b){
+    return dynamic_cast<LandmarkBuilding*>(b)->clone();
 }
 
 #endif

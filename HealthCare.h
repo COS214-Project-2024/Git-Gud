@@ -8,7 +8,8 @@ public:
     
     HealthCare(int capacity, int maintenanceCost) : PublicService(capacity, maintenanceCost, "HealthCare", 100000){};
     virtual ~HealthCare() = default;
-    void provideService() override;
+    void callObserver() override;
+
 };
 
 #endif  // HEALTHCARE_H

@@ -8,9 +8,16 @@ public:
     WasteManagement(int capacity, int maintenanceCost)
         : Utility("WasteManagement", capacity, maintenanceCost) {}
 
-    void provideService() override {
-        // Logic specific to WasteManagement, using capacity as filtering capability
+    void callObserver() override{
+
+        ChangeData changeData = {"ProvideService", 4.0f};
+
+        this->notify(changeData);
+
+        std::cout << "Waste is being managed in the area" << std::endl;
+
     }
+
 };
 
 #endif // WASTEMANAGEMENT_H

@@ -1,8 +1,12 @@
 #include "LawEnforcement.h"
 #include <iostream>
 
-void LawEnforcement::provideService()
-{
-    std::cout << "LawEnforcement has been provided to neighbouring buildings.\nIncrease citizen satisfaction";
-    //Call function to increase satisfaction
+void LawEnforcement::callObserver(){
+
+    ChangeData changeData = {"ProvideService", 7.0f};
+
+    this->notify(changeData);   
+
+    std::cout << "Law Enforcement has been employed in the area" << std::endl;
+
 }

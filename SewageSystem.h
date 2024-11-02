@@ -14,6 +14,8 @@ public:
         ChangeData changeData = {"ProvideService", 1.0f};
 
         this->notify(changeData);
+        
+        std::cout << "A sewage system is in place in the area" << std::endl;
 
     }
 

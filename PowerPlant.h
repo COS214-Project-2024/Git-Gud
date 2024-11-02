@@ -14,6 +14,8 @@ public:
 
         this->notify(changeData);
 
+        std::cout << "Power is being provided for the area" << std::endl;
+
     }
 };
 

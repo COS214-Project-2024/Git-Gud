@@ -1,8 +1,12 @@
 #include "Education.h"
 #include <iostream>
 
-void Education::provideService()
-{
-    std::cout << "Education has been provided to neighbouring buildings.\nIncrease citizen satisfaction";
-    //Call function to increase satisfaction of citizens in buildings
+void Education::callObserver(){
+
+    ChangeData changeData = {"ProvideService", 6.0f};
+
+    this->notify(changeData);
+
+    std::cout << "Education is available in the area" << std::endl;
+
 }

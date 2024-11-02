@@ -13,7 +13,6 @@ class PublicService : public Utility {
         PublicService(int capacity, int maintenanceCost, std::string publicType, int funding) : Utility("PublicService", capacity, maintenanceCost), serviceType(publicType), fund(funding){}
         virtual ~PublicService() = default;
         
-        virtual void provideService() = 0;
 };
 
 #endif  // PUBLICSERVICE_H

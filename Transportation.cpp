@@ -44,3 +44,13 @@ TrafficFlow Transportation::calculateTrafficFlow()
     }
     */
 }
+
+void Transportation::callObserver(){
+
+    ChangeData changeData = {"ProvideService", 8.0f};
+
+    this->notify(changeData);   
+
+    std::cout << "Transportation has been made available in the area" << std::endl;
+
+}

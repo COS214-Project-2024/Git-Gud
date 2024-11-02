@@ -1,8 +1,12 @@
 #include "HealthCare.h"
 #include <iostream>
 
-void HealthCare::provideService()
-{
-    std::cout << "HealthCare has been provided to neighbouring buildings.\nIncrease citizen satisfaction";
-    //Call function to increase satisfaction of citizens in buildings
+void HealthCare::callObserver(){
+
+    ChangeData changeData = {"ProvideService", 5.0f};
+
+    this->notify(changeData);
+
+    std::cout << "Healthcare is now available in the area" << std::endl;
+
 }

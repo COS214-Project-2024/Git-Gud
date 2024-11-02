@@ -57,6 +57,8 @@ void Citizen::handleTaxChange(float changeInTaxRate){
 
     }
 
+    updateSatisfactionLevel();
+
 }
 
 void Citizen::handleBuildingConstructed(float BuildingFloat){
@@ -78,6 +80,8 @@ void Citizen::handleBuildingConstructed(float BuildingFloat){
 
     }
 
+    updateSatisfactionLevel();
+
 
 }
 
@@ -91,7 +95,7 @@ void Citizen::handleServiceProvided(float UtilityFloat){
 
         satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 1;
 
-    } else if(UtilityFloat == 3.0f){ //WaterSupply
+    } else if(UtilityFloat == 3.0f){ //WaterFiltering
 
         satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.25;
 
@@ -117,6 +121,8 @@ void Citizen::handleServiceProvided(float UtilityFloat){
 
     } 
 
+    updateSatisfactionLevel();
+
 }
 
 bool Citizen::getHasJob(){
@@ -136,5 +142,36 @@ SatisfactionLevel* Citizen::getSatisfactionLevel(){
 }
 
 void Citizen::setSatisfactionLevel(SatisfactionLevel* satisfactionLevel){
+    delete satisfactionLevel;
     this->satisfactionLevel = satisfactionLevel;
+}
+
+void Citizen::updateSatisfactionLevel(){
+
+    if(satisfactionLevel->satisfactionRating >= 0.0f && satisfactionLevel->satisfactionRating < 20.0f){
+
+        setSatisfactionLevel(new VeryDissatisfied());
+
+    } else if(satisfactionLevel->satisfactionRating >= 20.0f && satisfactionLevel->satisfactionRating < 40.0f){
+
+            setSatisfactionLevel(new Dissatisfied());
+
+        } else if(satisfactionLevel->satisfactionRating >= 40.0f && satisfactionLevel->satisfactionRating < 60.0f){
+
+            setSatisfactionLevel(new Neutral());
+
+        } else if(satisfactionLevel->satisfactionRating >= 60.0f && satisfactionLevel->satisfactionRating < 80.0f){
+
+            setSatisfactionLevel(new Satisfied());
+
+        } else if(satisfactionLevel->satisfactionRating >= 80.0f && satisfactionLevel->satisfactionRating <= 100.0f){
+
+            setSatisfactionLevel(new VerySatisfied());
+
+        } else{
+
+            setSatisfactionLevel(new Neutral());
+
+        }
+
 }

@@ -7,7 +7,7 @@ class Education : public PublicService {
 public:
     Education(int capacity, int maintenanceCost) : PublicService(capacity, maintenanceCost, "Education", 50000){};
     virtual ~Education() = default;
-    void provideService() override;
+    void callObserver() override;
 };
 
 #endif  // EDUCATION_H

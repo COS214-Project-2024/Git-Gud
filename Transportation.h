@@ -20,6 +20,8 @@ public:
 
     //Calculates Traffic flow based on the total number of citizens in city and the capacity of the stations
     TrafficFlow calculateTrafficFlow();
+
+    void callObserver() override;
 };
 
 #endif  // TRANSPORTATION_H

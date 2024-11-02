@@ -33,6 +33,7 @@ class Citizen{
 
         /// @brief sets the satifaction level of the citizen
         void setSatisfactionLevel(SatisfactionLevel* satisfactionLevel);
+        void updateSatisfactionLevel();
 
 };
 

@@ -8,8 +8,14 @@ public:
     WaterFilteringPlant(int capacity, int maintenanceCost)
         : Utility("WaterFilteringPlant", capacity, maintenanceCost) {}
 
-    void provideService() override {
-        // Logic specific to WaterFilteringPlant, using capacity as water output
+    void callObserver() override{
+
+        ChangeData changeData = {"ProvideService", 3.0f};
+
+        this->notify(changeData);
+
+        std::cout << "Waterfiltering is done for all the water in the area" << std::endl;
+
     }
 };
 

@@ -23,6 +23,8 @@ protected:
 
 public:
 
+    Decorator() : Building(){};
+
     /**
      * @brief Method used to provide a service to Citizens
      * 

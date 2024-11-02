@@ -10,7 +10,7 @@ LDFLAGS = -lgtest -lgtest_main -pthread
 # Source files
 #SRC = DecoratorTest.cpp Building.cpp BuildingWithParking.cpp BuildingWithCoffeeShop.cpp ResidentialBuilding.cpp IndustrialBuilding.cpp CommercialBuilding.cpp Subject.cpp Citizen.cpp Decorator.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp Neutral.cpp Dissatisfied.cpp Satisfied.cpp VeryDissatisfied.cpp VerySatisfied.cpp
 
-SRC = BuildingFactoryTest.cpp BuildingFactory.cpp CommercialBuildingFactory.cpp BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp IndustrialBuildingFactory.cpp Building.cpp BuildingWithCoffeeShop.cpp BuildingWithParking.cpp IndustrialBuilding.cpp CommercialBuilding.cpp Subject.cpp Citizen.cpp Decorator.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp Neutral.cpp Dissatisfied.cpp Satisfied.cpp VeryDissatisfied.cpp VerySatisfied.cpp ResourceManager.cpp Resources.cpp
+SRC = BuildingFactoryTest.cpp BuildingFactory.cpp CommercialBuildingFactory.cpp BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp IndustrialBuildingFactory.cpp ResidentialBuildingFactory.cpp Building.cpp BuildingWithCoffeeShop.cpp BuildingWithParking.cpp IndustrialBuilding.cpp CommercialBuilding.cpp ResidentialBuilding.cpp Subject.cpp Citizen.cpp Decorator.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp Neutral.cpp Dissatisfied.cpp Satisfied.cpp VeryDissatisfied.cpp VerySatisfied.cpp ResourceManager.cpp Resources.cpp
 
 # Executable name
 TARGET = test_fact

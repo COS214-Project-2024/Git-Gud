@@ -149,7 +149,7 @@ TEST(DecorateDecorator, Service){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);
     Building* c=new BuildingWithCoffeeShop(b);
 
-    Building* d=c->clone();
+    Building* d=c->clone(); // Hier is die segfault!!!!
     c->provideService();
 
     delete c;

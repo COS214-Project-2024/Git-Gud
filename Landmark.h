@@ -2,7 +2,6 @@
 #define LANDMARKBUILDING_H
 
 #include "Building.h"
-#include "GameEnvironment.h"
 
 class LandmarkBuilding : public Building{
 
@@ -10,7 +9,7 @@ class LandmarkBuilding : public Building{
         int landmarkName;
     public:
         
-
+        ~LandmarkBuilding() = default;
    // protected: changed to accomodate factory
         LandmarkBuilding(int capacity);
         LandmarkBuilding(std::unique_ptr<BuildingState> s, int capacity);

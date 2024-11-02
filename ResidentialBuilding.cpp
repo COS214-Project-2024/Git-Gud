@@ -12,7 +12,12 @@ ResidentialBuilding::ResidentialBuilding(int capacity):Building(capacity){
 
 ResidentialBuilding::ResidentialBuilding(std::unique_ptr<BuildingState> s, int capacity): Building(capacity){
 
+    addCitizens();
+
     setState(std::move(s));
+
+    ChangeData changeData = {"BuildingConstructed", 3.0f};
+    notify(changeData);
 
 }
 

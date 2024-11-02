@@ -1,8 +1,13 @@
 #include "Landmark.h"
 #include "GameEnvironment.h"
 #include "Citizen.h"
+#include <chrono>
+#include <thread>
+#include "Operational.h"
 
 LandmarkBuilding::LandmarkBuilding(int capacity):Building(capacity){
+
+    this->setState(std::make_unique<UnderConstruction>());
 
     for(Citizen* citizen : allCitizens){
 
@@ -18,7 +23,6 @@ LandmarkBuilding::LandmarkBuilding(int capacity):Building(capacity){
 
     }
 
-    this->setState(std::make_unique<UnderConstruction>());
 
 }
 

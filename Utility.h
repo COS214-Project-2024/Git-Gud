@@ -2,6 +2,7 @@
 #define UTILITY_H
 
 #include <string>
+#include "Subject.h"
 
 class Utility : public Subject {
 protected:

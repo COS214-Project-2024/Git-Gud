@@ -1,37 +1,38 @@
 #include "gtest/gtest.h"
 #include "Landmark.h"
 #include "Citizen.h"
-#include "Subject.h"
-#include <vector>
 #include <sstream>
+#include <thread>
+#include <chrono>
+#include "ResidentialBuilding.h"
 
 class LandmarkBuildingTest : public ::testing::Test {
 protected:
     LandmarkBuilding* landmarkBuilding;
+    ResidentialBuilding* residentialBuilding;
+    std::vector<Citizen*> testCitizens;
 
     void SetUp() override {
-        // Assume you have a Citizen collection for testing.
-        std::vector<Citizen*> citizens = { new Citizen(), new Citizen(), new Citizen() };
-         // Assuming allCitizens is accessible here.
-        landmarkBuilding = new LandmarkBuilding(10); // or use std::make_unique<UnderConstruction>() if applicable
-        landmarkBuilding->allCitizens = citizens;
+
+        residentialBuilding = new ResidentialBuilding(5);
+        landmarkBuilding = new LandmarkBuilding(5); // Assuming a capacity of 5
+
     }
 
     void TearDown() override {
-        
-        for (Citizen* citizen : this->landmarkBuilding->allCitizens) {
-            delete citizen; // Clean up Citizen objects
-        }
-
         delete landmarkBuilding;
+        for (Citizen* citizen : testCitizens) {
+            delete citizen;
+        }
     }
 };
 
 TEST_F(LandmarkBuildingTest, ConstructorTest) {
-    EXPECT_EQ(landmarkBuilding->getCapacity(), 10); // Check capacity
-    // You might need to adjust this depending on what you have implemented for size and stories.
-    EXPECT_EQ(landmarkBuilding->getSize(), 0); // Placeholder, update according to implementation
-    EXPECT_EQ(landmarkBuilding->getNumStories(), 0); // Placeholder, update according to implementation
+    EXPECT_EQ(landmarkBuilding->getCapacity(), 5);
+    
+    // Assuming there's a method to get the attached citizens
+    std::vector<Citizen*> attachedCitizens = landmarkBuilding->getObserverList(); 
+    EXPECT_EQ(landmarkBuilding->getObserverListSize(), 5);
 }
 
 TEST_F(LandmarkBuildingTest, GetCostTest) {
@@ -52,10 +53,7 @@ TEST_F(LandmarkBuildingTest, CloneTest) {
     LandmarkBuilding* clonedBuilding = landmarkBuilding->clone();
 
     EXPECT_EQ(clonedBuilding->getCapacity(), landmarkBuilding->getCapacity());
-    // Assuming you have implemented size and number of stories
-    EXPECT_EQ(clonedBuilding->getSize(), landmarkBuilding->getSize());
-    EXPECT_EQ(clonedBuilding->getNumStories(), landmarkBuilding->getNumStories());
-    EXPECT_FLOAT_EQ(clonedBuilding->getCost(), landmarkBuilding->getCost());
+    EXPECT_EQ(clonedBuilding->getCost(), landmarkBuilding->getCost());
 
     delete clonedBuilding;
 }

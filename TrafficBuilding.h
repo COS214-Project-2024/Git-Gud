@@ -20,9 +20,9 @@ public:
     TrafficBuilding(int capacity, TransportType transportType, float cost) : Building(capacity), tType(transportType), cost(cost){};
 
     // Updated constructor to match the factory arguments
-    TrafficBuilding(BuildingState *s, int capacity, TransportType transportType, float cost)
+    TrafficBuilding(std::unique_ptr<BuildingState> s, int capacity, TransportType transportType, float cost)
         : Building(capacity), tType(transportType), cost(cost) {
-        buildingState = s;
+        setState(std::move(s));
     }
 
     void provideService() override {

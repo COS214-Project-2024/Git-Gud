@@ -1,16 +1,22 @@
 #ifndef PROTOTYPEMANAGER_H
 #define PROTOTYPEMANAGER_H
 
-#include "BuildingFactory.h"
+#include "Building.h"
 
 class PrototypeManager
 {
 private:
-    BuildingFactory* buildings;
+    Building** prototypeBuildings;
+    int capacity, size;
+    void resizeArray();
 public:
-    void addPrototype(BuildingFactory* p);
-    void removePrototype(BuildingFactory* p);
-    BuildingFactory* getPrototype();
+    PrototypeManager();
+    ~PrototypeManager();
+    void addPrototype(Building* p);
+    bool removePrototype(Building* p);
+    Building* getPrototype(Building* p) const;
+    int getSize() const { return size; } 
+    int getCapacity() const { return capacity; }  
 };
 
 #endif // PROTOTYPEMANAGER_H

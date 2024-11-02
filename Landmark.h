@@ -13,7 +13,7 @@ class LandmarkBuilding : public Building{
 
    // protected: changed to accomodate factory
         LandmarkBuilding(int capacity);
-        LandmarkBuilding(BuildingState* s, int capacity);
+        LandmarkBuilding(std::unique_ptr<BuildingState> s, int capacity);
 
         virtual void provideService() override;
         virtual float getCost() override;

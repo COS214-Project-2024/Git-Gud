@@ -1,9 +1,10 @@
 #include "CommercialBuilding.h"
 #include "Citizen.h"
 
-CommercialBuilding::CommercialBuilding(BuildingState *s, int capacity, int size, int numStores, BusinessType businessType): Building(capacity){
+CommercialBuilding::CommercialBuilding(std::unique_ptr<BuildingState> s, int capacity, int size, int numStories, BusinessType businessType): Building(capacity){
 
-    this->setState(s);
+    //this->buildingState;
+    this->setState(std::move(s));
 
     this->size = size;
     this->numStories = numStories;
@@ -16,6 +17,9 @@ CommercialBuilding::CommercialBuilding(int capacity, int size, int numStories, B
     this->size = size;
     this->numStories = numStories;
     this->businessType = businessType;
+
+    //this->buildingState = nullptr;
+    this->setState(std::make_unique<UnderConstruction>());
 
 }
 
@@ -99,4 +103,10 @@ void CommercialBuilding::addEmployees(){
 CommercialBuilding* CommercialBuilding::clone(){
     CommercialBuilding* temp=new CommercialBuilding(this->capacity, this->size, this->numStories, this->businessType);
     return temp;
+}
+
+CommercialBuilding::~CommercialBuilding(){
+
+    //building state deleted in Building class
+
 }

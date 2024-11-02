@@ -9,7 +9,7 @@ class TrafficBuildingFactory {
 public:
     static TrafficBuilding* createTrafficBuilding(TransportType type, int capacity) {
         int cost;
-        BuildingState* initialState = new UnderConstruction();  // Default state at creation
+        std::unique_ptr<BuildingState> initialState = std::make_unique<UnderConstruction>();  // Default state at creation
 
         switch (type) {
             case TAXI:
@@ -28,7 +28,7 @@ public:
                 cost = 0;
         }
 
-        return new TrafficBuilding(initialState, capacity, type, cost);
+        return new TrafficBuilding(std::move(initialState), capacity, type, cost);
     }
 };
 

@@ -52,3 +52,9 @@ int Subject::getNumCitizens(){
     return allCitizens.size();
 
 }
+
+std::vector<Citizen *> Subject::getObserverList(){
+
+    return observerList;
+
+}

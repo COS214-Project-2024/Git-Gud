@@ -8,6 +8,7 @@ class UnderConstruction : public BuildingState{
     public:
 
         UnderConstruction() = default;  
+        ~UnderConstruction(){};
 
         void enterState(Building *building) override;
         void exitState(Building* building) override;

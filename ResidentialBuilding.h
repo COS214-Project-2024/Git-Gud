@@ -14,7 +14,7 @@ class ResidentialBuilding : public Building{
         ~ResidentialBuilding();
 
         ResidentialBuilding(int capacity);
-        ResidentialBuilding(BuildingState* s, int capacity);
+        ResidentialBuilding(std::unique_ptr<BuildingState> s, int capacity);
 
         virtual void provideService() override;
 

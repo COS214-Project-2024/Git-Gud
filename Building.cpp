@@ -4,46 +4,34 @@
 #include <thread>
 #include <chrono>
 #include <iostream>
+#include <memory>
 
-void Building::setState(BuildingState* s){
+void Building::setState(std::unique_ptr<BuildingState> s){
 
-    if(this->buildingState != nullptr){
-
-        delete this->buildingState;
-
-    }
-
-    this->buildingState = s;
+    this->buildingState = std::move(s);
 
 }
 
 Building::Building(){
 
+    //this->buildingState = nullptr;
+
     capacity = 30;
-    this->setState(new UnderConstruction);
+    this->setState(std::make_unique<UnderConstruction>());
 
     //allows thread to run concurrently and seperately from the rest
-    std::thread(&Building::simulateConstruction, this).detach();
+    constructionFuture = std::async(std::launch::async, &Building::simulateConstruction, this);
 
 }
 
 Building::Building(int capacity){
 
     this->capacity = capacity;
-    this->setState(new UnderConstruction);
+    this->setState(std::make_unique<UnderConstruction>());
 
     //allows thread to run concurrently and seperately from the rest
-    std::thread(&Building::simulateConstruction, this).detach();
-
-}
-
-Building::~Building(){
-
-    if(buildingState != nullptr){
-
-        delete buildingState;
-
-    }
+    constructionFuture = std::async(std::launch::async, &Building::simulateConstruction, this); 
+    //uses future to store future result of the outcome
 
 }
 
@@ -76,7 +64,7 @@ void Building::repairBuilding(){
 
     } else if(this->currentState() == "Dilapidated"){
 
-        this->setState(new Operational);
+        this->setState(std::make_unique<Operational>());
 
     } else{
 
@@ -86,11 +74,27 @@ void Building::repairBuilding(){
     
 }
 
-void Building::simulateConstruction(){ //possible issue here: Building could be destructed during 30 second period
+void Building::simulateConstruction(){ //possible issue here: Building could be destructed during 30 second period (Fixed using async and future)
 
     //Simulates 30 second waiting period for building construction
     std::this_thread::sleep_for(std::chrono::seconds(5));
-    setState(new Operational());
+    setState(std::make_unique<Operational>());
+
+}
+
+int Building::getCapacity(){
+
+    return capacity;
+
+}
+
+Building::~Building(){
+
+    if(constructionFuture.valid()){
+
+        constructionFuture.get(); //wait for asynchronous task to complete (from simulateConstruction())
+
+    }
 
 }
 

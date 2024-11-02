@@ -15,7 +15,7 @@ class TaxManager : public Subject{
         std::list<IndustrialBuilding*> industrialBuildings;
         std::list<ResidentialBuilding*> residentialBuildings;
         RetrieveTax* taxStrategy;
-        float currentTotalTaxRate;
+        float currentTotalTaxRate = 20.0;
     public:
         float calculateTax();
         void updateTotalTaxRate(float newRate);

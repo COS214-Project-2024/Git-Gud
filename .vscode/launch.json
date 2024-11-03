@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "c:/Users/mgrav/Documents/Uni/COS 214/GitHub/Git-Gud",
-      "program": "C:/Users/franc/OneDrive/Desktop/University/Semester 2/COS214/Project/Git-Gud/CommercialBuildingsTesting.cpp",
+      "program": "c:/Users/mgrav/Documents/Uni/COS 214/GitHub/Git-Gud/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

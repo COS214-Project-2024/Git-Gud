@@ -116,19 +116,6 @@ TEST(DecorateDecorator, Service){
     
 }
 
-TEST(CoffeeParkingClone, BusinessType){
-   Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);
-   Building* c=new BuildingWithCoffeeShop(b);
-   //Building* g=new BuildingWithParking(c);
-
-    /*BuildingFactory* d=new BuildingWithCoffeeShopFactory();
-    Building* f=d->cloneBuilding(g);*/
-
-    std::cout << c->getCost() << std::endl;
-
-    delete c;
-}
-
 /*int main(){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);
     Building* c=new BuildingWithCoffeeShop(b);

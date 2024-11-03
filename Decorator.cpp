@@ -3,12 +3,10 @@
 
 #include "Decorator.h"
 
-void Decorator::provideService(){       // needs updating
-    this->building->provideService();
-}
-
 Decorator::~Decorator(){
+    if (this->building != nullptr){
     delete this->building;
+    }
 }
 
 #endif

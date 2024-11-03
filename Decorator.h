@@ -13,14 +13,16 @@
 
 #include "Building.h"
 #include "ResourceManager.h"
+#include <memory>
 
 class Decorator : public Building{
 protected:
 
-    /// @brief Building-object that is being decorated
-    Building* building;
+    
 
 public:
+
+    Decorator() : Building(){};
 
     /**
      * @brief Method used to provide a service to Citizens
@@ -47,6 +49,9 @@ public:
      * 
      */
     virtual ~Decorator();
+
+    /// @brief Building-object that is being decorated
+    Building* building;
 
 };
 

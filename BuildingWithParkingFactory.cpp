@@ -1,8 +1,13 @@
 #include "BuildingWithParkingFactory.h"
 
-Building* BuildingWithParkingFactory::upgradeBuilding(Building* b){
+BuildingWithParking* BuildingWithParkingFactory::upgradeBuilding(Building* b){
     if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
         return new BuildingWithParking(b);
     }
-    return b;
+    return nullptr;
+}
+
+BuildingWithParking* BuildingWithParkingFactory::cloneBuilding(Building* b){
+    Building* c=dynamic_cast<BuildingWithParking*>(b)->building->clone();
+    return new BuildingWithParking(c);
 }

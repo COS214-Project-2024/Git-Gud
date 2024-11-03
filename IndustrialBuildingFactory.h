@@ -9,8 +9,20 @@ class IndustrialBuildingFactory : public BuildingFactory
 private:
     
 public:
-    Building* constructBuilding() override;
-    //Building* cloneBuilding() override;
+
+    IndustrialBuildingFactory() : BuildingFactory(){};
+
+    IndustrialBuilding* constructBuilding() override;
+    IndustrialBuilding* cloneBuilding(Building* b) override;
+
+private:
+
+    int power=5;
+    int water=4;
+    int wood=8;
+    int steel=10;
+    int concrete=5;
+
 };
 
 

@@ -29,7 +29,7 @@ public:
      * @brief Construct a new Building With Coffee Shop object
      * 
      */
-    BuildingWithCoffeeShop();
+    BuildingWithCoffeeShop() : Decorator(){};
 
     /**
      * @brief Method used to provide a service to the Citizens in the decorated Building
@@ -49,7 +49,7 @@ public:
      * 
      * @param s 
      */
-    virtual void setState(BuildingState* s);
+    virtual void setState(std::unique_ptr<BuildingState> s);
 
     /**
      * @brief Method used to repair the Building
@@ -128,7 +128,7 @@ public:
      * 
      * @return BuildingWithCoffeeShop* 
      */
-    virtual BuildingWithCoffeeShop* clone();
+    virtual BuildingWithCoffeeShop* clone(){};
 
     /**
      * @brief Method sued to add a worker to the Coffeeshop

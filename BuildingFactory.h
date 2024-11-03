@@ -18,20 +18,14 @@ class BuildingFactory
 {
 protected:
 
-    /// @brief ResourceManager used to check for available resources
-    ResourceManager* Rmanager;
+  
 
-    /// @brief Building-object that will be cloned by cloneBuilding method
-    Building* building;
-
-    // Units of resources used to construct each building
-    int wood;
-    int steel;
-    int concrete;
-    int water;
-    int power;
 
 public:
+
+    BuildingFactory(){
+        Rmanager=ResourceManager::getInstance();
+    };
 
     /**
      * @brief Method used to retrieve a Building-object
@@ -53,20 +47,17 @@ public:
      * 
      * @return Building* 
      */
-    virtual Building* cloneBuilding(){};      
-
-    /**
-     * @brief Set the Building object
-     * 
-     * @param b 
-     */
-    virtual void setBuilding(Building* b);
+    virtual Building* cloneBuilding(Building* b){};      
 
     /**
      * @brief Destroy the Building Factory object
      * 
      */
     virtual ~BuildingFactory();
+
+      /// @brief ResourceManager used to check for available resources
+    ResourceManager* Rmanager;
+
 
 };
 

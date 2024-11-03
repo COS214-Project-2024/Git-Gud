@@ -1,9 +1,10 @@
 #include "BuildingWithParking.h"
 
-BuildingWithParking::BuildingWithParking(Building* b){
+BuildingWithParking::BuildingWithParking(Building* b) : Decorator(){
     this->building=b;
-    this->building->setState(new UnderConstruction());
+    this->building->setState(std::make_unique<UnderConstruction>());
     this->capacity=2;
+    this->buildingState=nullptr;
 }
 
 void BuildingWithParking::provideService(){
@@ -15,8 +16,8 @@ float BuildingWithParking::getCost(){
     return 10000 + this->building->getCost();
 }
 
-void BuildingWithParking::setState(BuildingState* s){
-    this->building->setState(s);
+void BuildingWithParking::setState(std::unique_ptr<BuildingState> s){
+    this->building->setState(std::move(s));
 }
 
 void BuildingWithParking::repairBuilding(){
@@ -93,9 +94,11 @@ void BuildingWithParking::addWorker(){
 
 }
 
-BuildingWithParking* BuildingWithParking::clone(){
+/*BuildingWithParking* BuildingWithParking::clone(){
     BuildingWithParking* temp=new BuildingWithParking();
-    Building* b=this->building->clone();
-    temp->building=b;
+    if (temp->building != nullptr){
+        delete temp->building;
+        temp->building=this->building->clone();
+    }
     return temp;
-}
+}*/

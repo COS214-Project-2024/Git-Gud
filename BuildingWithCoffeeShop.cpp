@@ -1,9 +1,10 @@
 #include "BuildingWithCoffeeshop.h"
 
-BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
+BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b) : Decorator(){
     this->building=b;
-    this->building->setState(new UnderConstruction());
+    this->building->setState(std::make_unique<UnderConstruction>());
     this->capacity=1;
+
 }
 
 void BuildingWithCoffeeShop::provideService(){
@@ -15,8 +16,8 @@ float BuildingWithCoffeeShop::getCost(){
     return 5000+this->building->getCost();
 }
 
-void BuildingWithCoffeeShop::setState(BuildingState* s){
-    this->building->setState(s);
+void BuildingWithCoffeeShop::setState(std::unique_ptr<BuildingState> s){
+    this->building->setState(std::move(s));
 }
 
 void BuildingWithCoffeeShop::repairBuilding(){
@@ -93,9 +94,15 @@ void BuildingWithCoffeeShop::addWorker(){
 
 }
 
-BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone(){
-    BuildingWithCoffeeShop* b=new BuildingWithCoffeeShop();
-    Building* temp=this->building->clone();
-    b->building=temp;
+/*BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
+    BuildingWithCoffeeShop* b = new BuildingWithCoffeeShop();
+    std::cout << "coff" << std::endl;
+    // Only clone `this->building` if it's not null
+    if (this->building != nullptr) {
+        // Set `b->building` to the cloned object without deleting it first
+        delete b->building;
+        b->building = this->building->clone();
+    }
+
     return b;
-}
+}*/

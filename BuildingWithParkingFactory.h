@@ -22,7 +22,7 @@ public:
      * @brief Construct a new Building With Parking Factory object
      * 
      */
-    BuildingWithParkingFactory();
+    BuildingWithParkingFactory() : BuildingFactory(){};
 
     /**
      * @brief Method used to decorate a building and to return a pointer to that object
@@ -30,14 +30,22 @@ public:
      * @param b 
      * @return Building* 
      */
-    virtual Building* upgradeBuilding(Building* b);
+    virtual BuildingWithParking* upgradeBuilding(Building* b);
 
     /**
      * @brief Method sued to return a pointer to a copy of the object of this type
      * 
      * @return Building* 
      */
-    virtual Building* clone();
+    virtual BuildingWithParking* cloneBuilding(Building* b);
+
+private:
+
+    int power=5;
+    int water=2;
+    int wood=1;
+    int steel=3;
+    int concrete=7;
 
 };
 

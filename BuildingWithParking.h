@@ -29,7 +29,7 @@ public:
      * @brief Construct a new Building With Parking object
      * 
      */
-    BuildingWithParking();
+    BuildingWithParking() : Decorator() {this->buildingState=nullptr;};
 
     /**
      * @brief Method used to provide additional service on top of the service from the Building-object being decorated
@@ -49,7 +49,7 @@ public:
      * 
      * @param s 
      */
-    virtual void setState(BuildingState* s);
+    virtual void setState(std::unique_ptr<BuildingState> s);
 
     /**
      * @brief Repair the Decorated building
@@ -128,7 +128,9 @@ public:
      * 
      * @return BuildingWithParking* 
      */
-    virtual BuildingWithParking* clone();
+    virtual BuildingWithParking* clone(){};
+
+    virtual ~BuildingWithParking(){};
 
 };
 

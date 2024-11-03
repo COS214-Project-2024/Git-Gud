@@ -7,10 +7,17 @@
 class CommercialBuildingFactory : public BuildingFactory
 {
 private:
-    
+    int water=3;
+    int power=7;
+    int steel=5;
+    int wood=2;
+    int concrete=10;
 public:
-    Building* constructBuilding() override;
-    //Building* cloneBuilding() override;
+
+    CommercialBuildingFactory() :BuildingFactory(){};
+
+    CommercialBuilding* constructBuilding() override;
+    CommercialBuilding* cloneBuilding(Building* b) override;
 };
 
 

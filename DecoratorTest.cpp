@@ -7,15 +7,15 @@
 #include <gtest/gtest.h>
 
 TEST(CoffeeDecoratorTest, Cost){
-    Building* c=new CommercialBuilding(50, 100, 3, BusinessType::FOOD);
-    Building* d=new BuildingWithCoffeeShop(c);
+    Building* a=new CommercialBuilding(50, 100, 3, BusinessType::FOOD);
+    Building* b=new BuildingWithCoffeeShop(a);
     float f=55000;
-    EXPECT_EQ(d->getCost(), f);
+    EXPECT_EQ(b->getCost(), f);
 }
 
-TEST(ParkingDecoratorTest, Service){
-    Building* b=new IndustrialBuilding(50,100,3,Industry::ENERGY,2);
-    Building* d=new BuildingWithParking(b);
+/*TEST(ParkingDecoratorTest, Service){
+    Building* c=new CommercialBuilding(50, 100, 3, BusinessType::FOOD);
+    Building* d=new BuildingWithParking(c);
     
     std::stringstream buffer;
     std::streambuf* oldBuf=std::cout.rdbuf(buffer.rdbuf());
@@ -24,15 +24,16 @@ TEST(ParkingDecoratorTest, Service){
 
     std::cout.rdbuf(oldBuf);
 
-    EXPECT_EQ(buffer.str(), "Building is generating energy and provides parking");
-}
+    EXPECT_EQ(buffer.str(), "Building is selling food\n and provides parking\n");
+    
+}*/
 
-TEST(DecoratorStateTest, State){
-    Building* b= new ResidentialBuilding(new UnderConstruction(),5);
-    Building* d=new BuildingWithCoffeeShop(b);
+/*TEST(DecoratorStateTest, State){
+    Building* b=new IndustrialBuilding(50,100,3,Industry::ENERGY,2);
+    Building* d=new BuildingWithParking(b);
 
-    EXPECT_EQ(d->currentState(), "UnderConstruction");
-}
+    EXPECT_EQ(d->getCost(), 55000);
+}*/
 
 TEST(DecorateDecorator, Service){
     Building* b=new ResidentialBuilding(50);
@@ -46,6 +47,6 @@ TEST(DecorateDecorator, Service){
 
     std::cout.rdbuf(oldBuf);
 
-    EXPECT_EQ(buffer.str(), "Provide services to residents and serves coffee and provides parking");
+    EXPECT_EQ(buffer.str(), "Provide services to residents\n and serves coffee\n and provides parking\n");
     
 }

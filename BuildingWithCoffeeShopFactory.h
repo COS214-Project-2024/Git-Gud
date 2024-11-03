@@ -22,7 +22,7 @@ public:
      * @brief Construct a new Building With Coffee Shop Factory object
      * 
      */
-    BuildingWithCoffeeShopFactory();
+    BuildingWithCoffeeShopFactory() : BuildingFactory(){};
 
     /**
      * @brief Method used to construct an object of type BuildingWithCoffeeShop
@@ -30,14 +30,14 @@ public:
      * @param b 
      * @return Building* 
      */
-    virtual Building* upgradeBuilding(Building* b);
+    virtual BuildingWithCoffeeShop* upgradeBuilding(Building* b);
 
     /**
      * @brief Method used to return a pointer to a copy of the desired Building object
      * 
      * @return BuildingWithCoffeeShop* 
      */
-    virtual Building* cloneBuilding();
+    virtual BuildingWithCoffeeShop* cloneBuilding(Building* b);
 
     /**
      * @brief Destroy the Building With Coffee Shop Factory object

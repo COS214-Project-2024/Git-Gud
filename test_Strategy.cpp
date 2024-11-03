@@ -84,7 +84,7 @@ TEST_F(StrategyTest, taxMultipleIndustrialTest){
     player.addIndustrialBuilding(i3);
     player.changeTaxRate(10.0);
     player.taxIndustrialBuildings();
-    EXPECT_EQ(player.getBalance(),190.0f);
+    EXPECT_EQ(player.getBalance(),90.0f);
     delete i1;
     delete i2;
     delete i3;

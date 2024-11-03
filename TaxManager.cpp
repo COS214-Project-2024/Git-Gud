@@ -3,6 +3,12 @@
 
 void TaxManager::updateTotalTaxRate(float newRate){
 
+    for(Citizen* citizen : allCitizens){ //add citizens to observerlist
+
+        attach(citizen);
+
+    }
+
     //Citizens get notified of the change (Observer) 
     ChangeData changeData = {"TaxChange", newRate - currentTotalTaxRate}; //take change in taxrate
 

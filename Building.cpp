@@ -77,7 +77,7 @@ void Building::repairBuilding(){
 void Building::simulateConstruction(){ //possible issue here: Building could be destructed during 30 second period (Fixed using async and future)
 
     //Simulates 30 second waiting period for building construction
-    std::this_thread::sleep_for(std::chrono::seconds(5));
+    std::this_thread::sleep_for(std::chrono::seconds(2));
     setState(std::make_unique<Operational>());
 
 }

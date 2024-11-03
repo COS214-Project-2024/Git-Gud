@@ -14,12 +14,8 @@ private:
     float Balance = 0.0;
     TaxManager* taxMan;
 public:
-<<<<<<< HEAD
-
-=======
     Player();
     ~Player();
->>>>>>> features/StrategyTesting
     void changeTaxRate(float tax);
 
     void taxResidentialBuildings();
@@ -32,11 +28,8 @@ public:
 
     float getBalance();
 
-<<<<<<< HEAD
-=======
     TaxManager* getTaxMan(){return taxMan;};
     
->>>>>>> features/StrategyTesting
 };
 
 

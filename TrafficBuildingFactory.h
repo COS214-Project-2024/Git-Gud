@@ -7,6 +7,13 @@
 
 class TrafficBuildingFactory {
 public:
+
+    /**
+        * @brief Method used to create a traffic building 
+        * @param type
+        * @param capacity
+        * @return TrafficBuilding*
+    **/
     static TrafficBuilding* createTrafficBuilding(TransportType type, int capacity) {
         int cost;
         std::unique_ptr<BuildingState> initialState = std::make_unique<UnderConstruction>();  // Default state at creation

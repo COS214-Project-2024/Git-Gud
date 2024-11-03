@@ -7,6 +7,7 @@
 #include "ResidentialBuilding.h"
 #include "ResidentialBuildingFactory.h"
 
+
 TEST(CommercialFact, cost){
     BuildingFactory* b=new CommercialBuildingFactory();
     b->Rmanager->initializeResources(50,50,50,50);
@@ -115,6 +116,7 @@ TEST(DecorateDecorator, Service){
     EXPECT_EQ(buffer.str(), "Provide services to residents\n and serves coffee\n and provides parking\n");
     
 }
+
 
 /*int main(){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);

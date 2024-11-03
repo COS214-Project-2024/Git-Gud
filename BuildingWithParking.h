@@ -130,7 +130,7 @@ public:
      */
     virtual BuildingWithParking* clone();
 
-    virtual ~BuildingWithParking();
+    virtual ~BuildingWithParking(){};
 
 };
 

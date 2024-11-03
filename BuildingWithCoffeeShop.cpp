@@ -1,6 +1,6 @@
 #include "BuildingWithCoffeeshop.h"
 
-BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b){
+BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b) : Decorator(){
     this->building=b;
     //this->building->setState(std::make_unique<UnderConstruction>());
     this->capacity=1;
@@ -97,10 +97,4 @@ void BuildingWithCoffeeShop::addWorker(){
 BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
     Building* c=this->building->clone();
     return new BuildingWithCoffeeShop(c);
-}
-
-BuildingWithCoffeeShop::~BuildingWithCoffeeShop(){
-    if (this->building != nullptr){
-        delete this->building;
-    }
 }

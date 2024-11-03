@@ -65,6 +65,29 @@ void Transportation::calculateTrafficFlow()
     {
         currentFlow = HIGH;
     }
+
+    std::cout << "Traffic Flow: " << getCurrentFlow(currentFlow) << std::endl;
+  
+}
+
+std::string Transportation::getCurrentFlow(TrafficFlow t)
+{
+    
+        switch(t)
+        {
+            case LOW:
+                return "Low";
+                break;
+            case MODERATE:
+                return "Moderate";
+                break;
+            case HIGH:
+                return "High";
+                break;
+            default:
+                return "No traffic report";
+        
+        }
   
 }
 
@@ -74,22 +97,26 @@ int Transportation::getTotalTrafficCapacity(){
     return busCapacity + taxiCapacity + trainCapacity + airportCapacity;
 }
 
-void Transportation::addTrafficBuilding(TransportType type, int cost) {
-    auto building = TrafficBuildingFactory::createTrafficBuilding(type, cost);
+void Transportation::addTrafficBuilding(TransportType type, int capacity) {
+    auto building = TrafficBuildingFactory::createTrafficBuilding(type, capacity);
     trafficBuildings[type].push_back(std::unique_ptr<TrafficBuilding>(building));
     switch(type)
         {
             case TAXI:
                 numTaxis++;
+                updateCapacity(TAXI, capacity);
                 break;
             case BUS:
                 numBuses++;
+                updateCapacity(BUS, capacity);
                 break;
             case TRAIN:
                 numTrains++;
+                updateCapacity(TRAIN, capacity);
                 break;
             case AIRPORT:
                 numAirports++;
+                updateCapacity(AIRPORT, capacity);
                 break;
             default:
                 break;

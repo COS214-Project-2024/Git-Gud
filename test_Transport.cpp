@@ -43,7 +43,10 @@ TEST_F(TransportTest, Simulation) {
     EXPECT_EQ(ts1->getTransportTypeString(BUS), "Bus");
     EXPECT_EQ(ts1->getTransportTypeString(TRAIN), "Train");
     EXPECT_EQ(ts1->getTransportTypeString(AIRPORT), "Airport");
-    
+
+    ts1->calculateTrafficFlow();
+
+    std::cout << "Total traffic capacity: " << ts1->getTotalTrafficCapacity() << std::endl;
 
 }
 

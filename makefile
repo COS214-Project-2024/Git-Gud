@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++17 -Wall -g -I/usr/include/gtest -I.
 LDFLAGS = -lgtest -lgtest_main -lgmock -lgmock_main -pthread
 
 # Source files common to all builds
-COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp TrafficSimulation.cpp \
+COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp Transportation.cpp \
              TaxManager.cpp Subject.cpp IndustrialBuilding.cpp Landmark.cpp CommercialBuilding.cpp \
              ResidentialBuilding.cpp Citizen.cpp Education.cpp HealthCare.cpp LawEnforcement.cpp \
              Neutral.cpp Satisfied.cpp Dissatisfied.cpp VerySatisfied.cpp VeryDissatisfied.cpp

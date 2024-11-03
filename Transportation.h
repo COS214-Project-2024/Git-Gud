@@ -34,6 +34,8 @@ public:
     //Calculates Traffic flow based on the total number of citizens in city and the capacity of the stations
     void calculateTrafficFlow();
 
+    std::string getCurrentFlow(TrafficFlow t);
+
     //Used to get overall transport capacity in the city
     int getTotalTrafficCapacity();
 

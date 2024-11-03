@@ -21,6 +21,8 @@ class Dissatisfied : public SatisfactionLevel{
         void prevState(Citizen* citizen) override;
 
         std::string getCurrentSatisfactionLevel() override;
+
+        float getTaxReturn()override {return taxReturn;};
 };
 
 #endif  // DISSATISFIED_H

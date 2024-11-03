@@ -2,7 +2,14 @@
 #ifndef UTILITY_GRID_NODE_H
 #define UTILITY_GRID_NODE_H
 
-#include "Utility.h"
+#include "PowerPlant.h"
+#include "WaterFilteringPlant.h"
+#include "SewageSystem.h"
+#include "WasteManagement.h"
+#include "HealthCare.h"
+#include "Education.h"
+#include "LawEnforcement.h"
+#include "Transportation.h"
 
 class UtilGridNode {
     private:

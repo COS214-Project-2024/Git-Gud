@@ -6,9 +6,12 @@
 #include <vector>
 #include <math.h>
 #include "UtilityGridNode.h"
-#include "Building.h"
-#include "Player.h"
-#include "Utility.h"
+#include "IndustrialBuilding.h"
+#include "CommercialBuilding.h"
+#include "ResidentialBuilding.h"
+#include "Landmark.h"
+//#include "Player.h"
+//#include "Utility.h"
 
 using namespace std;
 

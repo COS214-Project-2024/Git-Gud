@@ -5,7 +5,11 @@
 
 CommercialBuilding* CommercialBuildingFactory::constructBuilding(){
     if (Rmanager->sufficientMaterials(this->water, this->steel, this->concrete, this->wood, this->power)){
-        std::cout << "Constructing" << std::endl;
+        Rmanager->useResource("wood",this->wood);
+        Rmanager->useResource("steel",this->steel);
+        Rmanager->useResource("concrete",this->concrete);
+        Rmanager->useResource("waterSupply",this->water);
+        Rmanager->useResource("energySupply", this->power);
         return new CommercialBuilding(std::make_unique<UnderConstruction>(), 50, 50, 3, BusinessType::GENERAL);
     }
     return nullptr;

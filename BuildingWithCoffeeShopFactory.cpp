@@ -10,9 +10,7 @@ BuildingWithCoffeeShop* BuildingWithCoffeeShopFactory::upgradeBuilding(Building*
 
 BuildingWithCoffeeShop* BuildingWithCoffeeShopFactory::cloneBuilding(Building* b){
     Building* c=dynamic_cast<BuildingWithCoffeeShop*>(b)->building->clone();
-    delete b;
-    BuildingWithCoffeeShop* temp=new BuildingWithCoffeeShop(c);
-    return temp;
+    return new BuildingWithCoffeeShop(c);
 }
 
 

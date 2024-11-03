@@ -94,11 +94,7 @@ void BuildingWithParking::addWorker(){
 
 }
 
-/*BuildingWithParking* BuildingWithParking::clone(){
-    BuildingWithParking* temp=new BuildingWithParking();
-    if (temp->building != nullptr){
-        delete temp->building;
-        temp->building=this->building->clone();
-    }
-    return temp;
-}*/
+BuildingWithParking* BuildingWithParking::clone() {
+    Building* c=this->building->clone();
+    return new BuildingWithParking(c);
+}

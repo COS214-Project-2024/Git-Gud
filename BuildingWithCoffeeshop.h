@@ -128,7 +128,7 @@ public:
      * 
      * @return BuildingWithCoffeeShop* 
      */
-    virtual BuildingWithCoffeeShop* clone(){};
+    virtual BuildingWithCoffeeShop* clone();
 
     /**
      * @brief Method sued to add a worker to the Coffeeshop

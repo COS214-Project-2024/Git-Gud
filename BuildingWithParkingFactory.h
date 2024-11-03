@@ -37,7 +37,7 @@ public:
      * 
      * @return Building* 
      */
-    virtual BuildingWithParking* cloneBuilding(Building* b);
+    virtual BuildingWithParking* cloneBuilding(Building* b){};
 
 private:
 

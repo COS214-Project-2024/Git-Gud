@@ -8,9 +8,8 @@ BuildingWithCoffeeShop* BuildingWithCoffeeShopFactory::upgradeBuilding(Building*
     return nullptr;
 }
 
-BuildingWithCoffeeShop* BuildingWithCoffeeShopFactory::cloneBuilding(Building* b){
+/*BuildingWithCoffeeShop* BuildingWithCoffeeShopFactory::cloneBuilding(Building* b){
     Building* c=dynamic_cast<BuildingWithCoffeeShop*>(b)->building->clone();
     return new BuildingWithCoffeeShop(c);
-}
-
+}*/
 

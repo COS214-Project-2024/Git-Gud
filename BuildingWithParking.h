@@ -128,7 +128,7 @@ public:
      * 
      * @return BuildingWithParking* 
      */
-    virtual BuildingWithParking* clone(){};
+    virtual BuildingWithParking* clone();
 
     virtual ~BuildingWithParking(){};
 

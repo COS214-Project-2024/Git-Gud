@@ -37,7 +37,7 @@ public:
      * 
      * @return BuildingWithCoffeeShop* 
      */
-    virtual BuildingWithCoffeeShop* cloneBuilding(Building* b);
+    virtual BuildingWithCoffeeShop* cloneBuilding(Building* b){};
 
     /**
      * @brief Destroy the Building With Coffee Shop Factory object

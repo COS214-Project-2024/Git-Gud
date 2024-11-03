@@ -18,7 +18,7 @@ class SatisfactionLevel{
         virtual void exitState() = 0;
 
         virtual std::string getCurrentSatisfactionLevel() = 0;
-        float getTaxReturn(){return taxReturn;};
+        virtual float getTaxReturn() = 0;
 };
 
 #endif  // SATISFACTIONLEVEL_H

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "TrafficBuilding.h"
 #include "TrafficBuildingFactory.h"
-#include "TrafficSimulation.h"
+#include "Transportation.h"
 
 class TransportTest : public ::testing::Test {};
 
@@ -23,7 +23,7 @@ TEST_F(TransportTest, Initialization) {
 
 TEST_F(TransportTest, Simulation) {
     
-    TrafficSimulation* ts1 = new TrafficSimulation();
+    Transportation* ts1 = new Transportation();
     ts1->addTrafficBuilding(TAXI, 20);
     ts1->addTrafficBuilding(TAXI, 20);
     ts1->addTrafficBuilding(BUS, 50);
@@ -44,6 +44,6 @@ TEST_F(TransportTest, Simulation) {
     EXPECT_EQ(ts1->getTransportTypeString(TRAIN), "Train");
     EXPECT_EQ(ts1->getTransportTypeString(AIRPORT), "Airport");
     
-    
+
 }
 

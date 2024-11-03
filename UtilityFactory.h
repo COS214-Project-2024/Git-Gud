@@ -12,6 +12,10 @@ class UtilityFactory {
         ResourceManager::getInstance()->addResource(resourceType, amount);
     }
 
+    void spendBudget(int amount) {
+        ResourceManager::getInstance()->spendBudget(amount);
+    }
+
     public:
         UtilityFactory(){};
         virtual ~UtilityFactory(){}

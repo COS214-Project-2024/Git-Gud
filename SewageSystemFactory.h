@@ -11,7 +11,10 @@ public:
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
         SewageSystem* sewageSystem = new SewageSystem(capacity, maintenanceCost);
-        adjustResource("waterSupply", capacity);  // or the appropriate resource
+
+        adjustResource("waterSupply", capacity);
+        spendBudget(maintenanceCost);
+
         return sewageSystem;
     }
 };

@@ -11,7 +11,10 @@ public:
 
     Utility* createUtility(int capacity, int maintenanceCost) override {
         WasteManagement* waste = new WasteManagement(capacity, maintenanceCost);
-        adjustResource("wasteCapacity", capacity);  // or the appropriate resource
+
+        adjustResource("wasteCapacity", capacity);
+        spendBudget(maintenanceCost);
+
         return waste;
     }
 };

@@ -147,12 +147,13 @@ TEST(DecorateDecorator, Service){
 
 /*int main(){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);
-    Building* c=new BuildingWithParking(b);
+    Building* c=new BuildingWithCoffeeShop(b);
 
-    Building* f=c->clone();
+    BuildingFactory* d=new BuildingWithCoffeeShopFactory();
+    Building* f=d->cloneBuilding(c);
 
     delete f;
-    delete c;
+    delete d;
 
 }*/
 

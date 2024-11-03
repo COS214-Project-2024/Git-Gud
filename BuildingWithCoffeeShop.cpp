@@ -2,7 +2,7 @@
 
 BuildingWithCoffeeShop::BuildingWithCoffeeShop(Building* b) : Decorator(){
     this->building=b;
-    //this->building->setState(std::make_unique<UnderConstruction>());
+    this->building->setState(std::make_unique<UnderConstruction>());
     this->capacity=1;
 
 }
@@ -94,7 +94,15 @@ void BuildingWithCoffeeShop::addWorker(){
 
 }
 
-BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
-    Building* c=this->building->clone();
-    return new BuildingWithCoffeeShop(c);
-}
+/*BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
+    BuildingWithCoffeeShop* b = new BuildingWithCoffeeShop();
+    std::cout << "coff" << std::endl;
+    // Only clone `this->building` if it's not null
+    if (this->building != nullptr) {
+        // Set `b->building` to the cloned object without deleting it first
+        delete b->building;
+        b->building = this->building->clone();
+    }
+
+    return b;
+}*/

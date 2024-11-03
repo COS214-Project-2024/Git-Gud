@@ -3,9 +3,10 @@
 
 #include "TrafficBuilding.h"
 #include "BuildingState.h"
+#include "BuildingFactory.h"
 #include "UnderConstruction.h" // Example state class
 
-class TrafficBuildingFactory {
+class TrafficBuildingFactory : public BuildingFactory {
 public:
 
     /**

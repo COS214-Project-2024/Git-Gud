@@ -4,7 +4,7 @@
 #include "Building.h"
 #include "Subject.h"
 
-enum Industry {MANUFACTURING, ENERGY, TECHNOLOGY};
+//enum Industry {MANUFACTURING, ENERGY, TECHNOLOGY};
 
 class IndustrialBuilding : public Building{
     

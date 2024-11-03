@@ -4,7 +4,7 @@
 #include "Building.h"
 #include <iostream>
 
-enum BusinessType {LUXURY, FOOD, GENERAL};
+//enum BusinessType {LUXURY, FOOD, GENERAL};
 
 class CommercialBuilding : public Building{
 

@@ -22,7 +22,7 @@ protected:
 
 public:
 
-    Decorator() : Building(){};
+   /*  Decorator() : Building(){}; */
 
     /**
      * @brief Method used to provide a service to Citizens
@@ -48,7 +48,7 @@ public:
      * @brief Destroy the Decorator object
      * 
      */
-    virtual ~Decorator();
+    /* virtual ~Decorator(); */
 
     /// @brief Building-object that is being decorated
     Building* building;

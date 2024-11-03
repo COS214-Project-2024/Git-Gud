@@ -74,7 +74,7 @@ public:
      * @brief Destroy the Building With Coffee Shop object
      * 
      */
-    virtual ~BuildingWithCoffeeShop(){};
+    virtual ~BuildingWithCoffeeShop();
 
     /**
      * @brief Get the number of stories of the Building

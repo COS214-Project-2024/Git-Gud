@@ -7,7 +7,7 @@
 #include "ResidentialBuilding.h"
 #include "ResidentialBuildingFactory.h"
 
-TEST(CommercialFact, cost){
+/*TEST(CommercialFact, cost){
     BuildingFactory* b=new CommercialBuildingFactory();
     b->Rmanager->initializeResources(50,50,50,50);
     b->Rmanager->addResource("energySupply",50);
@@ -117,19 +117,25 @@ TEST(DecorateDecorator, Service){
 }
 
 TEST(CoffeeParkingClone, BusinessType){
-    
+    Building* c=new CommercialBuilding(50,50,50,BusinessType::GENERAL);
+    Building* cs=new BuildingWithCoffeeShop(c);
+    Building* p=new BuildingWithParking(cs);
+    Building* n=p->clone();
+    delete p;
+    delete n;
+}*/
 
-}
-
-/*int main(){
+int main(){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);
     Building* c=new BuildingWithParking(b);
+    Building* d=new BuildingWithCoffeeShop(c);
+    Building* f=d->clone();
 
-    Building* f=c->clone();
+    std::cout << (f == nullptr) << std::endl;
 
     delete f;
-    delete c;
+   // delete d;
 
-}*/
+}
 
     

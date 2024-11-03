@@ -3,10 +3,6 @@
 
 #include "Decorator.h"
 
-Decorator::~Decorator(){
-    if (this->building != nullptr){
-    delete this->building;
-    }
-}
+
 
 #endif

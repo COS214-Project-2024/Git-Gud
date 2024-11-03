@@ -1,58 +1,47 @@
 #include <gtest/gtest.h>
 #include "Resources.h"
 
+// Test Suite for Resources
 class ResourcesTest : public ::testing::Test {
 protected:
-    Resources resources;
+    Resources resources; // Default initialization
+
+    void SetUp() override {
+        resources = Resources(10, 20, 30, 40, 50, 1000, 60); // Initialize with specific values
+    }
 };
 
 TEST_F(ResourcesTest, Initialization) {
-    EXPECT_EQ(resources.getWood(), 0);
-    EXPECT_EQ(resources.getSteel(), 0);
-    EXPECT_EQ(resources.getConcrete(), 0);
-    EXPECT_EQ(resources.getBudget(), 0);
-    EXPECT_EQ(resources.getWaterSupply(), 0);
-    EXPECT_EQ(resources.getEnergySupply(), 0);
+    EXPECT_EQ(resources.getWoodResource().getAmount(), 10);
+    EXPECT_EQ(resources.getSteelResource().getAmount(), 20);
+    EXPECT_EQ(resources.getConcreteResource().getAmount(), 30);
+    EXPECT_EQ(resources.getWaterSupplyResource().getAmount(), 40);
+    EXPECT_EQ(resources.getEnergySupplyResource().getAmount(), 50);
+    EXPECT_EQ(resources.getBudgetResource().getAmount(), 1000);
+    EXPECT_EQ(resources.getWasteCapacityResource().getAmount(), 60);
 }
 
-TEST_F(ResourcesTest, AddResources) {
-    resources.addResource("wood", 10);
-    resources.addResource("steel", 20);
-    resources.addResource("concrete", 30);
-    resources.addResource("waterSupply", 40);
-    resources.addResource("energySupply", 50);
-
-    EXPECT_EQ(resources.getWood(), 10);
-    EXPECT_EQ(resources.getSteel(), 20);
-    EXPECT_EQ(resources.getConcrete(), 30);
-    EXPECT_EQ(resources.getWaterSupply(), 40);
-    EXPECT_EQ(resources.getEnergySupply(), 50);
+TEST_F(ResourcesTest, AddResourceAmounts) {
+    resources.getWoodResource().addAmount(5);
+    resources.getSteelResource().addAmount(10);
+    resources.getConcreteResource().addAmount(15);
+    EXPECT_EQ(resources.getWoodResource().getAmount(), 15);
+    EXPECT_EQ(resources.getSteelResource().getAmount(), 30);
+    EXPECT_EQ(resources.getConcreteResource().getAmount(), 45);
 }
 
-TEST_F(ResourcesTest, UseResources) {
-    resources.addResource("wood", 10);
-    resources.addResource("steel", 20);
-    resources.useResource("wood", 5);
-    resources.useResource("steel", 10);
-
-    EXPECT_EQ(resources.getWood(), 5);
-    EXPECT_EQ(resources.getSteel(), 10);
+TEST_F(ResourcesTest, SubtractResourceAmounts) {
+    resources.getWoodResource().subtractAmount(5);
+    resources.getSteelResource().subtractAmount(10);
+    resources.getConcreteResource().subtractAmount(15);
+    EXPECT_EQ(resources.getWoodResource().getAmount(), 5);
+    EXPECT_EQ(resources.getSteelResource().getAmount(), 10);
+    EXPECT_EQ(resources.getConcreteResource().getAmount(), 15);
 }
 
-TEST_F(ResourcesTest, UseResourcesNegativeCheck) {
-    resources.addResource("wood", 5);
-    resources.useResource("wood", 10); // Attempt to use more than available
-
-    EXPECT_EQ(resources.getWood(), 0); // Should not go below 0
-}
-
-TEST_F(ResourcesTest, AddAndSpendBudget) {
-    resources.addBudget(1000);
-    EXPECT_EQ(resources.getBudget(), 1000);
-
-    resources.spendBudget(200);
-    EXPECT_EQ(resources.getBudget(), 800);
-
-    resources.spendBudget(1000); // Attempt to overspend
-    EXPECT_EQ(resources.getBudget(), 0); // Budget should not go negative
+TEST_F(ResourcesTest, ResourceAmountsCannotGoNegative) {
+    resources.getWoodResource().subtractAmount(15);
+    resources.getSteelResource().subtractAmount(30);
+    EXPECT_EQ(resources.getWoodResource().getAmount(), 0);
+    EXPECT_EQ(resources.getSteelResource().getAmount(), 0);
 }

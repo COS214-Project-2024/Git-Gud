@@ -1,5 +1,23 @@
 #include "Player.h"
 
+<<<<<<< Updated upstream
+=======
+Player::Player(){
+    taxMan = new TaxManager;
+}
+
+Player::~Player(){
+    if (taxMan) {
+        delete taxMan;
+        taxMan = nullptr;
+    }
+}
+
+void Player::changeTaxRate(float tax){
+    taxMan->updateTotalTaxRate(tax);
+}
+
+>>>>>>> Stashed changes
 void Player::taxResidentialBuildings(){
     taxMan->chooseTaxMethod(new TaxResidents);
     Balance = taxMan->calculateTax();

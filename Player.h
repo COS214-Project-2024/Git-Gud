@@ -9,9 +9,16 @@
 class Player
 {
 private:
-    float Balance;
+    float Balance = 0.0;
     TaxManager* taxMan;
 public:
+<<<<<<< Updated upstream
+=======
+    Player();
+    ~Player();
+    void changeTaxRate(float tax);
+
+>>>>>>> Stashed changes
     void taxResidentialBuildings();
     void taxIndustrialBuildings();
     void taxCommercialBuildings();
@@ -19,6 +26,14 @@ public:
     void addResidentialBuilding(ResidentialBuilding* residentialBuilding);
     void addIndustrialBuilding(IndustrialBuilding* industrialBuilding);
     void addCommercialBuilding(CommercialBuilding* commercialBuilding);
+<<<<<<< Updated upstream
+=======
+
+    float getBalance();
+
+    TaxManager* getTaxMan(){return taxMan;};
+    
+>>>>>>> Stashed changes
 };
 
 

@@ -1,10 +1,7 @@
 #include "gtest/gtest.h"
 #include "GameEnvironment.h"
 
-class MockBuilding : public Building {
-    
-       
-};
+
 
 class GameEnvironmentTest : public ::testing::Test {
     protected:
@@ -77,7 +74,7 @@ TEST_F(GameEnvironmentTest, RadialBuildingIteratorEmptyArea)
 
 TEST_F(GameEnvironmentTest, RadialBuildingIteratorSingleBuilding)
 {
-    auto* building = new MockBuilding();
+    auto* building = new ResidentialBuilding();
     environment->add(building, 24, 25);
 
     auto* radialIterator = environment->createRadBuildItr(24, 24, 3);
@@ -88,9 +85,9 @@ TEST_F(GameEnvironmentTest, RadialBuildingIteratorSingleBuilding)
 
 TEST_F(GameEnvironmentTest, RadialBuildingIteratorMultipleBuildings)
 {
-    auto* building1 = new MockBuilding();
-    auto* building2 = new MockBuilding();
-    auto* building3 = new MockBuilding();
+    auto* building1 = new ResidentialBuilding();
+    auto* building2 = new ResidentialBuilding();
+    auto* building3 = new ResidentialBuilding();
     environment->add(building1, 24, 25);
     environment->add(building2, 25, 24);
     environment->add(building3, 23, 24);
@@ -124,7 +121,7 @@ TEST_F(GameEnvironmentTest, LinearBuildingIteratorEmptyArea)
 
 TEST_F(GameEnvironmentTest, LinearBuildingIteratorSingleBuilding)
 {
-    auto* building = new MockBuilding();
+    auto* building = new ResidentialBuilding();
     environment->add(building, 24, 25);
 
     auto* linearIterator = environment->createLinBuildItr();
@@ -140,7 +137,7 @@ TEST_F(GameEnvironmentTest, LinearBuildingIteratorMultipleBuildings)
 {
     for (int i = 0; i < 20; i+=2) {
         for (int j = 0; j < 10; j++) {
-            auto* building = new MockBuilding();
+            auto* building = new ResidentialBuilding();
             environment->createRoad(i, j);
             environment->add(building, i+1, j);
         }

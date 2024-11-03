@@ -4,6 +4,8 @@
 #include <string>
 #include "Subject.h"
 
+class Citizen;
+
 
 class Utility : public Subject {
 protected:
@@ -31,6 +33,23 @@ public:
     std::string getUtilityType() const { 
         return utilityType; 
     }
+
+    void handleObservers(){
+
+        for(Citizen* citizen : allCitizens){
+
+            attach(citizen);
+
+        }
+
+        if(allCitizens.size() > 0){
+
+            callObserver();
+
+        }
+
+    }
+
 };
 
 #endif // UTILITY_H

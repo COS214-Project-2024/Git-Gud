@@ -8,15 +8,13 @@
 #include "GameEnvironment.h"
 #include "Utility.h"
 
-
-class GameEnvironment;
-
 class Player
 {
 private:
     float Balance;
     TaxManager* taxMan;
 public:
+
     void changeTaxRate(float tax);
 
     void taxResidentialBuildings();
@@ -28,7 +26,7 @@ public:
     void addCommercialBuilding(CommercialBuilding* commercialBuilding);
 
     float getBalance();
-    void provideServiceForUtility(int x, int y, int radius, Utility *utility, GameEnvironment *gameEnv);
+
 };
 
 

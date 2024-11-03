@@ -34,29 +34,3 @@ void Player::addCommercialBuilding(CommercialBuilding* commercialBuilding){
 float Player::getBalance(){
     return Balance;
 }
-
-void Player::provideServiceForUtility(int x, int y, int radius, Utility *utility, GameEnvironment *gameEnv){
-
-    for(int i = x - radius; i <= x + radius; ++i){
-
-        for(int j = y - radius; j <= y + radius; ++j){
-
-            Building* building = gameEnv->getBuildingAt(i, j);
-
-            if(building != nullptr){
-
-                std::vector<Citizen*> buildingObservers = building->getObserverList();
-
-                for(Citizen* observer : buildingObservers){
-
-                    utility->attach(observer);
-
-                }
-
-            }
-
-        }
-
-    }
-
-}

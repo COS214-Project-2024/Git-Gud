@@ -5,6 +5,11 @@
 #include "TaxCommercial.h"
 #include "TaxFactories.h"
 #include "TaxResidents.h"
+#include "GameEnvironment.h"
+#include "Utility.h"
+
+
+class GameEnvironment;
 
 class Player
 {
@@ -23,6 +28,7 @@ public:
     void addCommercialBuilding(CommercialBuilding* commercialBuilding);
 
     float getBalance();
+    void provideServiceForUtility(int x, int y, int radius, Utility *utility, GameEnvironment *gameEnv);
 };
 
 

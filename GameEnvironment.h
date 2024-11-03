@@ -7,6 +7,7 @@
 #include <math.h>
 #include "UtilityGridNode.h"
 #include "Building.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -187,7 +188,7 @@ public:
         return cols;
     };
 
-    Building* GameEnvironment::getBuildingAt(int x, int y){
+    Building* getBuildingAt(int x, int y){
 
         if(x >= 0 && x < getRows() && y >= 0 && y < getCols()){
 
@@ -221,7 +222,9 @@ public:
         }
         utilityGrid[y][x]->add(utility);
 
-        utility->provideService(this, x, y, 2);
+        Player player;
+        player.provideServiceForUtility(x, y, 2, utility, this);
+        utility->callObserver();
 
         return true;
     };

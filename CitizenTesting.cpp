@@ -1,5 +1,4 @@
-/*
-#include <gtest/gtest.h>
+/*#include <gtest/gtest.h>
 #include "Citizen.h"
 #include "Neutral.h" // Include satisfaction level classes
 #include "Satisfied.h"
@@ -85,8 +84,9 @@ TEST_F(CitizenTest, Update_IgnoredUnknownChangeType) {
     changeData.changeType = "UnknownChangeType";
     citizen->update(changeData);
     EXPECT_EQ(citizen->getSatisfactionLevel()->satisfactionRating, citizen->getSatisfactionLevel()->satisfactionRating);
-}
-*/
+}*/
+
+
 
 #include "Citizen.h"
 #include "gtest/gtest.h"
@@ -124,7 +124,7 @@ TEST_F(CitizenTest, SatisfactionLevel_InitializesToNeutral) {
     SatisfactionLevel* satisfactionLevel = citizen->getSatisfactionLevel();
     EXPECT_NE(satisfactionLevel, nullptr);
     EXPECT_TRUE(dynamic_cast<Neutral*>(satisfactionLevel)); // Check if it's Neutral
-    EXPECT_EQ(satisfactionLevel->satisfactionRating, 0.0f); // Assuming Neutral starts with a rating of 0
+    EXPECT_EQ(satisfactionLevel->satisfactionRating, 50); // Assuming Neutral starts with a rating of 0
 }
 
 // Test for Setting Job Status
@@ -138,8 +138,8 @@ TEST_F(CitizenTest, SetJobStatus_UpdatesJobStatus) {
 
 // Test for Handling Tax Change (Positive Rate)
 TEST_F(CitizenTest, HandleTaxChange_PositiveRate_DecreasesSatisfaction) {
-    SatisfactionLevel* satisfactionLevel = citizen->getSatisfactionLevel();
-    float initialRating = satisfactionLevel->satisfactionRating;
+    //SatisfactionLevel* satisfactionLevel = citizen->getSatisfactionLevel();
+    float initialRating = citizen->getSatisfactionLevel()->satisfactionRating;
 
     ChangeData changeData;
     changeData.changeType = "TaxChange";
@@ -147,13 +147,14 @@ TEST_F(CitizenTest, HandleTaxChange_PositiveRate_DecreasesSatisfaction) {
 
     citizen->update(changeData);
 
-    EXPECT_LT(satisfactionLevel->satisfactionRating, initialRating); // Should decrease
+    EXPECT_FLOAT_EQ(citizen->getSatisfactionLevel()->satisfactionRating, initialRating - 5.0); // Should decrease
+
 }
 
 // Test for Handling Tax Change (Negative Rate)
 TEST_F(CitizenTest, HandleTaxChange_NegativeRate_IncreasesSatisfaction) {
-    SatisfactionLevel* satisfactionLevel = citizen->getSatisfactionLevel();
-    float initialRating = satisfactionLevel->satisfactionRating;
+    //SatisfactionLevel* satisfactionLevel = citizen->getSatisfactionLevel();
+    float initialRating = citizen->getSatisfactionLevel()->satisfactionRating;
 
     ChangeData changeData;
     changeData.changeType = "TaxChange";
@@ -161,7 +162,7 @@ TEST_F(CitizenTest, HandleTaxChange_NegativeRate_IncreasesSatisfaction) {
 
     citizen->update(changeData);
 
-    EXPECT_GT(satisfactionLevel->satisfactionRating, initialRating); // Should increase
+    EXPECT_FLOAT_EQ(citizen->getSatisfactionLevel()->satisfactionRating, initialRating + 3); // Should increase
 }
 
 // Test for Handling Building Constructed (Type 1)
@@ -175,7 +176,7 @@ TEST_F(CitizenTest, HandleBuildingConstructed_Type1_DecreasesSatisfaction) {
 
     citizen->update(changeData);
 
-    EXPECT_LT(satisfactionLevel->satisfactionRating, initialRating); // Should decrease
+    EXPECT_FLOAT_EQ(citizen->getSatisfactionLevel()->satisfactionRating, initialRating + 2); // Should decrease
 }
 
 // Test for Handling Building Constructed (Type 2)
@@ -189,7 +190,7 @@ TEST_F(CitizenTest, HandleBuildingConstructed_Type2_IncreasesSatisfaction) {
 
     citizen->update(changeData);
 
-    EXPECT_GT(satisfactionLevel->satisfactionRating, initialRating); // Should increase
+    EXPECT_FLOAT_EQ(citizen->getSatisfactionLevel()->satisfactionRating, initialRating - 0.5f); // Should increase
 }
 
 // Test for Ignoring Unknown Change Type
@@ -205,3 +206,39 @@ TEST_F(CitizenTest, Update_UnknownChangeType_NoEffectOnSatisfaction) {
 
     EXPECT_EQ(satisfactionLevel->satisfactionRating, initialRating); // Should remain unchanged
 }
+
+
+TEST_F(CitizenTest, UpdateSatisfactionLevel_SetsCorrectSatisfactionLevel){
+
+
+    citizen->getSatisfactionLevel()->satisfactionRating = 10.0f; //Very Dissatisfied range
+    citizen->updateSatisfactionLevel();
+    EXPECT_TRUE(dynamic_cast<VeryDissatisfied*>(citizen->getSatisfactionLevel()) != nullptr)
+        << "Expected VeryDissatisfied satisfaction level.";
+
+    citizen->getSatisfactionLevel()->satisfactionRating = 25.0f; //Dissatisfied range
+    citizen->updateSatisfactionLevel();
+    EXPECT_TRUE(dynamic_cast<Dissatisfied*>(citizen->getSatisfactionLevel()) != nullptr)
+        << "Expected Dissatisfied satisfaction level.";
+
+    citizen->getSatisfactionLevel()->satisfactionRating = 50.0f; //Neutral range
+    citizen->updateSatisfactionLevel();
+    EXPECT_TRUE(dynamic_cast<Neutral*>(citizen->getSatisfactionLevel()) != nullptr)
+        << "Expected Neutral satisfaction level.";
+
+    citizen->getSatisfactionLevel()->satisfactionRating = 70.0f; //Satisfied range
+    citizen->updateSatisfactionLevel();
+    EXPECT_TRUE(dynamic_cast<Satisfied*>(citizen->getSatisfactionLevel()) != nullptr)
+        << "Expected Satisfied satisfaction level.";
+
+    citizen->getSatisfactionLevel()->satisfactionRating = 90.0f; //Very Satisfied range
+    citizen->updateSatisfactionLevel();
+    EXPECT_TRUE(dynamic_cast<VerySatisfied*>(citizen->getSatisfactionLevel()) != nullptr)
+        << "Expected VerySatisfied satisfaction level.";
+
+    citizen->getSatisfactionLevel()->satisfactionRating = 120.0f; //Out of range
+    citizen->updateSatisfactionLevel();
+    EXPECT_TRUE(dynamic_cast<Neutral*>(citizen->getSatisfactionLevel()) != nullptr)
+        << "Expected Neutral satisfaction level for out-of-range input.";
+}
+

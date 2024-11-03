@@ -1,5 +1,5 @@
 #include "Landmark.h"
-#include "GameEnvironment.h"
+//#include "GameEnvironment.h"
 #include "Citizen.h"
 #include <chrono>
 #include <thread>

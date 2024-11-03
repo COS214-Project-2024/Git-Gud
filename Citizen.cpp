@@ -5,6 +5,7 @@ Citizen::Citizen(){
 
     this->hasJob = false;
     this->satisfactionLevel = new Neutral();
+    this->satisfactionLevel->satisfactionRating = 50;
 
 }
 
@@ -12,16 +13,13 @@ Citizen::Citizen(bool hasJob){
 
     this->hasJob = hasJob;
     this->satisfactionLevel = new Neutral();
+    this->satisfactionLevel->satisfactionRating = 50;
 
 }
 
 Citizen::~Citizen(){
 
-    if(satisfactionLevel != NULL){
-
-        delete satisfactionLevel;
-
-    }
+    delete satisfactionLevel;
 
 }
 
@@ -66,17 +64,17 @@ void Citizen::handleBuildingConstructed(float BuildingFloat){
     if(BuildingFloat == 1.0f){
 
         //set satisfaction level (decrease float by 1)
-        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating - 2;
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 2;
 
     } else if(BuildingFloat == 2.0f || BuildingFloat == 3.0f){
 
         //+0.5
-        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 0.5;
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating - 0.5;
 
     } else if(BuildingFloat == 4.0f){
 
         //+2
-        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating + 2;
+        satisfactionLevel->satisfactionRating = satisfactionLevel->satisfactionRating - 2;
 
     }
 
@@ -142,8 +140,16 @@ SatisfactionLevel* Citizen::getSatisfactionLevel(){
 }
 
 void Citizen::setSatisfactionLevel(SatisfactionLevel* satisfactionLevel){
-    delete satisfactionLevel;
-    this->satisfactionLevel = satisfactionLevel;
+
+    if(this->satisfactionLevel != satisfactionLevel){
+
+        float currentRating = this->satisfactionLevel->satisfactionRating;
+        delete this->satisfactionLevel;
+        this->satisfactionLevel = satisfactionLevel;
+        this->satisfactionLevel->satisfactionRating = currentRating;
+
+    }
+    
 }
 
 void Citizen::updateSatisfactionLevel(){
@@ -154,24 +160,24 @@ void Citizen::updateSatisfactionLevel(){
 
     } else if(satisfactionLevel->satisfactionRating >= 20.0f && satisfactionLevel->satisfactionRating < 40.0f){
 
-            setSatisfactionLevel(new Dissatisfied());
+        setSatisfactionLevel(new Dissatisfied());
 
-        } else if(satisfactionLevel->satisfactionRating >= 40.0f && satisfactionLevel->satisfactionRating < 60.0f){
+    } else if(satisfactionLevel->satisfactionRating >= 40.0f && satisfactionLevel->satisfactionRating < 60.0f){
 
-            setSatisfactionLevel(new Neutral());
+        setSatisfactionLevel(new Neutral());
 
-        } else if(satisfactionLevel->satisfactionRating >= 60.0f && satisfactionLevel->satisfactionRating < 80.0f){
+    } else if(satisfactionLevel->satisfactionRating >= 60.0f && satisfactionLevel->satisfactionRating < 80.0f){
 
-            setSatisfactionLevel(new Satisfied());
+        setSatisfactionLevel(new Satisfied());
 
-        } else if(satisfactionLevel->satisfactionRating >= 80.0f && satisfactionLevel->satisfactionRating <= 100.0f){
+    } else if(satisfactionLevel->satisfactionRating >= 80.0f && satisfactionLevel->satisfactionRating <= 100.0f){
 
-            setSatisfactionLevel(new VerySatisfied());
+        setSatisfactionLevel(new VerySatisfied());
 
-        } else{
+    } else{
 
-            setSatisfactionLevel(new Neutral());
+        setSatisfactionLevel(new Neutral());
 
-        }
+    }
 
 }

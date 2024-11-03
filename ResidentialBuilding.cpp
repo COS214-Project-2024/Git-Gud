@@ -22,13 +22,7 @@ ResidentialBuilding::ResidentialBuilding(std::unique_ptr<BuildingState> s, int c
 }
 
 ResidentialBuilding::~ResidentialBuilding(){
-
-    for(Citizen* tenant : tenants){
-
-        delete tenant;
-
-    }
-
+    
     tenants.clear();
 
 }

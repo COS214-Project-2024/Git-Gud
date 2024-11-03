@@ -2,32 +2,30 @@
 
 float TaxFactories::CollectTax(std::list<ResidentialBuilding*> resBuildings, std::list<CommercialBuilding*> comBuildings, std::list<IndustrialBuilding*> indBuildings, float tax){
     float totalTax = 0;
-    std::list<IndustrialBuilding*>::iterator buildingIt;
-    for (buildingIt = indBuildings.begin(); buildingIt != indBuildings.end(); buildingIt++){
-        int buildingTax;
-        switch ((*buildingIt)->getIndustryType())
+    int factor = 1;
+    for (IndustrialBuilding* buildings : indBuildings){
+        factor = 1;
+        switch (buildings->getIndustryType())
         {
         case MANUFACTURING:
-            int factor = (*buildingIt)->getNumStories()-(*buildingIt)->getPollutionLevel();
+            factor = buildings->getNumStories()-buildings->getPollutionLevel();
             if(factor < 1){
                 factor = 1;
             }
-            buildingTax = tax*factor;
             break;
         case ENERGY:
-            int factor = 5-(*buildingIt)->getPollutionLevel();
+            factor = 5-buildings->getPollutionLevel();
             if(factor < 1){
                 factor = 1;
             }
-            buildingTax = tax*factor;
             break;
         case TECHNOLOGY:
-                buildingTax = tax*((*buildingIt)->getNumStories()+(*buildingIt)->getSize());
+                factor = (buildings->getNumStories());
             break;
         default:
             break;
         }
-        totalTax+=buildingTax; 
+        totalTax+=tax*factor; 
     }
     return totalTax;
 }

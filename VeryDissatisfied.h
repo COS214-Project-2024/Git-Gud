@@ -18,6 +18,8 @@ class VeryDissatisfied : public SatisfactionLevel{
         void exitState() override;
 
         std::string getCurrentSatisfactionLevel() override;
+
+        float getTaxReturn()override {return taxReturn;};
 };
 
 #endif  // VERYDISSATISFIED_H

@@ -4,23 +4,13 @@
 
 void Dissatisfied::enterState()
 {
-    std::cout << "Citizen Satisfaction Level is now Dissatisfied";
+    std::cout << "Citizen Satisfaction Level is now Dissatisfied" << std::endl;
 }
 
 
 void Dissatisfied::exitState()
 {
-    std::cout << "Citizen Satisfaction Level is no longer Dissatisfied";
-}
-
-void Dissatisfied::nextState(Citizen* citizen)
-{
-    citizen->setSatisfactionLevel(new Neutral());
-}
-        
-void Dissatisfied::prevState(Citizen* citizen)
-{
-    citizen->setSatisfactionLevel(new VeryDissatisfied());
+    std::cout << "Citizen Satisfaction Level is no longer Dissatisfied" << std::endl;
 }
 
 std::string Dissatisfied::getCurrentSatisfactionLevel()

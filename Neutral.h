@@ -13,13 +13,11 @@ class Neutral : public SatisfactionLevel{
     public:
         float satisfactionRating;
 
-        Neutral() = default;
+        Neutral(){enterState();}
+        ~Neutral(){exitState();}
 
         void enterState() override;
         void exitState() override;
-
-        void nextState(Citizen* citizen) override;
-        void prevState(Citizen* citizen) override;
 
         std::string getCurrentSatisfactionLevel() override;
 };

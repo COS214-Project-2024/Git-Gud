@@ -17,9 +17,6 @@ class SatisfactionLevel{
         virtual void enterState() = 0;
         virtual void exitState() = 0;
 
-        virtual void nextState(Citizen* citizen) = 0;
-        virtual void prevState(Citizen* citizen) = 0;
-
         virtual std::string getCurrentSatisfactionLevel() = 0;
         float getTaxReturn(){return taxReturn;};
 };

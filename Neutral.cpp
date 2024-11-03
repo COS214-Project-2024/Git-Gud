@@ -4,23 +4,13 @@
 
 void Neutral::enterState()
 {
-    std::cout << "Citizen Satisfaction Level is now Neutral";
+    std::cout << "Citizen Satisfaction Level is now Neutral" << std::endl;
 }
 
 
 void Neutral::exitState()
 {
-    std::cout << "Citizen Satisfaction Level is no longer Neutral";
-}
-
-void Neutral::nextState(Citizen* citizen)
-{
-    citizen->setSatisfactionLevel(new Satisfied());
-}
-        
-void Neutral::prevState(Citizen* citizen)
-{
-    citizen->setSatisfactionLevel(new Dissatisfied());
+    std::cout << "Citizen Satisfaction Level is no longer Neutral" << std::endl;
 }
 
 std::string Neutral::getCurrentSatisfactionLevel()

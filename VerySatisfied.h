@@ -11,13 +11,11 @@ class VerySatisfied : public SatisfactionLevel{
     public:
         float satisfactionRating;
 
-        VerySatisfied() = default;
+        VerySatisfied(){enterState();};
+        ~VerySatisfied(){exitState();}
 
         void enterState() override;
         void exitState() override;
-
-        void nextState(Citizen* citizen) override;
-        void prevState(Citizen* citizen) override;
 
         std::string getCurrentSatisfactionLevel() override;
 };

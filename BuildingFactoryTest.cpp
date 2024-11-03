@@ -116,10 +116,34 @@ TEST(DecorateDecorator, Service){
     
 }
 
-TEST(CoffeeParkingClone, BusinessType){
-    
+/*TEST(CoffeeParkingClone, BusinessType){
+    BuildingFactory* b=new CommercialBuildingFactory();
+    b->Rmanager->initializeResources(50,50,50,50);
+    b->Rmanager->addResource("energySupply",50);
+    Building* c=b->constructBuilding();
 
-}
+    BuildingFactory* d=new BuildingWithCoffeeShopFactory();
+    d->Rmanager->initializeResources(50,50,50,50);
+    d->Rmanager->addResource("energySupply",50);
+    Building * e=d->upgradeBuilding(c);
+
+    BuildingFactory* f=new BuildingWithParkingFactory();
+    f->Rmanager->initializeResources(50,50,50,50);
+    f->Rmanager->addResource("energySupply",50);
+    Building* g=f->upgradeBuilding(e);
+    Building* h=f->cloneBuilding(g);
+    //std::cout << (h == nullptr) << std::endl;
+    if (g != nullptr){
+        EXPECT_EQ(g->getBusinessType(), BusinessType::GENERAL);
+    }
+
+    delete g;
+    delete f;
+    delete d;
+    delete b;
+    delete h;
+
+}*/
 
 /*int main(){
     Building* b=new CommercialBuilding(50,50,3,BusinessType::GENERAL);

@@ -46,40 +46,9 @@ class Building : public Subject{
         virtual float getCost() = 0; 
 
         virtual void setState(BuildingState* s);
-<<<<<<< Updated upstream
         void repairBuilding();
         std::string currentState();
         void simulateConstruction();
-=======
-
-        virtual void repairBuilding();
-
-        virtual std::string currentState();
-
-        virtual void simulateConstruction();
-
-        // Added these methods to ensure the type is preserved after decorated
-        virtual int getNumStories(){return 0;};
-
-        virtual BusinessType getBusinessType(){return NONE;};
-
-        virtual void addEmployees(){};
-
-        virtual int getSize(){return 0;};
-
-        virtual float getPollutionLevel(){return 0;};
-
-        virtual void addCitizens(){};
-
-        virtual std::list<Citizen*> getTenants(){
-            std::list<Citizen*> c;
-            return c;
-        };
-
-        virtual void addWorker(){};
-
-        virtual Building* clone()=0;
->>>>>>> Stashed changes
 
 };
 

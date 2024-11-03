@@ -74,7 +74,7 @@ TEST_F(GameEnvironmentTest, RadialBuildingIteratorEmptyArea)
 
 TEST_F(GameEnvironmentTest, RadialBuildingIteratorSingleBuilding)
 {
-    auto* building = new ResidentialBuilding();
+    auto* building = new ResidentialBuilding(7);
     environment->add(building, 24, 25);
 
     auto* radialIterator = environment->createRadBuildItr(24, 24, 3);
@@ -85,9 +85,9 @@ TEST_F(GameEnvironmentTest, RadialBuildingIteratorSingleBuilding)
 
 TEST_F(GameEnvironmentTest, RadialBuildingIteratorMultipleBuildings)
 {
-    auto* building1 = new ResidentialBuilding();
-    auto* building2 = new ResidentialBuilding();
-    auto* building3 = new ResidentialBuilding();
+    auto* building1 = new ResidentialBuilding(7);
+    auto* building2 = new ResidentialBuilding(7);
+    auto* building3 = new ResidentialBuilding(7);
     environment->add(building1, 24, 25);
     environment->add(building2, 25, 24);
     environment->add(building3, 23, 24);
@@ -121,7 +121,7 @@ TEST_F(GameEnvironmentTest, LinearBuildingIteratorEmptyArea)
 
 TEST_F(GameEnvironmentTest, LinearBuildingIteratorSingleBuilding)
 {
-    auto* building = new ResidentialBuilding();
+    auto* building = new ResidentialBuilding(7);
     environment->add(building, 24, 25);
 
     auto* linearIterator = environment->createLinBuildItr();
@@ -137,7 +137,7 @@ TEST_F(GameEnvironmentTest, LinearBuildingIteratorMultipleBuildings)
 {
     for (int i = 0; i < 20; i+=2) {
         for (int j = 0; j < 10; j++) {
-            auto* building = new ResidentialBuilding();
+            auto* building = new ResidentialBuilding(7);
             environment->createRoad(i, j);
             environment->add(building, i+1, j);
         }

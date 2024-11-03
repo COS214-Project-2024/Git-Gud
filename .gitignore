@@ -43,3 +43,7 @@ unitTestingGE.cpp
 tasks.json
 ExampleTests.cpp
 test_PrototypeManager
+makefile
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/settings.json

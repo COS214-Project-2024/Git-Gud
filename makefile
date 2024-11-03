@@ -11,7 +11,13 @@ LDFLAGS = -lgtest -lgtest_main -lgmock -lgmock_main -pthread
 COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp Transportation.cpp \
              TaxManager.cpp Subject.cpp IndustrialBuilding.cpp Landmark.cpp CommercialBuilding.cpp \
              ResidentialBuilding.cpp Citizen.cpp Education.cpp HealthCare.cpp LawEnforcement.cpp \
-             Neutral.cpp Satisfied.cpp Dissatisfied.cpp VerySatisfied.cpp VeryDissatisfied.cpp
+             Neutral.cpp Satisfied.cpp Dissatisfied.cpp VerySatisfied.cpp VeryDissatisfied.cpp \
+			 BuildingFactory.cpp CommercialBuildingFactory.cpp \
+			 BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp \
+			 IndustrialBuildingFactory.cpp ResidentialBuildingFactory.cpp \
+			 BuildingWithCoffeeShop.cpp BuildingWithParking.cpp Decorator.cpp \
+			 ResourceManager.cpp Resources.cpp
+
 
 # Object files
 COMMON_OBJ = $(COMMON_SRC:.cpp=.o)
@@ -27,6 +33,7 @@ TEST_SRC7 = IndustrialBuildingTesting.cpp
 TEST_SRC8 = LandmarkBuildingTesting.cpp
 TEST_SRC9 = ResidentialBuildingTesting.cpp
 TEST_SRC10 = SubjectTest.cpp
+TEST_SRC11 = BuildingFactoryTest.cpp
 
 # Executable names for each test
 TARGET1 = test_Transport
@@ -39,6 +46,7 @@ TARGET7 = IndustrialBuildingTesting
 TARGET8 = LandmarkBuildingTesting
 TARGET9 = ResidentialBuildingTesting
 TARGET10 = SubjectTest
+TARGET11 = BuildingFactoryTest
 
 # All test targets
 all: $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10)
@@ -74,6 +82,9 @@ $(TARGET9): $(COMMON_OBJ) $(TEST_SRC9:.cpp=.o)
 $(TARGET10): $(COMMON_OBJ) $(TEST_SRC10:.cpp=.o)
 	$(CXX) $(COMMON_OBJ) $(TEST_SRC10:.cpp=.o) -o $(TARGET10) $(LDFLAGS)
 
+$(TARGET11): $(COMMON_OBJ) $(TEST_SRC11:.cpp=.0)
+	$(CXX) $(COMMON_OBJ) $(TEST_SRC11:.cpp=.o) -o $(TARGET11) $(LDFLAGS)
+
 # Compile object files
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -108,6 +119,9 @@ residential_building_test: $(TARGET9)
 
 subject_test: $(TARGET10)
 	./$(TARGET10)
+
+fact_dec_test: $(TARGET11)
+	./$(TARGET11)
 
 # Run tests with Valgrind
 valgrind: $(TEST_BIN)

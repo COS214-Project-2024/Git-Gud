@@ -17,6 +17,7 @@ class TaxManager : public Subject{
         RetrieveTax* taxStrategy;
         float currentTotalTaxRate;
     public:
+        ~TaxManager();
         float calculateTax();
         void updateTotalTaxRate(float newRate);
         void addResidential(ResidentialBuilding* residential);

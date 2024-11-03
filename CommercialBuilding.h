@@ -19,8 +19,9 @@ class CommercialBuilding : public Building{
         BusinessType getBusinessType();
         void addEmployees();
 
-    protected:
         CommercialBuilding(int capacity, int size, int numStories, BusinessType businessType);
+    protected:
+        
         CommercialBuilding(BuildingState* s, int capacity, int size, int numStores, BusinessType businessType);
 
         virtual void provideService() override;

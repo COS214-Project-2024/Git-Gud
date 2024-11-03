@@ -20,9 +20,9 @@ class IndustrialBuilding : public Building{
         Industry getIndustryType();
         float getPollutionLevel();
         void addEmployees();
-
-    protected:
         IndustrialBuilding(int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
+    protected:
+        
         IndustrialBuilding(BuildingState* s, int capacity, int size, int numStories, Industry industryType, int pollutionLevel);
 
         virtual void provideService() override;

@@ -1,5 +1,6 @@
 #include "ResidentialBuilding.h"
 #include "Citizen.h"
+#include "VerySatisfied.h"
 
 ResidentialBuilding::ResidentialBuilding(int capacity):Building(capacity){
 
@@ -45,7 +46,6 @@ void ResidentialBuilding::addCitizens(){
     for(int i = 0; i < this->capacity; i++){
 
         Citizen* newCitizen = new Citizen();
-
         this->addCitizenToSimulation(newCitizen);
         this->attach(newCitizen);
         this->tenants.push_back(newCitizen);

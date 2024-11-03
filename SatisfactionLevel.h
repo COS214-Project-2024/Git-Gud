@@ -4,6 +4,9 @@
 #include <string>
 #include "Citizen.h"
 
+class Citizen;
+
+
 class SatisfactionLevel{
     protected:
         float taxReturn;

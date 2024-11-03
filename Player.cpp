@@ -1,7 +1,5 @@
 #include "Player.h"
 
-<<<<<<< Updated upstream
-=======
 Player::Player(){
     taxMan = new TaxManager;
 }
@@ -17,7 +15,6 @@ void Player::changeTaxRate(float tax){
     taxMan->updateTotalTaxRate(tax);
 }
 
->>>>>>> Stashed changes
 void Player::taxResidentialBuildings(){
     taxMan->chooseTaxMethod(new TaxResidents);
     Balance = taxMan->calculateTax();
@@ -43,4 +40,8 @@ void Player::addIndustrialBuilding(IndustrialBuilding* industrialBuilding){
 
 void Player::addCommercialBuilding(CommercialBuilding* commercialBuilding){
     taxMan->addCommercial(commercialBuilding);
+}
+
+float Player::getBalance(){
+    return Balance;
 }

@@ -7,9 +7,9 @@
 
 void Building::setState(BuildingState* s){
 
-    if(this->buildingState != NULL){
+    if(this->buildingState != nullptr){
 
-        delete this->buildingState;
+        //delete this->buildingState;
 
     }
 
@@ -35,7 +35,7 @@ Building::Building(int capacity){
 
 Building::~Building(){
 
-    if(buildingState != nullptr){
+    if(buildingState != nullptr ){
 
         delete buildingState;
 

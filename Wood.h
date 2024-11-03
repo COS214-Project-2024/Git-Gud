@@ -4,7 +4,7 @@
 #include "Resources.h"
 #include <algorithm>
 
-class Wood : public Resources {
+class Wood {
 private:
     int amount;
 

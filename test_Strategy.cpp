@@ -1,5 +1,4 @@
 #include "gtest/gtest.h"
-//#include <gmock/gmock.h>
 #include "Player.h"
 #include "Citizen.h"
 #include "TaxManager.h"
@@ -25,64 +24,73 @@ TEST_F(StrategyTest, taxCitizensTest){
     player.addResidentialBuilding(new ResidentialBuilding(10));
     player.changeTaxRate(10.0f);
     player.taxResidentialBuildings();
-    EXPECT_EQ(player.getBalance(),1.0f);
+    EXPECT_EQ(player.getBalance(),25.0f);
     delete r1;
-    //delete p;
 }
-/*
+
 TEST_F(StrategyTest, taxMultipleCitizensTest){
-    Player p;
-    ResidentialBuilding* r1 = new ResidentialBuilding(5);//62.5
+    ResidentialBuilding* r1 = new ResidentialBuilding(6);
     ResidentialBuilding* r2 = new ResidentialBuilding(15);
-    r1->addCitizens();
-    r2->addCitizens();
-    p.addResidentialBuilding(r1);
-    p.addResidentialBuilding(r2);
-    p.changeTaxRate(50.0);
-    p.taxResidentialBuildings();
-    EXPECT_EQ(p.getBalance(),93.75f);
+    EXPECT_EQ(r1->getTenants().size(),6);
+    EXPECT_EQ(r2->getTenants().size(),15);
+    player.addResidentialBuilding(r1);
+    player.addResidentialBuilding(r2);
+    player.changeTaxRate(50.0);
+    player.taxResidentialBuildings();
+    EXPECT_EQ(player.getBalance(),262.5f);
+    delete r1;
+    delete r2;
 }
 
 TEST_F(StrategyTest, taxCommerialTest){
-    Player p;
     CommercialBuilding* c1 = new CommercialBuilding(10,10,5,LUXURY);
-    p.addCommercialBuilding(c1);
-    p.changeTaxRate(10.0);
-    p.taxCommercialBuildings();
-    EXPECT_EQ(p.getBalance(),20.0f);
+    player.addCommercialBuilding(c1);
+    player.changeTaxRate(10.0);
+    player.taxCommercialBuildings();
+    EXPECT_EQ(player.getBalance(),30.0f);
+    delete c1;
 }
 
 TEST_F(StrategyTest, taxMultipleCommercialTest){
-    Player p;
-    CommercialBuilding* c1 = new CommercialBuilding(10,10,5,LUXURY);
-    CommercialBuilding* c2 = new CommercialBuilding(10,10,5,FOOD);
+    CommercialBuilding* c1 = new CommercialBuilding(10,10,3,LUXURY);
+    CommercialBuilding* c2 = new CommercialBuilding(10,10,1,FOOD);
     CommercialBuilding* c3 = new CommercialBuilding(10,10,5,GENERAL);
-    p.addCommercialBuilding(c1);
-    p.addCommercialBuilding(c2);
-    p.addCommercialBuilding(c3);
-    p.changeTaxRate(10.0);
-    p.taxCommercialBuildings();
-    EXPECT_EQ(p.getBalance(),45.0f);
+    player.addCommercialBuilding(c1);
+    player.addCommercialBuilding(c2);
+    player.addCommercialBuilding(c3);
+    player.changeTaxRate(20.0);
+    player.taxCommercialBuildings();
+    EXPECT_EQ(player.getBalance(),70.0f);
+    delete c1;
+    delete c2;
+    delete c3;
 }
 
 TEST_F(StrategyTest, taxIndustrialTest){
-    Player p;
     IndustrialBuilding* i1 = new IndustrialBuilding(10,50,5,MANUFACTURING,2);
-    p.addIndustrialBuilding(i1);
-    p.changeTaxRate(10.0);
-    p.taxIndustrialBuildings();
-    EXPECT_EQ(p.getBalance(),30.0f);
+    player.addIndustrialBuilding(i1);
+    player.changeTaxRate(10.0);
+    player.taxIndustrialBuildings();
+    EXPECT_EQ(player.getBalance(),30.0f);
+    delete i1;
 }
 
 TEST_F(StrategyTest, taxMultipleIndustrialTest){
-    Player p;
     IndustrialBuilding* i1 = new IndustrialBuilding(10,50,5,MANUFACTURING,2);
     IndustrialBuilding* i2 = new IndustrialBuilding(10,50,5,TECHNOLOGY,2);
     IndustrialBuilding* i3 = new IndustrialBuilding(10,50,5,ENERGY,4);
-    p.addIndustrialBuilding(i1);
-    p.addIndustrialBuilding(i2);
-    p.addIndustrialBuilding(i3);
-    p.changeTaxRate(10.0);
-    p.taxIndustrialBuildings();
-    EXPECT_EQ(p.getBalance(),190.0f);
-}*/
+    player.addIndustrialBuilding(i1);
+    player.addIndustrialBuilding(i2);
+    player.addIndustrialBuilding(i3);
+    player.changeTaxRate(10.0);
+    player.taxIndustrialBuildings();
+    EXPECT_EQ(player.getBalance(),190.0f);
+    delete i1;
+    delete i2;
+    delete i3;
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

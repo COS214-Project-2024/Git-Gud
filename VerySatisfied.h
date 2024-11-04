@@ -11,8 +11,8 @@ class VerySatisfied : public SatisfactionLevel{
     public:
         float satisfactionRating;
 
-        VerySatisfied(){enterState();};
-        ~VerySatisfied(){exitState();}
+        VerySatisfied(){};
+        ~VerySatisfied(){}
 
         /**
         * @brief Method used to enter the next state

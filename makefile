@@ -13,7 +13,7 @@ COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp 
              ResidentialBuilding.cpp Citizen.cpp Education.cpp HealthCare.cpp LawEnforcement.cpp \
              Neutral.cpp Satisfied.cpp Dissatisfied.cpp VerySatisfied.cpp VeryDissatisfied.cpp \
 			 BuildingFactory.cpp CommercialBuildingFactory.cpp \
-			 BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp \
+			 BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp PrototypeManager.cpp\
 			 IndustrialBuildingFactory.cpp ResidentialBuildingFactory.cpp \
 			 BuildingWithCoffeeShop.cpp BuildingWithParking.cpp Decorator.cpp \
 			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp

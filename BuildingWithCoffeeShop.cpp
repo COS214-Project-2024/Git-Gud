@@ -94,6 +94,12 @@ void BuildingWithCoffeeShop::addWorker(){
 
 }
 
+std::string BuildingWithCoffeeShop::getType(){
+
+    return "BuildingWithCoffeeShop";
+
+}
+
 /*BuildingWithCoffeeShop* BuildingWithCoffeeShop::clone() {
     BuildingWithCoffeeShop* b = new BuildingWithCoffeeShop();
     std::cout << "coff" << std::endl;

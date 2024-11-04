@@ -14,6 +14,7 @@
 
 #include <string>
 #include "Subject.h"
+#include "Building.h"
 
 class Citizen;
 

@@ -1,5 +1,4 @@
 #include "TaxCommercial.h"
-
 float TaxCommercial::CollectTax(std::list<ResidentialBuilding*> resBuildings, std::list<CommercialBuilding*> comBuildings, std::list<IndustrialBuilding*> indBuildings, float tax){
     float totalTax = 0;
     for (CommercialBuilding* building : comBuildings){

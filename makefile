@@ -36,7 +36,8 @@ TEST_SRC10 = SubjectTest.cpp
 TEST_SRC11 = BuildingFactoryTest.cpp
 TEST_SRC12 = ExampleTests.cpp
 TEST_SRC13 = test_ResourceManager.cpp
-TEST_SRC14 = test_PtototypeManager.cpp
+TEST_SRC14 = test_PrototypeManager.cpp
+TEST_SRC15 = test_Strategy.cpp
 
 # Executable names for each test
 TARGET1 = test_Transport
@@ -52,10 +53,11 @@ TARGET10 = SubjectTest
 TARGET11 = BuildingFactoryTest
 TARGET12 = ExampleTests
 TARGET13 = test_ResourceManager
-TARGET14 = test_PtototypeManager
+TARGET14 = test_PrototypeManager
+TARGET15 = test_Strategy
 
 # All test targets
-all: $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14)
+all: $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14) $(TARGET15)
 
 # Build each test executable
 $(TARGET1): $(COMMON_OBJ) $(TEST_SRC1:.cpp=.o)
@@ -99,6 +101,9 @@ $(TARGET13): $(COMMON_OBJ) $(TEST_SRC13:.cpp=.o)
 
 $(TARGET14): $(COMMON_OBJ) $(TEST_SRC14:.cpp=.o)
 	$(CXX) $(COMMON_OBJ) $(TEST_SRC14:.cpp=.o) -o $(TARGET14) $(LDFLAGS)
+
+$(TARGET15): $(COMMON_OBJ) $(TEST_SRC15:.cpp=.o)
+	$(CXX) $(COMMON_OBJ) $(TEST_SRC15:.cpp=.o) -o $(TARGET15) $(LDFLAGS)
 
 # Compile object files
 %.o: %.cpp
@@ -147,10 +152,13 @@ resource_manager: $(TARGET13)
 prototype: $(TARGET14)
 	./$(TARGET14)
 
+strategy: $(TARGET15)
+	./$(TARGET15)
+
 # Run tests with Valgrind
 valgrind: $(TEST_BIN)
 	valgrind --leak-check=full --track-origins=yes ./$(TEST_BIN)
 
 # Clean generated files
 clean:
-	rm -f $(COMMON_OBJ) *.o $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14)
+	rm -f $(COMMON_OBJ) *.o $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14)  $(TARGET15)

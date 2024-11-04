@@ -1,3 +1,13 @@
+/**
+ * @file test_Strategy.cpp
+ * @author Git-Gud
+ * @brief Unit tests for strategy (tax)
+ * @version 0.1
+ * @date 2024-11-04
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include "gtest/gtest.h"
 #include "Player.h"
 #include "Citizen.h"

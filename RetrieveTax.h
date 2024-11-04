@@ -1,3 +1,13 @@
+/**
+ * @file RetrieveTax.h
+ * @author Git-Gud
+ * @brief Abstract class that collects tax
+ * @version 0.1
+ * @date 2024-11-04
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #ifndef RETRIEVETAX_H
 #define RETRIEVETAX_H
 

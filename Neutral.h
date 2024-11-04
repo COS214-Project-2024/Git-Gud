@@ -13,8 +13,8 @@ class Neutral : public SatisfactionLevel{
     public:
         float satisfactionRating;
 
-        Neutral(){enterState();}
-        ~Neutral(){exitState();}
+        Neutral(){}
+        ~Neutral(){}
 
         /**
         * @brief Method used to enter the next state

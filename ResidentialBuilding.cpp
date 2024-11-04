@@ -61,3 +61,9 @@ ResidentialBuilding* ResidentialBuilding::clone(){
     ResidentialBuilding* temp=new ResidentialBuilding(this->capacity);
     return temp;
 }
+
+std::string ResidentialBuilding::getType(){
+
+    return "ResidentialBuilding";
+
+}

@@ -105,3 +105,9 @@ IndustrialBuilding* IndustrialBuilding::clone(){
     IndustrialBuilding* temp=new IndustrialBuilding(this->capacity, this->size, this->numStories, this->industryType, this->pollutionLevel);
     return temp;
 }
+
+std::string IndustrialBuilding::getType(){
+
+    return "IndustrialBuilding";
+
+}

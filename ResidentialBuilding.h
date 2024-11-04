@@ -41,6 +41,12 @@ class ResidentialBuilding : public Building{
         ResidentialBuilding(std::unique_ptr<BuildingState> s, int capacity);
 
         /**
+         * @brief Get the building type
+         * @return string representing the building type
+         */
+        std::string getType() override;
+
+        /**
          * @brief Provide a service specific to the residential building.
          */
         virtual void provideService() override;

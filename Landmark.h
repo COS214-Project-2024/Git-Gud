@@ -40,6 +40,12 @@ class LandmarkBuilding : public Building{
         LandmarkBuilding(std::unique_ptr<BuildingState> s, int capacity);
 
         /**
+         * @brief Get the building type
+         * @return string representing the building type
+         */
+        std::string getType() override;
+
+        /**
          * @brief Provide a service specific to the landmark building.
          */
         virtual void provideService() override;

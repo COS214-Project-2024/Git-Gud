@@ -59,6 +59,12 @@ class Building : public Subject{
         Building();
 
         /**
+         * @brief Get the type of a building
+         * @return std::string representing the type of the building
+         */
+        virtual std::string getType() = 0;
+
+        /**
          * @brief Destroy the Building object.
          */
         virtual ~Building();

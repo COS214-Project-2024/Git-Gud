@@ -110,3 +110,9 @@ CommercialBuilding::~CommercialBuilding(){
     //building state deleted in Building class
 
 }
+
+std::string CommercialBuilding::getType(){
+
+    return "CommercialBuilding";
+
+}

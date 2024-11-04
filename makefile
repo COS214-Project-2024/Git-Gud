@@ -16,7 +16,7 @@ COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp 
 			 BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp PrototypeManager.cpp\
 			 IndustrialBuildingFactory.cpp ResidentialBuildingFactory.cpp \
 			 BuildingWithCoffeeShop.cpp BuildingWithParking.cpp Decorator.cpp \
-			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp
+			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp Player.cpp LandmarkFactory.cpp
 
 
 # Object files
@@ -38,6 +38,8 @@ TEST_SRC12 = ExampleTests.cpp
 TEST_SRC13 = test_ResourceManager.cpp
 TEST_SRC14 = test_PrototypeManager.cpp
 TEST_SRC15 = test_Strategy.cpp
+TEST_SRC16 = FacadeTest.cpp
+
 
 # Executable names for each test
 TARGET1 = test_Transport
@@ -55,9 +57,11 @@ TARGET12 = ExampleTests
 TARGET13 = test_ResourceManager
 TARGET14 = test_PrototypeManager
 TARGET15 = test_Strategy
+TARGET16 = test_Facade
+
 
 # All test targets
-all: $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14) $(TARGET15)
+all: $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14) $(TARGET15) $(TARGET16)
 
 # Build each test executable
 $(TARGET1): $(COMMON_OBJ) $(TEST_SRC1:.cpp=.o)
@@ -104,6 +108,9 @@ $(TARGET14): $(COMMON_OBJ) $(TEST_SRC14:.cpp=.o)
 
 $(TARGET15): $(COMMON_OBJ) $(TEST_SRC15:.cpp=.o)
 	$(CXX) $(COMMON_OBJ) $(TEST_SRC15:.cpp=.o) -o $(TARGET15) $(LDFLAGS)
+
+$(TARGET16): $(COMMON_OBJ) $(TEST_SRC16:.cpp=.o)
+	$(CXX) $(COMMON_OBJ) $(TEST_SRC16:.cpp=.o) -o $(TARGET16) $(LDFLAGS)
 
 # Compile object files
 %.o: %.cpp
@@ -155,10 +162,13 @@ prototype: $(TARGET14)
 strategy: $(TARGET15)
 	./$(TARGET15)
 
+player: $(TARGET16)
+	./$(TARGET16)
+
 # Run tests with Valgrind
 valgrind: $(TEST_BIN)
 	valgrind --leak-check=full --track-origins=yes ./$(TEST_BIN)
 
 # Clean generated files
 clean:
-	rm -f $(COMMON_OBJ) *.o $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14)  $(TARGET15)
+	rm -f $(COMMON_OBJ) *.o $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12) $(TARGET13) $(TARGET14)  $(TARGET15) $(TARGET16)

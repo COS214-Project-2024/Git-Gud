@@ -1,14 +1,18 @@
 #ifndef UTILITYITERATOR_H
 #define UTILITYITERATOR_H
 
-#include "Iterator.h"
+#include "UtilityGridNode.h"
 
-class UtilityIterator: public Iterator
-{
-private:
- 
+class UtilityIterator {
+protected:
+    UtilGridNode*** array;
+    int row, col;
+
 public:
-    
+    virtual bool hasNext() = 0;
+    virtual void next() = 0;
+    virtual UtilGridNode* current() = 0;
 };
+
 
 #endif // UTILITYITERATOR_H

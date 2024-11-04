@@ -32,7 +32,7 @@ public:
      * 
      * @return Building* 
      */
-    virtual Building* constructBuilding(){};
+    virtual Building* constructBuilding(){return nullptr;}
 
     /**
      * @brief Method sued to Decorate a building passed in
@@ -40,14 +40,14 @@ public:
      * @param b 
      * @return Building* 
      */
-    virtual Building* upgradeBuilding(Building* b){}; // This method is used to Decorate buildings
+    virtual Building* upgradeBuilding(Building* b){return nullptr;} // This method is used to Decorate buildings
 
     /**
      * @brief Method sued to clone a Building
      * 
      * @return Building* 
      */
-    virtual Building* cloneBuilding(Building* b){};      
+    virtual Building* cloneBuilding(Building* b){return nullptr;}      
 
     /**
      * @brief Destroy the Building Factory object

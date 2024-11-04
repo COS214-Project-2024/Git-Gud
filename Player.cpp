@@ -37,6 +37,7 @@ Player::~Player(){
 
 void Player::changeTaxRate(float tax){
     taxMan->updateTotalTaxRate(tax);
+    std::cout << "test" << std::endl;
 }
 
 void Player::taxResidentialBuildings(){

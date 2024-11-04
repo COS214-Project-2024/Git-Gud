@@ -34,6 +34,7 @@
 
 //#include "Utility.h"
 //GameEnvironment and other classes already #include all the concrete utility and factory implementations
+using namespace std;
 
 class Player
 {
@@ -121,6 +122,31 @@ private:
         }
         return false;
     };
+
+    Building* fetchBuildingFromJunkYard(string type){
+        Building* temp;
+        for (list<Building*>::iterator it = leftOverBuildings.begin(); it != leftOverBuildings.end(); ++it){
+            temp = *it;
+            if (temp->getType() == type){
+                leftOverBuildings.erase(it);
+                return temp;
+            }
+        }
+        return nullptr;
+    };
+
+    Utility* fetchUtilityFromJunkYard(string type){
+        Utility* temp;
+        for (list<Utility*>::iterator it = leftOverUtilities.begin(); it != leftOverUtilities.end(); ++it){
+            temp = *it;
+            if (temp->getUtilityType() == type){
+                leftOverUtilities.erase(it);
+                return temp;
+            }
+        }
+        return nullptr;
+    };
+        
 
 public:
     Player();

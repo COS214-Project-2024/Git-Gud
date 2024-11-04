@@ -73,26 +73,42 @@ float Player::getBalance(){
 //Building Addition Logic
 
 bool Player::buildIndustrialBuilding(int x, int y){
-    Building* newBuilding = industrialFactory->constructBuilding();
+    Building* newBuilding = fetchBuildingFromJunkYard("IndustrialBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = industrialFactory->constructBuilding();
+    }
 
     return addBuilding(newBuilding, x, y);
     
 }
 
 bool Player::buildCommercialBuilding(int x, int y){
-    Building* newBuilding = commercialFactory->constructBuilding();
+    Building* newBuilding = fetchBuildingFromJunkYard("CommercialBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = commercialFactory->constructBuilding();
+    }
 
     return addBuilding(newBuilding, x, y);
 }
 
 bool Player::buildResidentialBuilding(int x, int y){
-    Building* newBuilding = residentialFactory->constructBuilding();
+    Building* newBuilding = fetchBuildingFromJunkYard("ResidentialBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = residentialFactory->constructBuilding();
+    }
 
     return addBuilding(newBuilding, x, y);
 }
 
 bool Player::buildLandmark(int x, int y){
-    Building* newBuilding = landmarkFactory->constructBuilding();
+    Building* newBuilding = fetchBuildingFromJunkYard("LandmarkBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = landmarkFactory->constructBuilding();
+    }
 
     return addBuilding(newBuilding, x, y);
 }
@@ -110,7 +126,7 @@ bool Player::upgradeBuildingWithCoffeeShop(int x, int y){
     if (building){
         Building* newBuilding = coffeeShopFactory->upgradeBuilding(building);
         if (newBuilding){
-            gameEnv->remove(x,y);
+            gameEnv->decouple(x,y);
             return gameEnv->add(newBuilding, x, y);
         }else{
             return false;
@@ -129,7 +145,7 @@ bool Player::upgradeBuildingWithParking(int x, int y){
     if (building){
         Building* newBuilding = parkingFactory->upgradeBuilding(building);
         if (newBuilding){
-            gameEnv->remove(x,y);
+            gameEnv->decouple(x,y);
             return gameEnv->add(newBuilding, x, y);
         }else{
             return false;
@@ -141,37 +157,69 @@ bool Player::upgradeBuildingWithParking(int x, int y){
 //Utility addition logic
 
 bool Player::buildSewageSystem(int x, int y){
-    Utility* newUtility = sewageFactory->createUtility(100, 1000);
+
+    Utility* newUtility = fetchUtilityFromJunkYard("SewageSystem");
+
+    if (newUtility==nullptr){
+        newUtility = sewageFactory->createUtility(100, 1000);
+    }
+
     return addUtility(newUtility, x, y);
 }
 
 bool Player::buildWasteManagement(int x, int y){
-    Utility* newUtility = wasteFactory->createUtility(100, 1000);
+    Utility* newUtility = fetchUtilityFromJunkYard("WasteManagement");
+
+    if (newUtility==nullptr){
+        newUtility = wasteFactory->createUtility(100, 1000);
+    }
+
     return addUtility(newUtility, x, y);
 }
 
 bool Player::buildPowerPlant(int x, int y){
-    Utility* newUtility = powerFactory->createUtility(100, 1000);
+    Utility* newUtility = fetchUtilityFromJunkYard("PowerPlant");
+
+    if (newUtility==nullptr){
+        newUtility = powerFactory->createUtility(100, 1000);
+    }
+
     return addUtility(newUtility, x, y);
 }
 
 bool Player::buildWaterFilteringPlant(int x, int y){
-    Utility* newUtility = waterFactory->createUtility(100, 1000);
+    Utility* newUtility = fetchUtilityFromJunkYard("WaterFilteringPlant");
+
+    if (newUtility==nullptr){
+        newUtility = waterFactory->createUtility(100, 1000);
+    }
     return addUtility(newUtility, x, y);
 }
 
 bool Player::buildHealthCare(int x, int y){
-    Utility* newUtility = healthFactory->createUtility(100, 1000);
+    Utility* newUtility = fetchUtilityFromJunkYard("HealthCare");
+
+    if (newUtility==nullptr){
+        newUtility = healthFactory->createUtility(100, 1000);
+    }
     return addUtility(newUtility, x, y);
 }
 
 bool Player::buildEducation(int x, int y){
-    Utility* newUtility = educationFactory->createUtility(100, 1000);
+    Utility* newUtility = fetchUtilityFromJunkYard("Education");
+
+    if (newUtility==nullptr){
+        newUtility = educationFactory->createUtility(100, 1000);
+    }
     return addUtility(newUtility, x, y);
 }
 
 bool Player::buildLawEnforcement(int x, int y){
-    Utility* newUtility = lawFactory->createUtility(100, 1000);
+    Utility* newUtility = fetchUtilityFromJunkYard("LawEnforcement");
+
+    if (newUtility==nullptr){
+        newUtility = lawFactory->createUtility(100, 1000);
+    }
     return addUtility(newUtility, x, y);
 }
 

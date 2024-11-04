@@ -239,6 +239,18 @@ public:
         }
         return false;
     };
+
+    bool decouple(int x, int y){
+        if (x < 0 || x >= cols || y < 0 || y >= rows) {
+            return false;
+        }
+
+        if (buildingGrid[y][x] != nullptr) {
+            buildingGrid[y][x] = nullptr;
+            return true;
+        }
+        return false;
+    };
     
     void printTerminal(){//basic implementation for demonstration purposes
         for (int i = 0; i < rows; i++) {

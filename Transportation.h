@@ -109,7 +109,7 @@ public:
      * @param type The type of transport building to add (e.g., TAXI, BUS, TRAIN, AIRPORT).
      * @param capacity The capacity of the new traffic building.
      */
-    void addTrafficBuilding(TransportType type, int capacity);
+    void addTrafficBuilding(TransportType type);
 
     /**
      * @brief Initializes traffic flow based on validation checks.

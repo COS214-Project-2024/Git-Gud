@@ -303,7 +303,7 @@ public:
      * 
      * @return A Memento containing the saved state.
      */
-    Memento GameEnvironment::saveToMemento() const {
+    Memento saveToMemento() const {
         // Capture current ResourceManager state
         ResourceManagerState resourceState = ResourceManager::getInstance()->captureState();
 
@@ -314,7 +314,7 @@ public:
         for (int i = 0; i < rows; ++i) {
             for (int j = 0; j < cols; ++j) {
                 buildingGridSnapshot[i][j] = buildingGrid[i][j];
-                utilityGridSnapshot[i][j] = utilityGrid[i][j];
+                utilityGridSnapshot[i][j] = utilityGrid[i][j];  
             }
         }
 
@@ -326,7 +326,7 @@ public:
      * 
      * @param memento The Memento containing the state to restore.
      */
-    void GameEnvironment::restoreFromMemento(const Memento& memento) {
+    void restoreFromMemento(const Memento& memento) {
         // Restore ResourceManager to saved state
         ResourceManager::getInstance()->restoreState(memento.getSavedResourceState());
 

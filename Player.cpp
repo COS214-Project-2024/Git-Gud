@@ -21,6 +21,9 @@ Player::Player(){
 
     resourceManager = ResourceManager::getInstance();
 
+    leftOverBuildings = std::list<Building*>();
+    leftOverUtilities = std::list<Utility*>();
+
 }
 
 Player::~Player(){
@@ -139,22 +142,40 @@ bool Player::upgradeBuildingWithParking(int x, int y){
 
 bool Player::buildSewageSystem(int x, int y){
     Utility* newUtility = sewageFactory->createUtility(100, 1000);
-    if (newUtility){
-        if (gameEnv->add(newUtility, x, y)){
-            return true;
-        } else {
-            leftOverUtilities.push_back(newUtility);
-            return false;
-        }
-    }
+    return addUtility(newUtility, x, y);
 }
 
 bool Player::buildWasteManagement(int x, int y){
     Utility* newUtility = wasteFactory->createUtility(100, 1000);
-    if (newUtility){
-        return gameEnv->add(newUtility, x, y);
-    }
+    return addUtility(newUtility, x, y);
 }
+
+bool Player::buildPowerPlant(int x, int y){
+    Utility* newUtility = powerFactory->createUtility(100, 1000);
+    return addUtility(newUtility, x, y);
+}
+
+bool Player::buildWaterFilteringPlant(int x, int y){
+    Utility* newUtility = waterFactory->createUtility(100, 1000);
+    return addUtility(newUtility, x, y);
+}
+
+bool Player::buildHealthCare(int x, int y){
+    Utility* newUtility = healthFactory->createUtility(100, 1000);
+    return addUtility(newUtility, x, y);
+}
+
+bool Player::buildEducation(int x, int y){
+    Utility* newUtility = educationFactory->createUtility(100, 1000);
+    return addUtility(newUtility, x, y);
+}
+
+bool Player::buildLawEnforcement(int x, int y){
+    Utility* newUtility = lawFactory->createUtility(100, 1000);
+    return addUtility(newUtility, x, y);
+}
+
+
 
 
 

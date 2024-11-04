@@ -71,17 +71,56 @@ private:
         if (newBuilding){
             if (gameEnv->add(newBuilding, x, y)){
                 resourceManager->spendBudget(newBuilding->getCost());
+                UtilityIterator* itr = gameEnv->createRadUtilItr(x, y, 3);
+                Utility* temp;
+                while (itr->current() != nullptr){
+                    temp = itr->current()->getUtility("SewageSystem");
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+                    temp = itr->current()->getUtility("PowerPlant");
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+                    temp = itr->current()->getUtility("WaterFilteringPlant");
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+                    temp = itr->current()->getUtility("WasteManagement");
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+                    temp = itr->current()->getUtility("HealthCare");
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+                    temp = itr->current()->getUtility("Education");
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+                    temp = itr->current()->getUtility("LawEnforcement"); 
+                    if (temp != nullptr){ temp->scanBuilding(newBuilding); }
+
+                    itr->next();
+                }
                 return true;
             }
             else{
-                delete newBuilding;
+                leftOverBuildings.push_back(newBuilding);
                 return false;
             }       
         }
         return false;
     };
 
-    
+    bool addUtility(Utility* newUtility, int x, int y)
+    {
+        if (newUtility){
+            if (gameEnv->add(newUtility, x, y)){
+                BuildingIterator* itr = gameEnv->createRadBuildItr(x, y, 3);
+
+                while (itr->current() != nullptr){
+                   newUtility->scanBuilding(itr->current());
+                    itr->next();
+                }
+                newUtility->callObserver();
+                delete itr;
+                return true;
+            } else {
+                leftOverUtilities.push_back(newUtility);
+                return false;
+            }
+        }
+        return false;
+    };
 
 public:
     Player();
@@ -120,6 +159,11 @@ public:
     bool buildHealthCare(int x, int y);
     bool buildEducation(int x, int y);
     bool buildLawEnforcement(int x, int y);
+
+    //Junky Yard
+    
+
+
 
     
     

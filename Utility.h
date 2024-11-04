@@ -77,14 +77,14 @@ public:
      * @details Attaches all citizens to the observer list and calls `callObserver` if 
      *          there are observers present.
      */
-    void handleObservers() {
-        for (Citizen* citizen : allCitizens) {
-            attach(citizen);
+    void scanBuilding(Building* building){
+
+        for(Citizen* citizen : building->getObserverList()){
+
+            this->attach(citizen);
+
         }
 
-        if (allCitizens.size() > 0) {
-            callObserver();
-        }
     }
 };
 

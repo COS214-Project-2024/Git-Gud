@@ -81,6 +81,16 @@ public:
     }
 
     /**
+     * @brief Retrieves the building type
+     * @return std::string that represents the building type
+     */
+    std::string getType(){
+
+        return "TrafficBuilding";
+
+    }
+
+    /**
      * @brief Retrieves the cost of the traffic building.
      * @return The cost of the traffic building as a float.
      */

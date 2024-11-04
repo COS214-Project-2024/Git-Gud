@@ -30,6 +30,13 @@ class IndustrialBuilding : public Building{
         float pollutionLevel;
         
     public:
+
+        /**
+         * @brief Get the building type
+         * @return string representing the building type
+         */
+        std::string getType() override;
+        
         /**
          * @brief Get the size of the industrial building.
          * @return int representing the size.

@@ -49,3 +49,9 @@ LandmarkBuilding* LandmarkBuilding::clone(){
     temp->landmarkName=this->landmarkName;
     return temp;
 }
+
+std::string LandmarkBuilding::getType(){
+
+    return "LandmarkBuilding";
+
+}

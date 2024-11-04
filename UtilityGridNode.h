@@ -70,9 +70,32 @@ public:
         return false;
     };
 
+    bool contains(std::string type)
+    {
+        Node* current = head;
+        while (current != nullptr)
+        {
+            if (current->utility->getUtilityType() == type)
+            {
+                return true;
+            }
+            current = current->next;
+        }
+        return false;
+    };
+
     bool add(Utility* utility)
     {
-        remove(utility->getUtilityType());//Calling remove first to avoid duplicate utilities. Minimize traversals
+        /* remove(utility->getUtilityType());//Calling remove first to avoid duplicate utilities. Minimize traversals
+        Node* newNode = new Node;
+        newNode->utility = utility;
+        newNode->next = head;
+        head = newNode;
+        return true; */
+        if (contains(utility->getUtilityType()))
+        {
+            return false;
+        }
         Node* newNode = new Node;
         newNode->utility = utility;
         newNode->next = head;

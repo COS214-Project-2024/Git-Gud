@@ -10,6 +10,7 @@ Player::Player(){
     landmarkFactory = new LandmarkFactory();
     coffeeShopFactory = new BuildingWithCoffeeShopFactory();
     parkingFactory = new BuildingWithParkingFactory();
+    trafficFactory = new TrafficBuildingFactory();
 
     sewageFactory = new SewageSystemFactory();
     wasteFactory = new WasteManagementFactory();
@@ -109,6 +110,46 @@ bool Player::buildLandmark(int x, int y){
 
     if (newBuilding==nullptr){
         newBuilding = landmarkFactory->constructBuilding();
+    }
+
+    return addBuilding(newBuilding, x, y);
+}
+
+bool Player::buildTaxiTrafficBuilding(int x, int y){
+    Building* newBuilding = fetchBuildingFromJunkYard("TrafficBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = trafficFactory->createTrafficBuilding(TAXI);
+    }
+
+    return addBuilding(newBuilding, x, y);
+}
+
+bool Player::buildBusTrafficBuilding(int x, int y){
+    Building* newBuilding = fetchBuildingFromJunkYard("TrafficBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = trafficFactory->createTrafficBuilding(BUS);
+    }
+
+    return addBuilding(newBuilding, x, y);
+}
+
+bool Player::buildTrainTrafficBuilding(int x, int y){
+    Building* newBuilding = fetchBuildingFromJunkYard("TrafficBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = trafficFactory->createTrafficBuilding(TRAIN);
+    }
+
+    return addBuilding(newBuilding, x, y);
+}
+
+bool Player::buildAirportTrafficBuilding(int x, int y){
+    Building* newBuilding = fetchBuildingFromJunkYard("TrafficBuilding");
+
+    if (newBuilding==nullptr){
+        newBuilding = trafficFactory->createTrafficBuilding(AIRPORT);
     }
 
     return addBuilding(newBuilding, x, y);

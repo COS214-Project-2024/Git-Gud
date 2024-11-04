@@ -34,8 +34,6 @@ public:
      */
     virtual Building* constructBuilding(){return nullptr;}
 
-    virtual Building* createTrafficBuilding(TransportType t){return nullptr;}
-
     /**
      * @brief Method sued to Decorate a building passed in
      * 

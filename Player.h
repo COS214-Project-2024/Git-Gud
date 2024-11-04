@@ -49,7 +49,7 @@ private:
     BuildingFactory* commercialFactory;
     BuildingFactory* residentialFactory;
     BuildingFactory* landmarkFactory;
-    BuildingFactory* trafficFactory;
+    TrafficBuildingFactory* trafficFactory;
     //decorator factories
     BuildingFactory* coffeeShopFactory;
     BuildingFactory* parkingFactory;

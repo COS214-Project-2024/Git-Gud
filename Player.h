@@ -153,6 +153,13 @@ public:
     ~Player();
     void changeTaxRate(float tax);
 
+    int getWood();
+    int getSteel();
+    int getConcrete();
+    int getPower();
+    int getWater();
+    
+
     //Love, Death and Taxes
     //use these in the addition logic
     void taxResidentialBuildings();
@@ -168,6 +175,7 @@ public:
 
     // Bob the builder can't fix this
 
+    bool createRoad(int x, int y);
     bool buildIndustrialBuilding(int x, int y);
     bool buildCommercialBuilding(int x, int y);
     bool buildResidentialBuilding(int x, int y);
@@ -187,7 +195,7 @@ public:
     bool buildLawEnforcement(int x, int y);
 
     //Junky Yard
-    
+    std::string printRow(int currRow);
 
 
 

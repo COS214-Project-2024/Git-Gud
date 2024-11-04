@@ -1,5 +1,7 @@
 #include <iostream>
 #include <thread>
+#include "GameEnvironment.h"
+#include "Player.h"
 
 void promptPlayer();
 void displayHeading(int = 1);
@@ -10,9 +12,11 @@ void upgradeBuilding();
 void viewCityGrid();
 void displayRecources();
 void collectTax();
-void copyBuilding();
+void adjustTaxRate();
 void displayKey();
 using namespace std;
+
+Player* player;
 
 /* string ASCII_Numbers[4][10] = {
     {"   _ ", "   ___ ", "   ___ ", "   ___ ", "   ___ ", "   ___ ", "   ___ ", "   ___ ", "   ___ ", "   ___ "},
@@ -32,6 +36,9 @@ int main() {
     this_thread::sleep_for(chrono::milliseconds(2000)); */
 
     cout << "\e[?1049l"; // Restore screen buffer
+
+    player = new Player();
+
     displayHeading();
     displayTowers();
     promptPlayer();
@@ -101,10 +108,10 @@ void promptPlayer() {
     cout << "•[1] Create Building (Note your desired coordinates before continuing)" << endl;
     cout << "•[2] Create Utility (Note your desired coordinates before continuing)" << endl;
     cout << "•[3] Upgrade Building (Note your desired coordinates before continuing)" << endl;
-    cout << "•[4] Copy Building (Note your desired coordinates before continuing)" << endl;
-    cout << "•[5] View City Grid" << endl;
-    cout << "•[6] Display Recources" << endl;
-    cout << "•[7] Collect Tax" << endl;
+    cout << "•[4] View City Grid" << endl;
+    cout << "•[5] Display Recources" << endl;
+    cout << "•[6] Collect Tax" << endl;
+    cout << "•[7] Adjust Tax" << endl;
     
     cout << "•[Any] Exit" << endl;
     cout << endl;
@@ -126,16 +133,16 @@ void promptPlayer() {
             upgradeBuilding();
             break;
         case 4:
-            copyBuilding();
-            break;
-        case 5:
             viewCityGrid();
             break;
-        case 6:
+        case 5:
             displayRecources();
             break;
-        case 7:
+        case 6:
             collectTax();
+            break;
+        case 7:
+            adjustTaxRate();
             break;
         default:
             terminate();
@@ -168,19 +175,19 @@ void createBuilding(){
 
     switch(choice) {
         case 1:
-            
+            player->buildResidentialBuilding(x, y);
             break;
         case 2:
-            
+            player->buildCommercialBuilding(x, y);
             break;
         case 3:
-            
+            player->buildIndustrialBuilding(x, y);
             break;
         case 4:
-            
+            player->buildLandmark(x, y);
             break;
         case 5:
-
+            player->createRoad(x, y);
             break;
         default:
             break;
@@ -213,25 +220,25 @@ void createUtility(){
 
     switch(choice) {
         case 1:
-            
+            player->buildSewageSystem(x, y);
             break;
         case 2:
-            
+            player->buildPowerPlant(x, y);
             break;
         case 3:
-            
+            player->buildWaterFilteringPlant(x, y);
             break;
         case 4:
-            
+            player->buildWasteManagement(x, y);
             break;
         case 5:
-
+            player->buildHealthCare(x, y);
             break;
         case 6:
-            
+            player->buildLawEnforcement(x, y);
             break;
         case 7:
-
+            player->buildEducation(x, y);
             break;
         default:
             break;
@@ -259,10 +266,10 @@ void upgradeBuilding(){
 
     switch(choice) {
         case 1:
-            
+            player->upgradeBuildingWithCoffeeShop(x, y);
             break;
         case 2:
-            
+            player->upgradeBuildingWithParking(x, y);
             break;
         default:
             break;
@@ -276,7 +283,7 @@ void viewCityGrid(){
     displayTowers();
     int offset = 4;
     cout << "\e[" << offset << ";33H";    // Move cursor to row 11, column 33   
-    cout << "\e[0;31m |01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901|";     
+    cout << "\e[0;32m |01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901|";     
     cout << "\e[" << offset+1 << ";33H";    // Move cursor to row 11, column 33    
     cout << " |•====0====•====10===•====20===•====30===•====40===•====50===•====60===•====70===•====80===•====90===•====100==•====110==•=|";
     for (int i = 2; i < 36; i++)
@@ -285,7 +292,8 @@ void viewCityGrid(){
         cout << "\e[0;31m" << (i-2)%10;
         if ((i-2)%10 == 0)  
         {
-           cout << "|¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦-|";
+            cout << player->printRow((i-2));
+            //cout << "|¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦---------¦-|";
         }
         else
         cout << "|¦·········¦·········¦·········¦·········¦·········¦·········¦·········¦·········¦·········¦·········¦·········¦·········¦·|";
@@ -294,67 +302,61 @@ void viewCityGrid(){
 }
 
 void displayRecources(){
-    int movey, wood, steel, concrete, electricity, water;
     cout << "\e[0;36m==============================================================================================================================================================================================\e[0m" << endl;
 
+    	
     cout << "\e[0;95mRecources:\n";
 
     cout << "   __  _______  _  ________  __" << endl;
     cout << "  /  |/  / __ \\/ |/ / __/\\ \\/ /" << endl;
     cout << " / /|_/ / /_/ /    / _/   \\  / " << endl;
     cout << "/_/  /_/\\____/_/|_/___/   /_/  ";
-    cout << "\t$" << movey << endl;
+    cout << "\t$" << player->getBalance() << endl;
 
     cout << " _      ______  ____  ___ " << endl;
     cout << "| | /| / / __ \\/ __ \\/ _ \\" << endl;
     cout << "| |/ |/ / /_/ / /_/ / / //" << endl;
     cout << "|__/|__/\\____/\\____/____/ ";
-    cout << "\t" << wood << endl;
+    cout << "\t" << player->getWood() << endl;
 
     cout << "   ____________________ " << endl;
     cout << "  / __/_  __/ __/ __/ / " << endl;
     cout << " _\\ \\  / / / _// _// /__" << endl;
     cout << "/___/ /_/ /___/___/____/";
-    cout << "\t" << steel << endl;
+    cout << "\t" << player->getSteel() << endl;
 
     cout << "  _________  _  __________  ______________" << endl;
     cout << " / ___/ __ \\/ |/ / ___/ _ \\/ __/_  __/ __/" << endl;
     cout << "/ /__/ /_/ /    / /__/ , _/ _/  / / / _/  " << endl;
     cout << "\\___/\\____/_/|_/\\___/_/|_/___/ /_/ /___/  ";
-    cout << "\t" << concrete << endl;
+    cout << "\t" << player->getConcrete() << endl;
 
     cout << "   ______   __________________  _____________________  __" << endl;
     cout << "  / __/ /  / __/ ___/_  __/ _ \\/  _/ ___/  _/_  __/\\ \\/ /" << endl;
     cout << " / _// /__/ _// /__  / / / , _// // /___/ /  / /    \\  / " << endl;
     cout << "/___/____/___/\\___/ /_/ /_/|_/___/\\___/___/ /_/     /_/  ";
-    cout << "\t" << electricity << endl;
+    cout << "\t" << player->getPower() << endl;
 
     cout << " _      _____ _____________ " << endl;
     cout << "| | /| / / _ /_  __/ __/ _ \\" << endl;
     cout << "| |/ |/ / __ |/ / / _// , _/" << endl;
     cout << "|__/|__/_/ |_/_/ /___/_/|_| }";
-    cout << "\t" << water << endl;
+    cout << "\t" << player->getWater() << endl;
 }
 
 void collectTax(){
-
+    // player->taxCommercialBuildings();
+    // player->taxIndustrialBuildings();
+    // player->taxResidentialBuildings();
     cout << "Tax has been collected\nDisplay recourses to view new Budget:" << endl;
 }
 
-void copyBuilding(){
-    int x, y, newx, newy;
-    cout << "\e[?1049h"; // Alternate screen buffer     
-    cout << "\e[H";    // Move cursor to row 1, column 1
-    displayHeading();
-
-    cout << "Enter Coordinates: (x enter y)\n";
-    cin >> x >> y;
-
-    cout << "\nWhere would you like to place this building:  (x enter y)" << endl;
-    cin >> newx >> newy;
-
-
-    cout << "\e[?1049l"; // Restore screen buffer
+void adjustTaxRate(){
+    cout << "Enter the new tax rate: ";
+    float newRate;
+    cin >> newRate;
+    player->changeTaxRate(newRate);
+    cout << "Tax rate has been adjusted" << endl;
 }
 
 void displayKey(){
@@ -366,7 +368,7 @@ void displayKey(){
     cout << "\e[" << firstColumn << "C";    // Move cursor to right 100
     
     //cout << "\e[" << startRow << ";100H";    // Move cursor to row 11, column 33   
-    cout << "\e[0;43mKey:"; // Set background color to yellow
+    cout << "\e[0;33mKey:"; // Set background color to yellow
     cout << "\033[s";    // Save cursor position  
     
     cout << "\033[u";   // Restore cursor position    

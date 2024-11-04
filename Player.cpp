@@ -37,7 +37,7 @@ Player::~Player(){
 
 void Player::changeTaxRate(float tax){
     taxMan->updateTotalTaxRate(tax);
-    std::cout << "test" << std::endl;
+   // std::cout << "test" << std::endl;
 }
 
 void Player::taxResidentialBuildings(){
@@ -72,6 +72,11 @@ float Player::getBalance(){
 }
 
 //Building Addition Logic
+bool Player::createRoad(int x, int y){
+    gameEnv->createRoad(x, y);
+    return true;
+
+}
 
 bool Player::buildIndustrialBuilding(int x, int y){
     Building* newBuilding = fetchBuildingFromJunkYard("IndustrialBuilding");
@@ -224,7 +229,26 @@ bool Player::buildLawEnforcement(int x, int y){
     return addUtility(newUtility, x, y);
 }
 
+std::string Player::printRow(int currRow){
+    return gameEnv->printTerminal(currRow);
+}
 
+int Player::getWood(){
+    return resourceManager->getWood();
+}
 
+int Player::getSteel(){
+    return resourceManager->getSteel();
+}
 
+int Player::getConcrete(){
+    return resourceManager->getConcrete();
+}
 
+int Player::getPower(){
+    return resourceManager->getEnergySupply();
+}
+
+int Player::getWater(){
+    return resourceManager->getWaterSupply();
+}

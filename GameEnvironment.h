@@ -329,6 +329,7 @@ class BuildingIterator {
         virtual bool hasNext()=0;
         virtual void next()=0;
         virtual Building* current() =0;
+        virtual ~BuildingIterator() =0;
 };
 
 class BuildingIteratorRadial : public BuildingIterator {

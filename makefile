@@ -16,7 +16,8 @@ COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp 
 			 BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp PrototypeManager.cpp\
 			 IndustrialBuildingFactory.cpp ResidentialBuildingFactory.cpp \
 			 BuildingWithCoffeeShop.cpp BuildingWithParking.cpp Decorator.cpp \
-			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp
+			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp\
+			 Player.cpp
 
 
 # Object files
@@ -36,7 +37,7 @@ TEST_SRC10 = SubjectTest.cpp
 TEST_SRC11 = BuildingFactoryTest.cpp
 TEST_SRC12 = ExampleTests.cpp
 TEST_SRC13 = test_ResourceManager.cpp
-TEST_SRC14 = test_PtototypeManager.cpp
+TEST_SRC14 = test_PrototypeManager.cpp
 TEST_SRC15 = FacadeTestingMain.cpp
 
 # Executable names for each test
@@ -53,7 +54,7 @@ TARGET10 = SubjectTest
 TARGET11 = BuildingFactoryTest
 TARGET12 = ExampleTests
 TARGET13 = test_ResourceManager
-TARGET14 = test_PtototypeManager
+TARGET14 = test_PrototypeManager
 TARGET15 = test_Player
 
 # All test targets

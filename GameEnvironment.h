@@ -212,9 +212,7 @@ public:
         if (utilityGrid[y][x] == nullptr) {
             utilityGrid[y][x] = new UtilGridNode();
         }
-        utilityGrid[y][x]->add(utility);
-
-        return true;
+        return utilityGrid[y][x]->add(utility);
     };
 
     bool remove(int x, int y, string type="unspecified"){

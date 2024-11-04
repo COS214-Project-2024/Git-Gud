@@ -5,7 +5,7 @@
 #include "CommercialBuilding.h"
 #include <cassert>
 
-int main(){
+int Facade(){
 
     Player* player = new Player();
 

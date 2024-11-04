@@ -178,13 +178,38 @@ public:
         return false;
     }
 
-    void printTerminal() {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                cout << (buildingGrid[i][j] ? "B" : (utilityGrid[i][j] ? "U" : "."));
+    string printTerminal(int currRow) {
+        string output = "";
+        for (int j = 0; j < cols; j++) {
+            if (buildingGrid[currRow][j] == nullptr && utilityGrid[currRow][j] == nullptr)
+            {
+                output += " ";
             }
-            cout << endl;
+            else
+            if (buildingGrid[currRow][j] != nullptr) {
+                if (buildingGrid[currRow][j]->getType() == "CommercialBuilding") {
+                    output += "C";
+                } else if (buildingGrid[currRow][j]->getType() == "IndustrialBuilding") {
+                    output += "I";
+                } else if (buildingGrid[currRow][j]->getType() == "ResidentialBuilding") {
+                    output += "R";
+                } else if (buildingGrid[currRow][j]->getType() == "Landmark") {
+                    output += "¤";
+                }
+            } 
+            else
+            if (utilityGrid[currRow][j] != nullptr && utilityGrid[currRow][j]->getHasRoad())
+            {
+                    output += "#";
+            }
+            else
+            {
+                output += " ";
+            }
+
+            
         }
+        return output;
     }
 
     void printToFile(string filename = "map.txt") {

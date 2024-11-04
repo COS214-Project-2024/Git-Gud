@@ -6,7 +6,8 @@
 class UtilityIteratorRadial : public UtilityIterator {
 protected:
     int setRadius;
-    int centerX, centerY;
+    int centerX; 
+    int centerY;
 
     void calculatePoints(UtilGridNode*** array, int rows, int cols) {
         int yUp, yDown;

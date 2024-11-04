@@ -35,6 +35,7 @@ TEST_SRC9 = ResidentialBuildingTesting.cpp
 TEST_SRC10 = SubjectTest.cpp
 TEST_SRC11 = BuildingFactoryTest.cpp
 TEST_SRC12 = ExampleTests.cpp
+TEST_SRC13 = test_ResourceManager.cpp
 
 # Executable names for each test
 TARGET1 = test_Transport
@@ -49,6 +50,7 @@ TARGET9 = ResidentialBuildingTesting
 TARGET10 = SubjectTest
 TARGET11 = BuildingFactoryTest
 TARGET12 = ExampleTests
+TARGET13 = test_ResourceManager
 
 # All test targets
 all: $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) $(TARGET12)
@@ -90,6 +92,9 @@ $(TARGET11): $(COMMON_OBJ) $(TEST_SRC11:.cpp=.o)
 $(TARGET12): $(COMMON_OBJ) $(TEST_SRC12:.cpp=.o)
 	$(CXX) $(COMMON_OBJ) $(TEST_SRC12:.cpp=.o) -o $(TARGET12) $(LDFLAGS)
 
+$(TARGET13): $(COMMON_OBJ) $(TEST_SRC13:.cpp=.o)
+	$(CXX) $(COMMON_OBJ) $(TEST_SRC13:.cpp=.o) -o $(TARGET13) $(LDFLAGS)
+
 # Compile object files
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -130,6 +135,9 @@ fact_dec_test: $(TARGET11)
 
 GE_test: $(TARGET12)
 	./$(TARGET12)
+
+resource_manager: $(TARGET13)
+	./$(TARGET13)
 
 # Run tests with Valgrind
 valgrind: $(TEST_BIN)

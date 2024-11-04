@@ -1,0 +1,51 @@
+\doxysection{Traffic\+Building\+Factory.\+h}
+\hypertarget{_traffic_building_factory_8h_source}{}\label{_traffic_building_factory_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/TrafficBuildingFactory.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/TrafficBuildingFactory.h}}
+\mbox{\hyperlink{_traffic_building_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ TRAFFICBUILDINGFACTORY\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ TRAFFICBUILDINGFACTORY\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_traffic_building_8h}{TrafficBuilding.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_state_8h}{BuildingState.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_factory_8h}{BuildingFactory.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_under_construction_8h}{UnderConstruction.h}}"{}}\ \textcolor{comment}{//\ Example\ state\ class}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_traffic_building_factory}{TrafficBuildingFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building_factory}{BuildingFactory}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_traffic_building}{TrafficBuilding}}*\ \mbox{\hyperlink{class_traffic_building_factory_a53a582c72a63751eb089e211e5ae9393}{createTrafficBuilding}}(\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ type)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cost;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::unique\_ptr<BuildingState>\ initialState\ =\ std::make\_unique<UnderConstruction>();\ \ \textcolor{comment}{//\ Default\ state\ at\ creation}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TAXI:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cost\ =\ 10000;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\ =\ 20;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BUS:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cost\ =\ 20000;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\ =\ 50;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ TRAIN:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cost\ =\ 50000;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\ =\ 100;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ AIRPORT:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cost\ =\ 100000;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ capacity\ =\ 200;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cost\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_resource_manager_a41943f7fb045ad54f1e24da7c6046502}{ResourceManager::getInstance}}()-\/>\mbox{\hyperlink{class_resource_manager_afef47699d5c0d7d1ce5a6a1c50695c3e}{spendBudget}}(cost);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_traffic_building}{TrafficBuilding}}(std::move(initialState),\ capacity,\ type,\ cost);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRAFFICBUILDINGFACTORY\_H}}
+
+\end{DoxyCode}

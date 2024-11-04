@@ -1,0 +1,58 @@
+\doxysection{Building\+With\+Coffeeshop.\+h}
+\hypertarget{_building_with_coffeeshop_8h_source}{}\label{_building_with_coffeeshop_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/BuildingWithCoffeeshop.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/BuildingWithCoffeeshop.h}}
+\mbox{\hyperlink{_building_with_coffeeshop_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ BUILDINGWITHCOFFEESHOP\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BUILDINGWITHCOFFEESHOP\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_decorator_8h}{Decorator.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building_with_coffee_shop}{BuildingWithCoffeeShop}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_decorator}{Decorator}}\{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_building_with_coffee_shop_a5d25d2d71d891b0a8e7d529b9ec0b7e1}{BuildingWithCoffeeShop}}(\mbox{\hyperlink{class_building}{Building}}*\ b);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_building_with_coffee_shop_a5d25d2d71d891b0a8e7d529b9ec0b7e1}{BuildingWithCoffeeShop}}()\ :\ \mbox{\hyperlink{class_decorator}{Decorator}}()\{\};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_a29dc6a5a24d93299a230f9aa10b3f3f5}{provideService}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_building_with_coffee_shop_a2a040635a84be7635eb0e11d7ee8996b}{getCost}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_a9ad3cb3ac6c4dd89c9db35c89c45644a}{setState}}(std::unique\_ptr<BuildingState>\ s);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_abdaf5793af666a7fda40096374c622db}{repairBuilding}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_building_with_coffee_shop_a0cd176139ce397ddb0a62a8f38f611d8}{currentState}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_a8b90cfb0ff1dae37c70f104978276071}{simulateConstruction}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_with_coffee_shop_a15f2bda84a23d633fbf77628795e4016}{\string~BuildingWithCoffeeShop}}()\{\};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_with_coffee_shop_a2e0d8b9ad6ddcd63180834c53c60b672}{getNumStories}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ \mbox{\hyperlink{class_building_with_coffee_shop_a9ff19904bf40931ab00ee819161316b3}{getBusinessType}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_a1a67dbe19b7de8b03cb7ec9bedb92333}{addEmployees}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_with_coffee_shop_aaf3ad1448a3e7b4302b2b5d7a581c2a9}{getSize}}();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_building_with_coffee_shop_a3f4c78a8520122789dfcc2a7af13ed09}{getPollutionLevel}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_aae7cb879777f356b7d0bdce3611e2dfa}{addCitizens}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ std::list<Citizen*>\ \mbox{\hyperlink{class_building_with_coffee_shop_abeaee8f33c963d976b9cc38f467f9de5}{getTenants}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_with_coffee_shop}{BuildingWithCoffeeShop}}*\ \mbox{\hyperlink{class_building_with_coffee_shop_a658c5a4b4b295a8b4a1b8eb957bafe99}{clone}}()\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_coffee_shop_a5b306aa14ab2c868b546f67c58b3b873}{addWorker}}();}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ \ \ std::string\ \mbox{\hyperlink{class_building_with_coffee_shop_a032da5eaba659c4898c10af0c807a1ef}{getType}}()\ \textcolor{keyword}{override};\ \ \ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

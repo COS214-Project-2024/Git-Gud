@@ -1,0 +1,41 @@
+\doxysection{Building\+Factory.\+h}
+\hypertarget{_building_factory_8h_source}{}\label{_building_factory_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/BuildingFactory.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/BuildingFactory.h}}
+\mbox{\hyperlink{_building_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ BUILDINGFACTORY\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BUILDINGFACTORY\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_manager_8h}{ResourceManager.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building_factory}{BuildingFactory}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_building_factory}{BuildingFactory}}()\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_building_factory_adc1ad8f999464baa7b3a5f28ba5816aa}{Rmanager}}=\mbox{\hyperlink{class_resource_manager_a41943f7fb045ad54f1e24da7c6046502}{ResourceManager::getInstance}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_building_factory_acb727d48708a6f14b7e383bd5c81ad45}{constructBuilding}}()\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_building_factory_a1ba0326f9ca2497aecf02c92de78de7b}{upgradeBuilding}}(\mbox{\hyperlink{class_building}{Building}}*\ b)\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\}\ \textcolor{comment}{//\ This\ method\ is\ used\ to\ Decorate\ buildings}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_building_factory_a536e7d3552dc6ce2108b7364a6fe7e44}{cloneBuilding}}(\mbox{\hyperlink{class_building}{Building}}*\ b)\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\}\ \ \ \ \ \ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_factory_a9d2b189ccbf4bf411bb6475ac86d7801}{\string~BuildingFactory}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_resource_manager}{ResourceManager}}*\ \mbox{\hyperlink{class_building_factory_adc1ad8f999464baa7b3a5f28ba5816aa}{Rmanager}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUILDINGFACTORY\_H}}
+
+\end{DoxyCode}

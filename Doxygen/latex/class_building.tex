@@ -1,0 +1,400 @@
+\doxysection{Building Class Reference}
+\hypertarget{class_building}{}\label{class_building}\index{Building@{Building}}
+
+
+Abstract base class representing a building in a system.  
+
+
+
+
+{\ttfamily \#include $<$Building.\+h$>$}
+
+Inheritance diagram for Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.393162cm]{class_building}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd}{Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with a specified capacity. \end{DoxyCompactList}\item 
+\Hypertarget{class_building_ab570ec0a203ee621f9f522c678a147d9}\label{class_building_ab570ec0a203ee621f9f522c678a147d9} 
+{\bfseries Building} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with default parameters. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a8b013de56a31a97bd8dba262ce984606}{get\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the type of a building. \end{DoxyCompactList}\item 
+\Hypertarget{class_building_ab675c6a382e110b84031956cda708439}\label{class_building_ab675c6a382e110b84031956cda708439} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a276bdff1b5d7c81c1c52da749947dfd1}{provide\+Service}} ()=0
+\begin{DoxyCompactList}\small\item\em Generic function that provides a service to it\textquotesingle{}s Citizens (e.\+g. \doxylink{class_commercial_building}{Commercial\+Building} wou,,d pay it\textquotesingle{}s Citizens) \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1}{get\+Cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the cost of the \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{set\+State}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s)
+\begin{DoxyCompactList}\small\item\em Set the state of the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}{repair\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Repair the building, transitioning it to an appropriate state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a4f0602265fda2abe42ec661099cb8b86}{current\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aeaef971c807cbf4ab126f5684ae9c197}{simulate\+Construction}} ()
+\begin{DoxyCompactList}\small\item\em Simulate the construction process of the building asynchronously. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ac03a90b80d56a13217b780240ecdd035}{get\+Num\+Stories}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of stories the building has. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{Business\+Type}} \mbox{\hyperlink{class_building_a35485c9e194d5be384a6f37e52f89524}{get\+Business\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of business the building operates. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1fd28496e5deb742b3397227a9d97646}{add\+Employees}} ()
+\begin{DoxyCompactList}\small\item\em Add employees to the building. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_building_a86512d1f4c823c9c06d999e0ade35840}{get\+Pollution\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Get the pollution level produced by the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}{add\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Add citizens to the building. \end{DoxyCompactList}\item 
+virtual std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}{get\+Tenants}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of tenants (citizens) in the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a17e7c262e271e06b2393032caf3e8e0c}{add\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Add a worker to the building. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_a5525f0851f4f51618f8c51ad9ac8d7af}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Clone the building to create a copy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the capacity of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}\label{class_building_a3a56eeb880c304f705b84fb5e96c0c0b} 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em The capacity of the building. \end{DoxyCompactList}\item 
+\Hypertarget{class_building_a3423dd1d5190491c17e56d6f863cd7e2}\label{class_building_a3423dd1d5190491c17e56d6f863cd7e2} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries building\+State}
+\begin{DoxyCompactList}\small\item\em State of the \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+\Hypertarget{class_building_a58b6c57e058f5585d1691a625862de3e}\label{class_building_a58b6c57e058f5585d1691a625862de3e} 
+std\+::future$<$ void $>$ {\bfseries construction\+Future}
+\begin{DoxyCompactList}\small\item\em Future object used for simulating construction asynchronously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a building in a system. 
+
+Inherits from the \doxylink{class_subject}{Subject} class to support observer behavior. Contains core attributes and methods that subclasses can extend. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd}\index{Building@{Building}!Building@{Building}}
+\index{Building@{Building}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{Building()}{Building()}}
+{\footnotesize\ttfamily \label{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd} 
+Building\+::\+Building (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_building}{Building} object with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The initial capacity of the building. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}\index{Building@{Building}!addCitizens@{addCitizens}}
+\index{addCitizens@{addCitizens}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{addCitizens()}{addCitizens()}}
+{\footnotesize\ttfamily \label{class_building_a76dfb30bdb9d741ec1d572084a4b37cb} 
+virtual void Building\+::add\+Citizens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Add citizens to the building. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_aae7cb879777f356b7d0bdce3611e2dfa}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a9ca530a2a84711cbebc612da06743e3f}{Building\+With\+Parking}}, and \mbox{\hyperlink{class_residential_building_a1dc054abe1a659182c015256de27c324}{Residential\+Building}}.
+
+\Hypertarget{class_building_a1fd28496e5deb742b3397227a9d97646}\index{Building@{Building}!addEmployees@{addEmployees}}
+\index{addEmployees@{addEmployees}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{addEmployees()}{addEmployees()}}
+{\footnotesize\ttfamily \label{class_building_a1fd28496e5deb742b3397227a9d97646} 
+virtual void Building\+::add\+Employees (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Add employees to the building. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a1a67dbe19b7de8b03cb7ec9bedb92333}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_ad983cbfc0c884f775752fa0bbe052203}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_a2f48a66b745d00793dccb976141be198}{Commercial\+Building}}, and \mbox{\hyperlink{class_industrial_building_ad0cc39136958430a46e277fb6d693fd5}{Industrial\+Building}}.
+
+\Hypertarget{class_building_a17e7c262e271e06b2393032caf3e8e0c}\index{Building@{Building}!addWorker@{addWorker}}
+\index{addWorker@{addWorker}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{addWorker()}{addWorker()}}
+{\footnotesize\ttfamily \label{class_building_a17e7c262e271e06b2393032caf3e8e0c} 
+virtual void Building\+::add\+Worker (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Add a worker to the building. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a5b306aa14ab2c868b546f67c58b3b873}{Building\+With\+Coffee\+Shop}}, and \mbox{\hyperlink{class_building_with_parking_abe9e4010da1818491b3b32990dd368e0}{Building\+With\+Parking}}.
+
+\Hypertarget{class_building_a5525f0851f4f51618f8c51ad9ac8d7af}\index{Building@{Building}!clone@{clone}}
+\index{clone@{clone}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_building_a5525f0851f4f51618f8c51ad9ac8d7af} 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Building\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone the building to create a copy. 
+
+\begin{DoxyReturn}{Returns}
+Building\texorpdfstring{$\ast$}{*} pointer to the cloned building. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_building_with_coffee_shop_a658c5a4b4b295a8b4a1b8eb957bafe99}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a2fd1447bf07c35debe37fee7218cca88}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_a13e852730b910a37c737365d27c21e4a}{Commercial\+Building}}, \mbox{\hyperlink{class_decorator_ab585e01396edaa7670e478d59dd94fe3}{Decorator}}, \mbox{\hyperlink{class_industrial_building_a310a0942a35c6c313757767f7c4a21ad}{Industrial\+Building}}, \mbox{\hyperlink{class_landmark_building_ad1fcca3a1e7c4486751f5135e8125576}{Landmark\+Building}}, \mbox{\hyperlink{class_residential_building_a011855bb550244f3823fbdf46e8819af}{Residential\+Building}}, and \mbox{\hyperlink{class_traffic_building_a762f56701ab3a4d7f232951d5162a77f}{Traffic\+Building}}.
+
+\Hypertarget{class_building_a4f0602265fda2abe42ec661099cb8b86}\index{Building@{Building}!currentState@{currentState}}
+\index{currentState@{currentState}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{currentState()}{currentState()}}
+{\footnotesize\ttfamily \label{class_building_a4f0602265fda2abe42ec661099cb8b86} 
+std\+::string Building\+::current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the current state of the building as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string representing the current state. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a0cd176139ce397ddb0a62a8f38f611d8}{Building\+With\+Coffee\+Shop}}, and \mbox{\hyperlink{class_building_with_parking_aa34a5174be3746428b0bf64dc4cdd77e}{Building\+With\+Parking}}.
+
+\Hypertarget{class_building_a35485c9e194d5be384a6f37e52f89524}\index{Building@{Building}!getBusinessType@{getBusinessType}}
+\index{getBusinessType@{getBusinessType}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getBusinessType()}{getBusinessType()}}
+{\footnotesize\ttfamily \label{class_building_a35485c9e194d5be384a6f37e52f89524} 
+virtual \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{Business\+Type}} Building\+::get\+Business\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the type of business the building operates. 
+
+\begin{DoxyReturn}{Returns}
+Business\+Type representing the type of business. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a9ff19904bf40931ab00ee819161316b3}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_af28e4d670320182bf7534e7a9037be4b}{Building\+With\+Parking}}, and \mbox{\hyperlink{class_commercial_building_af56c04e321241773d5947819ecd506eb}{Commercial\+Building}}.
+
+\Hypertarget{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}\index{Building@{Building}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540} 
+int Building\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the capacity of the building. 
+
+\begin{DoxyReturn}{Returns}
+int representing the capacity. 
+\end{DoxyReturn}
+\Hypertarget{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1}\index{Building@{Building}!getCost@{getCost}}
+\index{getCost@{getCost}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1} 
+virtual float Building\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the cost of the \doxylink{class_building}{Building}. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_building_with_coffee_shop_a2a040635a84be7635eb0e11d7ee8996b}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_aef1943426ba3de7e45a3dd9fb4524a39}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_adb2325da9c02f0e810e8dc9fd64d3ecb}{Commercial\+Building}}, \mbox{\hyperlink{class_decorator_a80d9ae2166821923bcba5a00105cd631}{Decorator}}, \mbox{\hyperlink{class_industrial_building_a3b247c4ddd4f6428920d6c0ef85a123a}{Industrial\+Building}}, \mbox{\hyperlink{class_landmark_building_a7c824d63dd3fa1036a7f139299e6778e}{Landmark\+Building}}, \mbox{\hyperlink{class_residential_building_a639f8bf8a9b183d1d88d3c04054d611b}{Residential\+Building}}, and \mbox{\hyperlink{class_traffic_building_a6cef369c6430d5028384bbfc2f8ec620}{Traffic\+Building}}.
+
+\Hypertarget{class_building_ac03a90b80d56a13217b780240ecdd035}\index{Building@{Building}!getNumStories@{getNumStories}}
+\index{getNumStories@{getNumStories}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getNumStories()}{getNumStories()}}
+{\footnotesize\ttfamily \label{class_building_ac03a90b80d56a13217b780240ecdd035} 
+virtual int Building\+::get\+Num\+Stories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the number of stories the building has. 
+
+\begin{DoxyReturn}{Returns}
+int representing the number of stories. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a2e0d8b9ad6ddcd63180834c53c60b672}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a70bb30573e95cdc5bcb7280eca13d246}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_a0ce3022e85d0d757770e5b4f106893ab}{Commercial\+Building}}, and \mbox{\hyperlink{class_industrial_building_ae70a823351be6d663a0330f4b994dfda}{Industrial\+Building}}.
+
+\Hypertarget{class_building_a86512d1f4c823c9c06d999e0ade35840}\index{Building@{Building}!getPollutionLevel@{getPollutionLevel}}
+\index{getPollutionLevel@{getPollutionLevel}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getPollutionLevel()}{getPollutionLevel()}}
+{\footnotesize\ttfamily \label{class_building_a86512d1f4c823c9c06d999e0ade35840} 
+virtual float Building\+::get\+Pollution\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the pollution level produced by the building. 
+
+\begin{DoxyReturn}{Returns}
+float representing the pollution level. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a3f4c78a8520122789dfcc2a7af13ed09}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_ab16883351e21d5f7e8e18ca7d8047964}{Building\+With\+Parking}}, and \mbox{\hyperlink{class_industrial_building_a49f144499b5bf92a56f02facc73217f7}{Industrial\+Building}}.
+
+\Hypertarget{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}\index{Building@{Building}!getSize@{getSize}}
+\index{getSize@{getSize}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1} 
+virtual int Building\+::get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the size of the building. 
+
+\begin{DoxyReturn}{Returns}
+int representing the size. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_aaf3ad1448a3e7b4302b2b5d7a581c2a9}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a1677713defe0f78380e9a17e392721e0}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_a300f17d67c728bfddc2e0b78962bc113}{Commercial\+Building}}, and \mbox{\hyperlink{class_industrial_building_a15504e1e2eb50f8d151282374a1d159a}{Industrial\+Building}}.
+
+\Hypertarget{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}\index{Building@{Building}!getTenants@{getTenants}}
+\index{getTenants@{getTenants}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getTenants()}{getTenants()}}
+{\footnotesize\ttfamily \label{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920} 
+virtual std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ Building\+::get\+Tenants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a list of tenants (citizens) in the building. 
+
+\begin{DoxyReturn}{Returns}
+std\+::list$<$\+Citizen\texorpdfstring{$\ast$}{*}$>$ representing the tenants. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_abeaee8f33c963d976b9cc38f467f9de5}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a24badaaf9e31c2e0fb57b8aa40fd57c5}{Building\+With\+Parking}}, and \mbox{\hyperlink{class_residential_building_af2c2e6f3ca226eccaedaa58fdf20dc53}{Residential\+Building}}.
+
+\Hypertarget{class_building_a8b013de56a31a97bd8dba262ce984606}\index{Building@{Building}!getType@{getType}}
+\index{getType@{getType}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_building_a8b013de56a31a97bd8dba262ce984606} 
+virtual std\+::string Building\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the type of a building. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string representing the type of the building 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_building_with_coffee_shop_a032da5eaba659c4898c10af0c807a1ef}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a667daffcab3f708c2a6f1454ecb8508e}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_abb1d264ba9144518d1865161d571963e}{Commercial\+Building}}, \mbox{\hyperlink{class_industrial_building_a0359a2b4c9fbbf095053de5be5698964}{Industrial\+Building}}, \mbox{\hyperlink{class_landmark_building_af32eed049c4ea7568375bafc2f1925f6}{Landmark\+Building}}, \mbox{\hyperlink{class_residential_building_a90b720900bfee33afbd2db26f093dc55}{Residential\+Building}}, and \mbox{\hyperlink{class_traffic_building_acec0495fd84030ebc4ed19ed31eb60a6}{Traffic\+Building}}.
+
+\Hypertarget{class_building_a276bdff1b5d7c81c1c52da749947dfd1}\index{Building@{Building}!provideService@{provideService}}
+\index{provideService@{provideService}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily \label{class_building_a276bdff1b5d7c81c1c52da749947dfd1} 
+virtual void Building\+::provide\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generic function that provides a service to it\textquotesingle{}s Citizens (e.\+g. \doxylink{class_commercial_building}{Commercial\+Building} wou,,d pay it\textquotesingle{}s Citizens) 
+
+
+
+Implemented in \mbox{\hyperlink{class_building_with_coffee_shop_a29dc6a5a24d93299a230f9aa10b3f3f5}{Building\+With\+Coffee\+Shop}}, \mbox{\hyperlink{class_building_with_parking_a8192f5ff1297b514baa941279622b9e9}{Building\+With\+Parking}}, \mbox{\hyperlink{class_commercial_building_a0d236a06373ba17022ae353fce26801e}{Commercial\+Building}}, \mbox{\hyperlink{class_decorator_a1906e363a514ed319032efe7cbd6c5bd}{Decorator}}, \mbox{\hyperlink{class_industrial_building_a7a88a0b407759f31d019261768f4a4a8}{Industrial\+Building}}, \mbox{\hyperlink{class_landmark_building_a48d3dc6d63e9e5ff232d04047b33088c}{Landmark\+Building}}, \mbox{\hyperlink{class_residential_building_a1951e23b8e545d04e13bc1226c33beeb}{Residential\+Building}}, and \mbox{\hyperlink{class_traffic_building_acdc02b77d9dab81f1d19d29c93bc0e28}{Traffic\+Building}}.
+
+\Hypertarget{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}\index{Building@{Building}!repairBuilding@{repairBuilding}}
+\index{repairBuilding@{repairBuilding}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{repairBuilding()}{repairBuilding()}}
+{\footnotesize\ttfamily \label{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2} 
+void Building\+::repair\+Building (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Repair the building, transitioning it to an appropriate state. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_abdaf5793af666a7fda40096374c622db}{Building\+With\+Coffee\+Shop}}, and \mbox{\hyperlink{class_building_with_parking_a0861bc44510d88e80e8cbeb7f028e5a8}{Building\+With\+Parking}}.
+
+\Hypertarget{class_building_aa958225a2589dc1d1e9ba196c35b610c}\index{Building@{Building}!setState@{setState}}
+\index{setState@{setState}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{class_building_aa958225a2589dc1d1e9ba196c35b610c} 
+void Building\+::set\+State (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the state of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A unique pointer to a new \doxylink{class_building_state}{Building\+State}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a9ad3cb3ac6c4dd89c9db35c89c45644a}{Building\+With\+Coffee\+Shop}}, and \mbox{\hyperlink{class_building_with_parking_a1713235c27f8782bc472ed244e3f846e}{Building\+With\+Parking}}.
+
+\Hypertarget{class_building_aeaef971c807cbf4ab126f5684ae9c197}\index{Building@{Building}!simulateConstruction@{simulateConstruction}}
+\index{simulateConstruction@{simulateConstruction}!Building@{Building}}
+\doxysubsubsection{\texorpdfstring{simulateConstruction()}{simulateConstruction()}}
+{\footnotesize\ttfamily \label{class_building_aeaef971c807cbf4ab126f5684ae9c197} 
+void Building\+::simulate\+Construction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Simulate the construction process of the building asynchronously. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_a8b90cfb0ff1dae37c70f104978276071}{Building\+With\+Coffee\+Shop}}, and \mbox{\hyperlink{class_building_with_parking_a4fb6d0014e826bbb9e438c3e6928d632}{Building\+With\+Parking}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_building_8h}{Building.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Building.\+cpp\end{DoxyCompactItemize}

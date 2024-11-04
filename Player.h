@@ -16,6 +16,7 @@
 #include "CommercialBuildingFactory.h"
 #include "ResidentialBuildingFactory.h"
 #include "LandmarkFactory.h"
+#include "TrafficBuildingFactory.h"
 //building decorator factories
 #include "BuildingWithCoffeeShopFactory.h"
 #include "BuildingWithParkingFactory.h"
@@ -48,6 +49,7 @@ private:
     BuildingFactory* commercialFactory;
     BuildingFactory* residentialFactory;
     BuildingFactory* landmarkFactory;
+    TrafficBuildingFactory* trafficFactory;
     //decorator factories
     BuildingFactory* coffeeShopFactory;
     BuildingFactory* parkingFactory;
@@ -180,6 +182,11 @@ public:
     bool buildCommercialBuilding(int x, int y);
     bool buildResidentialBuilding(int x, int y);
     bool buildLandmark(int x, int y);
+    bool buildTaxiTrafficBuilding(int x, int y);
+    bool buildBusTrafficBuilding(int x, int y);
+    bool buildTrainTrafficBuilding(int x, int y);
+    bool buildAirportTrafficBuilding(int x, int y);
+    
 
     //decorator buildings
     bool upgradeBuildingWithCoffeeShop(int x, int y);

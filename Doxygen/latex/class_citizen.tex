@@ -1,0 +1,195 @@
+\doxysection{Citizen Class Reference}
+\hypertarget{class_citizen}{}\label{class_citizen}\index{Citizen@{Citizen}}
+
+
+Class representing a citizen with attributes such as job status and satisfaction level.  
+
+
+
+
+{\ttfamily \#include $<$Citizen.\+h$>$}
+
+Inheritance diagram for Citizen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_citizen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_citizen_a3951355c9f2d7260debedd29b163dbe6}\label{class_citizen_a3951355c9f2d7260debedd29b163dbe6} 
+{\bfseries Citizen} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_citizen}{Citizen} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_citizen_a5232bf42d9a211d81ce3e5e3cefcf04c}\label{class_citizen_a5232bf42d9a211d81ce3e5e3cefcf04c} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Citizen} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_citizen}{Citizen} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_citizen_a30b6880f5f34efffe1a745b7a36197f9}{Citizen}} (bool has\+Job)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{class_citizen}{Citizen} with a job status. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_citizen_a1d91eec7724c56c046b00e56f13c5b19}{update}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Update the citizen\textquotesingle{}s state based on change data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_citizen_a1b24583563803aceb58ea4522bfbfefc}{get\+Has\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Get the job status of the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_aed78b71d19c34bd5d7f099b935a05702}{set\+Job\+Status}} (bool job\+Status)
+\begin{DoxyCompactList}\small\item\em Set the job status of the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a6038eb90413185bd50a4d645c0c05906}{handle\+Tax\+Change}} (float new\+Tax\+Rate)
+\begin{DoxyCompactList}\small\item\em Handle changes in the tax rate that affect the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_af51cef24d7c35706a8b4753a406b4572}{handle\+Building\+Constructed}} (float Building\+Num)
+\begin{DoxyCompactList}\small\item\em Handle the event of a new building being constructed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a44e2698c6e0e889716154d499ef843d3}{handle\+Service\+Provided}} (float Utility\+Float)
+\begin{DoxyCompactList}\small\item\em Handle the service provided by a utility or service provider. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_citizen_a8cd003b04e1a39f77ba73a9e4df79b22}{get\+Satisfaction\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Returns the satifaction level of the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_citizen_a252fb286b4314f871f1c642a22405f6d}{set\+Satisfaction\+Level}} (\mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}} \texorpdfstring{$\ast$}{*}satisfaction\+Level)
+\begin{DoxyCompactList}\small\item\em sets the satifaction level of the citizen \end{DoxyCompactList}\item 
+\Hypertarget{class_citizen_a299bcaa9c38ed2472edb173731ea60a3}\label{class_citizen_a299bcaa9c38ed2472edb173731ea60a3} 
+void {\bfseries update\+Satisfaction\+Level} ()
+\begin{DoxyCompactList}\small\item\em Update the satisfaction level of the citizen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a citizen with attributes such as job status and satisfaction level. 
+
+This class includes methods to handle changes in the environment that affect the citizen\textquotesingle{}s state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_citizen_a30b6880f5f34efffe1a745b7a36197f9}\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{Citizen()}{Citizen()}}
+{\footnotesize\ttfamily \label{class_citizen_a30b6880f5f34efffe1a745b7a36197f9} 
+Citizen\+::\+Citizen (\begin{DoxyParamCaption}\item[{bool}]{has\+Job}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the \doxylink{class_citizen}{Citizen} with a job status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\+Job} & Boolean indicating if the citizen has a job. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_citizen_a1b24583563803aceb58ea4522bfbfefc}\index{Citizen@{Citizen}!getHasJob@{getHasJob}}
+\index{getHasJob@{getHasJob}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHasJob()}{getHasJob()}}
+{\footnotesize\ttfamily \label{class_citizen_a1b24583563803aceb58ea4522bfbfefc} 
+bool Citizen\+::get\+Has\+Job (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the job status of the citizen. 
+
+\begin{DoxyReturn}{Returns}
+bool indicating if the citizen has a job. 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_a8cd003b04e1a39f77ba73a9e4df79b22}\index{Citizen@{Citizen}!getSatisfactionLevel@{getSatisfactionLevel}}
+\index{getSatisfactionLevel@{getSatisfactionLevel}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getSatisfactionLevel()}{getSatisfactionLevel()}}
+{\footnotesize\ttfamily \label{class_citizen_a8cd003b04e1a39f77ba73a9e4df79b22} 
+\mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}} \texorpdfstring{$\ast$}{*} Citizen\+::get\+Satisfaction\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the satifaction level of the citizen. 
+
+\begin{DoxyReturn}{Returns}
+Satisfaction\+Level\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_citizen_af51cef24d7c35706a8b4753a406b4572}\index{Citizen@{Citizen}!handleBuildingConstructed@{handleBuildingConstructed}}
+\index{handleBuildingConstructed@{handleBuildingConstructed}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{handleBuildingConstructed()}{handleBuildingConstructed()}}
+{\footnotesize\ttfamily \label{class_citizen_af51cef24d7c35706a8b4753a406b4572} 
+void Citizen\+::handle\+Building\+Constructed (\begin{DoxyParamCaption}\item[{float}]{Building\+Num}{}\end{DoxyParamCaption})}
+
+
+
+Handle the event of a new building being constructed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Building\+Num} & Float representing the building number or identifier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a44e2698c6e0e889716154d499ef843d3}\index{Citizen@{Citizen}!handleServiceProvided@{handleServiceProvided}}
+\index{handleServiceProvided@{handleServiceProvided}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{handleServiceProvided()}{handleServiceProvided()}}
+{\footnotesize\ttfamily \label{class_citizen_a44e2698c6e0e889716154d499ef843d3} 
+void Citizen\+::handle\+Service\+Provided (\begin{DoxyParamCaption}\item[{float}]{Utility\+Float}{}\end{DoxyParamCaption})}
+
+
+
+Handle the service provided by a utility or service provider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Utility\+Float} & Float representing the utility value or identifier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a6038eb90413185bd50a4d645c0c05906}\index{Citizen@{Citizen}!handleTaxChange@{handleTaxChange}}
+\index{handleTaxChange@{handleTaxChange}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{handleTaxChange()}{handleTaxChange()}}
+{\footnotesize\ttfamily \label{class_citizen_a6038eb90413185bd50a4d645c0c05906} 
+void Citizen\+::handle\+Tax\+Change (\begin{DoxyParamCaption}\item[{float}]{new\+Tax\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Handle changes in the tax rate that affect the citizen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Tax\+Rate} & Float representing the new tax rate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_aed78b71d19c34bd5d7f099b935a05702}\index{Citizen@{Citizen}!setJobStatus@{setJobStatus}}
+\index{setJobStatus@{setJobStatus}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setJobStatus()}{setJobStatus()}}
+{\footnotesize\ttfamily \label{class_citizen_aed78b71d19c34bd5d7f099b935a05702} 
+void Citizen\+::set\+Job\+Status (\begin{DoxyParamCaption}\item[{bool}]{job\+Status}{}\end{DoxyParamCaption})}
+
+
+
+Set the job status of the citizen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+Status} & Boolean indicating the new job status. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a252fb286b4314f871f1c642a22405f6d}\index{Citizen@{Citizen}!setSatisfactionLevel@{setSatisfactionLevel}}
+\index{setSatisfactionLevel@{setSatisfactionLevel}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setSatisfactionLevel()}{setSatisfactionLevel()}}
+{\footnotesize\ttfamily \label{class_citizen_a252fb286b4314f871f1c642a22405f6d} 
+void Citizen\+::set\+Satisfaction\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}} \texorpdfstring{$\ast$}{*}}]{satisfaction\+Level}{}\end{DoxyParamCaption})}
+
+
+
+sets the satifaction level of the citizen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em satisfaction\+Level} & Pointer to the new \doxylink{class_satisfaction_level}{Satisfaction\+Level} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_citizen_a1d91eec7724c56c046b00e56f13c5b19}\index{Citizen@{Citizen}!update@{update}}
+\index{update@{update}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_citizen_a1d91eec7724c56c046b00e56f13c5b19} 
+void Citizen\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_change_data}{Change\+Data}}}]{change\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the citizen\textquotesingle{}s state based on change data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change\+Data} & \doxylink{struct_change_data}{Change\+Data} object containing information about the change. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_citizen_8h}{Citizen.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Citizen.\+cpp\end{DoxyCompactItemize}

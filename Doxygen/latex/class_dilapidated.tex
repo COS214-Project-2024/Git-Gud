@@ -1,0 +1,127 @@
+\doxysection{Dilapidated Class Reference}
+\hypertarget{class_dilapidated}{}\label{class_dilapidated}\index{Dilapidated@{Dilapidated}}
+
+
+Class representing the state of a building when it is dilapidated.  
+
+
+
+
+{\ttfamily \#include $<$Dilapidated.\+h$>$}
+
+Inheritance diagram for Dilapidated\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dilapidated}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dilapidated_ab65802863b341179e8bf4a9af6ca4fcb}\label{class_dilapidated_ab65802863b341179e8bf4a9af6ca4fcb} 
+{\bfseries Dilapidated} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_dilapidated}{Dilapidated} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_dilapidated_a4b9cf80f025e630985eec9d11da05f55}\label{class_dilapidated_a4b9cf80f025e630985eec9d11da05f55} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Dilapidated} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_dilapidated}{Dilapidated} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dilapidated_a8f3b51f03ef0cfeec5d5a5929dd1e979}{enter\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Enter the dilapidated state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dilapidated_a8e5cd7d94b92c48e3ce96364bde04bdc}{exit\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Exit the dilapidated state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dilapidated_a069bd0c9a19d27dc0cba6b8028d1424a}{next\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Transition to the next state from the dilapidated state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_dilapidated_a43da2f579a7c8f7229cc3739942ce6bc}{get\+Current\+State}} () override
+\begin{DoxyCompactList}\small\item\em Get the current state as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+State} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_building_state}{Building\+State} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the state of a building when it is dilapidated. 
+
+Inherits from the \doxylink{class_building_state}{Building\+State} class and provides specific implementations for state transitions and behavior in the dilapidated state. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dilapidated_a8f3b51f03ef0cfeec5d5a5929dd1e979}\index{Dilapidated@{Dilapidated}!enterState@{enterState}}
+\index{enterState@{enterState}!Dilapidated@{Dilapidated}}
+\doxysubsubsection{\texorpdfstring{enterState()}{enterState()}}
+{\footnotesize\ttfamily \label{class_dilapidated_a8f3b51f03ef0cfeec5d5a5929dd1e979} 
+void Dilapidated\+::enter\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Enter the dilapidated state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} object entering this state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_a514375c73d1e6a6373fbe7c188a10d70}{Building\+State}}.
+
+\Hypertarget{class_dilapidated_a8e5cd7d94b92c48e3ce96364bde04bdc}\index{Dilapidated@{Dilapidated}!exitState@{exitState}}
+\index{exitState@{exitState}!Dilapidated@{Dilapidated}}
+\doxysubsubsection{\texorpdfstring{exitState()}{exitState()}}
+{\footnotesize\ttfamily \label{class_dilapidated_a8e5cd7d94b92c48e3ce96364bde04bdc} 
+void Dilapidated\+::exit\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Exit the dilapidated state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} object exiting this state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_a2b5fb65b89358607c5f9ef351cbe42ad}{Building\+State}}.
+
+\Hypertarget{class_dilapidated_a43da2f579a7c8f7229cc3739942ce6bc}\index{Dilapidated@{Dilapidated}!getCurrentState@{getCurrentState}}
+\index{getCurrentState@{getCurrentState}!Dilapidated@{Dilapidated}}
+\doxysubsubsection{\texorpdfstring{getCurrentState()}{getCurrentState()}}
+{\footnotesize\ttfamily \label{class_dilapidated_a43da2f579a7c8f7229cc3739942ce6bc} 
+std\+::string Dilapidated\+::get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current state as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string representing the current state ("{}\+Dilapidated"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ab4dfe9fa9ee90f9d651c66bbc9823d4e}{Building\+State}}.
+
+\Hypertarget{class_dilapidated_a069bd0c9a19d27dc0cba6b8028d1424a}\index{Dilapidated@{Dilapidated}!nextState@{nextState}}
+\index{nextState@{nextState}!Dilapidated@{Dilapidated}}
+\doxysubsubsection{\texorpdfstring{nextState()}{nextState()}}
+{\footnotesize\ttfamily \label{class_dilapidated_a069bd0c9a19d27dc0cba6b8028d1424a} 
+void Dilapidated\+::next\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Transition to the next state from the dilapidated state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} object transitioning to the next state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_adcbf504c9fbfc4901e9e6cf31e199f09}{Building\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_dilapidated_8h}{Dilapidated.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Dilapidated.\+cpp\end{DoxyCompactItemize}

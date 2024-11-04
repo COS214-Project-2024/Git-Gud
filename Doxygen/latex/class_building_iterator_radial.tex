@@ -1,0 +1,96 @@
+\doxysection{Building\+Iterator\+Radial Class Reference}
+\hypertarget{class_building_iterator_radial}{}\label{class_building_iterator_radial}\index{BuildingIteratorRadial@{BuildingIteratorRadial}}
+Inheritance diagram for Building\+Iterator\+Radial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_building_iterator_radial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_iterator_radial_ac8a764dc45c0a58e04a21d2e7b794cd1}\label{class_building_iterator_radial_ac8a764dc45c0a58e04a21d2e7b794cd1} 
+{\bfseries Building\+Iterator\+Radial} (int x, int y, int radius, \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, int rows, int cols)
+\item 
+bool \mbox{\hyperlink{class_building_iterator_radial_afbb587c9708c0272653239f806c4e842}{has\+Next}} () override
+\item 
+void \mbox{\hyperlink{class_building_iterator_radial_a5d1fc09b93383fc58ad36d068d403b74}{next}} () override
+\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_iterator_radial_a53a88a05219f67718523f72fdb8d7607}{current}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_iterator}{Building\+Iterator}}}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_iterator_radial_a2c746c62abac259837a3581528f930d7}\label{class_building_iterator_radial_a2c746c62abac259837a3581528f930d7} 
+void {\bfseries calculate\+Points} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, int rows, int cols)
+\item 
+\Hypertarget{class_building_iterator_radial_afacc6fbca7c070bd78e4e88aa375902e}\label{class_building_iterator_radial_afacc6fbca7c070bd78e4e88aa375902e} 
+bool {\bfseries contains} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_iterator_radial_a90fb4113ed6664ef64265bdf2c6fc281}\label{class_building_iterator_radial_a90fb4113ed6664ef64265bdf2c6fc281} 
+int {\bfseries set\+Radius}
+\item 
+\Hypertarget{class_building_iterator_radial_aa2fdae788eabf58e82f48d4248e0dcef}\label{class_building_iterator_radial_aa2fdae788eabf58e82f48d4248e0dcef} 
+int {\bfseries centerX}
+\item 
+\Hypertarget{class_building_iterator_radial_a885b490eef863e234c7469fdd6e4dc31}\label{class_building_iterator_radial_a885b490eef863e234c7469fdd6e4dc31} 
+int {\bfseries centerY}
+\item 
+\Hypertarget{class_building_iterator_radial_a08b2acc08f7229c667381f93ef6ebb57}\label{class_building_iterator_radial_a08b2acc08f7229c667381f93ef6ebb57} 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} {\bfseries head}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building_iterator}{Building\+Iterator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} {\bfseries array}
+\item 
+int {\bfseries rows}
+\item 
+int {\bfseries cols}
+\item 
+int {\bfseries row}
+\item 
+int {\bfseries col}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_building_iterator_radial_a53a88a05219f67718523f72fdb8d7607}\index{BuildingIteratorRadial@{BuildingIteratorRadial}!current@{current}}
+\index{current@{current}!BuildingIteratorRadial@{BuildingIteratorRadial}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily \label{class_building_iterator_radial_a53a88a05219f67718523f72fdb8d7607} 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Building\+Iterator\+Radial\+::current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_building_iterator}{Building\+Iterator}}.
+
+\Hypertarget{class_building_iterator_radial_afbb587c9708c0272653239f806c4e842}\index{BuildingIteratorRadial@{BuildingIteratorRadial}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!BuildingIteratorRadial@{BuildingIteratorRadial}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily \label{class_building_iterator_radial_afbb587c9708c0272653239f806c4e842} 
+bool Building\+Iterator\+Radial\+::has\+Next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_building_iterator}{Building\+Iterator}}.
+
+\Hypertarget{class_building_iterator_radial_a5d1fc09b93383fc58ad36d068d403b74}\index{BuildingIteratorRadial@{BuildingIteratorRadial}!next@{next}}
+\index{next@{next}!BuildingIteratorRadial@{BuildingIteratorRadial}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_building_iterator_radial_a5d1fc09b93383fc58ad36d068d403b74} 
+void Building\+Iterator\+Radial\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_building_iterator}{Building\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Building\+Iterator\+Radial.\+h\end{DoxyCompactItemize}

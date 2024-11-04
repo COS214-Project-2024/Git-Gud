@@ -1,0 +1,56 @@
+\doxysection{Transportation.\+h}
+\hypertarget{_transportation_8h_source}{}\label{_transportation_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/Transportation.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/Transportation.h}}
+\mbox{\hyperlink{_transportation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ TRANSPORTATION\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TRANSPORTATION\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}PublicService.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_traffic_building_8h}{TrafficBuilding.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_transportation_8h_a3633c482cf0587207ac33125d32ba3ee}{TrafficFlow}}\ \{\ LOW,\ MODERATE,\ HIGH\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transportation}{Transportation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_subject}{Subject}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ std::unordered\_map<TransportType,\ std::vector<std::unique\_ptr<TrafficBuilding>>>\ trafficBuildings;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ numTaxis;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ numTrains;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ numAirports;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ numBuses;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ busCapacity;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ taxiCapacity;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ trainCapacity;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ airportCapacity;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_transportation_8h_a3633c482cf0587207ac33125d32ba3ee}{TrafficFlow}}\ currentFlow;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_transportation_ad7a539e4fe118def2e147337296e31a1}{Transportation}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transportation_aa0601eebf2f20677108a9c9901c872ee}{updateCapacity}}(\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ t,\ \textcolor{keywordtype}{int}\ add);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transportation_a4769d854dc71ce5ac067ddf26bc7b37d}{calculateTrafficFlow}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ \mbox{\hyperlink{class_transportation_a7166a08b7e9e3c745039a67c1c9f0642}{getCurrentFlow}}(\mbox{\hyperlink{_transportation_8h_a3633c482cf0587207ac33125d32ba3ee}{TrafficFlow}}\ t);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_transportation_a3d5450bc1830262aa8b4c93d752f3f18}{getTotalTrafficCapacity}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transportation_a25e8c90255c3d98dddac3d7862399009}{addTrafficBuilding}}(\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ type);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transportation_ab5fc2de45bea6b7ac4b0bdd53a9e2500}{initializeTrafficFlow}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_transportation_a060745503821ee694232fb4e599ce8b0}{getNumStations}}(\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ t);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00141\ \ \ \ \ std::string\ \mbox{\hyperlink{class_transportation_aae9ef19384e071081ae9b849d82d399f}{getTransportTypeString}}(\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ t);}
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ TRANSPORTATION\_H}}
+
+\end{DoxyCode}

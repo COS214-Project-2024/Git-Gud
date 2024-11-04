@@ -1,0 +1,137 @@
+\doxysection{Very\+Satisfied Class Reference}
+\hypertarget{class_very_satisfied}{}\label{class_very_satisfied}\index{VerySatisfied@{VerySatisfied}}
+
+
+Represents a very satisfied level of satisfaction.  
+
+
+
+
+{\ttfamily \#include $<$Very\+Satisfied.\+h$>$}
+
+Inheritance diagram for Very\+Satisfied\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_very_satisfied}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_very_satisfied_aa842d2e42cc836e4819d60f28f047071}\label{class_very_satisfied_aa842d2e42cc836e4819d60f28f047071} 
+{\bfseries Very\+Satisfied} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_very_satisfied}{Very\+Satisfied} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_very_satisfied_a33fd398b6875a19ac353d4391c9de64b}\label{class_very_satisfied_a33fd398b6875a19ac353d4391c9de64b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Very\+Satisfied} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_very_satisfied}{Very\+Satisfied} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_very_satisfied_ab3672746c9e49fdbd1a733684827ff2a}{enter\+State}} () override
+\begin{DoxyCompactList}\small\item\em Enters the very satisfied state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_very_satisfied_aabda99e1c21e6f7e7e5dac6770e9d82c}{exit\+State}} () override
+\begin{DoxyCompactList}\small\item\em Exits the very satisfied state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_very_satisfied_a048fec8555e4fdf8826d757927d044c4}{get\+Current\+Satisfaction\+Level}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the current satisfaction level as a string. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_very_satisfied_ae0511a8fd70cb201485e3cdc3691c09a}{get\+Tax\+Return}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the tax return rate for the very satisfied state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_satisfaction_level_ac916348f22f093f78c3880fa1604637e}{\texorpdfstring{$\sim$}{\string~}\+Satisfaction\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_satisfaction_level}{Satisfaction\+Level} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_very_satisfied_ad23a98d38fda3875edf65cb768b278d7}\label{class_very_satisfied_ad23a98d38fda3875edf65cb768b278d7} 
+float {\bfseries satisfaction\+Rating}
+\begin{DoxyCompactList}\small\item\em Satisfaction rating associated with this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries satisfaction\+Rating}
+\begin{DoxyCompactList}\small\item\em Current satisfaction rating associated with this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_very_satisfied_a56cdbe7224f8548ada825671d0faedfc}\label{class_very_satisfied_a56cdbe7224f8548ada825671d0faedfc} 
+float {\bfseries tax\+Return} = 1.\+5
+\begin{DoxyCompactList}\small\item\em Tax return rate associated with the very satisfied state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries tax\+Return}
+\begin{DoxyCompactList}\small\item\em Tax return rate associated with the satisfaction level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a very satisfied level of satisfaction. 
+
+This class inherits from \doxylink{class_satisfaction_level}{Satisfaction\+Level} and represents a very satisfied state with specific behaviors and attributes, such as a tax return rate and satisfaction rating. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_very_satisfied_ab3672746c9e49fdbd1a733684827ff2a}\index{VerySatisfied@{VerySatisfied}!enterState@{enterState}}
+\index{enterState@{enterState}!VerySatisfied@{VerySatisfied}}
+\doxysubsubsection{\texorpdfstring{enterState()}{enterState()}}
+{\footnotesize\ttfamily \label{class_very_satisfied_ab3672746c9e49fdbd1a733684827ff2a} 
+void Very\+Satisfied\+::enter\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Enters the very satisfied state. 
+
+This method is used to transition into the very satisfied state. 
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a1efbc8395b31d9e69604f8521d109876}{Satisfaction\+Level}}.
+
+\Hypertarget{class_very_satisfied_aabda99e1c21e6f7e7e5dac6770e9d82c}\index{VerySatisfied@{VerySatisfied}!exitState@{exitState}}
+\index{exitState@{exitState}!VerySatisfied@{VerySatisfied}}
+\doxysubsubsection{\texorpdfstring{exitState()}{exitState()}}
+{\footnotesize\ttfamily \label{class_very_satisfied_aabda99e1c21e6f7e7e5dac6770e9d82c} 
+void Very\+Satisfied\+::exit\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Exits the very satisfied state. 
+
+This method is used to transition out of the very satisfied state. 
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a3e4a177ff8b43d0f924b6f51abeac035}{Satisfaction\+Level}}.
+
+\Hypertarget{class_very_satisfied_a048fec8555e4fdf8826d757927d044c4}\index{VerySatisfied@{VerySatisfied}!getCurrentSatisfactionLevel@{getCurrentSatisfactionLevel}}
+\index{getCurrentSatisfactionLevel@{getCurrentSatisfactionLevel}!VerySatisfied@{VerySatisfied}}
+\doxysubsubsection{\texorpdfstring{getCurrentSatisfactionLevel()}{getCurrentSatisfactionLevel()}}
+{\footnotesize\ttfamily \label{class_very_satisfied_a048fec8555e4fdf8826d757927d044c4} 
+std\+::string Very\+Satisfied\+::get\+Current\+Satisfaction\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the current satisfaction level as a string. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current satisfaction level. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a5c14fce4b82b917c6d1b9506326883cd}{Satisfaction\+Level}}.
+
+\Hypertarget{class_very_satisfied_ae0511a8fd70cb201485e3cdc3691c09a}\index{VerySatisfied@{VerySatisfied}!getTaxReturn@{getTaxReturn}}
+\index{getTaxReturn@{getTaxReturn}!VerySatisfied@{VerySatisfied}}
+\doxysubsubsection{\texorpdfstring{getTaxReturn()}{getTaxReturn()}}
+{\footnotesize\ttfamily \label{class_very_satisfied_ae0511a8fd70cb201485e3cdc3691c09a} 
+float Very\+Satisfied\+::get\+Tax\+Return (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the tax return rate for the very satisfied state. 
+
+\begin{DoxyReturn}{Returns}
+The tax return rate as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a717c1b0a9ebfdcd8175ca9ad0f7eb6a9}{Satisfaction\+Level}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_very_satisfied_8h}{Very\+Satisfied.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Very\+Satisfied.\+cpp\end{DoxyCompactItemize}

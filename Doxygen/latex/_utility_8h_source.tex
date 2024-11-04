@@ -1,0 +1,54 @@
+\doxysection{Utility.\+h}
+\hypertarget{_utility_8h_source}{}\label{_utility_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/Utility.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/Utility.h}}
+\mbox{\hyperlink{_utility_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ UTILITY\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ UTILITY\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_subject_8h}{Subject.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_citizen}{Citizen}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_utility}{Utility}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_subject}{Subject}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{class_utility_a355a0b4367f18832d8b389277397b218}{utilityType}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}};\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_utility_ac5bce561407a568712d34cff71041a21}{Utility}}(\textcolor{keyword}{const}\ std::string\&\ type,\ \textcolor{keywordtype}{int}\ cap,\ \textcolor{keywordtype}{int}\ cost)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_utility_a355a0b4367f18832d8b389277397b218}{utilityType}}(type),\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}}(cap),\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}}(cost)\ \{\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_utility_a658f0109fa28ef7342768f50bb11a110}{\string~Utility}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utility_aa3c607f4b293e6e890856124c959cb36}{callObserver}}()\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_a82bfd8fc78719418cab50df6098da2d6}{getCapacity}}()\textcolor{keyword}{\ const\ }\{\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}};\ }
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_a28c901a15f60a317eaca345ecce5ba94}{getMaintenanceCost}}()\textcolor{keyword}{\ const\ }\{\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}};\ }
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ \mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{getUtilityType}}()\textcolor{keyword}{\ const\ }\{\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_utility_a355a0b4367f18832d8b389277397b218}{utilityType}};\ }
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utility_a030e5a224d96fa0b915b8d09a0b58185}{scanBuilding}}(\mbox{\hyperlink{class_building}{Building}}*\ building)\{}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_citizen}{Citizen}}*\ citizen\ :\ building-\/>\mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{getObserverList}}())\{}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}}(citizen);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITY\_H}}
+
+\end{DoxyCode}

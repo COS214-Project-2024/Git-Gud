@@ -1,0 +1,223 @@
+\doxysection{Transportation Class Reference}
+\hypertarget{class_transportation}{}\label{class_transportation}\index{Transportation@{Transportation}}
+
+
+Manages traffic and transport types within a city.  
+
+
+
+
+{\ttfamily \#include $<$Transportation.\+h$>$}
+
+Inheritance diagram for Transportation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_transportation}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transportation_ad7a539e4fe118def2e147337296e31a1}{Transportation}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_transportation}{Transportation} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transportation_aa0601eebf2f20677108a9c9901c872ee}{update\+Capacity}} (\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} t, int add)
+\begin{DoxyCompactList}\small\item\em Updates the capacity of a specific transport type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transportation_a4769d854dc71ce5ac067ddf26bc7b37d}{calculate\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the current traffic flow. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_transportation_a7166a08b7e9e3c745039a67c1c9f0642}{get\+Current\+Flow}} (\mbox{\hyperlink{_transportation_8h_a3633c482cf0587207ac33125d32ba3ee}{Traffic\+Flow}} t)
+\begin{DoxyCompactList}\small\item\em Retrieves the current traffic flow as a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_transportation_a3d5450bc1830262aa8b4c93d752f3f18}{get\+Total\+Traffic\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total traffic capacity for the city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transportation_a25e8c90255c3d98dddac3d7862399009}{add\+Traffic\+Building}} (\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Adds a traffic building to the city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transportation_ab5fc2de45bea6b7ac4b0bdd53a9e2500}{initialize\+Traffic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Initializes traffic flow based on validation checks. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_transportation_a060745503821ee694232fb4e599ce8b0}{get\+Num\+Stations}} (\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} t)
+\begin{DoxyCompactList}\small\item\em Gets the number of stations for a specific transport type. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_transportation_aae9ef19384e071081ae9b849d82d399f}{get\+Transport\+Type\+String}} (\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} t)
+\begin{DoxyCompactList}\small\item\em Converts a transport type to its string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages traffic and transport types within a city. 
+
+The \doxylink{class_transportation}{Transportation} class handles the registration and management of different types of traffic buildings. It calculates traffic flow based on the capacities of these buildings, updates transport capacities, and provides information about the current transport state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_transportation_ad7a539e4fe118def2e147337296e31a1}\index{Transportation@{Transportation}!Transportation@{Transportation}}
+\index{Transportation@{Transportation}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{Transportation()}{Transportation()}}
+{\footnotesize\ttfamily \label{class_transportation_ad7a539e4fe118def2e147337296e31a1} 
+Transportation\+::\+Transportation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_transportation}{Transportation} class. 
+
+Initializes a new instance of the \doxylink{class_transportation}{Transportation} class with default values. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_transportation_a25e8c90255c3d98dddac3d7862399009}\index{Transportation@{Transportation}!addTrafficBuilding@{addTrafficBuilding}}
+\index{addTrafficBuilding@{addTrafficBuilding}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{addTrafficBuilding()}{addTrafficBuilding()}}
+{\footnotesize\ttfamily \label{class_transportation_a25e8c90255c3d98dddac3d7862399009} 
+void Transportation\+::add\+Traffic\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Adds a traffic building to the city. 
+
+This method creates and adds a new traffic building of the specified type and capacity to the transportation system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of transport building to add (e.\+g., TAXI, BUS, TRAIN, AIRPORT). \\
+\hline
+{\em capacity} & The capacity of the new traffic building. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transportation_a4769d854dc71ce5ac067ddf26bc7b37d}\index{Transportation@{Transportation}!calculateTrafficFlow@{calculateTrafficFlow}}
+\index{calculateTrafficFlow@{calculateTrafficFlow}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{calculateTrafficFlow()}{calculateTrafficFlow()}}
+{\footnotesize\ttfamily \label{class_transportation_a4769d854dc71ce5ac067ddf26bc7b37d} 
+void Transportation\+::calculate\+Traffic\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the current traffic flow. 
+
+Computes the traffic flow based on the total number of citizens in the city and the capacities of all transport stations, updating the current flow state accordingly. \Hypertarget{class_transportation_a7166a08b7e9e3c745039a67c1c9f0642}\index{Transportation@{Transportation}!getCurrentFlow@{getCurrentFlow}}
+\index{getCurrentFlow@{getCurrentFlow}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{getCurrentFlow()}{getCurrentFlow()}}
+{\footnotesize\ttfamily \label{class_transportation_a7166a08b7e9e3c745039a67c1c9f0642} 
+std\+::string Transportation\+::get\+Current\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_transportation_8h_a3633c482cf0587207ac33125d32ba3ee}{Traffic\+Flow}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current traffic flow as a string. 
+
+This method provides a human-\/readable string representation of the current traffic flow state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The Traffic\+Flow enum value to convert to a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string A string representing the current traffic flow state. 
+\end{DoxyReturn}
+\Hypertarget{class_transportation_a060745503821ee694232fb4e599ce8b0}\index{Transportation@{Transportation}!getNumStations@{getNumStations}}
+\index{getNumStations@{getNumStations}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{getNumStations()}{getNumStations()}}
+{\footnotesize\ttfamily \label{class_transportation_a060745503821ee694232fb4e599ce8b0} 
+int Transportation\+::get\+Num\+Stations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Gets the number of stations for a specific transport type. 
+
+This method returns the count of traffic buildings associated with the specified transport type, which can be used to check if a minimum number of stations exist for proper operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The transport type for which to count stations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The number of stations for the specified transport type. 
+\end{DoxyReturn}
+\Hypertarget{class_transportation_a3d5450bc1830262aa8b4c93d752f3f18}\index{Transportation@{Transportation}!getTotalTrafficCapacity@{getTotalTrafficCapacity}}
+\index{getTotalTrafficCapacity@{getTotalTrafficCapacity}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{getTotalTrafficCapacity()}{getTotalTrafficCapacity()}}
+{\footnotesize\ttfamily \label{class_transportation_a3d5450bc1830262aa8b4c93d752f3f18} 
+int Transportation\+::get\+Total\+Traffic\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the total traffic capacity for the city. 
+
+This method sums the capacities of all transport types to provide a total traffic capacity available in the city.
+
+\begin{DoxyReturn}{Returns}
+int The total traffic capacity of all transport buildings. 
+\end{DoxyReturn}
+\Hypertarget{class_transportation_aae9ef19384e071081ae9b849d82d399f}\index{Transportation@{Transportation}!getTransportTypeString@{getTransportTypeString}}
+\index{getTransportTypeString@{getTransportTypeString}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{getTransportTypeString()}{getTransportTypeString()}}
+{\footnotesize\ttfamily \label{class_transportation_aae9ef19384e071081ae9b849d82d399f} 
+std\+::string Transportation\+::get\+Transport\+Type\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Converts a transport type to its string representation. 
+
+This method provides a human-\/readable string representation of the specified transport type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The transport type to convert to a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string The string representation of the transport type. 
+\end{DoxyReturn}
+\Hypertarget{class_transportation_ab5fc2de45bea6b7ac4b0bdd53a9e2500}\index{Transportation@{Transportation}!initializeTrafficFlow@{initializeTrafficFlow}}
+\index{initializeTrafficFlow@{initializeTrafficFlow}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{initializeTrafficFlow()}{initializeTrafficFlow()}}
+{\footnotesize\ttfamily \label{class_transportation_ab5fc2de45bea6b7ac4b0bdd53a9e2500} 
+void Transportation\+::initialize\+Traffic\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes traffic flow based on validation checks. 
+
+This method validates the conditions for traffic flow initialization for each transport type and initializes the traffic flow accordingly. \Hypertarget{class_transportation_aa0601eebf2f20677108a9c9901c872ee}\index{Transportation@{Transportation}!updateCapacity@{updateCapacity}}
+\index{updateCapacity@{updateCapacity}!Transportation@{Transportation}}
+\doxysubsubsection{\texorpdfstring{updateCapacity()}{updateCapacity()}}
+{\footnotesize\ttfamily \label{class_transportation_aa0601eebf2f20677108a9c9901c872ee} 
+void Transportation\+::update\+Capacity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}}}]{t}{, }\item[{int}]{add}{}\end{DoxyParamCaption})}
+
+
+
+Updates the capacity of a specific transport type. 
+
+This method increases the capacity for the given transport type by the specified amount, allowing for dynamic adjustments based on traffic demand.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The transport type to update (e.\+g., TAXI, BUS, TRAIN, AIRPORT). \\
+\hline
+{\em add} & The amount to add to the current capacity. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_transportation_8h}{Transportation.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Transportation.\+cpp\end{DoxyCompactItemize}

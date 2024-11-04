@@ -1,0 +1,60 @@
+\doxysection{Power\+Plant\+Factory Class Reference}
+\hypertarget{class_power_plant_factory}{}\label{class_power_plant_factory}\index{PowerPlantFactory@{PowerPlantFactory}}
+Inheritance diagram for Power\+Plant\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_power_plant_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utility}{Utility}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_power_plant_factory_abe3e2ac45ead0e83d29140af87416ba5}{create\+Utility}} (int capacity, int maintenance\+Cost) override
+\begin{DoxyCompactList}\small\item\em Pure virtual method to create a \doxylink{class_utility}{Utility} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utility_factory}{Utility\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Utility\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_utility_factory}{Utility\+Factory}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Utility\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_utility_factory}{Utility\+Factory}, allowing derived classes to clean up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_utility_factory}{Utility\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_utility_factory_aa2ab5c03a2747c928781ecb12375bfc5}{adjust\+Resource}} (const std\+::string \&resource\+Type, int amount)
+\begin{DoxyCompactList}\small\item\em Helper method to adjust resource levels in the \doxylink{class_resource_manager}{Resource\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utility_factory_a53290e529ca3e09b6ef39074d120c9dc}{spend\+Budget}} (int amount)
+\begin{DoxyCompactList}\small\item\em Helper method to reduce the budget in the \doxylink{class_resource_manager}{Resource\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_power_plant_factory_abe3e2ac45ead0e83d29140af87416ba5}\index{PowerPlantFactory@{PowerPlantFactory}!createUtility@{createUtility}}
+\index{createUtility@{createUtility}!PowerPlantFactory@{PowerPlantFactory}}
+\doxysubsubsection{\texorpdfstring{createUtility()}{createUtility()}}
+{\footnotesize\ttfamily \label{class_power_plant_factory_abe3e2ac45ead0e83d29140af87416ba5} 
+\mbox{\hyperlink{class_utility}{Utility}} \texorpdfstring{$\ast$}{*} Power\+Plant\+Factory\+::create\+Utility (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{int}]{maintenance\+Cost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual method to create a \doxylink{class_utility}{Utility} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The capacity of the utility. \\
+\hline
+{\em maintenance\+Cost} & The maintenance cost associated with the utility. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Utility\texorpdfstring{$\ast$}{*} Pointer to the created \doxylink{class_utility}{Utility} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_utility_factory_ae1f2e0089f810531160a4439c8e902b0}{Utility\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Power\+Plant\+Factory.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,33 @@
+\doxysection{Utility\+Factory.\+h}
+\hypertarget{_utility_factory_8h_source}{}\label{_utility_factory_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/UtilityFactory.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/UtilityFactory.h}}
+\mbox{\hyperlink{_utility_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ UTILITYFACTORY\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ UTILITYFACTORY\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utility_8h}{Utility.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_manager_8h}{ResourceManager.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_utility_factory}{UtilityFactory}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utility_factory_aa2ab5c03a2747c928781ecb12375bfc5}{adjustResource}}(\textcolor{keyword}{const}\ std::string\&\ resourceType,\ \textcolor{keywordtype}{int}\ amount)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_resource_manager_a41943f7fb045ad54f1e24da7c6046502}{ResourceManager::getInstance}}()-\/>\mbox{\hyperlink{class_resource_manager_ad3a69cb3653f70dfb0a20649d06850ab}{addResource}}(resourceType,\ amount);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utility_factory_a53290e529ca3e09b6ef39074d120c9dc}{spendBudget}}(\textcolor{keywordtype}{int}\ amount)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_resource_manager_a41943f7fb045ad54f1e24da7c6046502}{ResourceManager::getInstance}}()-\/>\mbox{\hyperlink{class_resource_manager_afef47699d5c0d7d1ce5a6a1c50695c3e}{spendBudget}}(amount);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_utility_factory_af5c1f2af61a6f1f5a01e3c80d56c937d}{UtilityFactory}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_utility_factory_a4a7960717fa0cb9e1ce2d0efac5e3297}{\string~UtilityFactory}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_utility}{Utility}}*\ \mbox{\hyperlink{class_utility_factory_ae1f2e0089f810531160a4439c8e902b0}{createUtility}}(\textcolor{keywordtype}{int}\ capacity,\ \textcolor{keywordtype}{int}\ maintenanceCost)\ =\ 0;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITYFACTORY\_H}}
+
+\end{DoxyCode}

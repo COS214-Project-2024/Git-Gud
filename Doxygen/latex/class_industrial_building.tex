@@ -1,0 +1,311 @@
+\doxysection{Industrial\+Building Class Reference}
+\hypertarget{class_industrial_building}{}\label{class_industrial_building}\index{IndustrialBuilding@{IndustrialBuilding}}
+
+
+Class representing an industrial building used for manufacturing, energy, or technology purposes.  
+
+
+
+
+{\ttfamily \#include $<$Industrial\+Building.\+h$>$}
+
+Inheritance diagram for Industrial\+Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_industrial_building}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_industrial_building_a0359a2b4c9fbbf095053de5be5698964}{get\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Get the building type. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_industrial_building_a15504e1e2eb50f8d151282374a1d159a}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the industrial building. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_industrial_building_ae70a823351be6d663a0330f4b994dfda}{get\+Num\+Stories}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of stories of the industrial building. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}} \mbox{\hyperlink{class_industrial_building_a35fa3f083acf75a66c75e582ed16e8e1}{get\+Industry\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the industry type of the industrial building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_industrial_building_a49f144499b5bf92a56f02facc73217f7}{get\+Pollution\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Get the pollution level of the industrial building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_industrial_building_ad0cc39136958430a46e277fb6d693fd5}{add\+Employees}} ()
+\begin{DoxyCompactList}\small\item\em Add employees to the industrial building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_industrial_building_a770eb3998c0ae2ec71e740bb3cf57b3e}{Industrial\+Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}}, int size, int num\+Stories, \mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}} industry\+Type, int pollution\+Level)
+\begin{DoxyCompactList}\small\item\em Constructor for creating an \doxylink{class_industrial_building}{Industrial\+Building} with specified capacity, size, number of stories, industry type, and pollution level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_industrial_building_a020facafc47dc263382e18c60963d5e6}{Industrial\+Building}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s, int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}}, int size, int num\+Stories, \mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}} industry\+Type, int pollution\+Level)
+\begin{DoxyCompactList}\small\item\em Constructor for creating an \doxylink{class_industrial_building}{Industrial\+Building} with a specified state, capacity, size, number of stories, industry type, and pollution level. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_industrial_building_a7a88a0b407759f31d019261768f4a4a8}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Provide a service specific to the industrial building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_industrial_building_a3b247c4ddd4f6428920d6c0ef85a123a}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Get the cost of the industrial building. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_industrial_building}{Industrial\+Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_industrial_building_a310a0942a35c6c313757767f7c4a21ad}{clone}} ()
+\begin{DoxyCompactList}\small\item\em Clone the industrial building object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd}{Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with a specified capacity. \end{DoxyCompactList}\item 
+{\bfseries Building} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with default parameters. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{set\+State}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s)
+\begin{DoxyCompactList}\small\item\em Set the state of the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}{repair\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Repair the building, transitioning it to an appropriate state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a4f0602265fda2abe42ec661099cb8b86}{current\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aeaef971c807cbf4ab126f5684ae9c197}{simulate\+Construction}} ()
+\begin{DoxyCompactList}\small\item\em Simulate the construction process of the building asynchronously. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{Business\+Type}} \mbox{\hyperlink{class_building_a35485c9e194d5be384a6f37e52f89524}{get\+Business\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of business the building operates. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}{add\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Add citizens to the building. \end{DoxyCompactList}\item 
+virtual std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}{get\+Tenants}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of tenants (citizens) in the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a17e7c262e271e06b2393032caf3e8e0c}{add\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Add a worker to the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the capacity of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em The capacity of the building. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries building\+State}
+\begin{DoxyCompactList}\small\item\em State of the \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+std\+::future$<$ void $>$ {\bfseries construction\+Future}
+\begin{DoxyCompactList}\small\item\em Future object used for simulating construction asynchronously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing an industrial building used for manufacturing, energy, or technology purposes. 
+
+Inherits from the \doxylink{class_building}{Building} class and includes attributes such as size, number of stories, industry type, and pollution level. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_industrial_building_a770eb3998c0ae2ec71e740bb3cf57b3e}\index{IndustrialBuilding@{IndustrialBuilding}!IndustrialBuilding@{IndustrialBuilding}}
+\index{IndustrialBuilding@{IndustrialBuilding}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{IndustrialBuilding()}{IndustrialBuilding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_industrial_building_a770eb3998c0ae2ec71e740bb3cf57b3e} 
+Industrial\+Building\+::\+Industrial\+Building (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{int}]{size}{, }\item[{int}]{num\+Stories}{, }\item[{\mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}}}]{industry\+Type}{, }\item[{int}]{pollution\+Level}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for creating an \doxylink{class_industrial_building}{Industrial\+Building} with specified capacity, size, number of stories, industry type, and pollution level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The maximum number of occupants the building can hold. \\
+\hline
+{\em size} & The size of the building. \\
+\hline
+{\em num\+Stories} & The number of stories in the building. \\
+\hline
+{\em industry\+Type} & The type of industry the building operates. \\
+\hline
+{\em pollution\+Level} & The pollution level of the building. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_industrial_building_a020facafc47dc263382e18c60963d5e6}\index{IndustrialBuilding@{IndustrialBuilding}!IndustrialBuilding@{IndustrialBuilding}}
+\index{IndustrialBuilding@{IndustrialBuilding}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{IndustrialBuilding()}{IndustrialBuilding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_industrial_building_a020facafc47dc263382e18c60963d5e6} 
+Industrial\+Building\+::\+Industrial\+Building (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$}]{s}{, }\item[{int}]{capacity}{, }\item[{int}]{size}{, }\item[{int}]{num\+Stories}{, }\item[{\mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}}}]{industry\+Type}{, }\item[{int}]{pollution\+Level}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for creating an \doxylink{class_industrial_building}{Industrial\+Building} with a specified state, capacity, size, number of stories, industry type, and pollution level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Unique pointer to the initial state of the building. \\
+\hline
+{\em capacity} & The maximum number of occupants the building can hold. \\
+\hline
+{\em size} & The size of the building. \\
+\hline
+{\em num\+Stories} & The number of stories in the building. \\
+\hline
+{\em industry\+Type} & The type of industry the building operates. \\
+\hline
+{\em pollution\+Level} & The pollution level of the building. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_industrial_building_ad0cc39136958430a46e277fb6d693fd5}\index{IndustrialBuilding@{IndustrialBuilding}!addEmployees@{addEmployees}}
+\index{addEmployees@{addEmployees}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{addEmployees()}{addEmployees()}}
+{\footnotesize\ttfamily \label{class_industrial_building_ad0cc39136958430a46e277fb6d693fd5} 
+void Industrial\+Building\+::add\+Employees (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add employees to the industrial building. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_building_a1fd28496e5deb742b3397227a9d97646}{Building}}.
+
+\Hypertarget{class_industrial_building_a310a0942a35c6c313757767f7c4a21ad}\index{IndustrialBuilding@{IndustrialBuilding}!clone@{clone}}
+\index{clone@{clone}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a310a0942a35c6c313757767f7c4a21ad} 
+\mbox{\hyperlink{class_industrial_building}{Industrial\+Building}} \texorpdfstring{$\ast$}{*} Industrial\+Building\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clone the industrial building object. 
+
+\begin{DoxyReturn}{Returns}
+Industrial\+Building\texorpdfstring{$\ast$}{*} Pointer to the cloned object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a5525f0851f4f51618f8c51ad9ac8d7af}{Building}}.
+
+\Hypertarget{class_industrial_building_a3b247c4ddd4f6428920d6c0ef85a123a}\index{IndustrialBuilding@{IndustrialBuilding}!getCost@{getCost}}
+\index{getCost@{getCost}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a3b247c4ddd4f6428920d6c0ef85a123a} 
+float Industrial\+Building\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the cost of the industrial building. 
+
+\begin{DoxyReturn}{Returns}
+float representing the cost of the building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1}{Building}}.
+
+\Hypertarget{class_industrial_building_a35fa3f083acf75a66c75e582ed16e8e1}\index{IndustrialBuilding@{IndustrialBuilding}!getIndustryType@{getIndustryType}}
+\index{getIndustryType@{getIndustryType}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getIndustryType()}{getIndustryType()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a35fa3f083acf75a66c75e582ed16e8e1} 
+\mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}} Industrial\+Building\+::get\+Industry\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the industry type of the industrial building. 
+
+\begin{DoxyReturn}{Returns}
+Industry indicating the type of industry. 
+\end{DoxyReturn}
+\Hypertarget{class_industrial_building_ae70a823351be6d663a0330f4b994dfda}\index{IndustrialBuilding@{IndustrialBuilding}!getNumStories@{getNumStories}}
+\index{getNumStories@{getNumStories}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getNumStories()}{getNumStories()}}
+{\footnotesize\ttfamily \label{class_industrial_building_ae70a823351be6d663a0330f4b994dfda} 
+int Industrial\+Building\+::get\+Num\+Stories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of stories of the industrial building. 
+
+\begin{DoxyReturn}{Returns}
+int representing the number of stories. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_building_ac03a90b80d56a13217b780240ecdd035}{Building}}.
+
+\Hypertarget{class_industrial_building_a49f144499b5bf92a56f02facc73217f7}\index{IndustrialBuilding@{IndustrialBuilding}!getPollutionLevel@{getPollutionLevel}}
+\index{getPollutionLevel@{getPollutionLevel}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getPollutionLevel()}{getPollutionLevel()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a49f144499b5bf92a56f02facc73217f7} 
+float Industrial\+Building\+::get\+Pollution\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the pollution level of the industrial building. 
+
+\begin{DoxyReturn}{Returns}
+float representing the pollution level. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_building_a86512d1f4c823c9c06d999e0ade35840}{Building}}.
+
+\Hypertarget{class_industrial_building_a15504e1e2eb50f8d151282374a1d159a}\index{IndustrialBuilding@{IndustrialBuilding}!getSize@{getSize}}
+\index{getSize@{getSize}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a15504e1e2eb50f8d151282374a1d159a} 
+int Industrial\+Building\+::get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the size of the industrial building. 
+
+\begin{DoxyReturn}{Returns}
+int representing the size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}{Building}}.
+
+\Hypertarget{class_industrial_building_a0359a2b4c9fbbf095053de5be5698964}\index{IndustrialBuilding@{IndustrialBuilding}!getType@{getType}}
+\index{getType@{getType}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a0359a2b4c9fbbf095053de5be5698964} 
+std\+::string Industrial\+Building\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the building type. 
+
+\begin{DoxyReturn}{Returns}
+string representing the building type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a8b013de56a31a97bd8dba262ce984606}{Building}}.
+
+\Hypertarget{class_industrial_building_a7a88a0b407759f31d019261768f4a4a8}\index{IndustrialBuilding@{IndustrialBuilding}!provideService@{provideService}}
+\index{provideService@{provideService}!IndustrialBuilding@{IndustrialBuilding}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily \label{class_industrial_building_a7a88a0b407759f31d019261768f4a4a8} 
+void Industrial\+Building\+::provide\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provide a service specific to the industrial building. 
+
+
+
+Implements \mbox{\hyperlink{class_building_a276bdff1b5d7c81c1c52da749947dfd1}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_industrial_building_8h}{Industrial\+Building.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Industrial\+Building.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\doxysection{Utility Class Reference}
+\hypertarget{class_utility}{}\label{class_utility}\index{Utility@{Utility}}
+Inheritance diagram for Utility\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.527559cm]{class_utility}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utility_ac5bce561407a568712d34cff71041a21}{Utility}} (const std\+::string \&type, int cap, int cost)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_utility}{Utility} object with specified parameters. \end{DoxyCompactList}\item 
+\Hypertarget{class_utility_a658f0109fa28ef7342768f50bb11a110}\label{class_utility_a658f0109fa28ef7342768f50bb11a110} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Utility} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_utility}{Utility}, allowing derived classes to clean up. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_utility_aa3c607f4b293e6e890856124c959cb36}{call\+Observer}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to notify observers, to be implemented by derived classes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_utility_a82bfd8fc78719418cab50df6098da2d6}{get\+Capacity}} () const
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the utility. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_utility_a28c901a15f60a317eaca345ecce5ba94}{get\+Maintenance\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maintenance cost of the utility. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{get\+Utility\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the type of utility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utility_a030e5a224d96fa0b915b8d09a0b58185}{scan\+Building}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building)
+\begin{DoxyCompactList}\small\item\em Manages and updates observers associated with the utility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_utility_a355a0b4367f18832d8b389277397b218}\label{class_utility_a355a0b4367f18832d8b389277397b218} 
+std\+::string {\bfseries utility\+Type}
+\begin{DoxyCompactList}\small\item\em Type of utility (e.\+g., "{}\+Power\+Plant"{}, "{}\+Water\+Filtering\+Plant"{}). \end{DoxyCompactList}\item 
+\Hypertarget{class_utility_a85e7c65e4820319e628f76aa0914556b}\label{class_utility_a85e7c65e4820319e628f76aa0914556b} 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em General capacity for the utility (e.\+g., output, filtering capacity). \end{DoxyCompactList}\item 
+\Hypertarget{class_utility_ad7c10c0813e939fc9365d25958f864c0}\label{class_utility_ad7c10c0813e939fc9365d25958f864c0} 
+int {\bfseries maintenance\+Cost}
+\begin{DoxyCompactList}\small\item\em Cost for maintaining the utility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_utility_ac5bce561407a568712d34cff71041a21}\index{Utility@{Utility}!Utility@{Utility}}
+\index{Utility@{Utility}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{Utility()}{Utility()}}
+{\footnotesize\ttfamily \label{class_utility_ac5bce561407a568712d34cff71041a21} 
+Utility\+::\+Utility (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type}{, }\item[{int}]{cap}{, }\item[{int}]{cost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{class_utility}{Utility} object with specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of utility. \\
+\hline
+{\em cap} & Capacity of the utility. \\
+\hline
+{\em cost} & Maintenance cost for the utility. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_utility_aa3c607f4b293e6e890856124c959cb36}\index{Utility@{Utility}!callObserver@{callObserver}}
+\index{callObserver@{callObserver}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{callObserver()}{callObserver()}}
+{\footnotesize\ttfamily \label{class_utility_aa3c607f4b293e6e890856124c959cb36} 
+virtual void Utility\+::call\+Observer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to notify observers, to be implemented by derived classes. 
+
+
+
+Implemented in \mbox{\hyperlink{class_education_aeffb12068ac914fd517a0d904b5d3b62}{Education}}, \mbox{\hyperlink{class_health_care_ad945d14d72a3c631574a67396760bb26}{Health\+Care}}, \mbox{\hyperlink{class_law_enforcement_a9e2f5e580e75f9f62acf389e7331fb6b}{Law\+Enforcement}}, \mbox{\hyperlink{class_power_plant_abbc8c455c5b7e4bfff6a58b693f925e5}{Power\+Plant}}, \mbox{\hyperlink{class_sewage_system_a927c0a7ef147db789309cf6f34ac4020}{Sewage\+System}}, \mbox{\hyperlink{class_waste_management_a518bfd879dddc43155ca69bcee638fa0}{Waste\+Management}}, and \mbox{\hyperlink{class_water_filtering_plant_a7e4092f2075b99cf164290798e879620}{Water\+Filtering\+Plant}}.
+
+\Hypertarget{class_utility_a82bfd8fc78719418cab50df6098da2d6}\index{Utility@{Utility}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_utility_a82bfd8fc78719418cab50df6098da2d6} 
+int Utility\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the capacity of the utility. 
+
+\begin{DoxyReturn}{Returns}
+int The capacity, interpretation depends on specific utility type. 
+\end{DoxyReturn}
+\Hypertarget{class_utility_a28c901a15f60a317eaca345ecce5ba94}\index{Utility@{Utility}!getMaintenanceCost@{getMaintenanceCost}}
+\index{getMaintenanceCost@{getMaintenanceCost}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{getMaintenanceCost()}{getMaintenanceCost()}}
+{\footnotesize\ttfamily \label{class_utility_a28c901a15f60a317eaca345ecce5ba94} 
+int Utility\+::get\+Maintenance\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the maintenance cost of the utility. 
+
+\begin{DoxyReturn}{Returns}
+int Maintenance cost for the utility. 
+\end{DoxyReturn}
+\Hypertarget{class_utility_a8db0fd854e3585e8ff32eba915acb611}\index{Utility@{Utility}!getUtilityType@{getUtilityType}}
+\index{getUtilityType@{getUtilityType}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{getUtilityType()}{getUtilityType()}}
+{\footnotesize\ttfamily \label{class_utility_a8db0fd854e3585e8ff32eba915acb611} 
+std\+::string Utility\+::get\+Utility\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the type of utility. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The utility type as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_utility_a030e5a224d96fa0b915b8d09a0b58185}\index{Utility@{Utility}!scanBuilding@{scanBuilding}}
+\index{scanBuilding@{scanBuilding}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{scanBuilding()}{scanBuilding()}}
+{\footnotesize\ttfamily \label{class_utility_a030e5a224d96fa0b915b8d09a0b58185} 
+void Utility\+::scan\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Manages and updates observers associated with the utility. 
+
+Attaches all citizens to the observer list and calls {\ttfamily call\+Observer} if there are observers present. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_utility_8h}{Utility.\+h}}\end{DoxyCompactItemize}

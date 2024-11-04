@@ -1,0 +1,237 @@
+\doxysection{Traffic\+Building Class Reference}
+\hypertarget{class_traffic_building}{}\label{class_traffic_building}\index{TrafficBuilding@{TrafficBuilding}}
+
+
+Represents a building that provides transportation services.  
+
+
+
+
+{\ttfamily \#include $<$Traffic\+Building.\+h$>$}
+
+Inheritance diagram for Traffic\+Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_traffic_building}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_traffic_building_a28077ceec24efc6f22787c75f098e602}{Traffic\+Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}}, \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} transport\+Type, float cost)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_traffic_building}{Traffic\+Building} with specified capacity, transport type, and cost. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_traffic_building_a3b2512e1adf05de94da93a9c35800919}{Traffic\+Building}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s, int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}}, \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} transport\+Type, float cost)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_traffic_building}{Traffic\+Building} with state, capacity, transport type, and cost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_traffic_building_acdc02b77d9dab81f1d19d29c93bc0e28}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Provides transportation services and increases citizen satisfaction. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_traffic_building_acec0495fd84030ebc4ed19ed31eb60a6}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the building type. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_traffic_building_a6cef369c6430d5028384bbfc2f8ec620}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost of the traffic building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} \mbox{\hyperlink{class_traffic_building_a80a619e4287d5c8cf57cb061b634ef68}{get\+Transport\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of transportation provided by the building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_traffic_building}{Traffic\+Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_traffic_building_a762f56701ab3a4d7f232951d5162a77f}{clone}} ()
+\begin{DoxyCompactList}\small\item\em Creates a clone of the current \doxylink{class_traffic_building}{Traffic\+Building} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd}{Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with a specified capacity. \end{DoxyCompactList}\item 
+{\bfseries Building} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with default parameters. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{set\+State}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s)
+\begin{DoxyCompactList}\small\item\em Set the state of the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}{repair\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Repair the building, transitioning it to an appropriate state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a4f0602265fda2abe42ec661099cb8b86}{current\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aeaef971c807cbf4ab126f5684ae9c197}{simulate\+Construction}} ()
+\begin{DoxyCompactList}\small\item\em Simulate the construction process of the building asynchronously. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ac03a90b80d56a13217b780240ecdd035}{get\+Num\+Stories}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of stories the building has. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{Business\+Type}} \mbox{\hyperlink{class_building_a35485c9e194d5be384a6f37e52f89524}{get\+Business\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of business the building operates. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1fd28496e5deb742b3397227a9d97646}{add\+Employees}} ()
+\begin{DoxyCompactList}\small\item\em Add employees to the building. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_building_a86512d1f4c823c9c06d999e0ade35840}{get\+Pollution\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Get the pollution level produced by the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}{add\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Add citizens to the building. \end{DoxyCompactList}\item 
+virtual std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}{get\+Tenants}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of tenants (citizens) in the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a17e7c262e271e06b2393032caf3e8e0c}{add\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Add a worker to the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the capacity of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em The capacity of the building. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries building\+State}
+\begin{DoxyCompactList}\small\item\em State of the \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+std\+::future$<$ void $>$ {\bfseries construction\+Future}
+\begin{DoxyCompactList}\small\item\em Future object used for simulating construction asynchronously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a building that provides transportation services. 
+
+This class inherits from \doxylink{class_building}{Building} and represents a building dedicated to transportation. It includes a transport type, cost, and methods for providing services, retrieving transport type and cost, and cloning the building instance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_traffic_building_a28077ceec24efc6f22787c75f098e602}\index{TrafficBuilding@{TrafficBuilding}!TrafficBuilding@{TrafficBuilding}}
+\index{TrafficBuilding@{TrafficBuilding}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{TrafficBuilding()}{TrafficBuilding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_traffic_building_a28077ceec24efc6f22787c75f098e602} 
+Traffic\+Building\+::\+Traffic\+Building (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}}}]{transport\+Type}{, }\item[{float}]{cost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{class_traffic_building}{Traffic\+Building} with specified capacity, transport type, and cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The capacity of the building. \\
+\hline
+{\em transport\+Type} & The type of transportation provided. \\
+\hline
+{\em cost} & The cost associated with the traffic building. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_traffic_building_a3b2512e1adf05de94da93a9c35800919}\index{TrafficBuilding@{TrafficBuilding}!TrafficBuilding@{TrafficBuilding}}
+\index{TrafficBuilding@{TrafficBuilding}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{TrafficBuilding()}{TrafficBuilding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_traffic_building_a3b2512e1adf05de94da93a9c35800919} 
+Traffic\+Building\+::\+Traffic\+Building (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$}]{s}{, }\item[{int}]{capacity}{, }\item[{\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}}}]{transport\+Type}{, }\item[{float}]{cost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{class_traffic_building}{Traffic\+Building} with state, capacity, transport type, and cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A unique pointer to a \doxylink{class_building_state}{Building\+State} object representing the initial state. \\
+\hline
+{\em capacity} & The capacity of the building. \\
+\hline
+{\em transport\+Type} & The type of transportation provided. \\
+\hline
+{\em cost} & The cost associated with the traffic building. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_traffic_building_a762f56701ab3a4d7f232951d5162a77f}\index{TrafficBuilding@{TrafficBuilding}!clone@{clone}}
+\index{clone@{clone}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_traffic_building_a762f56701ab3a4d7f232951d5162a77f} 
+\mbox{\hyperlink{class_traffic_building}{Traffic\+Building}} \texorpdfstring{$\ast$}{*} Traffic\+Building\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Creates a clone of the current \doxylink{class_traffic_building}{Traffic\+Building} instance. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the cloned \doxylink{class_traffic_building}{Traffic\+Building} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a5525f0851f4f51618f8c51ad9ac8d7af}{Building}}.
+
+\Hypertarget{class_traffic_building_a6cef369c6430d5028384bbfc2f8ec620}\index{TrafficBuilding@{TrafficBuilding}!getCost@{getCost}}
+\index{getCost@{getCost}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_traffic_building_a6cef369c6430d5028384bbfc2f8ec620} 
+float Traffic\+Building\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost of the traffic building. 
+
+\begin{DoxyReturn}{Returns}
+The cost of the traffic building as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1}{Building}}.
+
+\Hypertarget{class_traffic_building_a80a619e4287d5c8cf57cb061b634ef68}\index{TrafficBuilding@{TrafficBuilding}!getTransportType@{getTransportType}}
+\index{getTransportType@{getTransportType}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{getTransportType()}{getTransportType()}}
+{\footnotesize\ttfamily \label{class_traffic_building_a80a619e4287d5c8cf57cb061b634ef68} 
+\mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{Transport\+Type}} Traffic\+Building\+::get\+Transport\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the type of transportation provided by the building. 
+
+\begin{DoxyReturn}{Returns}
+The transport type as a Transport\+Type enum value. 
+\end{DoxyReturn}
+\Hypertarget{class_traffic_building_acec0495fd84030ebc4ed19ed31eb60a6}\index{TrafficBuilding@{TrafficBuilding}!getType@{getType}}
+\index{getType@{getType}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_traffic_building_acec0495fd84030ebc4ed19ed31eb60a6} 
+std\+::string Traffic\+Building\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the building type. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string that represents the building type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a8b013de56a31a97bd8dba262ce984606}{Building}}.
+
+\Hypertarget{class_traffic_building_acdc02b77d9dab81f1d19d29c93bc0e28}\index{TrafficBuilding@{TrafficBuilding}!provideService@{provideService}}
+\index{provideService@{provideService}!TrafficBuilding@{TrafficBuilding}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily \label{class_traffic_building_acdc02b77d9dab81f1d19d29c93bc0e28} 
+void Traffic\+Building\+::provide\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides transportation services and increases citizen satisfaction. 
+
+This method outputs a message indicating that transportation services have been provided to neighboring buildings and increases citizen satisfaction. 
+
+Implements \mbox{\hyperlink{class_building_a276bdff1b5d7c81c1c52da749947dfd1}{Building}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_traffic_building_8h}{Traffic\+Building.\+h}}\end{DoxyCompactItemize}

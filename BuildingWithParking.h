@@ -132,6 +132,12 @@ public:
 
     virtual ~BuildingWithParking(){};
 
+    /**
+     * @brief Get the building type
+     * @return string representing the building type
+    */
+    std::string getType() override;   
+
 };
 
 #endif

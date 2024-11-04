@@ -94,6 +94,12 @@ void BuildingWithParking::addWorker(){
 
 }
 
+std::string BuildingWithParking::getType(){
+
+    return "BuildingWithParking";
+
+}
+
 /*BuildingWithParking* BuildingWithParking::clone(){
     BuildingWithParking* temp=new BuildingWithParking();
     if (temp->building != nullptr){

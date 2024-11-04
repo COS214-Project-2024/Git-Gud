@@ -45,6 +45,8 @@ public:
      */
     virtual ~BuildingWithCoffeeShopFactory(){};
 
+
+
 private:
 
     /// @brief Resources needed to construct the Building

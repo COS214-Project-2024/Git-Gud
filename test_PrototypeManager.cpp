@@ -1,22 +1,7 @@
 #include <gtest/gtest.h>
 #include "PrototypeManager.h"
 #include "Building.h"
-
-// Mock Concrete Building classes for testing
-class MockBuilding : public Building {
-public:
-    virtual ~MockBuilding() {}
-    MockBuilding* clone() const override {
-        return new MockBuilding(*this);
-    }
-    void provideService() override{
-        std::cout << "This is for testing" << std::endl;
-    }
-    float getCost(){
-        return 0;
-    }
-
-};
+#include "CommercialBuilding.h"
 
 // Test Suite for PrototypeManager
 class PrototypeManagerTest : public ::testing::Test {
@@ -27,9 +12,9 @@ protected:
     Building* building3;
 
     void SetUp() override {
-        building1 = new MockBuilding();
-        building2 = new MockBuilding();
-        building3 = new MockBuilding();
+        building1 = new CommercialBuilding(30,30,30,GENERAL);
+        building2 = new CommercialBuilding(30,30,30,GENERAL);
+        building3 = new CommercialBuilding(30,30,30,GENERAL);
     }
 
     void TearDown() override {
@@ -70,7 +55,7 @@ TEST_F(PrototypeManagerTest, RemovePrototypeTest) {
 TEST_F(PrototypeManagerTest, ResizeArrayTest) {
     // Add enough buildings to trigger a resize
     for (int i = 0; i < 11; ++i) {
-        manager->addPrototype(new MockBuilding());
+        manager->addPrototype(new CommercialBuilding(30,30,30,GENERAL));
     }
     EXPECT_GE(manager->getCapacity(), 10);  // Assuming initial capacity is 10
     EXPECT_GE(manager->getSize(), 11);      // After resizing, it should be able to hold all buildings
@@ -80,7 +65,7 @@ TEST_F(PrototypeManagerTest, ResizeArrayTest) {
 TEST_F(PrototypeManagerTest, AddAfterResizeTest) {
     // Add buildings to trigger resize
     for (int i = 0; i < 15; ++i) {
-        manager->addPrototype(new MockBuilding());
+        manager->addPrototype(new CommercialBuilding(30,30,30,GENERAL));
     }
     EXPECT_EQ(manager->getSize(), 15);
     EXPECT_GE(manager->getCapacity(), 15); // Ensure capacity grew appropriately

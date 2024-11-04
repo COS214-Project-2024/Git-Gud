@@ -40,25 +40,29 @@ public:
      * from the resource manager's budget.
      *
      * @param type The transport type for the TrafficBuilding (e.g., TAXI, BUS, TRAIN, AIRPORT).
-     * @param capacity The capacity of the TrafficBuilding.
      * @return TrafficBuilding* A pointer to the newly created TrafficBuilding instance.
      */
-    static TrafficBuilding* createTrafficBuilding(TransportType type, int capacity) {
+    static TrafficBuilding* createTrafficBuilding(TransportType type) {
         int cost;
+        int capacity;
         std::unique_ptr<BuildingState> initialState = std::make_unique<UnderConstruction>();  // Default state at creation
 
         switch (type) {
             case TAXI:
                 cost = 10000;
+                capacity = 20;
                 break;
             case BUS:
                 cost = 20000;
+                capacity = 50;
                 break;
             case TRAIN:
                 cost = 50000;
+                capacity = 100;
                 break;
             case AIRPORT:
                 cost = 100000;
+                capacity = 200;
                 break;
             default:
                 cost = 0;

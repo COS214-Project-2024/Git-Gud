@@ -51,7 +51,7 @@ void Transportation::updateCapacity(TransportType t, int add)
 void Transportation::calculateTrafficFlow()
 {
     
-    int remain = getNumCitizens() - getTotalTrafficCapacity();
+    int remain = getTotalTrafficCapacity() - getNumCitizens();
 
     if(remain > 50)
     {
@@ -97,26 +97,26 @@ int Transportation::getTotalTrafficCapacity(){
     return busCapacity + taxiCapacity + trainCapacity + airportCapacity;
 }
 
-void Transportation::addTrafficBuilding(TransportType type, int capacity) {
-    auto building = TrafficBuildingFactory::createTrafficBuilding(type, capacity);
+void Transportation::addTrafficBuilding(TransportType type) {
+    auto building = TrafficBuildingFactory::createTrafficBuilding(type);
     trafficBuildings[type].push_back(std::unique_ptr<TrafficBuilding>(building));
     switch(type)
         {
             case TAXI:
                 numTaxis++;
-                updateCapacity(TAXI, capacity);
+                updateCapacity(TAXI, 20);
                 break;
             case BUS:
                 numBuses++;
-                updateCapacity(BUS, capacity);
+                updateCapacity(BUS, 50);
                 break;
             case TRAIN:
                 numTrains++;
-                updateCapacity(TRAIN, capacity);
+                updateCapacity(TRAIN, 100);
                 break;
             case AIRPORT:
                 numAirports++;
-                updateCapacity(AIRPORT, capacity);
+                updateCapacity(AIRPORT, 200);
                 break;
             default:
                 break;

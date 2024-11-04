@@ -1,0 +1,32 @@
+\doxysection{Sewage\+System.\+h}
+\hypertarget{_sewage_system_8h_source}{}\label{_sewage_system_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/SewageSystem.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/SewageSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SEWAGESYSTEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SEWAGESYSTEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utility_8h}{Utility.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameEnvironment.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sewage_system}{SewageSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utility}{Utility}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_sewage_system}{SewageSystem}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}})}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_utility_ac5bce561407a568712d34cff71041a21}{Utility}}(\textcolor{stringliteral}{"{}SewageSystem"{}},\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}},\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}})\ \{\}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sewage_system_a927c0a7ef147db789309cf6f34ac4020}{callObserver}}()\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_change_data}{ChangeData}}\ changeData\ =\ \{\textcolor{stringliteral}{"{}ProvideService"{}},\ 1.0f\};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}}(changeData);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}A\ sewage\ system\ is\ in\ place\ in\ the\ area"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SEWAGESYSTEM\_H}}
+
+\end{DoxyCode}

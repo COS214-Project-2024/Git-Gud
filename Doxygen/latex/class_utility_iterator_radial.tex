@@ -1,0 +1,92 @@
+\doxysection{Utility\+Iterator\+Radial Class Reference}
+\hypertarget{class_utility_iterator_radial}{}\label{class_utility_iterator_radial}\index{UtilityIteratorRadial@{UtilityIteratorRadial}}
+Inheritance diagram for Utility\+Iterator\+Radial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_utility_iterator_radial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_utility_iterator_radial_a029716f90029813012a4f6abe6f24b2b}\label{class_utility_iterator_radial_a029716f90029813012a4f6abe6f24b2b} 
+{\bfseries Utility\+Iterator\+Radial} (\mbox{\hyperlink{class_util_grid_node}{Util\+Grid\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, int x, int y, int radius, int rows, int cols)
+\item 
+bool \mbox{\hyperlink{class_utility_iterator_radial_a5061201d5d6b239c3863f7333ee4d2c4}{has\+Next}} () override
+\item 
+void \mbox{\hyperlink{class_utility_iterator_radial_ac03d5e215143958ad413c095ca92a217}{next}} () override
+\item 
+\mbox{\hyperlink{class_util_grid_node}{Util\+Grid\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_utility_iterator_radial_ab4bff9f3edffa3b128e9d297c54469cb}{current}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_utility_iterator}{Utility\+Iterator}}}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_utility_iterator_radial_ad7627c6adb181cd01301e2dc0eeb685d}\label{class_utility_iterator_radial_ad7627c6adb181cd01301e2dc0eeb685d} 
+void {\bfseries calculate\+Points} (\mbox{\hyperlink{class_util_grid_node}{Util\+Grid\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, int rows, int cols)
+\item 
+\Hypertarget{class_utility_iterator_radial_a5cf30632a04284af845056b3c8f2b0a9}\label{class_utility_iterator_radial_a5cf30632a04284af845056b3c8f2b0a9} 
+bool {\bfseries contains} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_utility_iterator_radial_a942d20dc8cf139a8e71b07ebf8a0ade2}\label{class_utility_iterator_radial_a942d20dc8cf139a8e71b07ebf8a0ade2} 
+int {\bfseries set\+Radius}
+\item 
+\Hypertarget{class_utility_iterator_radial_a1edca9e36c1a0bb4f0cface51fd12289}\label{class_utility_iterator_radial_a1edca9e36c1a0bb4f0cface51fd12289} 
+int {\bfseries centerX}
+\item 
+\Hypertarget{class_utility_iterator_radial_af0dd3c4ab4d594ec2495b50f4e0cf016}\label{class_utility_iterator_radial_af0dd3c4ab4d594ec2495b50f4e0cf016} 
+int {\bfseries centerY}
+\item 
+\Hypertarget{class_utility_iterator_radial_acbbfdc40ec78932d7759d9ab21dfe9d6}\label{class_utility_iterator_radial_acbbfdc40ec78932d7759d9ab21dfe9d6} 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} {\bfseries head}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_utility_iterator}{Utility\+Iterator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_util_grid_node}{Util\+Grid\+Node}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} {\bfseries array}
+\item 
+int {\bfseries row}
+\item 
+int {\bfseries col}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_utility_iterator_radial_ab4bff9f3edffa3b128e9d297c54469cb}\index{UtilityIteratorRadial@{UtilityIteratorRadial}!current@{current}}
+\index{current@{current}!UtilityIteratorRadial@{UtilityIteratorRadial}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily \label{class_utility_iterator_radial_ab4bff9f3edffa3b128e9d297c54469cb} 
+\mbox{\hyperlink{class_util_grid_node}{Util\+Grid\+Node}} \texorpdfstring{$\ast$}{*} Utility\+Iterator\+Radial\+::current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_utility_iterator}{Utility\+Iterator}}.
+
+\Hypertarget{class_utility_iterator_radial_a5061201d5d6b239c3863f7333ee4d2c4}\index{UtilityIteratorRadial@{UtilityIteratorRadial}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!UtilityIteratorRadial@{UtilityIteratorRadial}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily \label{class_utility_iterator_radial_a5061201d5d6b239c3863f7333ee4d2c4} 
+bool Utility\+Iterator\+Radial\+::has\+Next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_utility_iterator}{Utility\+Iterator}}.
+
+\Hypertarget{class_utility_iterator_radial_ac03d5e215143958ad413c095ca92a217}\index{UtilityIteratorRadial@{UtilityIteratorRadial}!next@{next}}
+\index{next@{next}!UtilityIteratorRadial@{UtilityIteratorRadial}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_utility_iterator_radial_ac03d5e215143958ad413c095ca92a217} 
+void Utility\+Iterator\+Radial\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_utility_iterator}{Utility\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Utility\+Iterator\+Radial.\+h\end{DoxyCompactItemize}

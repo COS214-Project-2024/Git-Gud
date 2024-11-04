@@ -1,0 +1,153 @@
+\doxysection{Tax\+Manager Class Reference}
+\hypertarget{class_tax_manager}{}\label{class_tax_manager}\index{TaxManager@{TaxManager}}
+Inheritance diagram for Tax\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tax_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tax_manager_a82370258e6b5b35dfe7cac25454bb488}\label{class_tax_manager_a82370258e6b5b35dfe7cac25454bb488} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Tax\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor -\/ Clears Lists. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_tax_manager_ab14dd20d978df8f9fd1a58332d72b93f}{calculate\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Collects tax depending on the taxation Strategy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tax_manager_ad714dfab0c1a834595472e922b99a534}{update\+Total\+Tax\+Rate}} (float new\+Rate)
+\begin{DoxyCompactList}\small\item\em Update the tax amount and notify citizens of new tax rates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tax_manager_a35a14bb76248e6cdd49ff0ecef185900}{add\+Residential}} (\mbox{\hyperlink{class_residential_building}{Residential\+Building}} \texorpdfstring{$\ast$}{*}residential)
+\begin{DoxyCompactList}\small\item\em Add residential building to corresponding list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tax_manager_abe1dbf88afb8b703310587981e4c715a}{add\+Industrial}} (\mbox{\hyperlink{class_industrial_building}{Industrial\+Building}} \texorpdfstring{$\ast$}{*}industrial)
+\begin{DoxyCompactList}\small\item\em Add industrial building to corresponding list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tax_manager_acb4c3ad502fdb35027c09feba18f74d3}{add\+Commercial}} (\mbox{\hyperlink{class_commercial_building}{Commercial\+Building}} \texorpdfstring{$\ast$}{*}commercial)
+\begin{DoxyCompactList}\small\item\em Add commercial building to corresponding list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tax_manager_a51ef0d0caa80905327d49e56cee90c69}{choose\+Tax\+Method}} (\mbox{\hyperlink{class_retrieve_tax}{Retrieve\+Tax}} \texorpdfstring{$\ast$}{*}tax\+Method)
+\begin{DoxyCompactList}\small\item\em updates the taxation method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tax_manager_acb4c3ad502fdb35027c09feba18f74d3}\index{TaxManager@{TaxManager}!addCommercial@{addCommercial}}
+\index{addCommercial@{addCommercial}!TaxManager@{TaxManager}}
+\doxysubsubsection{\texorpdfstring{addCommercial()}{addCommercial()}}
+{\footnotesize\ttfamily \label{class_tax_manager_acb4c3ad502fdb35027c09feba18f74d3} 
+void Tax\+Manager\+::add\+Commercial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_commercial_building}{Commercial\+Building}} \texorpdfstring{$\ast$}{*}}]{commercial}{}\end{DoxyParamCaption})}
+
+
+
+Add commercial building to corresponding list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commercial} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tax_manager_abe1dbf88afb8b703310587981e4c715a}\index{TaxManager@{TaxManager}!addIndustrial@{addIndustrial}}
+\index{addIndustrial@{addIndustrial}!TaxManager@{TaxManager}}
+\doxysubsubsection{\texorpdfstring{addIndustrial()}{addIndustrial()}}
+{\footnotesize\ttfamily \label{class_tax_manager_abe1dbf88afb8b703310587981e4c715a} 
+void Tax\+Manager\+::add\+Industrial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_industrial_building}{Industrial\+Building}} \texorpdfstring{$\ast$}{*}}]{industrial}{}\end{DoxyParamCaption})}
+
+
+
+Add industrial building to corresponding list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em industrial} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tax_manager_a35a14bb76248e6cdd49ff0ecef185900}\index{TaxManager@{TaxManager}!addResidential@{addResidential}}
+\index{addResidential@{addResidential}!TaxManager@{TaxManager}}
+\doxysubsubsection{\texorpdfstring{addResidential()}{addResidential()}}
+{\footnotesize\ttfamily \label{class_tax_manager_a35a14bb76248e6cdd49ff0ecef185900} 
+void Tax\+Manager\+::add\+Residential (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_residential_building}{Residential\+Building}} \texorpdfstring{$\ast$}{*}}]{residential}{}\end{DoxyParamCaption})}
+
+
+
+Add residential building to corresponding list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em residential} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tax_manager_ab14dd20d978df8f9fd1a58332d72b93f}\index{TaxManager@{TaxManager}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!TaxManager@{TaxManager}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily \label{class_tax_manager_ab14dd20d978df8f9fd1a58332d72b93f} 
+float Tax\+Manager\+::calculate\+Tax (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Collects tax depending on the taxation Strategy. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{class_tax_manager_a51ef0d0caa80905327d49e56cee90c69}\index{TaxManager@{TaxManager}!chooseTaxMethod@{chooseTaxMethod}}
+\index{chooseTaxMethod@{chooseTaxMethod}!TaxManager@{TaxManager}}
+\doxysubsubsection{\texorpdfstring{chooseTaxMethod()}{chooseTaxMethod()}}
+{\footnotesize\ttfamily \label{class_tax_manager_a51ef0d0caa80905327d49e56cee90c69} 
+void Tax\+Manager\+::choose\+Tax\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_retrieve_tax}{Retrieve\+Tax}} \texorpdfstring{$\ast$}{*}}]{tax\+Method}{}\end{DoxyParamCaption})}
+
+
+
+updates the taxation method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tax\+Method} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tax_manager_ad714dfab0c1a834595472e922b99a534}\index{TaxManager@{TaxManager}!updateTotalTaxRate@{updateTotalTaxRate}}
+\index{updateTotalTaxRate@{updateTotalTaxRate}!TaxManager@{TaxManager}}
+\doxysubsubsection{\texorpdfstring{updateTotalTaxRate()}{updateTotalTaxRate()}}
+{\footnotesize\ttfamily \label{class_tax_manager_ad714dfab0c1a834595472e922b99a534} 
+void Tax\+Manager\+::update\+Total\+Tax\+Rate (\begin{DoxyParamCaption}\item[{float}]{new\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Update the tax amount and notify citizens of new tax rates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Rate} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_tax_manager_8h}{Tax\+Manager.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Tax\+Manager.\+cpp\end{DoxyCompactItemize}

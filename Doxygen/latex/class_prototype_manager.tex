@@ -1,0 +1,119 @@
+\doxysection{Prototype\+Manager Class Reference}
+\hypertarget{class_prototype_manager}{}\label{class_prototype_manager}\index{PrototypeManager@{PrototypeManager}}
+
+
+Manages a dynamic array of \doxylink{class_building}{Building} prototypes, allowing for adding, removing, and retrieving prototypes.  
+
+
+
+
+{\ttfamily \#include $<$Prototype\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_prototype_manager_add85db5b325ea6e3dd99b977291b2664}\label{class_prototype_manager_add85db5b325ea6e3dd99b977291b2664} 
+{\bfseries Prototype\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_prototype_manager}{Prototype\+Manager} with an initial capacity. \end{DoxyCompactList}\item 
+\Hypertarget{class_prototype_manager_ab3b265042ee209e9681b5fb6e3c8666c}\label{class_prototype_manager_ab3b265042ee209e9681b5fb6e3c8666c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Prototype\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_prototype_manager}{Prototype\+Manager}, releases allocated memory for the array of prototypes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prototype_manager_aabf9cf397414ada5ec51e8097ec777fb}{add\+Prototype}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Adds a new prototype to the manager. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_prototype_manager_a095aa93c95bc5ca90c9bb45ea4688643}{remove\+Prototype}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Removes a prototype from the manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_prototype_manager_a9f0aba024cd15f35131756e1ac3e9a79}{get\+Prototype}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}p) const
+\begin{DoxyCompactList}\small\item\em Retrieves a prototype from the manager that matches the given prototype. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_prototype_manager_a1563ff848e2d9ad4ca4c879835af3107}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current number of prototypes managed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_prototype_manager_a89d456e933421ff74c38823981b8c348}{get\+Capacity}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a dynamic array of \doxylink{class_building}{Building} prototypes, allowing for adding, removing, and retrieving prototypes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_prototype_manager_aabf9cf397414ada5ec51e8097ec777fb}\index{PrototypeManager@{PrototypeManager}!addPrototype@{addPrototype}}
+\index{addPrototype@{addPrototype}!PrototypeManager@{PrototypeManager}}
+\doxysubsubsection{\texorpdfstring{addPrototype()}{addPrototype()}}
+{\footnotesize\ttfamily \label{class_prototype_manager_aabf9cf397414ada5ec51e8097ec777fb} 
+void Prototype\+Manager\+::add\+Prototype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new prototype to the manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the \doxylink{class_building}{Building} prototype to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_prototype_manager_a89d456e933421ff74c38823981b8c348}\index{PrototypeManager@{PrototypeManager}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!PrototypeManager@{PrototypeManager}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \label{class_prototype_manager_a89d456e933421ff74c38823981b8c348} 
+int Prototype\+Manager\+::get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current capacity of the array. 
+
+\begin{DoxyReturn}{Returns}
+The capacity of the array. 
+\end{DoxyReturn}
+\Hypertarget{class_prototype_manager_a9f0aba024cd15f35131756e1ac3e9a79}\index{PrototypeManager@{PrototypeManager}!getPrototype@{getPrototype}}
+\index{getPrototype@{getPrototype}!PrototypeManager@{PrototypeManager}}
+\doxysubsubsection{\texorpdfstring{getPrototype()}{getPrototype()}}
+{\footnotesize\ttfamily \label{class_prototype_manager_a9f0aba024cd15f35131756e1ac3e9a79} 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Prototype\+Manager\+::get\+Prototype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a prototype from the manager that matches the given prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the \doxylink{class_building}{Building} prototype to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the matched \doxylink{class_building}{Building} prototype if found, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_prototype_manager_a1563ff848e2d9ad4ca4c879835af3107}\index{PrototypeManager@{PrototypeManager}!getSize@{getSize}}
+\index{getSize@{getSize}!PrototypeManager@{PrototypeManager}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{class_prototype_manager_a1563ff848e2d9ad4ca4c879835af3107} 
+int Prototype\+Manager\+::get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current number of prototypes managed. 
+
+\begin{DoxyReturn}{Returns}
+The number of prototypes currently in the array. 
+\end{DoxyReturn}
+\Hypertarget{class_prototype_manager_a095aa93c95bc5ca90c9bb45ea4688643}\index{PrototypeManager@{PrototypeManager}!removePrototype@{removePrototype}}
+\index{removePrototype@{removePrototype}!PrototypeManager@{PrototypeManager}}
+\doxysubsubsection{\texorpdfstring{removePrototype()}{removePrototype()}}
+{\footnotesize\ttfamily \label{class_prototype_manager_a095aa93c95bc5ca90c9bb45ea4688643} 
+bool Prototype\+Manager\+::remove\+Prototype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Removes a prototype from the manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the \doxylink{class_building}{Building} prototype to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the prototype was successfully removed; false if not found. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Prototype\+Manager.\+h\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Prototype\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,249 @@
+\doxysection{Residential\+Building Class Reference}
+\hypertarget{class_residential_building}{}\label{class_residential_building}\index{ResidentialBuilding@{ResidentialBuilding}}
+
+
+Class representing a residential building where citizens can live.  
+
+
+
+
+{\ttfamily \#include $<$Residential\+Building.\+h$>$}
+
+Inheritance diagram for Residential\+Building\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_residential_building}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_residential_building_a9232b6754a2ce20bc48d425aa4df703b}\label{class_residential_building_a9232b6754a2ce20bc48d425aa4df703b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Residential\+Building} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_residential_building}{Residential\+Building} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_residential_building_a3d49adc21132fb559c6b65ba5834ec6b}{Residential\+Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Constructor for creating a \doxylink{class_residential_building}{Residential\+Building} with a specified capacity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_residential_building_ab87093b5b698f30fadb8093dc96f2dce}{Residential\+Building}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s, int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Constructor for creating a \doxylink{class_residential_building}{Residential\+Building} with a specified state and capacity. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_residential_building_a90b720900bfee33afbd2db26f093dc55}{get\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Get the building type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_residential_building_a1951e23b8e545d04e13bc1226c33beeb}{provide\+Service}} () override
+\begin{DoxyCompactList}\small\item\em Provide a service specific to the residential building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_residential_building_a639f8bf8a9b183d1d88d3c04054d611b}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Get the cost of the residential building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_residential_building_a1dc054abe1a659182c015256de27c324}{add\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Add citizens (tenants) to the residential building. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_residential_building_af2c2e6f3ca226eccaedaa58fdf20dc53}{get\+Tenants}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of tenants in the residential building. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_residential_building}{Residential\+Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_residential_building_a011855bb550244f3823fbdf46e8819af}{clone}} ()
+\begin{DoxyCompactList}\small\item\em Clone the residential building object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd}{Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with a specified capacity. \end{DoxyCompactList}\item 
+{\bfseries Building} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with default parameters. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{set\+State}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s)
+\begin{DoxyCompactList}\small\item\em Set the state of the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}{repair\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Repair the building, transitioning it to an appropriate state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a4f0602265fda2abe42ec661099cb8b86}{current\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aeaef971c807cbf4ab126f5684ae9c197}{simulate\+Construction}} ()
+\begin{DoxyCompactList}\small\item\em Simulate the construction process of the building asynchronously. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ac03a90b80d56a13217b780240ecdd035}{get\+Num\+Stories}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of stories the building has. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{Business\+Type}} \mbox{\hyperlink{class_building_a35485c9e194d5be384a6f37e52f89524}{get\+Business\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of business the building operates. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1fd28496e5deb742b3397227a9d97646}{add\+Employees}} ()
+\begin{DoxyCompactList}\small\item\em Add employees to the building. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_building_a86512d1f4c823c9c06d999e0ade35840}{get\+Pollution\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Get the pollution level produced by the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a17e7c262e271e06b2393032caf3e8e0c}{add\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Add a worker to the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the capacity of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em The capacity of the building. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries building\+State}
+\begin{DoxyCompactList}\small\item\em State of the \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+std\+::future$<$ void $>$ {\bfseries construction\+Future}
+\begin{DoxyCompactList}\small\item\em Future object used for simulating construction asynchronously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a residential building where citizens can live. 
+
+This class inherits from \doxylink{class_building}{Building} and includes functionalities specific to residential buildings. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_residential_building_a3d49adc21132fb559c6b65ba5834ec6b}\index{ResidentialBuilding@{ResidentialBuilding}!ResidentialBuilding@{ResidentialBuilding}}
+\index{ResidentialBuilding@{ResidentialBuilding}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{ResidentialBuilding()}{ResidentialBuilding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_residential_building_a3d49adc21132fb559c6b65ba5834ec6b} 
+Residential\+Building\+::\+Residential\+Building (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for creating a \doxylink{class_residential_building}{Residential\+Building} with a specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The maximum number of occupants the building can hold. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_residential_building_ab87093b5b698f30fadb8093dc96f2dce}\index{ResidentialBuilding@{ResidentialBuilding}!ResidentialBuilding@{ResidentialBuilding}}
+\index{ResidentialBuilding@{ResidentialBuilding}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{ResidentialBuilding()}{ResidentialBuilding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_residential_building_ab87093b5b698f30fadb8093dc96f2dce} 
+Residential\+Building\+::\+Residential\+Building (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$}]{s}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for creating a \doxylink{class_residential_building}{Residential\+Building} with a specified state and capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Unique pointer to the initial state of the building. \\
+\hline
+{\em capacity} & The maximum number of occupants the building can hold. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_residential_building_a1dc054abe1a659182c015256de27c324}\index{ResidentialBuilding@{ResidentialBuilding}!addCitizens@{addCitizens}}
+\index{addCitizens@{addCitizens}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{addCitizens()}{addCitizens()}}
+{\footnotesize\ttfamily \label{class_residential_building_a1dc054abe1a659182c015256de27c324} 
+void Residential\+Building\+::add\+Citizens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add citizens (tenants) to the residential building. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}{Building}}.
+
+\Hypertarget{class_residential_building_a011855bb550244f3823fbdf46e8819af}\index{ResidentialBuilding@{ResidentialBuilding}!clone@{clone}}
+\index{clone@{clone}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_residential_building_a011855bb550244f3823fbdf46e8819af} 
+\mbox{\hyperlink{class_residential_building}{Residential\+Building}} \texorpdfstring{$\ast$}{*} Residential\+Building\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clone the residential building object. 
+
+\begin{DoxyReturn}{Returns}
+Residential\+Building\texorpdfstring{$\ast$}{*} Pointer to the cloned object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a5525f0851f4f51618f8c51ad9ac8d7af}{Building}}.
+
+\Hypertarget{class_residential_building_a639f8bf8a9b183d1d88d3c04054d611b}\index{ResidentialBuilding@{ResidentialBuilding}!getCost@{getCost}}
+\index{getCost@{getCost}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily \label{class_residential_building_a639f8bf8a9b183d1d88d3c04054d611b} 
+float Residential\+Building\+::get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the cost of the residential building. 
+
+\begin{DoxyReturn}{Returns}
+float representing the cost of the building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1}{Building}}.
+
+\Hypertarget{class_residential_building_af2c2e6f3ca226eccaedaa58fdf20dc53}\index{ResidentialBuilding@{ResidentialBuilding}!getTenants@{getTenants}}
+\index{getTenants@{getTenants}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getTenants()}{getTenants()}}
+{\footnotesize\ttfamily \label{class_residential_building_af2c2e6f3ca226eccaedaa58fdf20dc53} 
+std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ Residential\+Building\+::get\+Tenants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the list of tenants in the residential building. 
+
+\begin{DoxyReturn}{Returns}
+std\+::list$<$\+Citizen\texorpdfstring{$\ast$}{*}$>$ List of pointers to the citizens residing in the building. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}{Building}}.
+
+\Hypertarget{class_residential_building_a90b720900bfee33afbd2db26f093dc55}\index{ResidentialBuilding@{ResidentialBuilding}!getType@{getType}}
+\index{getType@{getType}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_residential_building_a90b720900bfee33afbd2db26f093dc55} 
+std\+::string Residential\+Building\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the building type. 
+
+\begin{DoxyReturn}{Returns}
+string representing the building type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_a8b013de56a31a97bd8dba262ce984606}{Building}}.
+
+\Hypertarget{class_residential_building_a1951e23b8e545d04e13bc1226c33beeb}\index{ResidentialBuilding@{ResidentialBuilding}!provideService@{provideService}}
+\index{provideService@{provideService}!ResidentialBuilding@{ResidentialBuilding}}
+\doxysubsubsection{\texorpdfstring{provideService()}{provideService()}}
+{\footnotesize\ttfamily \label{class_residential_building_a1951e23b8e545d04e13bc1226c33beeb} 
+void Residential\+Building\+::provide\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provide a service specific to the residential building. 
+
+
+
+Implements \mbox{\hyperlink{class_building_a276bdff1b5d7c81c1c52da749947dfd1}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_residential_building_8h}{Residential\+Building.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Residential\+Building.\+cpp\end{DoxyCompactItemize}

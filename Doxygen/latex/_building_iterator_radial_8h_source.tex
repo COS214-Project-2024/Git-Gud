@@ -1,0 +1,108 @@
+\doxysection{Building\+Iterator\+Radial.\+h}
+\hypertarget{_building_iterator_radial_8h_source}{}\label{_building_iterator_radial_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/BuildingIteratorRadial.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/BuildingIteratorRadial.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUILDINGITERATORRADIAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUILDINGITERATORRADIAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}BuildingIterator.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Node.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building_iterator_radial}{BuildingIteratorRadial}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building_iterator}{BuildingIterator}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ setRadius;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ centerX,\ centerY;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ struct\ Node\ \{}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ struct\ Point\ \{}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ int\ x,\ y;}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}\ point;}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Node*\ next;}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ head;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ calculatePoints(\mbox{\hyperlink{class_building}{Building}}***\ array,\ \textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ yUp,\ yDown;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ r\ =\ 0;\ r\ <=\ setRadius;\ r++)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ centerX\ -\/\ r;\ x\ <=\ centerX\ +\ r;\ x++)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0\ ||\ x\ >=\ rows)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yUp\ =\ sqrt(r\ *\ r\ -\/\ (x\ -\/\ centerX)\ *\ (x\ -\/\ centerX))\ +\ centerY;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yDown\ =\ -\/sqrt(r\ *\ r\ -\/\ (x\ -\/\ centerX)\ *\ (x\ -\/\ centerX))\ +\ centerY;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (yUp\ >=\ 0\ \&\&\ yUp\ <\ rows\ \&\&\ !contains(x,\ yUp)\ \&\&\ array[x][yUp]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ newNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>point.x\ =\ x;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>point.y\ =\ yUp;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>next\ =\ head;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ newNode;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (yDown\ !=\ yUp\ \&\&\ yDown\ >=\ 0\ \&\&\ yDown\ <\ rows\ \&\&\ !contains(x,\ yDown)\ \&\&\ array[x][yDown]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ newNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>point.x\ =\ x;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>point.y\ =\ yDown;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>next\ =\ head;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ newNode;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ temp\ =\ head;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (temp\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>point.x\ ==\ x\ \&\&\ temp-\/>point.y\ ==\ y)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>next;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_building_iterator_radial}{BuildingIteratorRadial}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ radius,\ \mbox{\hyperlink{class_building}{Building}}***\ array,\ \textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ this-\/>array\ =\ array;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ this-\/>rows\ =\ rows;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ this-\/>cols\ =\ cols;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ centerX\ =\ x;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ centerY\ =\ y;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ setRadius\ =\ radius;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ head\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ calculatePoints(array,\ rows,\ cols);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_building_iterator_radial}{\string~BuildingIteratorRadial}}()\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ array\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasNext()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ head\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ head-\/>next\ !=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ next()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ temp\ =\ head;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ current()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>array[head-\/>point.x][head-\/>point.y];}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BUILDINGITERATOR\_H}}
+
+\end{DoxyCode}

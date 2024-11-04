@@ -1,0 +1,91 @@
+\doxysection{Building\+Factory Class Reference}
+\hypertarget{class_building_factory}{}\label{class_building_factory}\index{BuildingFactory@{BuildingFactory}}
+Inheritance diagram for Building\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.800000cm]{class_building_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_factory_acb727d48708a6f14b7e383bd5c81ad45}{construct\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Method used to retrieve a Building-\/object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_factory_a1ba0326f9ca2497aecf02c92de78de7b}{upgrade\+Building}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Method sued to Decorate a building passed in. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_factory_a536e7d3552dc6ce2108b7364a6fe7e44}{clone\+Building}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Method sued to clone a \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+\Hypertarget{class_building_factory_a9d2b189ccbf4bf411bb6475ac86d7801}\label{class_building_factory_a9d2b189ccbf4bf411bb6475ac86d7801} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} Factory object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_factory_adc1ad8f999464baa7b3a5f28ba5816aa}\label{class_building_factory_adc1ad8f999464baa7b3a5f28ba5816aa} 
+\mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Rmanager}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_resource_manager}{Resource\+Manager} used to check for available resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_building_factory_a536e7d3552dc6ce2108b7364a6fe7e44}\index{BuildingFactory@{BuildingFactory}!cloneBuilding@{cloneBuilding}}
+\index{cloneBuilding@{cloneBuilding}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{cloneBuilding()}{cloneBuilding()}}
+{\footnotesize\ttfamily \label{class_building_factory_a536e7d3552dc6ce2108b7364a6fe7e44} 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Building\+Factory\+::clone\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Method sued to clone a \doxylink{class_building}{Building}. 
+
+\begin{DoxyReturn}{Returns}
+Building\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_factory_a97e8be013c5d01effe1931b69d49d71d}{Building\+With\+Coffee\+Shop\+Factory}}, \mbox{\hyperlink{class_building_with_parking_factory_ac030d48f0fd1f16e4f00c80832de66f7}{Building\+With\+Parking\+Factory}}, \mbox{\hyperlink{class_commercial_building_factory_a3b72be299aa2576f8c892e12e64896e0}{Commercial\+Building\+Factory}}, \mbox{\hyperlink{class_industrial_building_factory_adfc083e004ee8258d2b1ea12a1be99ff}{Industrial\+Building\+Factory}}, \mbox{\hyperlink{class_landmark_factory_a7ae8a777eecae291c22adade3d612387}{Landmark\+Factory}}, and \mbox{\hyperlink{class_residential_building_factory_aa7ab140bac2cc4da912502a641df7b07}{Residential\+Building\+Factory}}.
+
+\Hypertarget{class_building_factory_acb727d48708a6f14b7e383bd5c81ad45}\index{BuildingFactory@{BuildingFactory}!constructBuilding@{constructBuilding}}
+\index{constructBuilding@{constructBuilding}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{constructBuilding()}{constructBuilding()}}
+{\footnotesize\ttfamily \label{class_building_factory_acb727d48708a6f14b7e383bd5c81ad45} 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Building\+Factory\+::construct\+Building (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Method used to retrieve a Building-\/object. 
+
+\begin{DoxyReturn}{Returns}
+Building\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_commercial_building_factory_a63586e83a78b18a7b7279ea3cfd50203}{Commercial\+Building\+Factory}}, \mbox{\hyperlink{class_industrial_building_factory_aa14aac73c6c22a7d7ce1b7abba518e5e}{Industrial\+Building\+Factory}}, \mbox{\hyperlink{class_landmark_factory_a9d261e6f187f15d93db427c0276e2e84}{Landmark\+Factory}}, and \mbox{\hyperlink{class_residential_building_factory_a9531248a15b754b9364eff9877fbb251}{Residential\+Building\+Factory}}.
+
+\Hypertarget{class_building_factory_a1ba0326f9ca2497aecf02c92de78de7b}\index{BuildingFactory@{BuildingFactory}!upgradeBuilding@{upgradeBuilding}}
+\index{upgradeBuilding@{upgradeBuilding}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{upgradeBuilding()}{upgradeBuilding()}}
+{\footnotesize\ttfamily \label{class_building_factory_a1ba0326f9ca2497aecf02c92de78de7b} 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} Building\+Factory\+::upgrade\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Method sued to Decorate a building passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Building\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_building_with_coffee_shop_factory_a97cb5fc4a1a1876bd6e3d60ec936939d}{Building\+With\+Coffee\+Shop\+Factory}}, and \mbox{\hyperlink{class_building_with_parking_factory_a286164b0f03224f220cdafdc6fd17897}{Building\+With\+Parking\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_building_factory_8h}{Building\+Factory.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Building\+Factory.\+cpp\end{DoxyCompactItemize}

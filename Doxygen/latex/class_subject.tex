@@ -1,0 +1,170 @@
+\doxysection{Subject Class Reference}
+\hypertarget{class_subject}{}\label{class_subject}\index{Subject@{Subject}}
+
+
+Class representing the subject in the observer pattern.  
+
+
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+Inheritance diagram for Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.839694cm]{class_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_subject_a3eb1eb85563f53524135522c5e6ddda7}\label{class_subject_a3eb1eb85563f53524135522c5e6ddda7} 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the subject in the observer pattern. 
+
+This class maintains a list of observers (citizens) and provides methods to manage them. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_subject_a68ce1571713fe1350b4ad800c60048fd}\index{Subject@{Subject}!addCitizenToSimulation@{addCitizenToSimulation}}
+\index{addCitizenToSimulation@{addCitizenToSimulation}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{addCitizenToSimulation()}{addCitizenToSimulation()}}
+{\footnotesize\ttfamily \label{class_subject_a68ce1571713fe1350b4ad800c60048fd} 
+void Subject\+::add\+Citizen\+To\+Simulation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}}]{new\+Citizen}{}\end{DoxyParamCaption})}
+
+
+
+Add a citizen to the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Citizen} & Pointer to the new \doxylink{class_citizen}{Citizen} to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_subject_a9850901b62a18cc7db0345d6f58cab14}\index{Subject@{Subject}!attach@{attach}}
+\index{attach@{attach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{class_subject_a9850901b62a18cc7db0345d6f58cab14} 
+void Subject\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+
+
+Attach an observer (citizen) to the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \doxylink{class_citizen}{Citizen} to be added as an observer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}\index{Subject@{Subject}!detach@{detach}}
+\index{detach@{detach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{class_subject_a686abb0c34a6af59e852d4a7f0ad6865} 
+void Subject\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+
+
+Detach an observer (citizen) from the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \doxylink{class_citizen}{Citizen} to be removed from observers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}\index{Subject@{Subject}!getNumCitizens@{getNumCitizens}}
+\index{getNumCitizens@{getNumCitizens}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{getNumCitizens()}{getNumCitizens()}}
+{\footnotesize\ttfamily \label{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32} 
+int Subject\+::get\+Num\+Citizens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the total number of citizens. 
+
+\begin{DoxyReturn}{Returns}
+int The total number of citizens. 
+\end{DoxyReturn}
+\Hypertarget{class_subject_a12b4b9e61165628b693c1183521156bd}\index{Subject@{Subject}!getObserverList@{getObserverList}}
+\index{getObserverList@{getObserverList}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{getObserverList()}{getObserverList()}}
+{\footnotesize\ttfamily \label{class_subject_a12b4b9e61165628b693c1183521156bd} 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ Subject\+::get\+Observer\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the list of current observers. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Citizen\texorpdfstring{$\ast$}{*}$>$ List of pointers to observers (citizens). 
+\end{DoxyReturn}
+\Hypertarget{class_subject_acacf203e003f9ef980b6f5d52848dee3}\index{Subject@{Subject}!getObserverListSize@{getObserverListSize}}
+\index{getObserverListSize@{getObserverListSize}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{getObserverListSize()}{getObserverListSize()}}
+{\footnotesize\ttfamily \label{class_subject_acacf203e003f9ef980b6f5d52848dee3} 
+int Subject\+::get\+Observer\+List\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the size of the observer list. 
+
+\begin{DoxyReturn}{Returns}
+int The number of observers currently attached. 
+\end{DoxyReturn}
+\Hypertarget{class_subject_a9e7198d28d891bb75a6210b3187974e0}\index{Subject@{Subject}!notify@{notify}}
+\index{notify@{notify}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{class_subject_a9e7198d28d891bb75a6210b3187974e0} 
+void Subject\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_change_data}{Change\+Data}}}]{change\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Notify all observers about a change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change\+Data} & Data related to the change to notify observers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_subject_abba4e56451de05a0cb06ae7c615d6800}\index{Subject@{Subject}!removeCitizenFromSimulation@{removeCitizenFromSimulation}}
+\index{removeCitizenFromSimulation@{removeCitizenFromSimulation}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{removeCitizenFromSimulation()}{removeCitizenFromSimulation()}}
+{\footnotesize\ttfamily \label{class_subject_abba4e56451de05a0cb06ae7c615d6800} 
+void Subject\+::remove\+Citizen\+From\+Simulation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}}]{citizen}{}\end{DoxyParamCaption})}
+
+
+
+Remove a citizen from the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & Pointer to the \doxylink{class_citizen}{Citizen} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_subject_8h}{Subject.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Subject.\+cpp\end{DoxyCompactItemize}

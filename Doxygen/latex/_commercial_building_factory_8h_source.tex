@@ -1,0 +1,30 @@
+\doxysection{Commercial\+Building\+Factory.\+h}
+\hypertarget{_commercial_building_factory_8h_source}{}\label{_commercial_building_factory_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/CommercialBuildingFactory.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/CommercialBuildingFactory.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMERCIALBUILDINGFACTORY\_H\ \ \ \ }}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMERCIALBUILDINGFACTORY\_H\ \ \ }}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_factory_8h}{BuildingFactory.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commercial_building_8h}{CommercialBuilding.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_commercial_building_factory}{CommercialBuildingFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building_factory}{BuildingFactory}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ water=3;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ power=7;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ steel=5;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ wood=2;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ concrete=10;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_commercial_building_factory}{CommercialBuildingFactory}}()\ :\mbox{\hyperlink{class_building_factory}{BuildingFactory}}()\{\};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}*\ \mbox{\hyperlink{class_commercial_building_factory_a63586e83a78b18a7b7279ea3cfd50203}{constructBuilding}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}*\ \mbox{\hyperlink{class_commercial_building_factory_a3b72be299aa2576f8c892e12e64896e0}{cloneBuilding}}(\mbox{\hyperlink{class_building}{Building}}*\ b)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMERCIALBUILDINGFACTORY\_H\ \ }}
+
+\end{DoxyCode}

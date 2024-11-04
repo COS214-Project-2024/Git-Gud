@@ -5,8 +5,13 @@
 // Mock Concrete Building classes for testing
 class MockBuilding : public Building {
 public:
+    MockBuilding() = default;
+    MockBuilding(const MockBuilding& other) : Building(other) {
+        // Copy any additional MockBuilding-specific members here if necessary
+    }
+    MockBuilding(MockBuilding&& other) noexcept = default;
     virtual ~MockBuilding() {}
-    MockBuilding* clone() const override {
+    MockBuilding* clone() override {
         return new MockBuilding(*this);
     }
     void provideService() override{
@@ -14,6 +19,9 @@ public:
     }
     float getCost(){
         return 0;
+    }
+    std::string getType() override {
+        return "MockBuilding";
     }
 
 };

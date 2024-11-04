@@ -15,6 +15,16 @@
 #include "Resources.h"
 #include <string>
 
+struct ResourceManagerState {
+    int wood;
+    int steel;
+    int concrete;
+    int waterSupply;
+    int energySupply;
+    int budget;
+    int wasteCapacity;
+};
+
 class ResourceManager {
 private:
     static ResourceManager* instance; ///< Singleton instance of ResourceManager.
@@ -145,6 +155,38 @@ public:
      * @return int Amount of waste capacity available.
      */
     int getWasteCapacity() const;
+
+    /**
+     * @brief Captures the current state of ResourceManager as a ResourceManagerState struct.
+     * 
+     * @return ResourceManagerState A struct containing the current state values.
+     */
+    ResourceManagerState captureState() const {
+        return {
+            resources.getWoodResource().getAmount(),
+            resources.getSteelResource().getAmount(),
+            resources.getConcreteResource().getAmount(),
+            resources.getWaterSupplyResource().getAmount(),
+            resources.getEnergySupplyResource().getAmount(),
+            resources.getBudgetResource().getAmount(),
+            resources.getWasteCapacityResource().getAmount()
+        };
+    }
+
+    /**
+     * @brief Restores the ResourceManager's resources and budget to a previous state.
+     * 
+     * @param state The ResourceManagerState containing the values to restore.
+     */
+    void restoreState(const ResourceManagerState& state) {
+        resources.setWood(state.wood);
+        resources.setSteel(state.steel);
+        resources.setConcrete(state.concrete);
+        resources.setWaterSupply(state.waterSupply);
+        resources.setEnergySupply(state.energySupply);
+        resources.setBudget(state.budget);
+        resources.setWasteCapacity(state.wasteCapacity);
+    }
 };
 
 #endif // RESOURCEMANAGER_H

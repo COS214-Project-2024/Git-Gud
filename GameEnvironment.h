@@ -10,6 +10,7 @@
 #include "CommercialBuilding.h"
 #include "ResidentialBuilding.h"
 #include "Landmark.h"
+#include "Memento.h"
 //#include "Player.h"
 //#include "Utility.h"
 
@@ -297,6 +298,59 @@ public:
 
     UtilityIteratorLinear* createLinUtilItr();
 
+    /**
+     * @brief Saves the current state of the ResourceManager, utility grid, and building grid.
+     * 
+     * @return A Memento containing the saved state.
+     */
+    Memento GameEnvironment::saveToMemento() const {
+        // Capture current ResourceManager state
+        ResourceManagerState resourceState = ResourceManager::getInstance()->captureState();
+
+        // Capture building and utility grid snapshots
+        std::vector<std::vector<Building*>> buildingGridSnapshot(rows, std::vector<Building*>(cols));
+        std::vector<std::vector<UtilGridNode*>> utilityGridSnapshot(rows, std::vector<UtilGridNode*>(cols));
+        
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                buildingGridSnapshot[i][j] = buildingGrid[i][j];
+                utilityGridSnapshot[i][j] = utilityGrid[i][j];
+            }
+        }
+
+        return Memento(resourceState, buildingGridSnapshot, utilityGridSnapshot);
+    }
+
+    /**
+     * @brief Restores the state of the ResourceManager, utility grid, and building grid from a Memento.
+     * 
+     * @param memento The Memento containing the state to restore.
+     */
+    void GameEnvironment::restoreFromMemento(const Memento& memento) {
+        // Restore ResourceManager to saved state
+        ResourceManager::getInstance()->restoreState(memento.getSavedResourceState());
+
+        // Restore building and utility grids
+        const auto& buildingGridSnapshot = memento.getBuildingGridSnapshot();
+        const auto& utilityGridSnapshot = memento.getUtilityGridSnapshot();
+
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                buildingGrid[i][j] = buildingGridSnapshot[i][j];
+                utilityGrid[i][j] = utilityGridSnapshot[i][j];
+            }
+        }
+    }
+
+    // Accessor for building grid (read-only)
+    Building*** getBuildingGrid() const {
+        return buildingGrid;
+    }
+
+    // Accessor for utility grid (read-only)
+    UtilGridNode*** getUtilityGrid() const {
+        return utilityGrid;
+    }
 };
 
 

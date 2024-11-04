@@ -36,6 +36,8 @@ public:
                 cost = 0;
         }
 
+       ResourceManager::getInstance()->spendBudget(cost);
+
         return new TrafficBuilding(std::move(initialState), capacity, type, cost);
     }
 };

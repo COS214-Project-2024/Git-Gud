@@ -31,7 +31,7 @@ TEST_F(StrategyTest, testBalance){
 TEST_F(StrategyTest, taxCitizensTest){
     ResidentialBuilding* r1 = new ResidentialBuilding(10);
     EXPECT_EQ(r1->getTenants().size(),10);
-    player.addResidentialBuilding(new ResidentialBuilding(10));
+    player.registerResidentialBuilding(new ResidentialBuilding(10));
     player.changeTaxRate(10.0f);
     player.taxResidentialBuildings();
     EXPECT_EQ(player.getBalance(),25.0f);
@@ -43,8 +43,8 @@ TEST_F(StrategyTest, taxMultipleCitizensTest){
     ResidentialBuilding* r2 = new ResidentialBuilding(15);
     EXPECT_EQ(r1->getTenants().size(),6);
     EXPECT_EQ(r2->getTenants().size(),15);
-    player.addResidentialBuilding(r1);
-    player.addResidentialBuilding(r2);
+    player.registerResidentialBuilding(r1);
+    player.registerResidentialBuilding(r2);
     player.changeTaxRate(50.0);
     player.taxResidentialBuildings();
     EXPECT_EQ(player.getBalance(),262.5f);
@@ -54,7 +54,7 @@ TEST_F(StrategyTest, taxMultipleCitizensTest){
 
 TEST_F(StrategyTest, taxCommerialTest){
     CommercialBuilding* c1 = new CommercialBuilding(10,10,5,LUXURY);
-    player.addCommercialBuilding(c1);
+    player.registerCommercialBuilding(c1);
     player.changeTaxRate(10.0);
     player.taxCommercialBuildings();
     EXPECT_EQ(player.getBalance(),30.0f);
@@ -65,9 +65,9 @@ TEST_F(StrategyTest, taxMultipleCommercialTest){
     CommercialBuilding* c1 = new CommercialBuilding(10,10,3,LUXURY);
     CommercialBuilding* c2 = new CommercialBuilding(10,10,1,FOOD);
     CommercialBuilding* c3 = new CommercialBuilding(10,10,5,GENERAL);
-    player.addCommercialBuilding(c1);
-    player.addCommercialBuilding(c2);
-    player.addCommercialBuilding(c3);
+    player.registerCommercialBuilding(c1);
+    player.registerCommercialBuilding(c2);
+    player.registerCommercialBuilding(c3);
     player.changeTaxRate(20.0);
     player.taxCommercialBuildings();
     EXPECT_EQ(player.getBalance(),70.0f);
@@ -78,7 +78,7 @@ TEST_F(StrategyTest, taxMultipleCommercialTest){
 
 TEST_F(StrategyTest, taxIndustrialTest){
     IndustrialBuilding* i1 = new IndustrialBuilding(10,50,5,MANUFACTURING,2);
-    player.addIndustrialBuilding(i1);
+    player.registerIndustrialBuilding(i1);
     player.changeTaxRate(10.0);
     player.taxIndustrialBuildings();
     EXPECT_EQ(player.getBalance(),30.0f);
@@ -89,9 +89,9 @@ TEST_F(StrategyTest, taxMultipleIndustrialTest){
     IndustrialBuilding* i1 = new IndustrialBuilding(10,50,5,MANUFACTURING,2);
     IndustrialBuilding* i2 = new IndustrialBuilding(10,50,5,TECHNOLOGY,2);
     IndustrialBuilding* i3 = new IndustrialBuilding(10,50,5,ENERGY,4);
-    player.addIndustrialBuilding(i1);
-    player.addIndustrialBuilding(i2);
-    player.addIndustrialBuilding(i3);
+    player.registerIndustrialBuilding(i1);
+    player.registerIndustrialBuilding(i2);
+    player.registerIndustrialBuilding(i3);
     player.changeTaxRate(10.0);
     player.taxIndustrialBuildings();
     EXPECT_EQ(player.getBalance(),90.0f);

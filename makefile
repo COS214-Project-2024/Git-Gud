@@ -16,7 +16,8 @@ COMMON_SRC = Building.cpp UnderConstruction.cpp Operational.cpp Dilapidated.cpp 
 			 BuildingWithCoffeeShopFactory.cpp BuildingWithParkingFactory.cpp PrototypeManager.cpp\
 			 IndustrialBuildingFactory.cpp ResidentialBuildingFactory.cpp \
 			 BuildingWithCoffeeShop.cpp BuildingWithParking.cpp Decorator.cpp \
-			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp
+			 ResourceManager.cpp Resources.cpp TaxCommercial.cpp TaxFactories.cpp TaxResidents.cpp \
+			 Player.cpp LandmarkFactory.cpp
 
 
 # Object files

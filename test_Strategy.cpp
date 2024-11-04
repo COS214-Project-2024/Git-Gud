@@ -9,7 +9,9 @@
  * 
  */
 #include "gtest/gtest.h"
-#include "Player.h"
+#include "TaxFactories.h"
+#include "TaxResidents.h"
+#include "TaxCommercial.h"
 #include "Citizen.h"
 #include "TaxManager.h"
 #include "IndustrialBuilding.h"
@@ -20,21 +22,22 @@
 class StrategyTest : public ::testing::Test {
 
     protected:
-        Player player;
+        TaxManager tax;
 
 };
 
-TEST_F(StrategyTest, testBalance){
-    EXPECT_EQ(player.getBalance(),0.0f);
+TEST_F(StrategyTest, EmptyTax){
+    tax.chooseTaxMethod(new TaxResidents);
+    EXPECT_EQ(tax.calculateTax(),0.0f);
 }
 
 TEST_F(StrategyTest, taxCitizensTest){
     ResidentialBuilding* r1 = new ResidentialBuilding(10);
     EXPECT_EQ(r1->getTenants().size(),10);
-    player.registerResidentialBuilding(new ResidentialBuilding(10));
-    player.changeTaxRate(10.0f);
-    player.taxResidentialBuildings();
-    EXPECT_EQ(player.getBalance(),25.0f);
+    tax.addResidential(new ResidentialBuilding(10));
+    tax.updateTotalTaxRate(10.0f);
+    tax.chooseTaxMethod(new TaxResidents);
+    EXPECT_EQ(tax.calculateTax(),25.0f);
     delete r1;
 }
 
@@ -43,21 +46,22 @@ TEST_F(StrategyTest, taxMultipleCitizensTest){
     ResidentialBuilding* r2 = new ResidentialBuilding(15);
     EXPECT_EQ(r1->getTenants().size(),6);
     EXPECT_EQ(r2->getTenants().size(),15);
-    player.registerResidentialBuilding(r1);
-    player.registerResidentialBuilding(r2);
-    player.changeTaxRate(50.0);
-    player.taxResidentialBuildings();
-    EXPECT_EQ(player.getBalance(),262.5f);
+    tax.addResidential(r1);
+    tax.addResidential(r2);
+    tax.updateTotalTaxRate(75.0);
+    tax.updateTotalTaxRate(50.0);
+    tax.chooseTaxMethod(new TaxResidents);
+    EXPECT_EQ(tax.calculateTax(),262.5f);
     delete r1;
     delete r2;
 }
 
 TEST_F(StrategyTest, taxCommerialTest){
     CommercialBuilding* c1 = new CommercialBuilding(10,10,5,LUXURY);
-    player.registerCommercialBuilding(c1);
-    player.changeTaxRate(10.0);
-    player.taxCommercialBuildings();
-    EXPECT_EQ(player.getBalance(),30.0f);
+    tax.addCommercial(c1);
+    tax.updateTotalTaxRate(10.0);
+    tax.chooseTaxMethod(new TaxCommercial);
+    EXPECT_EQ(tax.calculateTax(),30.0f);
     delete c1;
 }
 
@@ -65,12 +69,12 @@ TEST_F(StrategyTest, taxMultipleCommercialTest){
     CommercialBuilding* c1 = new CommercialBuilding(10,10,3,LUXURY);
     CommercialBuilding* c2 = new CommercialBuilding(10,10,1,FOOD);
     CommercialBuilding* c3 = new CommercialBuilding(10,10,5,GENERAL);
-    player.registerCommercialBuilding(c1);
-    player.registerCommercialBuilding(c2);
-    player.registerCommercialBuilding(c3);
-    player.changeTaxRate(20.0);
-    player.taxCommercialBuildings();
-    EXPECT_EQ(player.getBalance(),70.0f);
+    tax.addCommercial(c1);
+    tax.addCommercial(c2);
+    tax.addCommercial(c3);
+    tax.updateTotalTaxRate(20.0);
+    tax.chooseTaxMethod(new TaxCommercial);
+    EXPECT_EQ(tax.calculateTax(),70.0f);
     delete c1;
     delete c2;
     delete c3;
@@ -78,10 +82,10 @@ TEST_F(StrategyTest, taxMultipleCommercialTest){
 
 TEST_F(StrategyTest, taxIndustrialTest){
     IndustrialBuilding* i1 = new IndustrialBuilding(10,50,5,MANUFACTURING,2);
-    player.registerIndustrialBuilding(i1);
-    player.changeTaxRate(10.0);
-    player.taxIndustrialBuildings();
-    EXPECT_EQ(player.getBalance(),30.0f);
+    tax.addIndustrial(i1);
+    tax.updateTotalTaxRate(10.0);
+    tax.chooseTaxMethod(new TaxFactories);
+    EXPECT_EQ(tax.calculateTax(),30.0f);
     delete i1;
 }
 
@@ -89,12 +93,12 @@ TEST_F(StrategyTest, taxMultipleIndustrialTest){
     IndustrialBuilding* i1 = new IndustrialBuilding(10,50,5,MANUFACTURING,2);
     IndustrialBuilding* i2 = new IndustrialBuilding(10,50,5,TECHNOLOGY,2);
     IndustrialBuilding* i3 = new IndustrialBuilding(10,50,5,ENERGY,4);
-    player.registerIndustrialBuilding(i1);
-    player.registerIndustrialBuilding(i2);
-    player.registerIndustrialBuilding(i3);
-    player.changeTaxRate(10.0);
-    player.taxIndustrialBuildings();
-    EXPECT_EQ(player.getBalance(),90.0f);
+    tax.addIndustrial(i1);
+    tax.addIndustrial(i2);
+    tax.addIndustrial(i3);
+    tax.updateTotalTaxRate(10.0);
+    tax.chooseTaxMethod(new TaxFactories);
+    EXPECT_EQ(tax.calculateTax(),90.0f);
     delete i1;
     delete i2;
     delete i3;

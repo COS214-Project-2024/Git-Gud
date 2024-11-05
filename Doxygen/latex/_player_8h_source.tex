@@ -1,6 +1,5 @@
-\doxysection{Player.\+h}
-\hypertarget{_player_8h_source}{}\label{_player_8h_source}\index{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/Player.h@{//wsl.localhost/Ubuntu/home/zandervanschoor/University/Year 2/COS 214/GitHub/Git-\/Gud/Player.h}}
-
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Player.h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYER\_H}}
@@ -159,54 +158,62 @@
 \DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{class_player}{\string~Player}}();}
 \DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ changeTaxRate(\textcolor{keywordtype}{float}\ tax);}
 \DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{comment}{//Love,\ Death\ and\ Taxes}}
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//use\ these\ in\ the\ addition\ logic}}
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ taxResidentialBuildings();}
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ taxIndustrialBuildings();}
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ taxCommercialBuildings();}
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ registerResidentialBuilding(\mbox{\hyperlink{class_residential_building}{ResidentialBuilding}}*\ residentialBuilding);}
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ registerIndustrialBuilding(\mbox{\hyperlink{class_industrial_building}{IndustrialBuilding}}*\ industrialBuilding);}
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ registerCommercialBuilding(\mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}*\ commercialBuilding);}
-\DoxyCodeLine{00166\ }
-\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{float}\ getBalance();}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//TaxManager*\ getTaxMan()\{return\ taxMan;\};}}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//\ Bob\ the\ builder\ can't\ fix\ this}}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildIndustrialBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildCommercialBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildResidentialBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildLandmark(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildTaxiTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildBusTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildTrainTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildAirportTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00181\ \ \ \ \ }
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{comment}{//decorator\ buildings}}
-\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{bool}\ upgradeBuildingWithCoffeeShop(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{bool}\ upgradeBuildingWithParking(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//We\ can\ do\ what\ Sasol\ can't}}
-\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildSewageSystem(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildWasteManagement(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildPowerPlant(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildWaterFilteringPlant(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildHealthCare(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildEducation(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildLawEnforcement(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{//Junky\ Yard}}
-\DoxyCodeLine{00197\ \ \ \ \ }
-\DoxyCodeLine{00198\ }
-\DoxyCodeLine{00199\ }
-\DoxyCodeLine{00200\ }
-\DoxyCodeLine{00201\ \ \ \ \ }
-\DoxyCodeLine{00202\ \ \ \ \ }
-\DoxyCodeLine{00203\ \};}
-\DoxyCodeLine{00204\ }
-\DoxyCodeLine{00205\ }
-\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_H}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ getWood();}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ getSteel();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ getConcrete();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ getPower();}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ getWater();}
+\DoxyCodeLine{00163\ \ \ \ \ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{comment}{//Love,\ Death\ and\ Taxes}}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//use\ these\ in\ the\ addition\ logic}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ taxResidentialBuildings();}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ taxIndustrialBuildings();}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ taxCommercialBuildings();}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ registerResidentialBuilding(\mbox{\hyperlink{class_residential_building}{ResidentialBuilding}}*\ residentialBuilding);}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ registerIndustrialBuilding(\mbox{\hyperlink{class_industrial_building}{IndustrialBuilding}}*\ industrialBuilding);}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ registerCommercialBuilding(\mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}*\ commercialBuilding);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{float}\ getBalance();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//TaxManager*\ getTaxMan()\{return\ taxMan;\};}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ Bob\ the\ builder\ can't\ fix\ this}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ createRoad(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildIndustrialBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildCommercialBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildResidentialBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildLandmark(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildTaxiTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildBusTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildTrainTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildAirportTrafficBuilding(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00189\ \ \ \ \ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//decorator\ buildings}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{bool}\ upgradeBuildingWithCoffeeShop(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{bool}\ upgradeBuildingWithParking(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//We\ can\ do\ what\ Sasol\ can't}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildSewageSystem(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildWasteManagement(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildPowerPlant(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildWaterFilteringPlant(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildHealthCare(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildEducation(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{bool}\ buildLawEnforcement(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{comment}{//Junky\ Yard}}
+\DoxyCodeLine{00205\ \ \ \ \ std::string\ printRow(\textcolor{keywordtype}{int}\ currRow);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ }
+\DoxyCodeLine{00211\ \};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_H}}
 
 \end{DoxyCode}

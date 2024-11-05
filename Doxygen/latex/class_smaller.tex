@@ -1,0 +1,106 @@
+\doxysection{Smaller Class Reference}
+\hypertarget{class_smaller}{}\label{class_smaller}\index{Smaller@{Smaller}}
+Inheritance diagram for Smaller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_smaller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_smaller_aad598e4875f3d8f8fd81b0cf55c83d70}\label{class_smaller_aad598e4875f3d8f8fd81b0cf55c83d70} 
+void {\bfseries add\+Citizen} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_decorator}{Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_decorator_a1906e363a514ed319032efe7cbd6c5bd}{provide\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Method used to provide a service to Citizens. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_decorator_a80d9ae2166821923bcba5a00105cd631}{get\+Cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the cost of the decorated \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_decorator}{Decorator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_decorator_ab585e01396edaa7670e478d59dd94fe3}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Method sued to return a pointer to a copy of the object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Decorator} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_decorator}{Decorator} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building_af07a7b3d3e18f83eb181dd2d868a2ddd}{Building}} (int \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with a specified capacity. \end{DoxyCompactList}\item 
+{\bfseries Building} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} object with default parameters. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a8b013de56a31a97bd8dba262ce984606}{get\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the type of a building. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{set\+State}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ s)
+\begin{DoxyCompactList}\small\item\em Set the state of the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}{repair\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Repair the building, transitioning it to an appropriate state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_building_a4f0602265fda2abe42ec661099cb8b86}{current\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the building as a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_aeaef971c807cbf4ab126f5684ae9c197}{simulate\+Construction}} ()
+\begin{DoxyCompactList}\small\item\em Simulate the construction process of the building asynchronously. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ac03a90b80d56a13217b780240ecdd035}{get\+Num\+Stories}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of stories the building has. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{Business\+Type}} \mbox{\hyperlink{class_building_a35485c9e194d5be384a6f37e52f89524}{get\+Business\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of business the building operates. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a1fd28496e5deb742b3397227a9d97646}{add\+Employees}} ()
+\begin{DoxyCompactList}\small\item\em Add employees to the building. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the building. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_building_a86512d1f4c823c9c06d999e0ade35840}{get\+Pollution\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Get the pollution level produced by the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}{add\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Add citizens to the building. \end{DoxyCompactList}\item 
+virtual std\+::list$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}{get\+Tenants}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of tenants (citizens) in the building. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_building_a17e7c262e271e06b2393032caf3e8e0c}{add\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Add a worker to the building. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the capacity of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer (citizen) to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer (citizen) from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}} (\mbox{\hyperlink{struct_change_data}{Change\+Data}} change\+Data)
+\begin{DoxyCompactList}\small\item\em Notify all observers about a change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{add\+Citizen\+To\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}new\+Citizen)
+\begin{DoxyCompactList}\small\item\em Add a citizen to the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{remove\+Citizen\+From\+Simulation}} (\mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*}citizen)
+\begin{DoxyCompactList}\small\item\em Remove a citizen from the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{get\+Observer\+List\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the observer list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{get\+Num\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Get the total number of citizens. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{get\+Observer\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of current observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_decorator}{Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} {\bfseries building}
+\begin{DoxyCompactList}\small\item\em Building-\/object that is being decorated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{class_citizen}{Citizen}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Citizens}
+\begin{DoxyCompactList}\small\item\em Static list of all citizens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_building}{Building}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries capacity}
+\begin{DoxyCompactList}\small\item\em The capacity of the building. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_building_state}{Building\+State}} $>$ {\bfseries building\+State}
+\begin{DoxyCompactList}\small\item\em State of the \doxylink{class_building}{Building}. \end{DoxyCompactList}\item 
+std\+::future$<$ void $>$ {\bfseries construction\+Future}
+\begin{DoxyCompactList}\small\item\em Future object used for simulating construction asynchronously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Smaller.\+h\end{DoxyCompactItemize}

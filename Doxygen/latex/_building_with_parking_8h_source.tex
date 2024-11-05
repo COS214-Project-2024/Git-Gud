@@ -1,0 +1,57 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Building\+With\+Parking.h}
+\hypertarget{_building_with_parking_8h_source}{}\label{_building_with_parking_8h_source}\mbox{\hyperlink{_building_with_parking_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ BUILDINGWITHPARKING\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BUILDINGWITHPARKING\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_decorator_8h}{Decorator.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building_with_parking}{BuildingWithParking}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_decorator}{Decorator}}\{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_building_with_parking_a14c37473d629c94dd697deae3a1d1f7e}{BuildingWithParking}}(\mbox{\hyperlink{class_building}{Building}}*\ b);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_building_with_parking_a14c37473d629c94dd697deae3a1d1f7e}{BuildingWithParking}}()\ :\ \mbox{\hyperlink{class_decorator}{Decorator}}()\ \{this-\/>\mbox{\hyperlink{class_building_a3423dd1d5190491c17e56d6f863cd7e2}{buildingState}}=\textcolor{keyword}{nullptr};\};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_a8192f5ff1297b514baa941279622b9e9}{provideService}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_building_with_parking_aef1943426ba3de7e45a3dd9fb4524a39}{getCost}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_a1713235c27f8782bc472ed244e3f846e}{setState}}(std::unique\_ptr<BuildingState>\ s);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_a0861bc44510d88e80e8cbeb7f028e5a8}{repairBuilding}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_building_with_parking_aa34a5174be3746428b0bf64dc4cdd77e}{currentState}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_a4fb6d0014e826bbb9e438c3e6928d632}{simulateConstruction}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_with_parking_a70bb30573e95cdc5bcb7280eca13d246}{getNumStories}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ \mbox{\hyperlink{class_building_with_parking_af28e4d670320182bf7534e7a9037be4b}{getBusinessType}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_ad983cbfc0c884f775752fa0bbe052203}{addEmployees}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_with_parking_a1677713defe0f78380e9a17e392721e0}{getSize}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_building_with_parking_ab16883351e21d5f7e8e18ca7d8047964}{getPollutionLevel}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_a9ca530a2a84711cbebc612da06743e3f}{addCitizens}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ std::list<Citizen*>\ \mbox{\hyperlink{class_building_with_parking_a24badaaf9e31c2e0fb57b8aa40fd57c5}{getTenants}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_with_parking_abe9e4010da1818491b3b32990dd368e0}{addWorker}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_with_parking}{BuildingWithParking}}*\ \mbox{\hyperlink{class_building_with_parking_a2fd1447bf07c35debe37fee7218cca88}{clone}}()\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_with_parking}{\string~BuildingWithParking}}()\{\};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ std::string\ \mbox{\hyperlink{class_building_with_parking_a667daffcab3f708c2a6f1454ecb8508e}{getType}}()\ \textcolor{keyword}{override};\ \ \ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

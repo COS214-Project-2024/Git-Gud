@@ -1,0 +1,38 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Prototype\+Manager.h}
+\hypertarget{_prototype_manager_8h_source}{}\label{_prototype_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROTOTYPEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROTOTYPEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_prototype_manager}{PrototypeManager}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}**\ prototypeBuildings;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ resizeArray();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_prototype_manager_add85db5b325ea6e3dd99b977291b2664}{PrototypeManager}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_prototype_manager_ab3b265042ee209e9681b5fb6e3c8666c}{\string~PrototypeManager}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_prototype_manager_aabf9cf397414ada5ec51e8097ec777fb}{addPrototype}}(\mbox{\hyperlink{class_building}{Building}}*\ p);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_prototype_manager_a095aa93c95bc5ca90c9bb45ea4688643}{removePrototype}}(\mbox{\hyperlink{class_building}{Building}}*\ p);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_prototype_manager_a9f0aba024cd15f35131756e1ac3e9a79}{getPrototype}}(\mbox{\hyperlink{class_building}{Building}}*\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_prototype_manager_a1563ff848e2d9ad4ca4c879835af3107}{getSize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ size;\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_prototype_manager_a89d456e933421ff74c38823981b8c348}{getCapacity}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ capacity;\ \}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PROTOTYPEMANAGER\_H}}
+
+\end{DoxyCode}

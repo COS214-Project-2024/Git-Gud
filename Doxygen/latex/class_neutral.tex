@@ -1,0 +1,137 @@
+\doxysection{Neutral Class Reference}
+\hypertarget{class_neutral}{}\label{class_neutral}\index{Neutral@{Neutral}}
+
+
+Represents a neutral level of satisfaction.  
+
+
+
+
+{\ttfamily \#include $<$Neutral.\+h$>$}
+
+Inheritance diagram for Neutral\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_neutral}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_neutral_aa3a8b3238e5b9a9a9a422bbbf0da6026}\label{class_neutral_aa3a8b3238e5b9a9a9a422bbbf0da6026} 
+{\bfseries Neutral} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_neutral}{Neutral} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_neutral_afc4de4ad01e65cc80f60dad54dc2e3c5}\label{class_neutral_afc4de4ad01e65cc80f60dad54dc2e3c5} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Neutral} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_neutral}{Neutral} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neutral_a272e544d46bafea337199c53a7b64ea3}{enter\+State}} () override
+\begin{DoxyCompactList}\small\item\em Enters the neutral state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neutral_aa2ba3e8cd15067102117854bd699fc86}{exit\+State}} () override
+\begin{DoxyCompactList}\small\item\em Exits the neutral state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_neutral_a93a3f123d0c986dd3fe5cd471a17abc2}{get\+Current\+Satisfaction\+Level}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the current satisfaction level as a string. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_neutral_a96cecc8cc314b79c1ea60165488294e2}{get\+Tax\+Return}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the tax return rate for the neutral state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_satisfaction_level_ac916348f22f093f78c3880fa1604637e}{\texorpdfstring{$\sim$}{\string~}\+Satisfaction\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_satisfaction_level}{Satisfaction\+Level} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_neutral_adcf233cf645cdf1e42fd612925849983}\label{class_neutral_adcf233cf645cdf1e42fd612925849983} 
+float {\bfseries satisfaction\+Rating}
+\begin{DoxyCompactList}\small\item\em Satisfaction rating associated with this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries satisfaction\+Rating}
+\begin{DoxyCompactList}\small\item\em Current satisfaction rating associated with this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_neutral_a39e8425a93e0efc055d09fd91c6be2ee}\label{class_neutral_a39e8425a93e0efc055d09fd91c6be2ee} 
+float {\bfseries tax\+Return} = 1.\+0
+\begin{DoxyCompactList}\small\item\em Tax return rate associated with the neutral state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_satisfaction_level}{Satisfaction\+Level}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries tax\+Return}
+\begin{DoxyCompactList}\small\item\em Tax return rate associated with the satisfaction level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a neutral level of satisfaction. 
+
+This class inherits from \doxylink{class_satisfaction_level}{Satisfaction\+Level} and represents a neutral state with specific behaviors and attributes, such as a tax return rate and satisfaction rating. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_neutral_a272e544d46bafea337199c53a7b64ea3}\index{Neutral@{Neutral}!enterState@{enterState}}
+\index{enterState@{enterState}!Neutral@{Neutral}}
+\doxysubsubsection{\texorpdfstring{enterState()}{enterState()}}
+{\footnotesize\ttfamily \label{class_neutral_a272e544d46bafea337199c53a7b64ea3} 
+void Neutral\+::enter\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Enters the neutral state. 
+
+This method is used to transition into the neutral state. 
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a1efbc8395b31d9e69604f8521d109876}{Satisfaction\+Level}}.
+
+\Hypertarget{class_neutral_aa2ba3e8cd15067102117854bd699fc86}\index{Neutral@{Neutral}!exitState@{exitState}}
+\index{exitState@{exitState}!Neutral@{Neutral}}
+\doxysubsubsection{\texorpdfstring{exitState()}{exitState()}}
+{\footnotesize\ttfamily \label{class_neutral_aa2ba3e8cd15067102117854bd699fc86} 
+void Neutral\+::exit\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Exits the neutral state. 
+
+This method is used to transition out of the neutral state. 
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a3e4a177ff8b43d0f924b6f51abeac035}{Satisfaction\+Level}}.
+
+\Hypertarget{class_neutral_a93a3f123d0c986dd3fe5cd471a17abc2}\index{Neutral@{Neutral}!getCurrentSatisfactionLevel@{getCurrentSatisfactionLevel}}
+\index{getCurrentSatisfactionLevel@{getCurrentSatisfactionLevel}!Neutral@{Neutral}}
+\doxysubsubsection{\texorpdfstring{getCurrentSatisfactionLevel()}{getCurrentSatisfactionLevel()}}
+{\footnotesize\ttfamily \label{class_neutral_a93a3f123d0c986dd3fe5cd471a17abc2} 
+std\+::string Neutral\+::get\+Current\+Satisfaction\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the current satisfaction level as a string. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current satisfaction level. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a5c14fce4b82b917c6d1b9506326883cd}{Satisfaction\+Level}}.
+
+\Hypertarget{class_neutral_a96cecc8cc314b79c1ea60165488294e2}\index{Neutral@{Neutral}!getTaxReturn@{getTaxReturn}}
+\index{getTaxReturn@{getTaxReturn}!Neutral@{Neutral}}
+\doxysubsubsection{\texorpdfstring{getTaxReturn()}{getTaxReturn()}}
+{\footnotesize\ttfamily \label{class_neutral_a96cecc8cc314b79c1ea60165488294e2} 
+float Neutral\+::get\+Tax\+Return (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the tax return rate for the neutral state. 
+
+\begin{DoxyReturn}{Returns}
+The tax return rate as a float. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_satisfaction_level_a717c1b0a9ebfdcd8175ca9ad0f7eb6a9}{Satisfaction\+Level}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_neutral_8h}{Neutral.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Neutral.\+cpp\end{DoxyCompactItemize}

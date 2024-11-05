@@ -1,0 +1,74 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Resources.h}
+\hypertarget{_resources_8h_source}{}\label{_resources_8h_source}\mbox{\hyperlink{_resources_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ RESOURCES\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RESOURCES\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Wood.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Steel.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Concrete.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}WaterSupply.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}EnergySupply.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Budget.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}WasteCapacity.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resources}{Resources}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_wood}{Wood}}\ wood;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_steel}{Steel}}\ steel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_concrete}{Concrete}}\ concrete;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_water_supply}{WaterSupply}}\ waterSupply;\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_energy_supply}{EnergySupply}}\ energySupply;\ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_budget}{Budget}}\ budget;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_waste_capacity}{WasteCapacity}}\ wasteCapacity;\ \ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_resources_a05010d16a94aa29499afdd9b86083e7c}{Resources}}(\textcolor{keywordtype}{int}\ w\ =\ 0,\ \textcolor{keywordtype}{int}\ s\ =\ 0,\ \textcolor{keywordtype}{int}\ c\ =\ 0,\ \textcolor{keywordtype}{int}\ ws\ =\ 0,\ \textcolor{keywordtype}{int}\ es\ =\ 0,\ \textcolor{keywordtype}{int}\ b\ =\ 0,\ \textcolor{keywordtype}{int}\ wc\ =\ 0)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ :\ wood(w),\ steel(s),\ concrete(c),\ waterSupply(ws),\ energySupply(es),\ budget(b),\ wasteCapacity(wc)\ \{\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_wood}{Wood}}\&\ \mbox{\hyperlink{class_resources_a664d9dba0bd2dbc84f03650ef24b2eea}{getWoodResource}}()\ \{\ \textcolor{keywordflow}{return}\ wood;\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_steel}{Steel}}\&\ \mbox{\hyperlink{class_resources_a8a10510f477e03ca243a8541177c02fd}{getSteelResource}}()\ \{\ \textcolor{keywordflow}{return}\ steel;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_concrete}{Concrete}}\&\ \mbox{\hyperlink{class_resources_a7b66d783ad1218c223efa68594a8f1fa}{getConcreteResource}}()\ \{\ \textcolor{keywordflow}{return}\ concrete;\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_water_supply}{WaterSupply}}\&\ \mbox{\hyperlink{class_resources_a85f9499c74e7e22a3178034910bd4f11}{getWaterSupplyResource}}()\ \{\ \textcolor{keywordflow}{return}\ waterSupply;\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_energy_supply}{EnergySupply}}\&\ \mbox{\hyperlink{class_resources_a2447e1acea68ed76d43cf90c641784c5}{getEnergySupplyResource}}()\ \{\ \textcolor{keywordflow}{return}\ energySupply;\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_budget}{Budget}}\&\ \mbox{\hyperlink{class_resources_a649002c5bef983d574bdd54b73e7caf7}{getBudgetResource}}()\ \{\ \textcolor{keywordflow}{return}\ budget;\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_waste_capacity}{WasteCapacity}}\&\ \mbox{\hyperlink{class_resources_ac242535cdb7dcad8d989b1586e33239e}{getWasteCapacityResource}}()\ \{\ \textcolor{keywordflow}{return}\ wasteCapacity;\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_wood}{Wood}}\&\ \mbox{\hyperlink{class_resources_a6cb65e709b54e2e51badc9113f6e6b43}{getWoodResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ wood;\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_steel}{Steel}}\&\ \mbox{\hyperlink{class_resources_a5a939ba8d135ee5d00c0e50209c9cccb}{getSteelResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ steel;\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_concrete}{Concrete}}\&\ \mbox{\hyperlink{class_resources_abd84a75e9c135f6bb81730393cc231f4}{getConcreteResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ concrete;\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_water_supply}{WaterSupply}}\&\ \mbox{\hyperlink{class_resources_adc1bd666594d196c38aead04db542830}{getWaterSupplyResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ waterSupply;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_energy_supply}{EnergySupply}}\&\ \mbox{\hyperlink{class_resources_a169b42056b11bc50f44bdad1e0df5a05}{getEnergySupplyResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ energySupply;\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_budget}{Budget}}\&\ \mbox{\hyperlink{class_resources_afe17a1508c30c4118e7e452eb2a75dfb}{getBudgetResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ budget;\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_waste_capacity}{WasteCapacity}}\&\ \mbox{\hyperlink{class_resources_a87cb1aeb7d7482602e01acf488fbc76c}{getWasteCapacityResource}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ wasteCapacity;\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_ac03ea04eac0ef79ac4c771bdd4dff8f4}{setWood}}(\textcolor{keywordtype}{int}\ amount)\ \{\ wood.setAmount(amount);\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_a687c9466904967190659f64e8495a74b}{setSteel}}(\textcolor{keywordtype}{int}\ amount)\ \{\ steel.setAmount(amount);\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_a748cbd2d1740329fde6f5464126b9497}{setConcrete}}(\textcolor{keywordtype}{int}\ amount)\ \{\ concrete.setAmount(amount);\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_a326e96d4f93c1cc5c123a6c758502fae}{setWaterSupply}}(\textcolor{keywordtype}{int}\ amount)\ \{\ waterSupply.setAmount(amount);\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_aee4a121584aa2569a6deae574c7c94c3}{setEnergySupply}}(\textcolor{keywordtype}{int}\ amount)\ \{\ energySupply.setAmount(amount);\ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_ad6aa6410fab81cec948920bfbb155831}{setBudget}}(\textcolor{keywordtype}{int}\ amount)\ \{\ budget.setAmount(amount);\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_resources_a9d390174e160879ae84d4f2b8bcaaa49}{setWasteCapacity}}(\textcolor{keywordtype}{int}\ amount)\ \{\ wasteCapacity.setAmount(amount);\ \}}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCES\_H}}
+
+\end{DoxyCode}

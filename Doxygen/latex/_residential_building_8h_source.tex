@@ -1,0 +1,41 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Residential\+Building.h}
+\hypertarget{_residential_building_8h_source}{}\label{_residential_building_8h_source}\mbox{\hyperlink{_residential_building_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ RESIDENTIALBUILDING\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ RESIDENTIALBUILDING\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_residential_building}{ResidentialBuilding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building}{Building}}\{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::list<Citizen*>\ tenants;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//protected:\ Changed\ to\ accomodate\ factory}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_residential_building_a9232b6754a2ce20bc48d425aa4df703b}{\string~ResidentialBuilding}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_residential_building_a3d49adc21132fb559c6b65ba5834ec6b}{ResidentialBuilding}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_residential_building_a3d49adc21132fb559c6b65ba5834ec6b}{ResidentialBuilding}}(std::unique\_ptr<BuildingState>\ s,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_residential_building_a90b720900bfee33afbd2db26f093dc55}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_residential_building_a1951e23b8e545d04e13bc1226c33beeb}{provideService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_residential_building_a639f8bf8a9b183d1d88d3c04054d611b}{getCost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_residential_building_a1dc054abe1a659182c015256de27c324}{addCitizens}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::list<Citizen*>\ \mbox{\hyperlink{class_residential_building_af2c2e6f3ca226eccaedaa58fdf20dc53}{getTenants}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_residential_building}{ResidentialBuilding}}*\ \mbox{\hyperlink{class_residential_building_a011855bb550244f3823fbdf46e8819af}{clone}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESIDENTIALBUILDING\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Traffic\+Building.h}
+\hypertarget{_traffic_building_8h_source}{}\label{_traffic_building_8h_source}\mbox{\hyperlink{_traffic_building_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ TRAFFICBUILDING\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ TRAFFICBUILDING\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ TAXI,\ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ BUS,\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ TRAIN,\ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ AIRPORT\ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_traffic_building}{TrafficBuilding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building}{Building}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ tType;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ cost;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_traffic_building_a28077ceec24efc6f22787c75f098e602}{TrafficBuilding}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}},\ \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ transportType,\ \textcolor{keywordtype}{float}\ cost)\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_building}{Building}}(\mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}}),\ tType(transportType),\ cost(cost)\ \{\}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_traffic_building_a3b2512e1adf05de94da93a9c35800919}{TrafficBuilding}}(std::unique\_ptr<BuildingState>\ s,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}},\ \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ transportType,\ \textcolor{keywordtype}{float}\ cost)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_building}{Building}}(\mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}}),\ tType(transportType),\ cost(cost)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{setState}}(std::move(s));}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_traffic_building_acdc02b77d9dab81f1d19d29c93bc0e28}{provideService}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Transportation\ has\ been\ provided\ to\ neighbouring\ buildings.\(\backslash\)nIncrease\ citizen\ satisfaction"{}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Call\ function\ to\ increase\ satisfaction}}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ std::string\ \mbox{\hyperlink{class_traffic_building_acec0495fd84030ebc4ed19ed31eb60a6}{getType}}()\{}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}TrafficBuilding"{}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_traffic_building_a6cef369c6430d5028384bbfc2f8ec620}{getCost}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cost;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_traffic_building_8h_aca1e72535e7f260e54ed8bbf984dade9}{TransportType}}\ \mbox{\hyperlink{class_traffic_building_a80a619e4287d5c8cf57cb061b634ef68}{getTransportType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tType;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_traffic_building}{TrafficBuilding}}*\ \mbox{\hyperlink{class_traffic_building_a762f56701ab3a4d7f232951d5162a77f}{clone}}()\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_traffic_building}{TrafficBuilding}}*\ temp\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_traffic_building_a28077ceec24efc6f22787c75f098e602}{TrafficBuilding}}(this-\/>\mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}},\ this-\/>\mbox{\hyperlink{class_traffic_building_a80a619e4287d5c8cf57cb061b634ef68}{getTransportType}}(),\ this-\/>cost);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRAFFICBUILDING\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Tax\+Manager.h}
+\hypertarget{_tax_manager_8h_source}{}\label{_tax_manager_8h_source}\mbox{\hyperlink{_tax_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ TAXMANAGER\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ TAXMANAGER\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_retrieve_tax_8h}{RetrieveTax.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_subject_8h}{Subject.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commercial_building_8h}{CommercialBuilding.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_industrial_building_8h}{IndustrialBuilding.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_residential_building_8h}{ResidentialBuilding.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tax_manager}{TaxManager}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_subject}{Subject}}\{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::list<CommercialBuilding*>\ commercialBuildings;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::list<IndustrialBuilding*>\ industrialBuildings;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::list<ResidentialBuilding*>\ residentialBuildings;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_retrieve_tax}{RetrieveTax}}*\ taxStrategy;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ currentTotalTaxRate\ =\ 20.0;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_tax_manager_a82370258e6b5b35dfe7cac25454bb488}{\string~TaxManager}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_tax_manager_ab14dd20d978df8f9fd1a58332d72b93f}{calculateTax}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tax_manager_ad714dfab0c1a834595472e922b99a534}{updateTotalTaxRate}}(\textcolor{keywordtype}{float}\ newRate);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tax_manager_a35a14bb76248e6cdd49ff0ecef185900}{addResidential}}(\mbox{\hyperlink{class_residential_building}{ResidentialBuilding}}*\ residential);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tax_manager_abe1dbf88afb8b703310587981e4c715a}{addIndustrial}}(\mbox{\hyperlink{class_industrial_building}{IndustrialBuilding}}*\ industrial);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tax_manager_acb4c3ad502fdb35027c09feba18f74d3}{addCommercial}}(\mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}*\ commercial);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tax_manager_a51ef0d0caa80905327d49e56cee90c69}{chooseTaxMethod}}(\mbox{\hyperlink{class_retrieve_tax}{RetrieveTax}}*\ taxMethod);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TAXMANAGER\_H}}
+
+\end{DoxyCode}

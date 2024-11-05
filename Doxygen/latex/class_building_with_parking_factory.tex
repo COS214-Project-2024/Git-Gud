@@ -1,0 +1,79 @@
+\doxysection{Building\+With\+Parking\+Factory Class Reference}
+\hypertarget{class_building_with_parking_factory}{}\label{class_building_with_parking_factory}\index{BuildingWithParkingFactory@{BuildingWithParkingFactory}}
+Inheritance diagram for Building\+With\+Parking\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_building_with_parking_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_building_with_parking_factory_a3e5faa0db7612c7748bee6ba9f8ae102}\label{class_building_with_parking_factory_a3e5faa0db7612c7748bee6ba9f8ae102} 
+{\bfseries Building\+With\+Parking\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_building}{Building} With Parking Factory object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_building_with_parking}{Building\+With\+Parking}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_with_parking_factory_a286164b0f03224f220cdafdc6fd17897}{upgrade\+Building}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Method used to decorate a building and to return a pointer to that object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_building_with_parking}{Building\+With\+Parking}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_with_parking_factory_ac030d48f0fd1f16e4f00c80832de66f7}{clone\+Building}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Method sued to return a pointer to a copy of the object of this type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_factory}{Building\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_building_factory_acb727d48708a6f14b7e383bd5c81ad45}{construct\+Building}} ()
+\begin{DoxyCompactList}\small\item\em Method used to retrieve a Building-\/object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_building}{Building} Factory object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_building_factory}{Building\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries Rmanager}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_resource_manager}{Resource\+Manager} used to check for available resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_building_with_parking_factory_ac030d48f0fd1f16e4f00c80832de66f7}\index{BuildingWithParkingFactory@{BuildingWithParkingFactory}!cloneBuilding@{cloneBuilding}}
+\index{cloneBuilding@{cloneBuilding}!BuildingWithParkingFactory@{BuildingWithParkingFactory}}
+\doxysubsubsection{\texorpdfstring{cloneBuilding()}{cloneBuilding()}}
+{\footnotesize\ttfamily \label{class_building_with_parking_factory_ac030d48f0fd1f16e4f00c80832de66f7} 
+\mbox{\hyperlink{class_building_with_parking}{Building\+With\+Parking}} \texorpdfstring{$\ast$}{*} Building\+With\+Parking\+Factory\+::clone\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method sued to return a pointer to a copy of the object of this type. 
+
+\begin{DoxyReturn}{Returns}
+Building\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_building_factory_a536e7d3552dc6ce2108b7364a6fe7e44}{Building\+Factory}}.
+
+\Hypertarget{class_building_with_parking_factory_a286164b0f03224f220cdafdc6fd17897}\index{BuildingWithParkingFactory@{BuildingWithParkingFactory}!upgradeBuilding@{upgradeBuilding}}
+\index{upgradeBuilding@{upgradeBuilding}!BuildingWithParkingFactory@{BuildingWithParkingFactory}}
+\doxysubsubsection{\texorpdfstring{upgradeBuilding()}{upgradeBuilding()}}
+{\footnotesize\ttfamily \label{class_building_with_parking_factory_a286164b0f03224f220cdafdc6fd17897} 
+\mbox{\hyperlink{class_building_with_parking}{Building\+With\+Parking}} \texorpdfstring{$\ast$}{*} Building\+With\+Parking\+Factory\+::upgrade\+Building (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method used to decorate a building and to return a pointer to that object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Building\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_building_factory_a1ba0326f9ca2497aecf02c92de78de7b}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_building_with_parking_factory_8h}{Building\+With\+Parking\+Factory.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Building\+With\+Parking\+Factory.\+cpp\end{DoxyCompactItemize}

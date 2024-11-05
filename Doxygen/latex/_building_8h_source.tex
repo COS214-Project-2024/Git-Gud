@@ -1,0 +1,83 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Building.h}
+\hypertarget{_building_8h_source}{}\label{_building_8h_source}\mbox{\hyperlink{_building_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ BUILDING\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BUILDING\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_subject_8h}{Subject.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_citizen_8h}{Citizen.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_under_construction_8h}{UnderConstruction.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_state_8h}{BuildingState.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ \{LUXURY,\ FOOD,\ GENERAL,\ NONE\};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_building_8h_ade54467363c23fe3e712d06071b75565}{Industry}}\ \{MANUFACTURING,\ ENERGY,\ TECHNOLOGY\};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building}{Building}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_subject}{Subject}}\{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::unique\_ptr<BuildingState>\ \mbox{\hyperlink{class_building_a3423dd1d5190491c17e56d6f863cd7e2}{buildingState}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::future<void>\ \mbox{\hyperlink{class_building_a58b6c57e058f5585d1691a625862de3e}{constructionFuture}};\ \textcolor{comment}{//used\ as\ part\ of\ the\ simulateConstruction()\ function}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_building_ab570ec0a203ee621f9f522c678a147d9}{Building}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_building_ab570ec0a203ee621f9f522c678a147d9}{Building}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_building_a8b013de56a31a97bd8dba262ce984606}{getType}}()\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building_ab675c6a382e110b84031956cda708439}{\string~Building}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_a276bdff1b5d7c81c1c52da749947dfd1}{provideService}}()=0;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_building_a8c8ee8c2668d05533b6cd4e9b5e9fce1}{getCost}}()\ =\ 0;\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_aa958225a2589dc1d1e9ba196c35b610c}{setState}}(std::unique\_ptr<BuildingState>\ s);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_a1f69e898aa57bd0dbfd432fae0d8eda2}{repairBuilding}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_building_a4f0602265fda2abe42ec661099cb8b86}{currentState}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_aeaef971c807cbf4ab126f5684ae9c197}{simulateConstruction}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Added\ these\ methods\ to\ ensure\ the\ type\ is\ preserved\ after\ decorated}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_ac03a90b80d56a13217b780240ecdd035}{getNumStories}}()\{\textcolor{keywordflow}{return}\ 0;\};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ \mbox{\hyperlink{class_building_a35485c9e194d5be384a6f37e52f89524}{getBusinessType}}()\{\textcolor{keywordflow}{return}\ NONE;\};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_a1fd28496e5deb742b3397227a9d97646}{addEmployees}}()\{\};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_ab3e6b3234b02233267ed5ae6b2cc8ea1}{getSize}}()\{\textcolor{keywordflow}{return}\ 0;\};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_building_a86512d1f4c823c9c06d999e0ade35840}{getPollutionLevel}}()\{\textcolor{keywordflow}{return}\ 0;\};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_a76dfb30bdb9d741ec1d572084a4b37cb}{addCitizens}}()\{\};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::list<Citizen*>\ \mbox{\hyperlink{class_building_afc64d7b44ab8c4e7aef8f4ff1dc0f920}{getTenants}}()\{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ std::list<Citizen*>\ c;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_building_a17e7c262e271e06b2393032caf3e8e0c}{addWorker}}()\{\};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_building}{Building}}*\ \mbox{\hyperlink{class_building_a5525f0851f4f51618f8c51ad9ac8d7af}{clone}}()=0;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a5eeee6f6d62a67c3c1c085f26b6b7540}{getCapacity}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUILDING\_H}}
+
+\end{DoxyCode}

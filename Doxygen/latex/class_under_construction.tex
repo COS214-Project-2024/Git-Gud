@@ -1,0 +1,127 @@
+\doxysection{Under\+Construction Class Reference}
+\hypertarget{class_under_construction}{}\label{class_under_construction}\index{UnderConstruction@{UnderConstruction}}
+
+
+Class representing the "{}\+Under Construction"{} state of a building.  
+
+
+
+
+{\ttfamily \#include $<$Under\+Construction.\+h$>$}
+
+Inheritance diagram for Under\+Construction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_under_construction}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_under_construction_a2b217ad298a5e6004fd6ea7b82dfa9d1}\label{class_under_construction_a2b217ad298a5e6004fd6ea7b82dfa9d1} 
+{\bfseries Under\+Construction} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_under_construction}{Under\+Construction} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_under_construction_a50280f4cd000afb46efc51a29b61af94}\label{class_under_construction_a50280f4cd000afb46efc51a29b61af94} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Under\+Construction} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_under_construction}{Under\+Construction} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_under_construction_a5bc68eb74a3ed7d440b7e58f4776f7bf}{enter\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Method called when entering the Under Construction state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_under_construction_a366bd155c635be8ff49b62d5b131e94b}{exit\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Method called when exiting the Under Construction state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_under_construction_a8780327d819e7dab45e288b5dc5fa4e8}{next\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Transition to the next state from Under Construction. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_under_construction_a2eae51ce5d3eab98c2b23d818411dab3}{get\+Current\+State}} () override
+\begin{DoxyCompactList}\small\item\em Get the current state as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+State} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_building_state}{Building\+State} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the "{}\+Under Construction"{} state of a building. 
+
+This class defines the behavior of a building while it is in the under construction state. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_under_construction_a5bc68eb74a3ed7d440b7e58f4776f7bf}\index{UnderConstruction@{UnderConstruction}!enterState@{enterState}}
+\index{enterState@{enterState}!UnderConstruction@{UnderConstruction}}
+\doxysubsubsection{\texorpdfstring{enterState()}{enterState()}}
+{\footnotesize\ttfamily \label{class_under_construction_a5bc68eb74a3ed7d440b7e58f4776f7bf} 
+void Under\+Construction\+::enter\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called when entering the Under Construction state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} that is transitioning into this state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_a514375c73d1e6a6373fbe7c188a10d70}{Building\+State}}.
+
+\Hypertarget{class_under_construction_a366bd155c635be8ff49b62d5b131e94b}\index{UnderConstruction@{UnderConstruction}!exitState@{exitState}}
+\index{exitState@{exitState}!UnderConstruction@{UnderConstruction}}
+\doxysubsubsection{\texorpdfstring{exitState()}{exitState()}}
+{\footnotesize\ttfamily \label{class_under_construction_a366bd155c635be8ff49b62d5b131e94b} 
+void Under\+Construction\+::exit\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method called when exiting the Under Construction state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} that is transitioning out of this state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_a2b5fb65b89358607c5f9ef351cbe42ad}{Building\+State}}.
+
+\Hypertarget{class_under_construction_a2eae51ce5d3eab98c2b23d818411dab3}\index{UnderConstruction@{UnderConstruction}!getCurrentState@{getCurrentState}}
+\index{getCurrentState@{getCurrentState}!UnderConstruction@{UnderConstruction}}
+\doxysubsubsection{\texorpdfstring{getCurrentState()}{getCurrentState()}}
+{\footnotesize\ttfamily \label{class_under_construction_a2eae51ce5d3eab98c2b23d818411dab3} 
+std\+::string Under\+Construction\+::get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current state as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The name of the current state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ab4dfe9fa9ee90f9d651c66bbc9823d4e}{Building\+State}}.
+
+\Hypertarget{class_under_construction_a8780327d819e7dab45e288b5dc5fa4e8}\index{UnderConstruction@{UnderConstruction}!nextState@{nextState}}
+\index{nextState@{nextState}!UnderConstruction@{UnderConstruction}}
+\doxysubsubsection{\texorpdfstring{nextState()}{nextState()}}
+{\footnotesize\ttfamily \label{class_under_construction_a8780327d819e7dab45e288b5dc5fa4e8} 
+void Under\+Construction\+::next\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Transition to the next state from Under Construction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} that is transitioning to the next state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_adcbf504c9fbfc4901e9e6cf31e199f09}{Building\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_under_construction_8h}{Under\+Construction.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Under\+Construction.\+cpp\end{DoxyCompactItemize}

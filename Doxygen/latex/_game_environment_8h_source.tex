@@ -1,0 +1,257 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Game\+Environment.h}
+\hypertarget{_game_environment_8h_source}{}\label{_game_environment_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEENVIRONMENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEENVIRONMENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}UtilityGridNode.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_industrial_building_8h}{IndustrialBuilding.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commercial_building_8h}{CommercialBuilding.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_residential_building_8h}{ResidentialBuilding.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_landmark_8h}{Landmark.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}BuildingIterator.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}BuildingIteratorLinear.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}BuildingIteratorRadial.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}UtilityIterator.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}UtilityIteratorLinear.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}UtilityIteratorRadial.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\#include\ "{}Utility.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_environment}{GameEnvironment}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}***\ buildingGrid;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}***\ utilityGrid;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ rows,\ cols;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ startingPoint[2];\ \textcolor{comment}{//\ Center\ of\ the\ map\ as\ the\ initial\ off-\/ramp}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ resizeGrid(\textcolor{keywordtype}{int}\ newRows,\ \textcolor{keywordtype}{int}\ newCols,\ \textcolor{keywordtype}{string}\ direction)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ offset\ for\ grid\ translation}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rowOffset\ =\ (direction\ ==\ \textcolor{stringliteral}{"{}North"{}})\ ?\ newRows\ -\/\ rows\ :\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ colOffset\ =\ (direction\ ==\ \textcolor{stringliteral}{"{}West"{}})\ ?\ newCols\ -\/\ cols\ :\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allocate\ new\ grids}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}***\ newBuildingGrid\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_building}{Building}}**[newRows];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}***\ newUtilityGrid\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}**[newRows];}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ newRows;\ i++)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ newBuildingGrid[i]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_building}{Building}}*[newCols];}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ newUtilityGrid[i]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}*[newCols];}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ newCols;\ j++)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newBuildingGrid[i][j]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newUtilityGrid[i][j]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transfer\ existing\ grid\ data\ to\ the\ new\ grid}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ +\ rowOffset\ >=\ 0\ \&\&\ j\ +\ colOffset\ >=\ 0\ \&\&\ i\ +\ rowOffset\ <\ newRows\ \&\&\ j\ +\ colOffset\ <\ newCols)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newBuildingGrid[i\ +\ rowOffset][j\ +\ colOffset]\ =\ buildingGrid[i][j];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newUtilityGrid[i\ +\ rowOffset][j\ +\ colOffset]\ =\ utilityGrid[i][j];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Free\ the\ memory\ of\ the\ old\ grids}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ buildingGrid[i];}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ utilityGrid[i];}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ buildingGrid;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ utilityGrid;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ member\ variables}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ buildingGrid\ =\ newBuildingGrid;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ utilityGrid\ =\ newUtilityGrid;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ rows\ =\ newRows;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ cols\ =\ newCols;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ startingPoint[0]\ +=\ rowOffset;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ startingPoint[1]\ +=\ colOffset;}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ checkCoherence(\textcolor{keywordtype}{int}\ \&x,\ \textcolor{keywordtype}{int}\ \&y)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ temp;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ cols;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ resizeGrid(rows,\ cols\ *\ 1.1,\ \textcolor{stringliteral}{"{}West"{}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ (cols\ -\/\ temp);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >=\ cols)\ resizeGrid(rows,\ cols\ *\ 1.1,\ \textcolor{stringliteral}{"{}East"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ <\ 0)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ rows;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ resizeGrid(rows\ *\ 1.1,\ cols,\ \textcolor{stringliteral}{"{}North"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ (rows\ -\/\ temp);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >=\ rows)\ resizeGrid(rows\ *\ 1.1,\ cols,\ \textcolor{stringliteral}{"{}South"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ adjToRoad(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((x\ +\ 1\ <\ cols\ \&\&\ utilityGrid[y][x\ +\ 1]\ \&\&\ utilityGrid[y][x\ +\ 1]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (x\ -\/\ 1\ >=\ 0\ \&\&\ utilityGrid[y][x\ -\/\ 1]\ \&\&\ utilityGrid[y][x\ -\/\ 1]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (y\ +\ 1\ <\ rows\ \&\&\ utilityGrid[y\ +\ 1][x]\ \&\&\ utilityGrid[y\ +\ 1][x]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (y\ -\/\ 1\ >=\ 0\ \&\&\ utilityGrid[y\ -\/\ 1][x]\ \&\&\ utilityGrid[y\ -\/\ 1][x]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (x\ +\ 1\ <\ cols\ \&\&\ y\ +\ 1\ <\ rows\ \&\&\ utilityGrid[y\ +\ 1][x\ +\ 1]\ \&\&\ utilityGrid[y\ +\ 1][x\ +\ 1]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (x\ -\/\ 1\ >=\ 0\ \&\&\ y\ -\/\ 1\ >=\ 0\ \&\&\ utilityGrid[y\ -\/\ 1][x\ -\/\ 1]\ \&\&\ utilityGrid[y\ -\/\ 1][x\ -\/\ 1]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (x\ +\ 1\ <\ cols\ \&\&\ y\ -\/\ 1\ >=\ 0\ \&\&\ utilityGrid[y\ -\/\ 1][x\ +\ 1]\ \&\&\ utilityGrid[y\ -\/\ 1][x\ +\ 1]-\/>getHasRoad())\ ||}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (x\ -\/\ 1\ >=\ 0\ \&\&\ y\ +\ 1\ <\ rows\ \&\&\ utilityGrid[y\ +\ 1][x\ -\/\ 1]\ \&\&\ utilityGrid[y\ +\ 1][x\ -\/\ 1]-\/>getHasRoad()));}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_game_environment}{GameEnvironment}}()\ :\ rows(50),\ cols(50)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ buildingGrid\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_building}{Building}}**[rows];}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ utilityGrid\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}**[rows];}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ buildingGrid[i]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_building}{Building}}*[cols];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ utilityGrid[i]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}*[cols];}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buildingGrid[i][j]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ utilityGrid[i][j]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ startingPoint[0]\ =\ 24;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ startingPoint[1]\ =\ 24;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ utilityGrid[startingPoint[0]][startingPoint[1]]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ utilityGrid[startingPoint[0]][startingPoint[1]]-\/>createRoad();}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_game_environment}{\string~GameEnvironment}}()\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ buildingGrid[i][j];}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ utilityGrid[i][j];}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ buildingGrid[i];}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ utilityGrid[i];}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ buildingGrid;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ utilityGrid;}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{int}\ getRows()\ \{\ \textcolor{keywordflow}{return}\ rows;\ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ getCols()\ \{\ \textcolor{keywordflow}{return}\ cols;\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ add(\mbox{\hyperlink{class_building}{Building}}*\ building,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ checkCoherence(x,\ y);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingGrid[y][x]\ ||\ !adjToRoad(x,\ y))\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ buildingGrid[y][x]\ =\ building;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ add(\mbox{\hyperlink{class_utility}{Utility}}*\ utility,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ checkCoherence(x,\ y);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!utilityGrid[y][x])\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ utilityGrid[y][x]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}();}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ utilityGrid[y][x]-\/>add(utility);}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{bool}\ remove(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{string}\ type\ =\ \textcolor{stringliteral}{"{}unspecified"{}})\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0\ ||\ x\ >=\ cols\ ||\ y\ <\ 0\ ||\ y\ >=\ rows)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}unspecified"{}})\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingGrid[y][x])\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ buildingGrid[y][x];}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buildingGrid[y][x]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ utilityGrid[y][x]\ \&\&\ utilityGrid[y][x]-\/>remove(type);}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{bool}\ decouple(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 0\ ||\ x\ >=\ cols\ ||\ y\ <\ 0\ ||\ y\ >=\ rows)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingGrid[y][x])\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ buildingGrid[y][x]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{string}\ printTerminal(\textcolor{keywordtype}{int}\ currRow)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ output\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingGrid[currRow][j]\ ==\ \textcolor{keyword}{nullptr}\ \&\&\ utilityGrid[currRow][j]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingGrid[currRow][j]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buildingGrid[currRow][j]-\/>getType()\ ==\ \textcolor{stringliteral}{"{}CommercialBuilding"{}})\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}C"{}};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buildingGrid[currRow][j]-\/>getType()\ ==\ \textcolor{stringliteral}{"{}IndustrialBuilding"{}})\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}I"{}};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buildingGrid[currRow][j]-\/>getType()\ ==\ \textcolor{stringliteral}{"{}ResidentialBuilding"{}})\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}R"{}};}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (buildingGrid[currRow][j]-\/>getType()\ ==\ \textcolor{stringliteral}{"{}Landmark"{}})\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}¤"{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (utilityGrid[currRow][j]\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ utilityGrid[currRow][j]-\/>getHasRoad())}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}\#"{}};}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ printToFile(\textcolor{keywordtype}{string}\ filename\ =\ \textcolor{stringliteral}{"{}map.txt"{}})\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ ofstream\ file(filename);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ (buildingGrid[i][j]\ ?\ \textcolor{stringliteral}{"{}B"{}}\ :\ (utilityGrid[i][j]\ ?\ \textcolor{stringliteral}{"{}U"{}}\ :\ \textcolor{stringliteral}{"{}."{}}));}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ endl;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ createRoad(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ checkCoherence(x,\ y);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!utilityGrid[y][x])\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ utilityGrid[y][x]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ utilityGrid[y][x]-\/>createRoad();}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{class_building_iterator_radial}{BuildingIteratorRadial}}*\ createRadBuildItr(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ radius)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_building_iterator_radial}{BuildingIteratorRadial}}(x,\ y,\ radius,\ buildingGrid,\ rows,\ cols);}
+\DoxyCodeLine{00236\ \ \ \ \ \};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{class_building_iterator_linear}{BuildingIteratorLinear}}*\ createLinBuildItr()\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_building_iterator_linear}{BuildingIteratorLinear}}(buildingGrid,\ rows,\ cols);}
+\DoxyCodeLine{00240\ \ \ \ \ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{class_utility_iterator_radial}{UtilityIteratorRadial}}*\ createRadUtilItr(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ radius)\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_utility_iterator_radial}{UtilityIteratorRadial}}(utilityGrid,\ x,\ y,\ radius,\ rows,\ cols);}
+\DoxyCodeLine{00244\ \ \ \ \ \};}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{class_utility_iterator_linear}{UtilityIteratorLinear}}*\ createLinUtilItr()\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_utility_iterator_linear}{UtilityIteratorLinear}}(utilityGrid,\ rows,\ cols);}
+\DoxyCodeLine{00248\ \ \ \ \ \};}
+\DoxyCodeLine{00249\ \};}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEENVIRONMENT\_H}}
+
+\end{DoxyCode}

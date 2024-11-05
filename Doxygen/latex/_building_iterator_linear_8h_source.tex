@@ -1,0 +1,91 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Building\+Iterator\+Linear.h}
+\hypertarget{_building_iterator_linear_8h_source}{}\label{_building_iterator_linear_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUILDINGITERATORLINEAR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUILDINGITERATORLINEAR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}BuildingIterator.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_building_iterator_linear}{BuildingIteratorLinear}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building_iterator}{BuildingIterator}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_building_iterator_linear}{BuildingIteratorLinear}}(\mbox{\hyperlink{class_building}{Building}}***\ array,\ \textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ this-\/>array\ =\ array;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ this-\/>rows\ =\ rows;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ this-\/>cols\ =\ cols;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ row\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ col\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>array[i][j]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\ =\ i;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col\ =\ j;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ row\ =\ -\/1;\ \ \textcolor{comment}{//\ No\ valid\ start\ position\ found}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ col\ =\ -\/1;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_building_iterator_linear}{\string~BuildingIteratorLinear}}()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ array\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasNext()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ ==\ -\/1\ ||\ col\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempRow\ =\ row;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempCol\ =\ col\ +\ 1;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempRow\ <\ rows)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempCol\ <\ cols)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>array[tempRow][tempCol]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempCol++;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ tempRow++;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ tempCol\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ next()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ ==\ -\/1\ ||\ col\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \ \textcolor{comment}{//\ Already\ at\ the\ end,\ do\ nothing}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempRow\ =\ row;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempCol\ =\ col\ +\ 1;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempRow\ <\ rows)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempCol\ <\ cols)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>array[tempRow][tempCol]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\ =\ tempRow;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col\ =\ tempCol;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempCol++;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ tempRow++;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ tempCol\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ row\ =\ -\/1;\ \ \textcolor{comment}{//\ Reached\ the\ end,\ no\ more\ elements}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ col\ =\ -\/1;}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_building}{Building}}*\ current()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ ==\ -\/1\ ||\ col\ ==\ -\/1\ ||\ this-\/>array[row][col]\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>array[row][col];}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BUILDINGITERATORLINEAR\_H}}
+
+\end{DoxyCode}

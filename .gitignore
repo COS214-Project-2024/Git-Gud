@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+googletest/
+build/
+CMakeLists.txt
+Example.cpp
+Example.hpp
+test.txt
+GameEnvironment.txt
+lukasTestingMain.cpp
+unitTestingGE.cpp
+tasks.json
+ExampleTests.cpp
+test_PrototypeManager
+makefile

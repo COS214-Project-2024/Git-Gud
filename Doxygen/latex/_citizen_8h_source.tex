@@ -1,0 +1,54 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Citizen.h}
+\hypertarget{_citizen_8h_source}{}\label{_citizen_8h_source}\mbox{\hyperlink{_citizen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CITIZEN\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CITIZEN\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_satisfaction_level_8h}{SatisfactionLevel.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_subject_8h}{Subject.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ChangeData.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_satisfaction_level}{SatisfactionLevel}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_citizen}{Citizen}}\{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_satisfaction_level}{SatisfactionLevel}}*\ satisfactionLevel;\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasJob;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_citizen_a3951355c9f2d7260debedd29b163dbe6}{Citizen}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_citizen_a5232bf42d9a211d81ce3e5e3cefcf04c}{\string~Citizen}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_citizen_a3951355c9f2d7260debedd29b163dbe6}{Citizen}}(\textcolor{keywordtype}{bool}\ hasJob);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a1d91eec7724c56c046b00e56f13c5b19}{update}}(\mbox{\hyperlink{struct_change_data}{ChangeData}}\ changeData);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_citizen_a1b24583563803aceb58ea4522bfbfefc}{getHasJob}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_aed78b71d19c34bd5d7f099b935a05702}{setJobStatus}}(\textcolor{keywordtype}{bool}\ jobStatus);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ update(ChangeData\ changeData);}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a6038eb90413185bd50a4d645c0c05906}{handleTaxChange}}(\textcolor{keywordtype}{float}\ newTaxRate);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_af51cef24d7c35706a8b4753a406b4572}{handleBuildingConstructed}}(\textcolor{keywordtype}{float}\ BuildingNum);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a44e2698c6e0e889716154d499ef843d3}{handleServiceProvided}}(\textcolor{keywordtype}{float}\ UtilityFloat);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_satisfaction_level}{SatisfactionLevel}}*\ \mbox{\hyperlink{class_citizen_a8cd003b04e1a39f77ba73a9e4df79b22}{getSatisfactionLevel}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a252fb286b4314f871f1c642a22405f6d}{setSatisfactionLevel}}(\mbox{\hyperlink{class_satisfaction_level}{SatisfactionLevel}}*\ satisfactionLevel);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_citizen_a299bcaa9c38ed2472edb173731ea60a3}{updateSatisfactionLevel}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CITIZEN\_H}}
+
+\end{DoxyCode}

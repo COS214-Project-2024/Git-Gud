@@ -1,0 +1,90 @@
+\doxysection{Utility\+Factory Class Reference}
+\hypertarget{class_utility_factory}{}\label{class_utility_factory}\index{UtilityFactory@{UtilityFactory}}
+Inheritance diagram for Utility\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.964912cm]{class_utility_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_utility_factory_af5c1f2af61a6f1f5a01e3c80d56c937d}\label{class_utility_factory_af5c1f2af61a6f1f5a01e3c80d56c937d} 
+{\bfseries Utility\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_utility_factory}{Utility\+Factory}. \end{DoxyCompactList}\item 
+\Hypertarget{class_utility_factory_a4a7960717fa0cb9e1ce2d0efac5e3297}\label{class_utility_factory_a4a7960717fa0cb9e1ce2d0efac5e3297} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Utility\+Factory} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{class_utility_factory}{Utility\+Factory}, allowing derived classes to clean up. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_utility}{Utility}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_utility_factory_ae1f2e0089f810531160a4439c8e902b0}{create\+Utility}} (int capacity, int maintenance\+Cost)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to create a \doxylink{class_utility}{Utility} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_utility_factory_aa2ab5c03a2747c928781ecb12375bfc5}{adjust\+Resource}} (const std\+::string \&resource\+Type, int amount)
+\begin{DoxyCompactList}\small\item\em Helper method to adjust resource levels in the \doxylink{class_resource_manager}{Resource\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utility_factory_a53290e529ca3e09b6ef39074d120c9dc}{spend\+Budget}} (int amount)
+\begin{DoxyCompactList}\small\item\em Helper method to reduce the budget in the \doxylink{class_resource_manager}{Resource\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_utility_factory_aa2ab5c03a2747c928781ecb12375bfc5}\index{UtilityFactory@{UtilityFactory}!adjustResource@{adjustResource}}
+\index{adjustResource@{adjustResource}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{adjustResource()}{adjustResource()}}
+{\footnotesize\ttfamily \label{class_utility_factory_aa2ab5c03a2747c928781ecb12375bfc5} 
+void Utility\+Factory\+::adjust\+Resource (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{resource\+Type}{, }\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Helper method to adjust resource levels in the \doxylink{class_resource_manager}{Resource\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Type} & The type of resource to adjust (e.\+g., "{}water\+Supply"{}, "{}energy\+Supply"{}). \\
+\hline
+{\em amount} & The amount to adjust (positive to add, negative to subtract). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_utility_factory_ae1f2e0089f810531160a4439c8e902b0}\index{UtilityFactory@{UtilityFactory}!createUtility@{createUtility}}
+\index{createUtility@{createUtility}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{createUtility()}{createUtility()}}
+{\footnotesize\ttfamily \label{class_utility_factory_ae1f2e0089f810531160a4439c8e902b0} 
+virtual \mbox{\hyperlink{class_utility}{Utility}} \texorpdfstring{$\ast$}{*} Utility\+Factory\+::create\+Utility (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{int}]{maintenance\+Cost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to create a \doxylink{class_utility}{Utility} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The capacity of the utility. \\
+\hline
+{\em maintenance\+Cost} & The maintenance cost associated with the utility. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Utility\texorpdfstring{$\ast$}{*} Pointer to the created \doxylink{class_utility}{Utility} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_education_factory_a6dc30b9ca52777a74d9756be7d129a73}{Education\+Factory}}, \mbox{\hyperlink{class_health_care_factory_a362b8aaed2bf3dd0fa939ee88803b1b6}{Health\+Care\+Factory}}, \mbox{\hyperlink{class_law_enforcement_factory_adc20aaed123af1ad913764348fa15cd6}{Law\+Enforcement\+Factory}}, \mbox{\hyperlink{class_power_plant_factory_abe3e2ac45ead0e83d29140af87416ba5}{Power\+Plant\+Factory}}, \mbox{\hyperlink{class_public_service_factory_adf88a98e48386f76e1e50124954bcbee}{Public\+Service\+Factory}}, \mbox{\hyperlink{class_sewage_system_factory_ad56756207faaebf8e2746cf6f411268d}{Sewage\+System\+Factory}}, \mbox{\hyperlink{class_waste_management_factory_a1b74c5ad79474e9ece25c51bf8f5a4b9}{Waste\+Management\+Factory}}, and \mbox{\hyperlink{class_water_filtering_plant_factory_aa6ae99a3b65464bb301f32c69711910c}{Water\+Filtering\+Plant\+Factory}}.
+
+\Hypertarget{class_utility_factory_a53290e529ca3e09b6ef39074d120c9dc}\index{UtilityFactory@{UtilityFactory}!spendBudget@{spendBudget}}
+\index{spendBudget@{spendBudget}!UtilityFactory@{UtilityFactory}}
+\doxysubsubsection{\texorpdfstring{spendBudget()}{spendBudget()}}
+{\footnotesize\ttfamily \label{class_utility_factory_a53290e529ca3e09b6ef39074d120c9dc} 
+void Utility\+Factory\+::spend\+Budget (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Helper method to reduce the budget in the \doxylink{class_resource_manager}{Resource\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to spend (subtract from the budget). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_utility_factory_8h}{Utility\+Factory.\+h}}\end{DoxyCompactItemize}

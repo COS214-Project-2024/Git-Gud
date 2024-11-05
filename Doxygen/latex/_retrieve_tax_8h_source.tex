@@ -1,0 +1,26 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Retrieve\+Tax.h}
+\hypertarget{_retrieve_tax_8h_source}{}\label{_retrieve_tax_8h_source}\mbox{\hyperlink{_retrieve_tax_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ RETRIEVETAX\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ RETRIEVETAX\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_residential_building_8h}{ResidentialBuilding.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commercial_building_8h}{CommercialBuilding.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_industrial_building_8h}{IndustrialBuilding.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_retrieve_tax}{RetrieveTax}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_retrieve_tax_acca5aefeb1e5b9433f5afb84db5747c2}{CollectTax}}(std::list<ResidentialBuilding*>\ resBuildings,\ std::list<CommercialBuilding*>\ comBuildings,\ std::list<IndustrialBuilding*>\ indBuildings,\ \textcolor{keywordtype}{float}\ tax)\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RETRIEVETAX\_H}}
+
+\end{DoxyCode}

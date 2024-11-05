@@ -1,0 +1,94 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Utility\+Iterator\+Linear.h}
+\hypertarget{_utility_iterator_linear_8h_source}{}\label{_utility_iterator_linear_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILITYITERATORLINEAR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTILITYITERATORLINEAR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UtilityIterator.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_utility_iterator_linear}{UtilityIteratorLinear}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utility_iterator}{UtilityIterator}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ rows,\ cols;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_utility_iterator_linear}{UtilityIteratorLinear}}(\mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}***\ array,\ \textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ this-\/>array\ =\ array;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ this-\/>rows\ =\ rows;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ this-\/>cols\ =\ cols;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ row\ =\ -\/1;\ \ \textcolor{comment}{//\ Start\ at\ invalid\ position}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ col\ =\ -\/1;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>array[i][j]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\ =\ i;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col\ =\ j;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_utility_iterator_linear}{\string~UtilityIteratorLinear}}()\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ array\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasNext()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ ==\ -\/1\ ||\ col\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Invalid\ state}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempRow\ =\ row;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempCol\ =\ col\ +\ 1;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempRow\ <\ rows)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempCol\ <\ cols)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>array[tempRow][tempCol]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \ \textcolor{comment}{//\ Found\ a\ next\ valid\ utility\ node}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempCol++;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ tempRow++;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ tempCol\ =\ 0;\ \ \textcolor{comment}{//\ Reset\ column\ for\ next\ row}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ No\ next\ valid\ utility\ node\ found}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ next()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ ==\ -\/1\ ||\ col\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempRow\ =\ row;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tempCol\ =\ col\ +\ 1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempRow\ <\ rows)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tempCol\ <\ cols)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (array[tempRow][tempCol]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row\ =\ tempRow;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col\ =\ tempCol;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempCol++;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ tempRow++;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ tempCol\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ row\ =\ -\/1;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ col\ =\ -\/1;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}*\ current()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ ==\ -\/1\ ||\ col\ ==\ -\/1\ ||\ this-\/>array[row][col]\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>array[row][col];}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//UTILITYITERATORLINEAR\_H}}
+
+\end{DoxyCode}

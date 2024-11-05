@@ -1,0 +1,127 @@
+\doxysection{Operational Class Reference}
+\hypertarget{class_operational}{}\label{class_operational}\index{Operational@{Operational}}
+
+
+Class representing the operational state of a building.  
+
+
+
+
+{\ttfamily \#include $<$Operational.\+h$>$}
+
+Inheritance diagram for Operational\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_operational}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_operational_acb8daeebdf832836d56dae9653bc72c1}\label{class_operational_acb8daeebdf832836d56dae9653bc72c1} 
+{\bfseries Operational} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_operational}{Operational} state. \end{DoxyCompactList}\item 
+\Hypertarget{class_operational_a759f6e61bdf81ea68f2fa9cabb82e962}\label{class_operational_a759f6e61bdf81ea68f2fa9cabb82e962} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Operational} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_operational}{Operational} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_operational_a01839bf07f66e237050e00aec6a2c551}{enter\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Enter the operational state of the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_operational_ab7992660ab35ee21b68c91fc5976c9f9}{exit\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Exit the operational state of the building. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_operational_a55ed77acf5501ebeafb280ed4ed7f2dc}{next\+State}} (\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}building) override
+\begin{DoxyCompactList}\small\item\em Transition to the next state from the operational state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_operational_adbfe8af73becfdbb8ae2070eb5142037}{get\+Current\+State}} () override
+\begin{DoxyCompactList}\small\item\em Get the current state of the building as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_building_state}{Building\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Building\+State} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_building_state}{Building\+State} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the operational state of a building. 
+
+This class inherits from \doxylink{class_building_state}{Building\+State} and defines behaviors when a building is in an operational state. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_operational_a01839bf07f66e237050e00aec6a2c551}\index{Operational@{Operational}!enterState@{enterState}}
+\index{enterState@{enterState}!Operational@{Operational}}
+\doxysubsubsection{\texorpdfstring{enterState()}{enterState()}}
+{\footnotesize\ttfamily \label{class_operational_a01839bf07f66e237050e00aec6a2c551} 
+void Operational\+::enter\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Enter the operational state of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} that is entering this state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_a514375c73d1e6a6373fbe7c188a10d70}{Building\+State}}.
+
+\Hypertarget{class_operational_ab7992660ab35ee21b68c91fc5976c9f9}\index{Operational@{Operational}!exitState@{exitState}}
+\index{exitState@{exitState}!Operational@{Operational}}
+\doxysubsubsection{\texorpdfstring{exitState()}{exitState()}}
+{\footnotesize\ttfamily \label{class_operational_ab7992660ab35ee21b68c91fc5976c9f9} 
+void Operational\+::exit\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Exit the operational state of the building. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} that is exiting this state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_a2b5fb65b89358607c5f9ef351cbe42ad}{Building\+State}}.
+
+\Hypertarget{class_operational_adbfe8af73becfdbb8ae2070eb5142037}\index{Operational@{Operational}!getCurrentState@{getCurrentState}}
+\index{getCurrentState@{getCurrentState}!Operational@{Operational}}
+\doxysubsubsection{\texorpdfstring{getCurrentState()}{getCurrentState()}}
+{\footnotesize\ttfamily \label{class_operational_adbfe8af73becfdbb8ae2070eb5142037} 
+std\+::string Operational\+::get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current state of the building as a string. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string representing the current state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_building_state_ab4dfe9fa9ee90f9d651c66bbc9823d4e}{Building\+State}}.
+
+\Hypertarget{class_operational_a55ed77acf5501ebeafb280ed4ed7f2dc}\index{Operational@{Operational}!nextState@{nextState}}
+\index{nextState@{nextState}!Operational@{Operational}}
+\doxysubsubsection{\texorpdfstring{nextState()}{nextState()}}
+{\footnotesize\ttfamily \label{class_operational_a55ed77acf5501ebeafb280ed4ed7f2dc} 
+void Operational\+::next\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_building}{Building}} \texorpdfstring{$\ast$}{*}}]{building}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Transition to the next state from the operational state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em building} & Pointer to the \doxylink{class_building}{Building} that is transitioning states. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_building_state_adcbf504c9fbfc4901e9e6cf31e199f09}{Building\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\mbox{\hyperlink{_operational_8h}{Operational.\+h}}\item 
+//wsl.\+localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/Operational.\+cpp\end{DoxyCompactItemize}

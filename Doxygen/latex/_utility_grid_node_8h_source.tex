@@ -1,0 +1,132 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Utility\+Grid\+Node.h}
+\hypertarget{_utility_grid_node_8h_source}{}\label{_utility_grid_node_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ UTILITY\_GRID\_NODE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ UTILITY\_GRID\_NODE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}PowerPlant.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}WaterFilteringPlant.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}SewageSystem.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}WasteManagement.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}HealthCare.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Education.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}LawEnforcement.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transportation_8h}{Transportation.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Member\ variable}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasRoad;\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }Node\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_utility}{Utility}}*\ utility;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Node*\ next;}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ \ \ \ \ Node*\ head;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_util_grid_node}{UtilGridNode}}()}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ head\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ hasRoad\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ \ \ \ \ \};\ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_util_grid_node}{\string~UtilGridNode}}()\ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (head\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ temp\ =\ head;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Member\ functions}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ createRoad()}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ hasRoad\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ remove(std::string\ type)}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head-\/>utility-\/>\mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{getUtilityType}}()\ ==\ type)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ temp\ =\ head;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Node*\ current\ =\ head;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Node*\ previous\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>utility-\/>\mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{getUtilityType}}()\ ==\ type)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ previous-\/>next\ =\ current-\/>next;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ current;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(std::string\ type)}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Node*\ current\ =\ head;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>utility-\/>\mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{getUtilityType}}()\ ==\ type)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ \ \ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ add(\mbox{\hyperlink{class_utility}{Utility}}*\ utility)}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ remove(utility-\/>getUtilityType());//Calling\ remove\ first\ to\ avoid\ duplicate\ utilities.\ Minimize\ traversals}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ Node*\ newNode\ =\ new\ Node;}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ \ \ \ \ newNode-\/>utility\ =\ utility;}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ newNode-\/>next\ =\ head;}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ \ \ \ \ \ \ head\ =\ newNode;}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ true;\ */}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (contains(utility-\/>\mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{getUtilityType}}()))}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ newNode-\/>utility\ =\ utility;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ newNode-\/>next\ =\ head;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ head\ =\ newNode;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHasRoad()}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hasRoad;}
+\DoxyCodeLine{00109\ \ \ \ \ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_utility}{Utility}}*\ getUtility(std::string\ type)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Node*\ current\ =\ head;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>utility-\/>\mbox{\hyperlink{class_utility_a8db0fd854e3585e8ff32eba915acb611}{getUtilityType}}()\ ==\ type)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current-\/>utility;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00123\ \ \ \ \ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UTILITY\_GRID\_NODE\_H}}
+
+\end{DoxyCode}

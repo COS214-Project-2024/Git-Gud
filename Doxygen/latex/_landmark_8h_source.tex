@@ -1,0 +1,36 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Landmark.h}
+\hypertarget{_landmark_8h_source}{}\label{_landmark_8h_source}\mbox{\hyperlink{_landmark_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ LANDMARKBUILDING\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LANDMARKBUILDING\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_landmark_building}{LandmarkBuilding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building}{Building}}\{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ landmarkName;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_landmark_building_acbda014260db812ddbba007a9361ae0b}{\string~LandmarkBuilding}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \textcolor{comment}{//\ protected:\ changed\ to\ accomodate\ factory}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_landmark_building_a1c3f807cb2b5c04dcf3f9e68bf5fc75d}{LandmarkBuilding}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_landmark_building_a1c3f807cb2b5c04dcf3f9e68bf5fc75d}{LandmarkBuilding}}(std::unique\_ptr<BuildingState>\ s,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_landmark_building_af32eed049c4ea7568375bafc2f1925f6}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_landmark_building_a48d3dc6d63e9e5ff232d04047b33088c}{provideService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_landmark_building_a7c824d63dd3fa1036a7f139299e6778e}{getCost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_landmark_building}{LandmarkBuilding}}*\ \mbox{\hyperlink{class_landmark_building_ad1fcca3a1e7c4486751f5135e8125576}{clone}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LANDMARKBUILDING\_H}}
+
+\end{DoxyCode}

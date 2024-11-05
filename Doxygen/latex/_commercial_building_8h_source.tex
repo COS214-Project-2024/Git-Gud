@@ -1,0 +1,51 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Commercial\+Building.h}
+\hypertarget{_commercial_building_8h_source}{}\label{_commercial_building_8h_source}\mbox{\hyperlink{_commercial_building_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ COMMERCIALBUILDING\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ COMMERCIALBUILDING\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_building_8h}{Building.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_building}{Building}}\{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numStories;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ businessType;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_commercial_building_abb1d264ba9144518d1865161d571963e}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_commercial_building_a300f17d67c728bfddc2e0b78962bc113}{getSize}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_commercial_building_a0ce3022e85d0d757770e5b4f106893ab}{getNumStories}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ \mbox{\hyperlink{class_commercial_building_af56c04e321241773d5947819ecd506eb}{getBusinessType}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_commercial_building_a2f48a66b745d00793dccb976141be198}{addEmployees}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_commercial_building_ad769a61f37e0448630d7c879a282cb14}{\string~CommercialBuilding}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//protected:\ Changed\ to\ accomodate\ factory}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_commercial_building_aaa9b72bebe1affbc19199ddd207713b2}{CommercialBuilding}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}},\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ numStories,\ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ businessType);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_commercial_building_aaa9b72bebe1affbc19199ddd207713b2}{CommercialBuilding}}(std::unique\_ptr<BuildingState>\ s,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_building_a3a56eeb880c304f705b84fb5e96c0c0b}{capacity}},\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ numStories,\ \mbox{\hyperlink{_building_8h_af110ba4ad2ae196a53d2c0d05e490e3f}{BusinessType}}\ businessType);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_commercial_building_a0d236a06373ba17022ae353fce26801e}{provideService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_commercial_building_adb2325da9c02f0e810e8dc9fd64d3ecb}{getCost}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_commercial_building}{CommercialBuilding}}*\ \mbox{\hyperlink{class_commercial_building_a13e852730b910a37c737365d27c21e4a}{clone}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMERCIALBUILDING\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Subject.h}
+\hypertarget{_subject_8h_source}{}\label{_subject_8h_source}\mbox{\hyperlink{_subject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SUBJECT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SUBJECT\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_citizen_8h}{Citizen.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ChangeData.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//forward\ declaration:}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_citizen}{Citizen}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_subject}{Subject}}\{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::vector<Citizen*>\ observerList;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Citizen*>\ \mbox{\hyperlink{class_subject_a3eb1eb85563f53524135522c5e6ddda7}{allCitizens}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_subject_a9850901b62a18cc7db0345d6f58cab14}{attach}}(\mbox{\hyperlink{class_citizen}{Citizen}}*\ observer);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_subject_a686abb0c34a6af59e852d4a7f0ad6865}{detach}}(\mbox{\hyperlink{class_citizen}{Citizen}}*\ observer);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}}(\mbox{\hyperlink{struct_change_data}{ChangeData}}\ changeData);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_subject_a68ce1571713fe1350b4ad800c60048fd}{addCitizenToSimulation}}(\mbox{\hyperlink{class_citizen}{Citizen}}*\ newCitizen);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_subject_abba4e56451de05a0cb06ae7c615d6800}{removeCitizenFromSimulation}}(\mbox{\hyperlink{class_citizen}{Citizen}}*\ citizen);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_subject_acacf203e003f9ef980b6f5d52848dee3}{getObserverListSize}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_subject_ad68d2ee4d3aa6acd0048602e003b6f32}{getNumCitizens}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::vector<Citizen*>\ \mbox{\hyperlink{class_subject_a12b4b9e61165628b693c1183521156bd}{getObserverList}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SUBJECT\_H}}
+
+\end{DoxyCode}

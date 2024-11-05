@@ -1,0 +1,27 @@
+\doxysection{//wsl.localhost/\+Ubuntu/home/zandervanschoor/\+University/\+Year 2/\+COS 214/\+Git\+Hub/\+Git-\/\+Gud/\+Power\+Plant.h}
+\hypertarget{_power_plant_8h_source}{}\label{_power_plant_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POWERPLANT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POWERPLANT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utility_8h}{Utility.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_power_plant}{PowerPlant}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_utility}{Utility}}\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_power_plant}{PowerPlant}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}})}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_utility_ac5bce561407a568712d34cff71041a21}{Utility}}(\textcolor{stringliteral}{"{}PowerPlant"{}},\ \mbox{\hyperlink{class_utility_a85e7c65e4820319e628f76aa0914556b}{capacity}},\ \mbox{\hyperlink{class_utility_ad7c10c0813e939fc9365d25958f864c0}{maintenanceCost}})\ \{\}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_plant_abbc8c455c5b7e4bfff6a58b693f925e5}{callObserver}}()\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_change_data}{ChangeData}}\ changeData\ =\ \{\textcolor{stringliteral}{"{}ProvideService"{}},\ 2.0f\};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_subject_a9e7198d28d891bb75a6210b3187974e0}{notify}}(changeData);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Power\ is\ being\ provided\ for\ the\ area"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POWERPLANT\_H}}
+
+\end{DoxyCode}

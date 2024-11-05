@@ -1,0 +1,25 @@
+var class_resources =
+[
+    [ "Resources", "class_resources.html#a05010d16a94aa29499afdd9b86083e7c", null ],
+    [ "getBudgetResource", "class_resources.html#a649002c5bef983d574bdd54b73e7caf7", null ],
+    [ "getBudgetResource", "class_resources.html#afe17a1508c30c4118e7e452eb2a75dfb", null ],
+    [ "getConcreteResource", "class_resources.html#a7b66d783ad1218c223efa68594a8f1fa", null ],
+    [ "getConcreteResource", "class_resources.html#abd84a75e9c135f6bb81730393cc231f4", null ],
+    [ "getEnergySupplyResource", "class_resources.html#a2447e1acea68ed76d43cf90c641784c5", null ],
+    [ "getEnergySupplyResource", "class_resources.html#a169b42056b11bc50f44bdad1e0df5a05", null ],
+    [ "getSteelResource", "class_resources.html#a8a10510f477e03ca243a8541177c02fd", null ],
+    [ "getSteelResource", "class_resources.html#a5a939ba8d135ee5d00c0e50209c9cccb", null ],
+    [ "getWasteCapacityResource", "class_resources.html#ac242535cdb7dcad8d989b1586e33239e", null ],
+    [ "getWasteCapacityResource", "class_resources.html#a87cb1aeb7d7482602e01acf488fbc76c", null ],
+    [ "getWaterSupplyResource", "class_resources.html#a85f9499c74e7e22a3178034910bd4f11", null ],
+    [ "getWaterSupplyResource", "class_resources.html#adc1bd666594d196c38aead04db542830", null ],
+    [ "getWoodResource", "class_resources.html#a664d9dba0bd2dbc84f03650ef24b2eea", null ],
+    [ "getWoodResource", "class_resources.html#a6cb65e709b54e2e51badc9113f6e6b43", null ],
+    [ "setBudget", "class_resources.html#ad6aa6410fab81cec948920bfbb155831", null ],
+    [ "setConcrete", "class_resources.html#a748cbd2d1740329fde6f5464126b9497", null ],
+    [ "setEnergySupply", "class_resources.html#aee4a121584aa2569a6deae574c7c94c3", null ],
+    [ "setSteel", "class_resources.html#a687c9466904967190659f64e8495a74b", null ],
+    [ "setWasteCapacity", "class_resources.html#a9d390174e160879ae84d4f2b8bcaaa49", null ],
+    [ "setWaterSupply", "class_resources.html#a326e96d4f93c1cc5c123a6c758502fae", null ],
+    [ "setWood", "class_resources.html#ac03ea04eac0ef79ac4c771bdd4dff8f4", null ]
+];
